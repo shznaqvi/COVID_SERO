@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID19 Inequity Survey - Urdu</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="btnSync">Download Data</string>
+    <string name="btnUpload">Upload Data</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="splashText"> </string>
+    <string name="splashText2">  </string>
+    <string name="check_pending_forms">CHECK PENDING FORMS</string>
+    <string name="open_new_form">OPEN NEW FORM</string>
+    <string name="records_summary">Records Summary</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="only_for_testing">ONLY FOR TESTING</string>
+    <string name="database">Database</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="no"> نہیں </string>
+    <string name="dkn"> معلوم نہیں </string>
+    <string name="none"> کوئی نہیں </string>
+    <string name="never"> کبھی نہیں </string>
+    <string name="na"> قابل اطلاق / دستیاب نہیں  </string>
+    <string name="nap"> قابل اطلاق نہیں </string>
+    <string name="nav"> دستیاب نہیں </string>
+    <string name="ref"> انکار کر دیا </string>
+    <string name="other"> دیگر </string>
+    <string name="specify"> وضاحت کریں </string>
+    <string name="year"> سال </string>
+    <string name="month"> مہینہ </string>
+    <string name="weeks"> ہفتے </string>
+    <string name="days"> دن </string>
+    <string name="hours"> گھنٹے </string>
+    <string name="minutes"> منٹ </string>
+    <string name="kg"> کلوگرام </string>
+    <string name="km"> کلومیٹر </string>
+    <string name="cm"> سینٹی میٹر </string>
+    <string name="in"> انچ </string>
+    <string name="rupees"> روپے </string>
+    <string name="num"> اعداد </string>
+    <string name="name"> نام </string>
+    <string name="contactnum"> رابطہ نمبر </string>
+    <string name="checkHHpresent"> گھر کے سربراہ کا نام لائن لسٹنگ ڈیٹا سے مطابقت رکھتا ہے۔ </string>
+    <string name="istatus"> گھرانے کے انٹرویو کا نتیجہ: </string>
+    <string name="istatus_info"> انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں ۔ </string>
+    <string name="istatus01">گھر اور فرد کی شناخت ہو گئی</string>
+    <string name="istatus02">فرد کی شناخت نہیں ہو سکی</string>
+    <string name="istatus03">گھر کی شناخت نہیں ہو سکی </string>
+    <string name="istatus04">گھر بند ہے</string>
+    <string name="istatus05">گھر میں کوئی اہل جواب دہندہ موجود نہیں</string>
+    <string name="istatus06">گھر طویل مدت سے بند ہے</string>
+    <string name="istatus07">انکار کردیا </string>
+    <string name="istatus96">دیگر(وضاحت کریں)</string>
+    <string name="Q_istatus">iStatus</string>
+
+</resources>

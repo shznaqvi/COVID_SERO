@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">COVID19 Inequity Survey - English</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="btnSync">Download Data</string>
+    <string name="btnUpload">Upload Data</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="splashText"> </string>
+    <string name="splashText2">  </string>
+    <string name="check_pending_forms">CHECK PENDING FORMS</string>
+    <string name="open_new_form">OPEN NEW FORM</string>
+    <string name="records_summary">Records Summary</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="only_for_testing">ONLY FOR TESTING</string>
+    <string name="database">Database</string>
+    <string name="no"> No </string>
+    <string name="dkn"> Don’t Know </string>
+    <string name="none"> No one </string>
+    <string name="never"> Never</string>
+    <string name="na"> Applicable /Not Available  </string>
+    <string name="nap"> Not Applicable </string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="nav">Not Available </string>
+    <string name="ref"> Refused </string>
+    <string name="other"> Other </string>
+    <string name="specify"> Please explain </string>
+    <string name="year"> Year </string>
+    <string name="month"> Month </string>
+    <string name="weeks"> Week </string>
+    <string name="days"> Day </string>
+    <string name="hours"> Hour </string>
+    <string name="minutes"> Minutes </string>
+    <string name="kg"> Kilograms </string>
+    <string name="km"> Kilometers </string>
+    <string name="cm"> cm </string>
+    <string name="in"> Inch </string>
+    <string name="rupees">  Rupees </string>
+    <string name="num"> Number </string>
+    <string name="name"> Name </string>
+    <string name="contactnum">Contact Number </string>
+    <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
+    <string name="istatus"> گھرانے کے انٹرویو کا نتیجہ: </string>
+    <string name="istatus_info"> انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں ۔ </string>
+    <string name="istatus01">گھر اور فرد کی شناخت ہو گئی</string>
+    <string name="istatus02">فرد کی شناخت نہیں ہو سکی</string>
+    <string name="istatus03">گھر کی شناخت نہیں ہو سکی </string>
+    <string name="istatus04">گھر بند ہے</string>
+    <string name="istatus05">گھر میں کوئی اہل جواب دہندہ موجود نہیں</string>
+    <string name="istatus06">گھر طویل مدت سے بند ہے</string>
+    <string name="istatus07">انکار کردیا </string>
+    <string name="istatus96">دیگر(وضاحت کریں)</string>
+    <string name="Q_istatus">iStatus</string>
+
+
+</resources>
