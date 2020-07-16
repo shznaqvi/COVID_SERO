@@ -59,4 +59,193 @@
     <string name="istatus96">دیگر(وضاحت کریں)</string>
     <string name="Q_istatus">iStatus</string>
 
+    <string name="nh3heading"> سیکشن ایچ 3 : سماجی امداد کے حوالے سے معلومات </string>
+    <string name="nh3sub">یہ سیکشن گھر کے سربراہ سے یا گھر میں کم سے کم 18 سال یا اس سے ذائد عمر کے کسی سمجھدار شخص سے پوچھا جائیگا </string>
+    <string name="nh301a"> اردو </string>
+    <string name="nh301b"> پنجابی </string>
+    <string name="nh301c"> سند ھی </string>
+    <string name="nh301d"> پشتو </string>
+    <string name="nh301e"> بلوچی </string>
+    <string name="nh301f"> سرائیکی </string>
+    <string name="nh301g"> ھند کو  </string>
+
+    <string name="nh302a"> اپنا </string>
+    <string name="nh302b"> کرائے کا </string>
+
+    <!--<string name="nh303sub"> میونسپل کمیٹی کا پانی کاکنکشن  </string>-->
+    <string name="nh303a"> میونسپل کمیٹی کا پانی کاکنکشن </string>
+    <string name="nh303b">گھر میں کانلکا </string>
+    <string name="nh303c"> صحن میں کا نلکا </string>
+    <string name="nh303d"> پڑوسی کے گھر کا نلکا </string>
+    <string name="nh303e"> گلی / علاقہ کا نلکا </string>
+    <string name="nh303f">  پانی کھینچنے کی مشین /ٹیوب ویل/ بورنگ کا پانی</string>
+    <string name="nh303g">  ہاتھ والا نلکا  </string>
+    <string name="nh303h"> محفوظ کنواں </string>
+    <string name="nh303i"> غیر محفوظ کنواں </string>
+    <string name="nh303j">محفوظ چشمہ </string>
+    <string name="nh303k"> غیر محفوظ چشمہ </string>
+    <string name="nh303l"> بارش کا پانی </string>
+    <string name="nh303m"> پانی کا ٹینکر </string>
+    <string name="nh303n"> ریڑھی کے ساتھ چھوٹی ٹنکی </string>
+    <string name="nh303o"> سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر کا پانی) </string>
+    <string name="nh303p"> فلٹیرشن پلانٹ </string>
+    <string name="nh303q"> بوتل کا پانی </string>
+
+    <string name="nh304"> ۔H304 - آپکوپانی کے اہم ذریعے تک پہنچنے میں اور وہاں سے پانی لے کر گھر آنے تک کتنا وقت لگتا ہے  </string>
+    <string name="nh304min">وقت منٹوں میں لکھیں</string>
+
+
+    <string name="nh306a">  ابالتے ہیں </string>
+    <string name="nh306b"> بلیچ/کلورین ملاتے ہیں </string>
+    <string name="nh306c"> کپڑے کے ذریعہ چھانتے ہیں </string>
+    <string name="nh306d">  پانی کا فلٹر استعمال کرتے ہیں </string>
+    <string name="nh306e"> سورج کی شعاعوں سے /دھوپ میں رکھتے ہیں  </string>
+    <string name="nh306f"> برتن میں پانی ڈال کر ٹہرنے کا انتظار کرتے ہیں </string>
+
+
+    <string name="nh307info"> فلش یا انڈیل کر پانی ڈالنے والا </string>
+    <string name="nh307a"> فلش سیوریج کے نظام سے منسلک </string>
+    <string name="nh307b"> فلش سپٹک ٹینک سے منسلک </string>
+    <string name="nh307c"> فلش گڑھےواے لیٹرین سے منسلک </string>
+    <string name="nh307d"> فلش کہیں اور </string>
+    <string name="nh307info1"> گڑھے والا لیٹرین </string>
+    <string name="nh307e"> بہتر ہوا دار گڑھے والا لیٹرین </string>
+    <string name="nh307f"> گڑھے والا لیٹرین ڈھکا ہوا </string>
+    <string name="nh307g"> گڑھے والا کھلاہوا لیٹرین </string>
+    <string name="nh307h"> بالٹی والا ٹوائلٹ </string>
+    <string name="nh307i"> کوئی سہولت نہیں /جھاڑیوں/زمین پر </string>
+
+
+    <string name="nh309a"> گھرانوں کی تعداد </string>
+
+
+    <string name="nh310a"> بچہ لیٹرین استعمال کرتا ہے </string>
+    <string name="nh310b"> پاخانہ لیٹرین سے بہادیتے ہیں </string>
+    <string name="nh310c"> پاخانہ نالی /گھڑھے سے بہادیتے ہیں  </string>
+    <string name="nh310d"> کچرے میں پھنک دیتے ہیں </string>
+    <string name="nh310e"> کھلا پڑا رہتا ہے </string>
+    <string name="nh310f"> زمین میں دبا دیتے ہیں </string>
+    <string name="nh310g"> پانچ سال سے کم عمر کوئی بچہ نہیں ہے </string>
+
+    <string name="nh31101"> بجلی </string>
+    <string name="nh31102"> ریڈیو </string>
+    <string name="nh31103">ٹیلی وژن </string>
+    <string name="nh31104"> ٹیلیفون  </string>
+    <string name="nh31105"> فریج  </string>
+    <string name="nh31106">الماری </string>
+    <string name="nh31107">کرسی </string>
+    <string name="nh31108">روم کولر </string>
+    <string name="nh31109">  ائیرکنڈئشن </string>
+    <string name="nh31110">واشنگ مشین </string>
+    <string name="nh31111"> پانی کا پمپ  </string>
+    <string name="nh31112">پلنگ </string>
+    <string name="nh31113">گھٹری  </string>
+    <string name="nh31114"> صوفہ </string>
+    <string name="nh31115"> کیمرہ </string>
+    <string name="nh31116">  سلائی میشن </string>
+    <string name="nh31117"> کمپیوٹر/لیپ ٹاپ  </string>
+    <string name="nh31118">انٹرنیٹ کا کنکشن </string>
+    <string name="nh31119"> ڈیش /کیبل نیٹ ورک </string>
+
+    <string name="nh312a"> گھڑی </string>
+    <string name="nh312b"> موبائل  </string>
+    <string name="nh312c"> سائیکل </string>
+    <string name="nh312d"> موٹر سائیکل/ سکوٹر  </string>
+    <string name="nh312e"> جانوروں سے چلائی جانے والی گاڑی </string>
+    <string name="nh312f">  گاڑی /ٹرک/ بس </string>
+    <string name="nh312g"> ٹریکٹر </string>
+    <string name="nh312h">موٹر کے ساتھ کشتی</string>
+    <string name="nh312i">موٹر کے بغیر کشتی </string>
+
+
+    <string name="nh313a"> بلب </string>
+    <string name="nh313b"> ٹیوب لائٹ </string>
+    <string name="nh313ca"> </string>
+    <string name="nh313c">۔LED بلب </string>
+    <string name="nh313d"> انرجی سیور </string>
+    <string name="nh313e"> موم بتی </string>
+    <string name="nh313f"> لالٹین </string>
+
+    <string name="nh314a"> بجلی </string>
+    <string name="nh314b"> ایل –پی-جی سیلنڈر </string>
+    <string name="nh314c"> قدرتی گیس </string>
+    <string name="nh314d"> بائیو گیس </string>
+    <string name="nh314e"> مٹی کا تیل </string>
+    <string name="nh314f"> کوئلہ </string>
+    <string name="nh314g"> لکٹری کاکوئلہ </string>
+    <string name="nh314h"> لکٹری </string>
+    <string name="nh314i"> تنکے/جھاڑیاں/گھاس پھونس </string>
+    <string name="nh314j"> جانوروں کا گوبر(اوپلے) </string>
+    <string name="nh314k"> گھر میں کھانا نہیں پکتا</string>
+
+    <string name="nh315a"> گھر کے اندر </string>
+    <string name="nh315b"> علیحدہ عمارت میں </string>
+    <string name="nh315c"> بیرونی جگہ </string>
+
+    <string name="nh317info"> قدرتی فرش </string>
+    <string name="nh317a"> مٹی/چکنی مٹی/زمین/ریت </string>
+    <string name="nh317b"> جانوروں کا گوبر </string>
+    <string name="nh317info1"> بنیادی /ابتدائی فرش </string>
+    <string name="nh317c"> لکٹری کے تختے </string>
+    <string name="nh317d"> کھجور  یاناریل کے پتے /بانس </string>
+
+    <string name="nh317info2"> تیار فرش </string>
+    <string name="nh317e">لکڑی کا فرش یا پالش والی لکڑی</string>
+    <string name="nh317f">لکڑی کی پلائی یا لکڑی کے ٹائلز   </string>
+    <string name="nh317g"> سرامک ٹائلز </string>
+    <string name="nh317h"> سیمنٹ </string>
+    <string name="nh317i"> قالین </string>
+    <string name="nh317j"> اینٹیں </string>
+    <string name="nh317k"> چونے کا پتھر </string>
+
+    <string name="nh318info"> قدرتی چھت </string>
+    <string name="nh318a"> کوئی چھت نہیں </string>
+    <string name="nh318b"> گھاس پھونس /کھجو ر کے پتے </string>
+    <string name="nh318c"> گھاس پھوس سے بنی ہوئی چھت </string>
+    <string name="nh318info1"> بنیادی /سادہ چھت </string>
+    <string name="nh318d"> تنکے کی  چٹائی </string>
+    <string name="nh318e">کھجور  یاناریل کے درخت/بانس </string>
+    <string name="nh318f">  لکڑی کے تختے </string>
+    <string name="nh318g"> گتے سے بنی ہوئی چھت </string>
+    <string name="nh318info2"> تیار چھت</string>
+    <string name="nh318h"> دھات/ٹین/سی جی آئی </string>
+    <string name="nh318i"> لکٹری سے بنی ہوئی چھت</string>
+    <string name="nh318j"> کیلا مائن/سیمنٹ فائبر  </string>
+    <string name="nh318k"> سرامک ٹائلز </string>
+    <string name="nh318l">  سیمنٹ آر سی سی(پکی چھت) </string>
+    <string name="nh318m"> چھت میں استعمال ہونے والے ٹائلز </string>
+    <string name="nh318n"> اینٹیں </string>
+
+    <string name="nh319sub">قدرتی دیواریں    </string>
+    <string name="nh319a"> کوئی دیوار نہیں </string>
+    <string name="nh319b"> کھجور کے درخت  /بانس </string>
+    <string name="nh319c"> مٹی </string>
+    <string name="nh319sub1">بنیادی سادہ دیواریں  </string>
+    <string name="nh319d"> بانس اور مٹی سے بنی ہوئی </string>
+    <string name="nh319e"> پتھر اور مٹی </string>
+    <string name="nh319f"> کچی اینٹوں سے  </string>
+    <string name="nh319g"> لکڑی کی پلائی  </string>
+    <string name="nh319h"> گّتہ </string>
+    <string name="nh319i"> استعمال کی ہوئی لکڑی</string>
+    <string name="nh319j"> کپڑا/پردے/شامیانہ</string>
+    <string name="nh319sub2"> تیاردیواریں     </string>
+    <string name="nh319k"> سیمنٹ </string>
+    <string name="nh319l"> پتھرچونے/سیمنٹ کے ساتھ</string>
+    <string name="nh319m">پکی اینٹیں</string>
+    <string name="nh319n">سیمنٹ سے بنی ہوئی بلاکس</string>
+    <string name="nh319o">کچی اینٹوں سے بنی(لیپ کی ہوئی) </string>
+    <string name="nh319p">لکڑی کے تختے </string>
+    <string name="nh320a"> کمرے </string>
+    <string name="nh322acr"> ایکٹر </string>
+    <string name="nh322can"> کنال </string>
+    <string name="nh324info"> ایک ایک کر کے جانوروں کے نام پوچھیں اور شمار کنندہ مشاہدہ کرے
+  اگر کوئی نہیں تو 000 لکھیں </string>
+    <string name="nh324a"> مال مویشی (گائے اور بیل) </string>
+    <string name="nh324b"> گھوڑے/گدھے/خچر </string>
+    <string name="nh324c"> بکریاں </string>
+    <string name="nh324d"> بھیڑ </string>
+    <string name="nh324e"> مرغیاں </string>
+    <string name="nh324f"> بھینسیں </string>
+    <string name="nh324g"> اونٹ </string>
+
 </resources>
