@@ -10,7 +10,10 @@
             type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHDActivity" />
     </data>
 
-    <LinearLayout style="@style/linearlayout_view_wt_bound">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <!-- im05title2  Title   -->
         <androidx.cardview.widget.CardView
@@ -37,11 +40,15 @@
 
             <LinearLayout
                 android:id="@+id/fldGrpSectionCHD"
-                style="@style/linearlayout_view_wt_bound">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/fldGrpSecChc2"
-                    style="@style/linearlayout_view_wt_bound">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <!-- im0501  Title   -->
                     <androidx.cardview.widget.CardView
@@ -90,8 +97,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0501dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0501dd"
                                     android:maxLength="2"
@@ -108,8 +116,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0501mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0501mm"
                                     android:maxLength="2"
@@ -125,8 +134,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0501yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0501yy"
                                     android:maxLength="4"
@@ -188,8 +198,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0502dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0502dd"
                                     android:maxLength="2"
@@ -206,8 +217,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0502mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0502mm"
                                     android:maxLength="2"
@@ -223,8 +235,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0502yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0502yy"
                                     android:maxLength="4"
@@ -287,8 +300,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0503dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0503dd"
                                     android:maxLength="2"
@@ -305,8 +319,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0503mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0503mm"
                                     android:maxLength="2"
@@ -322,8 +337,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0503yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0503yy"
                                     android:maxLength="4"
@@ -386,8 +402,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0504dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0504dd"
                                     android:maxLength="2"
@@ -404,8 +421,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0504mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0504mm"
                                     android:maxLength="2"
@@ -421,8 +439,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0504yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0504yy"
                                     android:maxLength="4"
@@ -471,7 +490,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -485,8 +503,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0505dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0505dd"
                                     android:maxLength="2"
@@ -503,8 +522,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0505mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0505mm"
                                     android:maxLength="2"
@@ -520,8 +540,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0505yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0505yy"
                                     android:maxLength="4"
@@ -570,7 +591,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -584,8 +604,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0506dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0506dd"
                                     android:maxLength="2"
@@ -602,8 +623,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0506mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0506mm"
                                     android:maxLength="2"
@@ -619,8 +641,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0506yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0506yy"
                                     android:maxLength="4"
@@ -669,7 +692,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -683,8 +705,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0507dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0507dd"
                                     android:maxLength="2"
@@ -701,8 +724,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0507mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0507mm"
                                     android:maxLength="2"
@@ -718,8 +742,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0507yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0507yy"
                                     android:maxLength="4"
@@ -781,8 +806,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0508dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0508dd"
                                     android:maxLength="2"
@@ -799,8 +825,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0508mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0508mm"
                                     android:maxLength="2"
@@ -816,8 +843,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0508yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0508yy"
                                     android:maxLength="4"
@@ -841,7 +869,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -880,8 +907,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0509dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0509dd"
                                     android:maxLength="2"
@@ -898,8 +926,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0509mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0509mm"
                                     android:maxLength="2"
@@ -915,8 +944,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0509yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0509yy"
                                     android:maxLength="4"
@@ -965,7 +995,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -979,8 +1008,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0510dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0510dd"
                                     android:maxLength="2"
@@ -997,8 +1027,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0510mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0510mm"
                                     android:maxLength="2"
@@ -1014,8 +1045,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0510yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0510yy"
                                     android:maxLength="4"
@@ -1077,8 +1109,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0511dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0511dd"
                                     android:maxLength="2"
@@ -1095,8 +1128,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0511mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0511mm"
                                     android:maxLength="2"
@@ -1112,8 +1146,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0511yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0511yy"
                                     android:maxLength="4"
@@ -1175,8 +1210,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0512dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0512dd"
                                     android:maxLength="2"
@@ -1193,8 +1229,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0512mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0512mm"
                                     android:maxLength="2"
@@ -1210,8 +1247,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0512yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0512yy"
                                     android:maxLength="4"
@@ -1260,7 +1298,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1274,8 +1311,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0513dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0513dd"
                                     android:maxLength="2"
@@ -1292,8 +1330,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0513mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0513mm"
                                     android:maxLength="2"
@@ -1309,8 +1348,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0513yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0513yy"
                                     android:maxLength="4"
@@ -1324,7 +1364,6 @@
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- im0514  Title   -->
                     <androidx.cardview.widget.CardView
@@ -1373,8 +1412,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0514dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0514dd"
                                     android:maxLength="2"
@@ -1391,8 +1431,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0514mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0514mm"
                                     android:maxLength="2"
@@ -1408,8 +1449,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0514yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0514yy"
                                     android:maxLength="4"
@@ -1423,7 +1465,6 @@
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- im0515  Title   -->
                     <androidx.cardview.widget.CardView
@@ -1472,8 +1513,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0515dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0515dd"
                                     android:maxLength="2"
@@ -1490,8 +1532,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0515mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0515mm"
                                     android:maxLength="2"
@@ -1507,8 +1550,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0515yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0515yy"
                                     android:maxLength="4"
@@ -1572,8 +1616,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0516dd"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0516dd"
                                     android:maxLength="2"
@@ -1590,8 +1635,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0516mm"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="2"
                                     android:hint="@string/im0516mm"
                                     android:maxLength="2"
@@ -1607,8 +1653,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im0516yy"
-                                    style="@style/EditTextNum"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:layout_weight="4"
                                     android:hint="@string/im0516yy"
                                     android:maxLength="4"
@@ -1724,8 +1771,6 @@
                             <RadioGroup
                                 android:id="@+id/im07"
                                 android:layout_width="match_parent"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -1795,8 +1840,6 @@
                         <RadioGroup
                             android:id="@+id/im08"
                             android:layout_width="match_parent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
@@ -1827,9 +1870,12 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <LinearLayout
                     android:id="@+id/fldGrpSecChc3"
-                    style="@style/linearlayout_view_wt_bound">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <!-- im09  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1868,8 +1914,6 @@
                             <RadioGroup
                                 android:id="@+id/im09"
                                 android:layout_width="match_parent"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -1970,7 +2014,9 @@
 
                     <LinearLayout
                         android:id="@+id/fldGrpSecChc5"
-                        style="@style/linearlayout_view_wt_bound">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <!-- im11  Radio   -->
                         <androidx.cardview.widget.CardView
@@ -2075,7 +2121,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im12"
-                                    style="@style/EditTextNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:hint="@string/num"
                                     android:maxLength="2"
                                     app:maxValue="50"
@@ -2165,7 +2213,9 @@
 
                     <LinearLayout
                         android:id="@+id/fldGrpSecChc6"
-                        style="@style/linearlayout_view_wt_bound">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <!-- im14  Radio   -->
                         <androidx.cardview.widget.CardView
@@ -2271,7 +2321,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im15"
-                                    style="@style/EditTextNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:hint="@string/num"
                                     android:maxLength="1"
                                     app:maxValue="3"
@@ -2356,7 +2408,6 @@
 
                         </androidx.cardview.widget.CardView>
 
-
                         <!-- im17  Input-Numeric   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVim17"
@@ -2393,7 +2444,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im17"
-                                    style="@style/EditTextNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:hint="@string/num"
                                     android:maxLength="1"
                                     app:maxValue="3"
@@ -2410,7 +2463,6 @@
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
-
 
                         <!-- im18  Radio   -->
                         <androidx.cardview.widget.CardView
@@ -2479,7 +2531,6 @@
 
                         </androidx.cardview.widget.CardView>
 
-
                         <!-- im19  Radio   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVim19"
@@ -2516,7 +2567,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im19"
-                                    style="@style/EditTextNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:hint="@string/num"
                                     android:maxLength="1"
                                     app:maxValue="2"
@@ -2533,7 +2586,6 @@
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
-
 
                         <!-- im20  Radio   -->
                         <androidx.cardview.widget.CardView
@@ -2602,7 +2654,6 @@
 
                         </androidx.cardview.widget.CardView>
 
-
                         <!-- im21  Radio   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVim21"
@@ -2670,7 +2721,6 @@
 
                         </androidx.cardview.widget.CardView>
 
-
                         <!-- im22  Input-Numeric   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVim22"
@@ -2707,7 +2757,9 @@
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im22"
-                                    style="@style/EditTextNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_marginBottom="12dp"
                                     android:hint="@string/num"
                                     android:maxLength="1"
                                     app:maxValue="2"
@@ -2809,7 +2861,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- im23a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim23a"
@@ -2882,7 +2933,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <!-- im24  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3031,35 +3081,33 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!--ENDBUTTON linearlayout-->
+                <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
+                    android:layout_gravity="end"
                     android:layout_marginTop="24dp"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btnNext"
+                        android:id="@+id/btn_End"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:background="@color/colorPrimary"
-                        android:drawableEnd="@drawable/ic_keyboard_arrow_left_black_24dp"
-                        android:onClick="@{() -> callback.BtnContinue()}"
-                        android:text="@string/nextSection"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/red_overlay"
+                        android:onClick="@{() -> callback.BtnEnd()}"
+                        android:text="Cancel"
                         android:textColor="@color/white" />
 
                     <Button
-                        android:id="@+id/btnEnd"
+                        android:id="@+id/btn_Continue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:background="@color/grayOverlay"
-                        android:onClick="@{() -> callback.BtnEnd()}"
-                        android:text="@string/end_interview" />
-
-
+                        android:layout_marginStart="12dp"
+                        android:background="@color/green_overlay"
+                        android:onClick="@{() -> callback.BtnContinue()}"
+                        android:text="Save"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>

@@ -16,7 +16,9 @@
 
         <LinearLayout
             android:id="@+id/fldGrpSectionCHC"
-            style="@style/linearlayout_view_wt_bound">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <!-- im1title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -108,9 +110,12 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <LinearLayout
                 android:id="@+id/fldGrpSecChc1"
-                style="@style/linearlayout_view_wt_bound">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!-- im02  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -146,7 +151,9 @@
 
                         <RadioGroup
                             android:id="@+id/im02"
-                            style="@style/hradiogroup">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im021"
@@ -288,7 +295,9 @@
 
                         <LinearLayout
                             android:id="@+id/fldGrpim04DT"
-                            style="@style/hlinearlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:layoutDirection="ltr">
 
                             <TextView
@@ -298,8 +307,9 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04dd"
-                                style="@style/EditTextNum"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="12dp"
                                 android:layout_weight="2"
                                 android:hint="@string/im04dd"
                                 android:maxLength="2"
@@ -316,8 +326,9 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04mm"
-                                style="@style/EditTextNum"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="12dp"
                                 android:layout_weight="2"
                                 android:hint="@string/im04mm"
                                 android:maxLength="2"
@@ -333,8 +344,9 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04yy"
-                                style="@style/EditTextNum"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="12dp"
                                 android:layout_weight="4"
                                 android:hint="@string/im04yy"
                                 android:maxLength="4"
@@ -365,7 +377,9 @@
                     <LinearLayout style="@style/vlinearlayout">
 
                         <LinearLayout
-                            style="@style/hlinearlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:gravity="center_horizontal">
 
                             <Button
@@ -399,7 +413,9 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            style="@style/hlinearlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:gravity="center_horizontal">
 
                             <EditText
@@ -430,27 +446,33 @@
             </LinearLayout>
 
 
-            <!--ENDBUTTON linearlayout-->
+            <!--EndButton LinearLayout-->
             <LinearLayout
-                style="@style/hlinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnNext"
-                    style="@style/buttons_bottom"
-                    android:background="@android:color/holo_green_light"
-                    android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="@string/nextSection"
+                    android:id="@+id/btn_End"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/red_overlay"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:text="Cancel"
                     android:textColor="@color/white" />
 
                 <Button
-                    android:id="@+id/btnEnd"
-                    style="@style/buttons_bottom"
-                    android:background="@android:color/holo_red_light"
-                    android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="@string/end_interview" />
-
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/green_overlay"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="Save"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </LinearLayout>

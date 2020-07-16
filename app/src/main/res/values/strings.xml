@@ -537,5 +537,46 @@
     <string name="im26c">  کارڈ کی دستیابی ، تکمیل (خاص طور پر کارڈ دکھایا گیا لیکن آپ اسے واضح طور پر پڑھ نہیں سکے)  </string>
     <string name="im26d"> دیگر تبصرے اگر کوئی </string>
 
+    <string name='Q_im01'>Im01</string>
+    <string name='Q_im02'>Im02</string>
+    <string name='Q_im03'>Im03</string>
+    <string name='Q_im04'>Im04</string>
+    <string name='Q_im0501'>Im0501</string>
+    <string name='Q_im0502'>Im0502</string>
+    <string name='Q_im0503'>Im0503</string>
+    <string name='Q_im0504'>Im0504</string>
+    <string name='Q_im0505'>Im0505</string>
+    <string name='Q_im0506'>Im0506</string>
+    <string name='Q_im0507'>Im0507</string>
+    <string name='Q_im0508'>Im0508</string>
+    <string name='Q_im0509'>Im0509</string>
+    <string name='Q_im0510'>Im0510</string>
+    <string name='Q_im0511'>Im0511</string>
+    <string name='Q_im0512'>Im0512</string>
+    <string name='Q_im0513'>Im0513</string>
+    <string name='Q_im0514'>Im0514</string>
+    <string name='Q_im0515'>Im0515</string>
+    <string name='Q_im0516'>Im0516</string>
+    <string name='Q_im06'>Im06</string>
+    <string name='Q_im07'>Im07</string>
+    <string name='Q_im08'>Im08</string>
+    <string name='Q_im09'>Im09</string>
+    <string name='Q_im10'>Im10</string>
+    <string name='Q_im11'>Im11</string>
+    <string name='Q_im12'>Im12</string>
+    <string name='Q_im13'>Im13</string>
+    <string name='Q_im14'>Im14</string>
+    <string name='Q_im15'>Im15</string>
+    <string name='Q_im16'>Im16</string>
+    <string name='Q_im17'>Im17</string>
+    <string name='Q_im18'>Im18</string>
+    <string name='Q_im19'>Im19</string>
+    <string name='Q_im20'>Im20</string>
+    <string name='Q_im21'>Im21</string>
+    <string name='Q_im22'>Im22</string>
+    <string name='Q_im23'>Im23</string>
+    <string name='Q_im23a'>Im23A</string>
+    <string name='Q_im24'>Im24</string>
+
 
 </resources>
