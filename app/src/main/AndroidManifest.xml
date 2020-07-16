@@ -24,6 +24,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.sections.SectionDActivity"></activity>
+        <activity android:name=".ui.sections.SectionCActivity" />
+        <activity android:name=".ui.sections.SectionBActivity" />
+        <activity android:name=".ui.sections.SectionAActivity" />
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
@@ -39,8 +43,6 @@
             android:label="Unfinished Forms"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
-
-
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait"
@@ -51,21 +53,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.other.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
-
         <activity
             android:name=".ui.other.MainActivity"
             android:theme="@style/AppThemeEnglish" />
-
         <activity
             android:name=".ui.other.EndingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
-
         <activity
             android:name=".ui.sections.SectionH3Activity"
             android:screenOrientation="portrait"
@@ -77,7 +75,6 @@
             android:parentActivityName=".ui.other.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".ui.other.SyncActivity"
             android:parentActivityName=".ui.other.MainActivity"
@@ -85,9 +82,6 @@
             android:theme="@style/AppThemeEnglish" />
 
         <service android:name=".utils.DownloadFileService" />
-        <!--        <service
-                    android:name=".MyNavigationService"
-                    android:foregroundServiceType="location" />-->
     </application>
 
 </manifest>
