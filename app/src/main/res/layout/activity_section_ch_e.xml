@@ -15,13 +15,19 @@
 
         <LinearLayout
             android:id="@+id/fldGrpSectionCHE"
-            style="@style/linearlayout_view_wt_bound">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <!-- im26a  TextArea   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVim26a"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -30,7 +36,9 @@
 
                     <EditText
                         android:id="@+id/im26a"
-                        style="@style/EditTextAlpha"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
                         android:ems="10"
                         android:gravity="start|top"
@@ -45,7 +53,10 @@
                 android:id="@+id/fldGrpCVim26b"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -54,7 +65,9 @@
 
                     <EditText
                         android:id="@+id/im26b"
-                        style="@style/EditTextAlpha"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
                         android:ems="10"
                         android:gravity="start|top"
@@ -69,7 +82,10 @@
                 android:id="@+id/fldGrpCVim26c"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -78,7 +94,9 @@
 
                     <EditText
                         android:id="@+id/im26c"
-                        style="@style/EditTextAlpha"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
                         android:ems="10"
                         android:gravity="start|top"
@@ -87,7 +105,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
             <!-- im26d  TextArea   -->
             <androidx.cardview.widget.CardView
@@ -103,7 +120,9 @@
 
                     <EditText
                         android:id="@+id/im26d"
-                        style="@style/EditTextAlpha"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
                         android:ems="10"
                         android:gravity="start|top"
@@ -115,35 +134,33 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!--ENDBUTTON linearlayout-->
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
+                android:layout_gravity="end"
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnNext"
+                    android:id="@+id/btn_End"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:background="@color/colorPrimary"
-                    android:drawableEnd="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="@string/nextSection"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/red_overlay"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:text="Cancel"
                     android:textColor="@color/white" />
 
                 <Button
-                    android:id="@+id/btnEnd"
+                    android:id="@+id/btn_Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:background="@color/grayOverlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="@string/end_interview" />
-
-
+                    android:layout_marginStart="12dp"
+                    android:background="@color/green_overlay"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="Save"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </LinearLayout>
