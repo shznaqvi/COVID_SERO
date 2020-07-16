@@ -40,6 +40,9 @@ public class Form extends LiveData<Form> {
     private String appversion = "";
     private String sInfo = "";
     private String sB = "";
+    private String sH3 = "";
+    private String sH4 = "";
+    private String sCC = "";
     private String sC = "";
     private String sD = "";
     private String sE = "";
@@ -82,6 +85,29 @@ public class Form extends LiveData<Form> {
         this.a05 = a05;
     }
 
+    public String getsH3() {
+        return sH3;
+    }
+
+    public void setsH3(String sH3) {
+        this.sH3 = sH3;
+    }
+
+    public String getsH4() {
+        return sH4;
+    }
+
+    public void setsH4(String sH4) {
+        this.sH4 = sH4;
+    }
+
+    public String getsCC() {
+        return sCC;
+    }
+
+    public void setsCC(String sCC) {
+        this.sCC = sCC;
+    }
 
     public String getsB() {
         return sB;
@@ -213,6 +239,9 @@ public class Form extends LiveData<Form> {
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
+        this.sH3 = jsonObject.getString(FormsTable.COLUMN_SH3);
+        this.sH4 = jsonObject.getString(FormsTable.COLUMN_SH4);
+        this.sCC = jsonObject.getString(FormsTable.COLUMN_SCC);
         this.sB = jsonObject.getString(FormsTable.COLUMN_SB);
         this.sC = jsonObject.getString(FormsTable.COLUMN_SC);
         this.sD = jsonObject.getString(FormsTable.COLUMN_SD);
@@ -249,6 +278,9 @@ public class Form extends LiveData<Form> {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
+        this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
+        this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4));
+        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SCC));
         this.sB = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
         this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
@@ -292,6 +324,15 @@ public class Form extends LiveData<Form> {
                 json.put(FormsTable.COLUMN_SINFO, new JSONObject(this.sInfo));
             }
 
+            if (this.sH3 != null && !this.sH3.equals("")) {
+                json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sH3));
+            }
+            if (this.sH4 != null && !this.sH4.equals("")) {
+                json.put(FormsTable.COLUMN_SH4, new JSONObject(this.sH4));
+            }
+            if (this.sCC != null && !this.sCC.equals("")) {
+                json.put(FormsTable.COLUMN_SCC, new JSONObject(this.sCC));
+            }
             if (this.sB != null && !this.sB.equals("")) {
                 json.put(FormsTable.COLUMN_SB, new JSONObject(this.sB));
             }

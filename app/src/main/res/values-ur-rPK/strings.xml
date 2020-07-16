@@ -22,6 +22,7 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
     <string name="dkn"> معلوم نہیں </string>
     <string name="none"> کوئی نہیں </string>
@@ -59,6 +60,7 @@
     <string name="istatus96">دیگر(وضاحت کریں)</string>
     <string name="Q_istatus">iStatus</string>
 
+    <!--NNS Section H3-->
 
     <string name="nh3heading"> سیکشن ایچ 3 : سماجی امداد کے حوالے سے معلومات </string>
     <string name="nh3sub">یہ سیکشن گھر کے سربراہ سے یا گھر میں کم سے کم 18 سال یا اس سے ذائد عمر کے کسی سمجھدار شخص سے پوچھا جائیگا </string>
@@ -248,4 +250,290 @@
     <string name="nh324e"> مرغیاں </string>
     <string name="nh324f"> بھینسیں </string>
     <string name="nh324g"> اونٹ </string>
+    <string name="nh301">۔H301 - گھرانےکے سربراہ کی مادری زبان کیا ہے ؟</string>
+    <string name="nh302">۔H302 - آپ کے گھرکی مالکانہ حیثیت کیا ہے ؟</string>
+    <string name="nh303">۔H303 - آپ کے گھر میں پینے کے پانی کا سب سے اہم ذریعہ کیا ہے ؟</string>
+    <string name="nh305">۔H305 - کیا  آپ پانی کو محفوظ بنانے کے لیے کوئی قدم اٹھاتے ہیں؟</string>
+    <string name="nh306">۔H306 - عموماً آپ  پینے کے پانی کو محفوظ  بنانے  کے لیے کیا کرتے ہیں؟</string>
+    <string name="nh307">۔H307 - آپ کے گھرانے کے افراد عام طورپر کس قسم کا بیت الخلاء استعمال کرتے ہیں ؟</string>
+    <string name="nh308"> ۔H308- کیا اس بیت الخلاء کی سہولت کو   دوسرے   گھرانوں کے افراد بھی استعمال کر تےہیں [جو آپ کے گھرانے کے فرد نہیں ہیں] </string>
+    <string name="nh309">۔H309 - اگر ہاں،تو کتنے گھرانےاس بیت الخلاء کی  سہولت کواستعمال کرتے ہیں ؟</string>
+    <string name="nh310">۔H310 - سب سے چھوٹے بچے کا پاخانہ پھینکنے کے لیے کیاکرتے ہیں؟</string>
+    <string name="nh311">۔H311 - کیا  آپ کے گھر میں ان میں سے کچھ موجود ہے؟</string>
+    <string name="nh312">۔H312 - کیا گھر کے کسی فرد کے پاس یہ چیزیں موجود ہیں؟</string>
+    <string name="nh313"> ۔H313 - مشاہدہ کریں، کہ گھرمیں روشنی کرنے کے لئے کونسے ذرائع استعمال کرتے ہیں </string>
+    <string name="nh314">۔H314 - عام طورپر آپ کے گھر میں کھانا پکانے کے لیے کس قسم کا ایندھن استعمال ہوتا ہے ؟</string>
+    <string name="nh315">۔H315 - کیاعام طورپرکھانا گھرمیں،کسی الگ کمرہ /جگہ یاگھر سے باہر بنتا ہے؟</string>
+    <string name="nh316">۔H316 - کیا آپ کے پاس باروچی خانہ کے استعمال کے لیے علیحدہ کمر ہ موجو د ہے ؟</string>
+    <string name="nh317"> ۔H317 - گھر کے  فرش  بنانے میں کس قسم کا  مواد استعمال کیاگیا ہے</string>
+    <string name="nh318">۔H318 - گھر کی چھت میں استعمال ہونے والا بنیادی مواد۔ </string>
+    <string name="nh319">۔H319 -  گھر کی دیوار وں میں استعمال ہونے والا بنیادی مواد: </string>
+    <string name="nh320">۔H320 - آپ کے گھر میں کتنے کمرے سونے کے لیے استعمال ہوتے ہیں ؟</string>
+    <string name="nh321">۔H321 - کیا اس گھر میں رہنے والا کوئی فرد زرعی زمین کا مالک ہے؟</string>
+    <string name="nh322">۔H322 - اگر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ/ایکٹرپر مشتمل زمین ہیں؟</string>
+    <string name="nh323">۔H323 - کیاآپ اپنا مال مویشی،جانور یا مرغی خانہ رکھتے ہیں؟</string>
+    <string name="nh324">۔H324 - اگر ہاں تو آپ کے گھر میں کتنے مویشی جانور یا مرغیاں موجود ہیں؟</string>
+
+    <!--NNS Section H4-->
+
+    <string name="na5heading"> سیکشن ایچ 4 : ہاتھ دھونے سے متعلق معلومات </string>
+    <string name="nh401">۔H401 - کیا آپ ہمیں وہ جگہ دکھا سکتی/سکتے ہیں جسے گھر والے اکثرہا تھ دھونے کے لیے استعمال کرتے ہیں؟</string>
+    <string name="nh402">۔H402 - ہاتھ دھونے کی جگہ پر پانی کی موجودگی کا مشاہدہ کریں</string>
+    <string name="nh403">۔H403 - مشاہدہ کریں کہ ہاتھ دھونے کی جگہ پر صابن یا ڈٹرجنٹ موجود ہے</string>
+    <string name="nh404"> ۔H404 - کیا آپ کے گھر میں ہاتھ دھونے کے لیے صابن یا صفائی والی اشیاء ڈٹرجنٹ /راکھ /مٹی /ریت موجود ہے </string>
+    "<string name="nh405">۔H405 - کیا آپ مجھے ہاتھ دھونے کی اشیاء دیکھا سکتی ہیں ؟
+    اپنا مشاہدہ درج کریں</string>"
+    <string name="nh406">۔H406 - آپ کس کس وقت اپنے ہاتھ صابن سے دھوتے/دھوتی ہیں؟</string>
+    <string name="nh401a"> مشاہدہ کیا  </string>
+    <string name="nh401info"> مشاہدہ نہیں کیا </string>
+    <string name="nh401b">رہائش گاہ پلاٹ /صحن میں موجود نہیں </string>
+    <string name="nh401c">دیکھنے کی اجازت نہیں  ملی</string>
+    <string name="nh401d"> کوئی اور وجہ </string>
+
+    <string name="nh402a"> پانی موجود ہے </string>
+    <string name="nh402b"> پانی موجود نہیں ہے </string>
+
+    <string name="nh403a"> صابن </string>
+    <string name="nh403b"> ڈیٹرجنٹ(پاوڈر/ مائع/پیسٹ) </string>
+    <string name="nh403c"> مائع صابن </string>
+    <string name="nh403d"> راکھ /مٹی /ریت </string>
+    <string name="nh403e"> کوئی نہیں </string>
+
+
+    <string name="nh405a"> صابن </string>
+    <string name="nh405b"> ڈیٹرجنٹ(پاوڈر/ مائع/پیسٹ) </string>
+    <string name="nh405c"> مائع صابن </string>
+    <string name="nh405d"> راکھ /مٹی /ریت </string>
+    <string name="nh405e"> کوئی نہیں </string>
+
+    <string name="nh40601"> کھانا بنانے سے پہلے </string>
+    <string name="nh40602"> کھانا کھانے سے پہلے </string>
+    <string name="nh40603"> بچے کو کھانا کھلانے سے پہلے </string>
+    <string name="nh40604"> بچوں کا ڈائپر یا پاخانہ صاف کرنے کے بعد </string>
+    <string name="nh40605"> پاخانہ کرنے کے بعد یابیت الخلاء استعمال کرنے بعد </string>
+    <string name="nh406info"> یہ از خود وضاحت پر مشتمل سوال ہیں اس لئے جواب دہندہ کو جواب پڑھ کر نہ سنائیں </string>
+    <string name="nh406info1"> جواب دہندہ کا جواب سننے کے بعد آپ اُس مزید پوچھں کیا کسی اور وجہ سے بھی صابن سے ہاتھ دھوتے ہیں اور سوال پوچھتےرہیں جب تک کہ جوابدہندہ یہ نہ کہے ،کہ اور کچھ نہیں ۔Y لکھیں اس صورت میں کہ جواب دہندہ کوئی خاص وجہ بتائے اور N لکھیں اس صورت میں کہ جواب دہندہ کوئی خاص وجہ نہ بتائے </string>
+
+    <!--TPVICS Immunization Section-->
+
+    <string name="im1title1"> اہل بچے کی عمر سوال نمبر :CB4 سے چیک کریں </string>
+    <string name="imtitle2"> اگر بچہ 12 سے 23 ماہ کی عمر کے گروپ کا نہیں ہے، تو ایک بار پھر تحقیق کریں اور تصدیق کریں اور اگر پھر بھی اس کی عمر 12 سے 23 ماہ نہیں بنتی، تو جواب دہندہ کا شکریہ ادا کر کے انٹرویو کا اختتام کردیں۔ اہل بچے کے معلوماتی پینل ec22 پر جائیں، اور بچہ اہل نہیں بچے کی عمر 12 سے 23 مہینے نہیں کوڈ 05 پر نشان لگائیں ۔ </string>
+
+    <string name="im01"> کیا آپ کے پاس کسی سرکاری یا نجی مرکز صحت سے ملا ہوا حفاظتی ٹیکوں کا کارڈ موجود ہے جس میں بچہ / بچی (نام) کو لگنے والے حفاظتی ٹیکوں کا اندراج ہو ؟  اگر ہاں:  تو برائے مہربانی کیا میں اسے دیکھ سکتا / سکتی ہوں </string>
+    <string name="im011"> ہاں دیکھ لیا </string>
+    <string name="im012">  ہاں، کار ڈنہیں دیکھا </string>
+    <string name="im013"> کارڈ نہیں ہے </string>
+
+    <string name="im02"> کیا بچے کے لئے آپ کے پاس کبھی کسی سرکاری یا نجی مرکز صحت کا حفاظتی ٹیکوں کا کارڈ موجود تھا ؟ </string>
+    <string name="im021"> ہاں </string>
+    <string name="im022"> نہیں </string>
+
+    <string name="im03"> اگر نہیں تو ، آپ کو کوئی ویکسینیشن کارڈ کیوں نہیں ملا ؟ </string>
+    <string name="im031"> میرے خیال سے اتنا اہم نہیں </string>
+    <string name="im032"> کبھی مرکز صحت میں نہیں گئے </string>
+    <string name="im033"> گم گیا ہے </string>
+    <string name="im034"> سہولت فراہم کرنے والے کے پاس کارڈ دستیاب نہیں تھا</string>
+    <string name="im035"> ویکسینیٹر/ مرکزصحت نے کارڈ مہیا نہیں کی</string>
+    <string name="im036"> ایسے کارڈوں سے واقف نہیں </string>
+    <string name="im0396"> دیگر وضاحت کریں</string>
+
+    <string name="im04"> کارڈ پر لکھی ہوئی تاریخ پیدائش چیک کر یں اور درج کریں۔ </string>
+    <string name="im04dd"> دن </string>
+    <string name="im04dd1"> دن معلوم نہیں </string>
+    <string name="im04mm"> مہینہ </string>
+    <string name="im04yy">  سال </string>
+    <string name="im0497">  Not clearly visible </string>
+
+    <string name="im05title1"> حفاظتی ٹیکوں کی تفصیلات </string>
+    <string name="im05title2">حفاظتی ٹیکوں کے کارڈ سے ہرحفاظتی ٹیکے کی تاریخ لکھئے۔\n اگر کارڈ پر لکھی ہوئی تاریخ واضح طور پر نہیں پڑھی جارہی تو دن کے کالم میں "44" درج کریں.\n(مثلاً  	 \u2713 کا نشان) مگرکوئی تاریخ درج نہیں تو "88"درج کریں.\n اگر کارڈ سے ظاہر ہوتا ہے کہ  ویکسینیشن فراہم کی گئی تھی.اگر ویکسینیشن فراہم کرنے کی کوئی معلومات کارڈ سے ظاہر نہیں ہوتی تو جوابدہندہ سے دریافت کریں۔ ہاں کی صورت میں  "66" اور انکار کی صورت میں "97" درج کریں.</string>
+
+    <string name="im0501"> (بی سی جی) ٹی بی کی بیماری سے بچائو کا ٹیکہ </string>
+    <string name="im0501dd"> دن </string>
+    <string name="im0501mm"> مہینہ </string>
+    <string name="im0501yy"> سال </string>
+
+    <string name="im0502"> پولیو (منہ کے ذریعے دیئے جانے والے قطرے) پہلی خوراک (OPV0) </string>
+    <string name="im0502dd"> دن </string>
+    <string name="im0502mm"> مہینہ </string>
+    <string name="im0502yy"> سال </string>
+
+    <string name="im0503"> پولیو - پیدائش کے وقت منہ کے ذریعے دیئے جانے والے قطرے (OPV1) </string>
+    <string name="im0503dd"> دن </string>
+    <string name="im0503mm"> مہینہ </string>
+    <string name="im0503yy"> سال </string>
+
+    <string name="im0504"> پہلی خوراک پینٹا وایلنٹ ویکسین </string>
+    <string name="im0504dd"> دن </string>
+    <string name="im0504mm"> مہینہ </string>
+    <string name="im0504yy"> سال </string>
+
+    <string name="im0505"> پہلی خوراک نمونیا کی ویکسین </string>
+    <string name="im0505dd"> دن </string>
+    <string name="im0505mm"> مہینہ </string>
+    <string name="im0505yy"> سال </string>
+
+    <string name="im0506"> روٹا وائرس ویکسین 1 </string>
+    <string name="im0506dd"> دن </string>
+    <string name="im0506mm"> مہینہ </string>
+    <string name="im0506yy"> سال </string>
+
+    <string name="im0507"> پولیو (منہ کے ذریعے دیئے جانے والے قطرے) دوسری خوراک </string>
+    <string name="im0507dd"> دن </string>
+    <string name="im0507mm"> مہینہ </string>
+    <string name="im0507yy"> سال </string>
+
+    <string name="im0508"> دوسری خوراک  پینٹاوایلنٹ ویکسین </string>
+    <string name="im0508dd"> دن </string>
+    <string name="im0508mm"> مہینہ </string>
+    <string name="im0508yy"> سال </string>
+
+    <string name="im0509"> دوسری  خوراک  نمونیا کی ویکسین </string>
+    <string name="im0509dd"> دن </string>
+    <string name="im0509mm"> مہینہ </string>
+    <string name="im0509yy"> سال </string>
+
+    <string name="im0510"> روٹا وائرس ویکسین 2 </string>
+    <string name="im0510dd"> دن </string>
+    <string name="im0510mm"> مہینہ </string>
+    <string name="im0510yy"> سال </string>
+
+    <string name="im0511"> پولیو (منہ کے ذریعے دیئے جانے والے قطرے) تیسری خوراک </string>
+    <string name="im0511dd"> دن </string>
+    <string name="im0511mm"> مہینہ </string>
+    <string name="im0511yy"> سال </string>
+
+    <string name="im0512"> تیسری خوراک پینٹاوایلنٹ ویکسین </string>
+    <string name="im0512dd"> دن </string>
+    <string name="im0512mm"> مہینہ </string>
+    <string name="im0512yy"> سال </string>
+
+    <string name="im0513"> تیسری خوراک (نمونیا کی ویکسین) </string>
+    <string name="im0513dd"> دن </string>
+    <string name="im0513mm"> مہینہ </string>
+    <string name="im0513yy"> سال </string>
+
+    <string name="im0514"> پولیو (آئی پی وی انجکشن) </string>
+    <string name="im0514dd"> دن </string>
+    <string name="im0514mm"> مہینہ </string>
+    <string name="im0514yy"> سال </string>
+
+    <string name="im0515"> (خسرہ کا ٹیکہ) پہلی خوراک </string>
+    <string name="im0515dd"> دن </string>
+    <string name="im0515mm"> مہینہ </string>
+    <string name="im0515yy"> سال </string>
+
+    <string name="im0516"> (خسرہ کا ٹیکہ) دوسری خوراک </string>
+    <string name="im0516dd"> دن </string>
+    <string name="im0516mm"> مہینہ </string>
+    <string name="im0516yy"> سال </string>
+
+    <string name="im06"> اس کارڈ پر درج ویکسین کے علاوہ جو آپ نے مجھے دکھایا ہے، کیا بچے کو کوئی اور اضافی ویکسین بھی لگی ہے ؟  </string>
+    <string name="im061">  ہاں</string>
+    <string name="im062"> نہیں</string>
+    <string name="im063"> معلوم نہیں</string>
+
+    <string name="im07"> آئی ایم۴ چیک کریں: کیا تمام حفاظتی ٹیکوں (بی سی جی سے لے کر خسرہ کی دوسری خوراک تک کی معلومات ریکارڈ کر لی گئی ہیں ؟ </string>
+    <string name="im071"> ہاں</string>
+    <string name="im072">   نہیں</string>
+
+    <string name="im08"> کیا بچے کو کوئی ویکسین لگی ہے جو اسے بیماریوں سے بچا سکے۔ اس میں حفاظتی ٹیکوں کی مہم کے دوران لگنے والی ویکسین ، حفاظتی ٹیکے لگانے والا دن یا بچوں کی صحت کے دن لگنے والی ویکسین شامل ہیں۔</string>
+    <string name="im081"> ہاں</string>
+    <string name="im082">  نہیں</string>
+    <string name="im083"> معلوم نہیں</string>
+
+    <string name="im09"> کیا بچےکوکبھی ٹی بی(تپ دق) کی بیماری سے بچاؤکے لئے بی سی جی کی ویکسین لگی ہے، یہ ایک انجکشن ہےجوعام طور پر بازو یا کندھے میں لگایا جاتا ہے جس کی وجہ سے بازو یا کندھے پر نشان پڑ جاتا ہے ؟ </string>
+    <string name="im091"> ہاں</string>
+    <string name="im092"> نہیں</string>
+    <string name="im093"> معلوم نہیں</string>
+
+    <string name="im10"> کیا بچے کو کبھی منہ کے ذریعے دیئے جانے والے  پولیو کی بیماری سے بچاؤ کے قطرے پلوائے گئے ہیں؟   نشاندہی کرتے ہوئے  اس بات کی تحقیق کریں کہ بعض اوقات پولیو کے قطروں کی پہلی خوراک پیدائش کے وقت اور دیگر بیماریوں سے بچاؤکے انجکشن لگاتے وقت ایک ساتھ ہی دے دی جاتی ہے</string>
+    <string name="im101"> ہاں</string>
+    <string name="im102">  نہیں</string>
+    <string name="im103"> معلوم نہیں</string>
+
+    <string name="im11"> کیا پہلی بار پلائے گئے پولیو کے قطرے پیدائش کے بعد پہلے دو ہفتوں میں دیئے گئے تھے ؟ </string>
+    <string name="im111">  ہاں </string>
+    <string name="im112">  نہیں </string>
+    <string name="im113">  معلوم نہیں </string>
+
+    <string name="im12"> پولیو کے قطرے کتنی بار پلائے گئے تھے ؟ تعداد </string>
+
+    <string name="im13"> آخری بار جب بچے کو پولیو کے قطرے پلائے  گئے تھے؛ تو کیا اس وقت (بچے / بچی) کو پولیو سے بچائو کا ٹیکہ بھی لگوایا گیا تھا ؟ اس بات کی یقین دہانی کرنے کے لئے مزید پوچھیں کہ اس وقت قطرے اور ٹیکہ دونوں دیئے گئے تھے۔ </string>
+    <string name="im131"> ہاں </string>
+    <string name="im132"> نہیں </string>
+    <string name="im133"> معلوم نہیں </string>
+
+    <string name="im14"> کیا بچہ / بچی کو کبھی Pentavalent کا انجیکشن لگا ہے یہ ایک انجکشن ہے جو ران میں لگایا جاتا ہے جو بچہ / بچی کو تشنج، کالی کھانسی، خناق، ہیپاٹاٹس کی بیماری اور ہیمو فائلس انفلوئنزا بی سے محفوظ رکھتا ہے ؟ </string>
+    <string name="im141"> ہاں </string>
+    <string name="im142">  نہیں </string>
+    <string name="im143"> معلوم نہیں </string>
+
+    <string name="im15"> پینٹا ویلینٹ ویکسین کتنی بار لگی تھی ؟ تعداد  </string>
+
+    <string name="im16"> کیا (نام) کو کبھی نمونیہ Pneumococcal کی ویکسین لگی ہے جو ایک انجیکشن ران میں لگایا جاتا ہے جس سے وہ بچہ / بچی نمونیہ کان کا انفیکشن اور گردن توڑ بخار کی بیماریوں سے محفوظ رہتا ہے ؟ </string>
+    <string name="im161"> ہاں</string>
+    <string name="im162"> نہیں</string>
+    <string name="im163"> معلوم نہیں</string>
+
+    <string name="im17"> نمونیہ کی ویکسین کتنی بار لگی تھی ؟ تعداد </string>
+
+    <string name="im18"> کیا بچے کو کبھی روٹا وائرس سے بچاؤ کے قطرے پلاۓ گئے ہیں ؟ ہے ؟ یہ قطرے منہ کے ذریعے پیدائش کے چھے ہفتے بعد دی جاتی ہے،  روٹا وائرس چھوٹے بچوں میں شدید اسہال کی سب سے بڑی وجہ بنتی ہے۔ </string>
+    <string name="im181"> ہاں </string>
+    <string name="im182"> نہیں </string>
+    <string name="im183">  معلوم نہیں </string>
+
+    <string name="im19"> قطرے کتنی بار پلائے گئے تھے ؟ تعداد </string>
+
+    <string name="im20"> کیا بچہ / بچی (نام) کو کبھی آئی پی وی انجکشن لگا ہے، ایک انجکشن جو 14 ہفتے یا اس سے زیادہ عمر میں ران  میں لگایا جاتا ہے جس سے ( بچہ / بچی ) پولیو  کی بیماری سے محفوظ رہتا / رہتی ہے ؟ </string>
+    <string name="im201"> ہاں </string>
+    <string name="im202"> نہیں </string>
+    <string name="im203"> معلوم نہیں </string>
+
+    <string name="im21"> کیا بچے کو کبھی خسرہ کا ٹیکہ لگا ہے، جو ایک انجکشن 9 مہینے یا اس سے زیادہ عمر میں بازو میں لگایا جاتا ہے جس سے (بچہ / بچی) خسرہ کی بیماری سے محفوظ رہتا ہے ؟ </string>
+    <string name="im211"> ہاں </string>
+    <string name="im212"> نہیں </string>
+    <string name="im213"> معلوم نہیں </string>
+
+    <string name="im22"> کتنی بار خسرہ کا ٹیکہ لگا تھا ؟ تعداد </string>
+
+    <string name="im23"> بچے کو عام طور پر حفاظتی ٹیکے کہاں سے لگواتے ہیں ؟ اگر بچے کو حفاظتی ٹیکے مختلف ذرائع سے لگوائے گئے ہیں، تو معمول کے مطابق سب سے زیادہ ویکسین جس جگہ سے لگوائی گئیں ہیں اس کو بیان کریں۔ </string>
+    <string name="im231"> سرکاری مرکز صحت </string>
+    <string name="im232"> پرائیوٹ مرکز صحت </string>
+    <string name="im233"> سرکاری آؤٹ ریچ سروس </string>
+    <string name="im234"> حفاظتی ٹیکے نہیں لگوائے </string>
+    <string name="im236x"> دیگر </string>
+
+    <string name="im23a"> کیا آپ براۓ مہربانی بتا سکتی ہیں کہ یہ مرکز صحت کہاں واقع ہے ؟ </string>
+    <string name="im23a1"> اسی احاطے کے دس کلومیڑ کے </string>
+    <string name="im23a2"> ضلع / شہر کے اندر </string>
+    <string name="im23a3"> ضلع / شہر سے باہر </string>
+    <string name="im23a96"> دیگر </string>
+
+    <string name="im24"> بچے کو حفاظتی ٹیکے کیوں نہیں لگوائے ؟ اگر بچے کو تمام حفاظتی ٹیکے نہیں لگوائے گئے، تو ماں / دیکھ بھال کرنے والے سے  پوچھیں۔ بتائی گئیں تمام وجوہات کو ریکارڈ کریں لیکن فوری طور پر کسی مخصوص وجہ پر مت جائیں۔ ماں کو تمام وجوہات فراہم کرنے کی ترغیب دیں۔ </string>
+    <string name="im241"> حفاظتی ٹیکوں کا مرکزبہت دور تھا </string>
+    <string name="im242"> حفاظتی ٹیکے لگائے جانے کا وقت مناسب نہیں تھا </string>
+    <string name="im243"> ماں مصروف تھی </string>
+    <string name="im244"> ماں کی بیماری سمیت، خاندانی مسائل </string>
+    <string name="im245"> بچہ بیمار تھا، لے کر نہیں گئے </string>
+    <string name="im246"> بچہ بیمار تھا، لے کر گئے تھے لیکن ویکسین نہیں لگائی </string>
+    <string name="im247"> طویل انتظار کرنے کی وجہ سے نہیں لگوائی </string>
+    <string name="im248"> افواہوں کی وجہ سے نہیں لگوائی </string>
+    <string name="im249"> حفاظتی ٹیکے لگوانے پر یقین نہیں ہے </string>
+    <string name="im2410"> ضمنی اثرات کا خوف </string>
+    <string name="im2411"> حفاظتی ٹیکے لگوانے کی جگہ اور وقت معلوم نہیں تھا </string>
+    <string name="im2412"> بچے کو لے کر گئے لیکن ویکسین نہیں تھی </string>
+    <string name="im2413"> بچے کو لے کر گئے لیکن ویکسین لگانے والا اسٹاف نہیں تھا </string>
+    <string name="im2414"> بچے کو لے کر گئے لیکن حفاظتی ٹیکوں کا مرکز بند تھا </string>
+    <string name="im2415"> بچہ بیمار تھا </string>
+    <string name="im2416"> بچے کو لے کر گئے لیکن ٹیکے لگانے کا دن نہیں تھا </string>
+    <string name="im2417"> دیگر </string>
+    <string name="im2499"> معلوم نہیں </string>
+
+    <string name="im25"> اس بچے کے حفاظتی ٹیکوں کے ریکارڈ کے لئے مرکز صحت پر ایک سوالنامہ کا فارم جاری کریں۔ اس سوالنامہ کا انفارمیشن پینل مکمل کریں۔ </string>
+
+    <string name="im26a"> حفاظتی ٹیکوں کے بارے میں جواب دہندہ کی معلومات</string>
+    <string name="im26b">  سوالوں کے جواب میں جواب دہندہ کا تعاون اور رویہ۔ </string>
+    <string name="im26c">  کارڈ کی دستیابی ، تکمیل (خاص طور پر کارڈ دکھایا گیا لیکن آپ اسے واضح طور پر پڑھ نہیں سکے)  </string>
+    <string name="im26d"> دیگر تبصرے اگر کوئی </string>
+
 </resources>

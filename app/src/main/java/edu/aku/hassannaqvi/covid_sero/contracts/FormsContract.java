@@ -38,6 +38,9 @@ public class FormsContract {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_SINFO = "sInfo";
+        public static final String COLUMN_SH3 = "sh3";  // NNS Section H3 (A4)
+        public static final String COLUMN_SH4 = "sh4";  // NNS Section H4 (A5)
+        public static final String COLUMN_SCC = "scc";  // TPVICS Immunisation (CHC+CHD+CHE)
         public static final String COLUMN_SB = "sB";
         public static final String COLUMN_SC = "sC";
         public static final String COLUMN_SD = "sD";

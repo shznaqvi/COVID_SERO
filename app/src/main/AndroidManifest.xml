@@ -67,6 +67,12 @@
             android:theme="@style/AppThemeUrdu" />
 
         <activity
+            android:name=".ui.sections.SectionH3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
             android:name=".core.AndroidDatabaseManager"
             android:parentActivityName=".ui.other.MainActivity"
             android:screenOrientation="portrait"
