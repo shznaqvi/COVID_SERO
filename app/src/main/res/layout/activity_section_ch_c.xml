@@ -25,7 +25,10 @@
                 android:id="@+id/fldGrpCVim1title1"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -36,13 +39,15 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <!-- imtitle2  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVimtitle2"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/info"
@@ -54,12 +59,16 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- im01  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVim01"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/vlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -122,7 +131,10 @@
                     android:id="@+id/fldGrpCVim02"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/vlinearlayout">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -180,7 +192,10 @@
                     android:id="@+id/fldGrpCVim03"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/vlinearlayout">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -267,7 +282,10 @@
                     android:id="@+id/fldGrpCVim04"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/vlinearlayout">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -297,8 +315,8 @@
                             android:id="@+id/fldGrpim04DT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layoutDirection="ltr">
+                            android:layoutDirection="ltr"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -374,13 +392,16 @@
                     android:id="@+id/fldGrpCVtakePhoto"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/vlinearlayout">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal">
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
 
                             <Button
                                 android:id="@+id/frontPhoto"
@@ -415,8 +436,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal">
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
 
                             <EditText
                                 android:id="@+id/frontFileName"
