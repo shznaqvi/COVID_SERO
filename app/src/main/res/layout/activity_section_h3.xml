@@ -632,7 +632,7 @@
 
                 <!-- 6 Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVnh306"
+                    android:id="@+id/fldGrpnh306"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -2738,7 +2738,7 @@
 
                     <!-- nh316 -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVnh316"
+                        android:id="@+id/fldGrpnh316"
                         style="@style/cardView">
 
                         <LinearLayout

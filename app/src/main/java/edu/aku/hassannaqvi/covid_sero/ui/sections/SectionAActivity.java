@@ -108,13 +108,13 @@ public class SectionAActivity extends AppCompatActivity {
                 : bi.pa082.isChecked() ? "2"
                 : "-1");
 
-        json.put("pa09a", bi.pa09a.getText().toString());
+    //    json.put("pa09a", bi.pa09a.getText().toString());
         json.put("pa09b", bi.pa09b.getText().toString());
 
-        json.put("pa10a", bi.pa10a.getText().toString());
+        //    json.put("pa10a", bi.pa10a.getText().toString());
         json.put("pa10b", bi.pa10b.getText().toString());
 
-        json.put("pa11a", bi.pa11a.getText().toString());
+        //    json.put("pa11a", bi.pa11a.getText().toString());
         json.put("pa11b", bi.pa11b.getText().toString());
 
 

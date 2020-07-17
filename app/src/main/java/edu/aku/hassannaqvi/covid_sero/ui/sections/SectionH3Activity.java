@@ -106,9 +106,9 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 formValidation();
                 if (checkedId == R.id.nh305b) {
-                    Clear.clearAllFields(bi.fldGrpnh305, false);
+                    Clear.clearAllFields(bi.fldGrpnh306, false);
                 } else {
-                    Clear.clearAllFields(bi.fldGrpnh305, true);
+                    Clear.clearAllFields(bi.fldGrpnh306, true);
                     bi.nh30696x.setEnabled(false);
                 }
             }
