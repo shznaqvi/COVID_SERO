@@ -1994,7 +1994,7 @@
                             android:id="@+id/im1398"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/im1398" />
+                            android:text="@string/im133" />
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

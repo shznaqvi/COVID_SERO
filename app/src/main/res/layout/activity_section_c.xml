@@ -290,7 +290,7 @@
 
             <!-- pc04?  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVpc04?"
+                android:id="@+id/fldGrpCVpc04a"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -304,28 +304,28 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_pc04?"
+                            android:id="@+id/qtxt_pc04a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_pc04?"
-                            android:text="@string/pc04?" />
+                            android:layout_toEndOf="@id/q_pc04a"
+                            android:text="@string/pc04a" />
 
                         <TextView
-                            android:id="@+id/q_pc04?"
+                            android:id="@+id/q_pc04a"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_pc04?"
-                            android:layout_alignBottom="@id/qtxt_pc04?"
-                            android:text="@string/Q_pc04?" />
+                            android:layout_alignTop="@id/qtxt_pc04a"
+                            android:layout_alignBottom="@id/qtxt_pc04a"
+                            android:text="@string/Q_pc04a" />
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pc04?"
+                        android:id="@+id/pc04a"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc04?"
+                        android:hint="@string/pc04a"
                         app:mask="##"
                         app:maxValue="0"
                         app:minValue="0"
