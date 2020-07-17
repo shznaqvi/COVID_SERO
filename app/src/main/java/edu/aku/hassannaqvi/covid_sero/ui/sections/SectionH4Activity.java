@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +26,7 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH4Binding;
-import edu.aku.hassannaqvi.covid_sero.ui.other.MainActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 
 
 public class SectionH4Activity extends AppCompatActivity implements TextWatcher, RadioGroup.OnCheckedChangeListener {
@@ -154,12 +155,10 @@ public class SectionH4Activity extends AppCompatActivity implements TextWatcher,
         bi.nh40605.setOnCheckedChangeListener(this);
         bi.nh40696.setOnCheckedChangeListener(this);
 
-
     }
 
 
     public void BtnContinue() {
-        //Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -167,14 +166,10 @@ public class SectionH4Activity extends AppCompatActivity implements TextWatcher,
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                //Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
                 finish();
-
-                startActivity(new Intent(this, MainActivity.class));
-
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -183,71 +178,15 @@ public class SectionH4Activity extends AppCompatActivity implements TextWatcher,
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "You can't go back.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
     }
 
     public boolean formValidation() {
-
-        //Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-
-//        nh401
-
-        if (!validatorClass.EmptyRadioButton(this, bi.nh401, bi.nh401a, getString(R.string.nh401))) {
-            return false;
-        }
-
-//        nh402
-        if (bi.nh401a.isChecked()) {
-            if (!validatorClass.EmptyRadioButton(this, bi.nh402, bi.nh402a, getString(R.string.nh402b))) {
-                return false;
-            }
-            // nh403
-            if (!validatorClass.EmptyCheckBox(this, bi.fldGrnh403check, bi.nh403a, getString(R.string.nh403))) {
-                return false;
-            }
-        }
-        if (!bi.nh403a.isChecked() && !bi.nh403b.isChecked() && !bi.nh403c.isChecked()) {
-//        nh404
-            if (!validatorClass.EmptyRadioButton(this, bi.nh404, bi.nh404a, getString(R.string.nh404))) {
-                return false;
-            }
-
-//        nh405
-            if (bi.nh404a.isChecked()) {
-                if (!validatorClass.EmptyCheckBox(this, bi.fldGrpnh405check, bi.nh405a, getString(R.string.nh405))) {
-                    return false;
-                }
-            }
-        }
-//        nh40601
-        if (!validatorClass.EmptyRadioButton(this, bi.nh40601, bi.nh40601b, getString(R.string.nh40601))) {
-            return false;
-        }
-//        nh40602
-        if (!validatorClass.EmptyRadioButton(this, bi.nh40602, bi.nh40602b, getString(R.string.nh40602))) {
-            return false;
-        }
-//        nh40603
-        if (!validatorClass.EmptyRadioButton(this, bi.nh40603, bi.nh40603b, getString(R.string.nh40603))) {
-            return false;
-        }
-//        nh40604
-        if (!validatorClass.EmptyRadioButton(this, bi.nh40604, bi.nh40604b, getString(R.string.nh40604))) {
-            return false;
-        }
-//        nh40605
-        if (!validatorClass.EmptyRadioButton(this, bi.nh40605, bi.nh40605b, getString(R.string.nh40605))) {
-            return false;
-        }
-//        nh40696
-        return validatorClass.EmptyRadioButton(this, bi.nh40696, bi.nh40696a, bi.nh40696x, getString(R.string.nh406) + " - " + getString(R.string.other));
+        return Validator.emptyCheckingContainer(this, bi.fldGrpH401);
     }
 
     public void BtnEnd() {
-
         MainApp.endActivity(this, this);
-
-
     }
 
 
@@ -424,7 +363,7 @@ public class SectionH4Activity extends AppCompatActivity implements TextWatcher,
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }
     }

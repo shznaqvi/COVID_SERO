@@ -60,7 +60,7 @@ public class SectionAActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, SectionBActivity.class));
         } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -71,7 +71,7 @@ public class SectionAActivity extends AppCompatActivity {
         if (updcount > 0) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }*/
         return true;
@@ -88,9 +88,9 @@ public class SectionAActivity extends AppCompatActivity {
                 : bi.pa022.isChecked() ? "2"
                 : "-1");
 
-        json.put("pa03_dd", bi.pa03_dd.getText().toString());
-        json.put("pa03_mm", bi.pa03_mm.getText().toString());
-        json.put("pa03_yy", bi.pa03_yy.getText().toString());
+        json.put("pa03_dd", bi.pa03Dd.getText().toString());
+        json.put("pa03_mm", bi.pa03Mm.getText().toString());
+        json.put("pa03_yy", bi.pa03Yy.getText().toString());
 
         json.put("pa04y", bi.pa04y.getText().toString());
         json.put("pa04m", bi.pa04m.getText().toString());

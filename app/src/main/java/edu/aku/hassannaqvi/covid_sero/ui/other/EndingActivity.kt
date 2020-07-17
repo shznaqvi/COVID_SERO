@@ -66,7 +66,7 @@ class EndingActivity : AppCompatActivity() {
         return if (updcount == 1) {
             true
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
             false
         }
     }

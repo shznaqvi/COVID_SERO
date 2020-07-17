@@ -536,7 +536,7 @@ public class SectionCHDActivity extends AppCompatActivity {
         if (updcount == 1) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -733,7 +733,7 @@ public class SectionCHDActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, SectionCHEActivity.class));
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
 

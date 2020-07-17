@@ -28,6 +28,8 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
+import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
+import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.DateUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
@@ -60,9 +62,9 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             int minYears = formgetCalculatedDOB().minusYears(2).getYear();
             setYearOfBirth(minYears, maxYears);
         } else */
-        if (formgetLocalDate() != null) {
-            int maxYears = formgetLocalDate().getYear();
-            int minYears = formgetLocalDate().minusYears(2).getYear();
+        if (form.getLocalDate() != null) {
+            int maxYears = form.getLocalDate().getYear();
+            int minYears = form.getLocalDate().minusYears(2).getYear();
             setYearOfBirth(minYears, maxYears);
         }
 
@@ -147,8 +149,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 /*if (formgetCalculatedDOB() != null)
                     age = DateRepository.Companion.getCalculatedAge(formgetCalculatedDOB(), year, month, day);
                 else */
-                if (formgetLocalDate() != null)
-                    age = DateRepository.Companion.getCalculatedAge(formgetLocalDate(), year, month, day);
+                if (form.getLocalDate() != null)
+                    age = DateRepository.Companion.getCalculatedAge(form.getLocalDate(), year, month, day);
                 else
                     age = DateRepository.Companion.getCalculatedAge(year, month, day);
                 if (age == null) {
@@ -196,7 +198,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         if (updcount == 1) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -232,10 +234,10 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());
 
-        formsetsCC(String.valueOf(f1));
+        form.setsCC(String.valueOf(f1));
 
         if (dtInstant != null)
-            formsetCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());
+            form.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());
     }
 
     private boolean formValidation() {
@@ -255,11 +257,11 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         if (formValidation()) {
             //Calculate months
             boolean monthFlag = true;
-            if (formgetCalculatedDOB() != null || dtInstant != null) {
+            if (form.getCalculatedDOB() != null || dtInstant != null) {
                 Pair<String, String> month_year;
                 if (bi.im011.isChecked() && dtInstant != null && !bi.im0497.isChecked())
                     month_year = getMonthAndYearFromDate(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate().toString());
-                else month_year = getMonthAndYearFromDate(formgetCalculatedDOB().toString());
+                else month_year = getMonthAndYearFromDate(form.getCalculatedDOB().toString());
                 int totalMonths = Integer.parseInt(month_year.getFirst()) + Integer.parseInt(month_year.getSecond()) * 12;
                 monthFlag = totalMonths >= 12 && totalMonths < 24;
             }
@@ -273,7 +275,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                     finish();
                     startActivity(new Intent(this, SectionCHDActivity.class).putExtra(IM02FLAG, !im02Flag).putExtra(IM01CARDSEEN, bi.im011.isChecked()));
                 } else {
-                    Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
                 }
             } else
                 openWarningActivity(this, "Current Child age leads to End this form.\nDo you want to Continue?");
@@ -284,9 +286,9 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     private Pair<String, String> getMonthAndYearFromDate(String date) {
         Calendar cal = DateUtils.getCalendarDate(date.replace("-", "/"));
-        int curdate = formgetLocalDate().getDayOfMonth();
-        int curmonth = formgetLocalDate().getMonthValue();
-        int curyear = formgetLocalDate().getYear();
+        int curdate = form.getLocalDate().getDayOfMonth();
+        int curmonth = form.getLocalDate().getMonthValue();
+        int curyear = form.getLocalDate().getYear();
         int day = cal.get(Calendar.DAY_OF_MONTH);
         int month = cal.get(Calendar.MONTH) + 1;
         int year = cal.get(Calendar.YEAR);
@@ -390,7 +392,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             startActivity(new Intent(this, EndingActivity.class)
                     .putExtra(CHILD_ENDING_AGE_ISSUE, true));
         } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 }

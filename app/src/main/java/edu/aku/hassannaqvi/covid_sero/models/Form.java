@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.LocalDate;
 
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
 
@@ -54,10 +55,27 @@ public class Form extends LiveData<Form> {
     private String sK = "";
     private String sL = "";
 
+    //Date Settings
+    private LocalDate localDate = null, calculatedDOB = null;
 
     public Form() {
     }
 
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
+    public LocalDate getCalculatedDOB() {
+        return calculatedDOB;
+    }
+
+    public void setCalculatedDOB(LocalDate calculatedDOB) {
+        this.calculatedDOB = calculatedDOB;
+    }
 
     public String getsInfo() {
         return sInfo;
