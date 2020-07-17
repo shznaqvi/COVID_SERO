@@ -93,8 +93,6 @@ public class SectionCActivity extends AppCompatActivity {
 
         json.put("pc04", bi.pc04.getText().toString());
 
-        json.put("pc04?", bi.pc04 ?.getText().toString())
-
         json.put("pc05", bi.pc05.getText().toString());
 
         json.put("pc06", bi.pc06.getText().toString());
