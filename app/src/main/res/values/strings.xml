@@ -578,6 +578,11 @@
     <string name='Q_im23a'>Im23A</string>
     <string name='Q_im24'>Im24</string>
     <string name='Q_nh401'>H401</string>
+    <string name='Q_nh402'>H402</string>
+    <string name='Q_nh403'>H403</string>
+    <string name='Q_nh404'>H404</string>
+    <string name='Q_nh405'>H405</string>
+    <string name='Q_nh406'>H406</string>
 
 
 </resources>
