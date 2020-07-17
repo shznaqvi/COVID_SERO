@@ -26,6 +26,8 @@ import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH3Binding;
 
+import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
+
 /*import edu.aku.hassannaqvi.nns_2018.JSONModels.JSONA4ModelClass;
 import edu.aku.hassannaqvi.nns_2018.R;
 import edu.aku.hassannaqvi.nns_2018.contracts.FormsContract;
@@ -261,7 +263,7 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
+        contextBackActivity(this);
     }
 
 

@@ -39,6 +39,7 @@ import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.CHILD_ENDING_AGE_ISSUE;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openEndActivity;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openWarningActivity;
 
@@ -309,7 +310,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        contextBackActivity(this);
     }
 
     /*

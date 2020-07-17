@@ -28,6 +28,8 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH4Binding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 
+import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
+
 
 public class SectionH4Activity extends AppCompatActivity implements TextWatcher, RadioGroup.OnCheckedChangeListener {
 
@@ -178,7 +180,7 @@ public class SectionH4Activity extends AppCompatActivity implements TextWatcher,
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
+        contextBackActivity(this);
     }
 
     public boolean formValidation() {
