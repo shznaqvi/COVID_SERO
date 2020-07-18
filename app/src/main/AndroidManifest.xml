@@ -24,10 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.sections.SectionDActivity"></activity>
-        <activity android:name=".ui.sections.SectionCActivity" />
-        <activity android:name=".ui.sections.SectionBActivity" />
-        <activity android:name=".ui.sections.SectionAActivity" />
+
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
@@ -66,6 +63,55 @@
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionH3Activity"
+            android:screenOrientation="portrait"
+            android:label="@string/sectionl_mainheading"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionH4Activity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionCHCActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionCHDActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionCHEActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionAActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionBActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionCActivity"
+            android:label="@string/sectionl_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionDActivity"
+            android:label="@string/sectionl_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
