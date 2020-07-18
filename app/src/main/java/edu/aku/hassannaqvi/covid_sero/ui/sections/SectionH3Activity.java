@@ -21,6 +21,8 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH3Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
+
 public class SectionH3Activity extends AppCompatActivity {
 
     ActivitySectionH3Binding bi;
@@ -459,7 +461,7 @@ public class SectionH3Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
+        contextBackActivity(this);
     }
 
 }
