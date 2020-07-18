@@ -2,9 +2,6 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -17,116 +14,72 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH3Binding;
+import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
-/*import edu.aku.hassannaqvi.nns_2018.JSONModels.JSONA4ModelClass;
-import edu.aku.hassannaqvi.nns_2018.R;
-import edu.aku.hassannaqvi.nns_2018.contracts.FormsContract;
-import edu.aku.hassannaqvi.nns_2018.core.DatabaseHelper;
-import edu.aku.hassannaqvi.nns_2018.core.MainApp;
-import edu.aku.hassannaqvi.nns_2018.databinding.ActivitySectionA4Binding;
-import edu.aku.hassannaqvi.nns_2018.other.JSONUtilClass;
-import edu.aku.hassannaqvi.nns_2018.validation.clearClass;
-import edu.aku.hassannaqvi.nns_2018.validation.validatorClass;*/
+public class SectionH3Activity extends AppCompatActivity {
 
-public class SectionH3Activity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, TextWatcher {
-
-    private final long DELAY = 1000;
     ActivitySectionH3Binding bi;
-    DatabaseHelper db;
-    private Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h3);
-        db = new DatabaseHelper(this);
-
-//        Assigning data to UI binding
         bi.setCallback(this);
-        this.setTitle(getResources().getString(R.string.nh3heading));
 
-//        Skip Pattern;
-
-//        nh303
-
-        bi.nh301.setOnCheckedChangeListener(this);
-        bi.nh302.setOnCheckedChangeListener(this);
-        bi.nh303.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.nh303b || i == R.id.nh303c) {
-                    formValidation();
-                    Clear.clearAllFields(bi.fldGrnh304, false);
-                } else {
-                    Clear.clearAllFields(bi.fldGrnh304, true);
-                }
-            }
-        });
-
-        bi.nh304.addTextChangedListener(this);
-
-        bi.nh30498.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.nh30499.setChecked(false);
-                    bi.nh304.setEnabled(false);
-                    bi.nh304.setText(null);
-                    bi.nh304.setError(null);
-                } else {
-                    bi.nh304.setEnabled(true);
-                }
-            }
-        });
-        bi.nh30499.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.nh30498.setChecked(false);
-                    bi.nh304.setEnabled(false);
-                    bi.nh304.setText(null);
-                    bi.nh304.setError(null);
-                } else {
-                    bi.nh304.setEnabled(true);
-                }
-            }
-        });
-
-
-        bi.nh305.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        bi.nh303.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == R.id.nh303b || i == R.id.nh303c) {
                 formValidation();
-                if (checkedId == R.id.nh305b) {
-                    Clear.clearAllFields(bi.fldGrpnh306, false);
-                } else {
-                    Clear.clearAllFields(bi.fldGrpnh306, true);
-                    bi.nh30696x.setEnabled(false);
-                }
+                Clear.clearAllFields(bi.fldGrnh304, false);
+            } else {
+                Clear.clearAllFields(bi.fldGrnh304, true);
             }
         });
 
-        bi.nh306.setOnCheckedChangeListener(this);
+        bi.nh30498.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                bi.nh30499.setChecked(false);
+                bi.nh304.setEnabled(false);
+                bi.nh304.setText(null);
+                bi.nh304.setError(null);
+            } else {
+                bi.nh304.setEnabled(true);
+            }
+        });
+
+        bi.nh30499.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                bi.nh30498.setChecked(false);
+                bi.nh304.setEnabled(false);
+                bi.nh304.setText(null);
+                bi.nh304.setError(null);
+            } else {
+                bi.nh304.setEnabled(true);
+            }
+        });
+
+        bi.nh305.setOnCheckedChangeListener((group, checkedId) -> {
+            formValidation();
+            if (checkedId == R.id.nh305b) {
+                Clear.clearAllFields(bi.fldGrpnh306, false);
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh306, true);
+                bi.nh30696x.setEnabled(false);
+            }
+        });
 
 //        nh307
-        bi.nh307.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                formValidation();
-                if (i == R.id.nh307h || i == R.id.nh307i) {
-                    Clear.clearAllFields(bi.fldGrpnh308, false);
-                    //  Clear.clearAllFields(binding.fldGrpnh309,true);
-                } else {
-                    Clear.clearAllFields(bi.fldGrpnh308, true);
-                }
+        bi.nh307.setOnCheckedChangeListener((radioGroup, i) -> {
+            formValidation();
+            if (i == R.id.nh307h || i == R.id.nh307i) {
+                Clear.clearAllFields(bi.fldGrpnh308, false);
+                //  Clear.clearAllFields(binding.fldGrpnh309,true);
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh308, true);
             }
         });
 
@@ -145,108 +98,48 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
             }
         });
 
-
-        bi.nh309.addTextChangedListener(this);
-
-        bi.nh310.setOnCheckedChangeListener(this);
-        bi.nh31101.setOnCheckedChangeListener(this);
-        bi.nh31102.setOnCheckedChangeListener(this);
-        bi.nh31103.setOnCheckedChangeListener(this);
-        bi.nh31104.setOnCheckedChangeListener(this);
-        bi.nh31105.setOnCheckedChangeListener(this);
-        bi.nh31106.setOnCheckedChangeListener(this);
-        bi.nh31107.setOnCheckedChangeListener(this);
-        bi.nh31108.setOnCheckedChangeListener(this);
-        bi.nh31109.setOnCheckedChangeListener(this);
-        bi.nh31110.setOnCheckedChangeListener(this);
-        bi.nh31111.setOnCheckedChangeListener(this);
-        bi.nh31112.setOnCheckedChangeListener(this);
-        bi.nh31113.setOnCheckedChangeListener(this);
-        bi.nh31114.setOnCheckedChangeListener(this);
-        bi.nh31115.setOnCheckedChangeListener(this);
-        bi.nh31116.setOnCheckedChangeListener(this);
-        bi.nh31117.setOnCheckedChangeListener(this);
-        bi.nh31118.setOnCheckedChangeListener(this);
-        bi.nh31119.setOnCheckedChangeListener(this);
-        bi.nh312a.setOnCheckedChangeListener(this);
-        bi.nh312b.setOnCheckedChangeListener(this);
-        bi.nh312c.setOnCheckedChangeListener(this);
-        bi.nh312d.setOnCheckedChangeListener(this);
-        bi.nh312e.setOnCheckedChangeListener(this);
-        bi.nh312f.setOnCheckedChangeListener(this);
-        bi.nh312g.setOnCheckedChangeListener(this);
-        bi.nh312h.setOnCheckedChangeListener(this);
-        bi.nh312i.setOnCheckedChangeListener(this);
-        bi.nh314.setOnCheckedChangeListener(this);
-
-
-        bi.nh315.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                formValidation();
-                if (bi.nh315a.isChecked()) {
-                    Clear.clearAllFields(bi.fldGrpnh316, true);
-                } else {
-                    Clear.clearAllFields(bi.fldGrpnh316, false);
-                }
+        bi.nh315.setOnCheckedChangeListener((group, checkedId) -> {
+            formValidation();
+            if (bi.nh315a.isChecked()) {
+                Clear.clearAllFields(bi.fldGrpnh316, true);
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh316, false);
             }
         });
-
-        bi.nh316.setOnCheckedChangeListener(this);
-        bi.nh317.setOnCheckedChangeListener(this);
-        bi.nh318.setOnCheckedChangeListener(this);
-        bi.nh319.setOnCheckedChangeListener(this);
-        bi.nh320.addTextChangedListener(this);
 
 //        nh321
-        bi.nh321.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                formValidation();
-                if (i == R.id.nh321b) {
-                    Clear.clearAllFields(bi.fldGrpnh322, false);
+        bi.nh321.setOnCheckedChangeListener((radioGroup, i) -> {
+            formValidation();
+            if (i == R.id.nh321b) {
+                Clear.clearAllFields(bi.fldGrpnh322, false);
 
-                } else {
-                    Clear.clearAllFields(bi.fldGrpnh322, true);
-                    bi.nh322acr.setEnabled(false);
-                    bi.nh322can.setEnabled(false);
-                }
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh322, true);
+                bi.nh322acr.setEnabled(false);
+                bi.nh322can.setEnabled(false);
             }
         });
-        bi.nh322.setOnCheckedChangeListener(this);
 
 //        nh323
-        bi.nh323.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                formValidation();
-                if (i == R.id.nh323b) {
-                    Clear.clearAllFields(bi.fldGrpnh324, false);
-                } else {
-                    Clear.clearAllFields(bi.fldGrpnh324, true);
-                }
+        bi.nh323.setOnCheckedChangeListener((radioGroup, i) -> {
+            formValidation();
+            if (i == R.id.nh323b) {
+                Clear.clearAllFields(bi.fldGrpnh324, false);
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh324, true);
             }
         });
 
-        bi.nh324a.addTextChangedListener(this);
-        bi.nh324b.addTextChangedListener(this);
-        bi.nh324c.addTextChangedListener(this);
-        bi.nh324d.addTextChangedListener(this);
-        bi.nh324e.addTextChangedListener(this);
-        bi.nh324f.addTextChangedListener(this);
-        bi.nh324g.addTextChangedListener(this);
-
     }
-
 
     public void BtnContinue() {
         if (formValidation()) {
             try {
-                SaveDraft();
+                saveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            if (updateDB()) {
                 finish();
                 startActivity(new Intent(this, SectionH4Activity.class));
             } else {
@@ -256,20 +149,14 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
     }
 
     public void BtnEnd() {
-        MainApp.endActivity(this, this);
+        AppUtilsKt.openEndActivity(this);
     }
-
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
-    }
-
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.fldGrpH301);
     }
 
-    private void SaveDraft() throws JSONException {
+    private void saveDraft() throws JSONException {
         JSONObject sH3 = new JSONObject();
 
         sH3.put("nh301", bi.nh301a.isChecked() ? "1"
@@ -556,23 +443,13 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
         sH3.put("nh324f", bi.nh324f.getText().toString());
         sH3.put("nh324g", bi.nh324g.getText().toString());
 
-
         MainApp.form.setsH3(String.valueOf(sH3));
-
-
-        //Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
     }
 
-    private boolean UpdateDB() {
-
-        //Long rowId;
-        DatabaseHelper db = new DatabaseHelper(this);
-
+    private boolean updateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH3, MainApp.form.getsH3());
-
         if (updcount == 1) {
-            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -580,49 +457,9 @@ public class SectionH3Activity extends AppCompatActivity implements RadioGroup.O
         }
     }
 
-
     @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        formValidation();
+    public void onBackPressed() {
+        Toast.makeText(this, "Sorry. There's no way to go back to the previous screen.", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-
-        timer.cancel();
-        timer = new Timer();
-        timer.schedule(
-                new TimerTask() {
-                    @Override
-                    public void run() {
-
-                        runOnUiThread(new Runnable() {
-                            public void run() {
-                                formValidation();
-                            }
-                        });
-
-                    }
-                },
-                DELAY
-        );
-
-
-    }
-
-   /* @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        formValidation();
-    }*/
 }
