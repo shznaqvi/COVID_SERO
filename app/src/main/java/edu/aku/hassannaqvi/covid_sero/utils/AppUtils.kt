@@ -101,6 +101,23 @@ fun contextEndActivity(activity: Activity, defaultFlag: Boolean = true) {
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { dialog.dismiss() }
 }
 
+fun contextBackActivity(activity: Activity) {
+    val dialog = Dialog(activity)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(R.layout.back_dialog)
+    dialog.setCancelable(false)
+    val params = WindowManager.LayoutParams()
+    params.copyFrom(dialog.window!!.attributes)
+    params.width = WindowManager.LayoutParams.WRAP_CONTENT
+    params.height = WindowManager.LayoutParams.WRAP_CONTENT
+    dialog.show()
+    dialog.window!!.attributes = params
+    dialog.findViewById<View>(R.id.btnOk).setOnClickListener {
+        activity.finish()
+    }
+    dialog.findViewById<View>(R.id.btnNo).setOnClickListener { dialog.dismiss() }
+}
+
 @JvmOverloads
 fun openWarningActivity(activity: Activity, title: String, message: String, btnYesTxt: String = "YES", btnNoTxt: String = "NO") {
     val dialog = Dialog(activity)

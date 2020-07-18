@@ -39,6 +39,7 @@ import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openEndActivity;
 
 public class SectionCHDActivity extends AppCompatActivity {
@@ -745,7 +746,7 @@ public class SectionCHDActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        contextBackActivity(this);
     }
 
 }
