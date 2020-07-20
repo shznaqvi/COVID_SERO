@@ -63,7 +63,7 @@
 
     <!--NNS Section 3-->
     <string name="na5heading"> سیکشن ایچ 4 : ہاتھ دھونے سے متعلق معلومات </string>
-
+    <string name="IMheading">حفاظتی ٹیکوں کی تفصیلات</string>
     <string name="nh3heading"> سیکشن ایچ 3 : سماجی امداد کے حوالے سے معلومات </string>
     <string name="nh3sub">یہ سیکشن گھر کے سربراہ سے یا گھر میں کم سے کم 18 سال یا اس سے ذائد عمر کے کسی سمجھدار شخص سے پوچھا جائیگا </string>
     <string name="nh301a"> اردو </string>

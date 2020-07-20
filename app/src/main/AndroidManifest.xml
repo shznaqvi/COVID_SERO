@@ -64,54 +64,55 @@
         <activity
             android:name=".ui.sections.SectionH3Activity"
             android:screenOrientation="portrait"
-            android:label="@string/sectionl_mainheading"
+            android:label="@string/nh3heading"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionH4Activity"
-            android:label="@string/sectionl_mainheading"
+            android:label="@string/na5heading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionCHCActivity"
-            android:label="@string/sectionl_mainheading"
+
+            android:label="@string/IMheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionCHDActivity"
-            android:label="@string/sectionl_mainheading"
+            android:label="@string/IMheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionCHEActivity"
-            android:label="@string/sectionl_mainheading"
+            android:label="@string/IMheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.sections.SectionAActivity"
-            android:label="@string/sectionl_mainheading"
+            android:name=".ui.sections.SectionPIAActivity"
+            android:label="@string/section1_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.sections.SectionBActivity"
-            android:label="@string/sectionl_mainheading"
+            android:name=".ui.sections.SectionPIBActivity"
+            android:label="@string/section2_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.sections.SectionCActivity"
-            android:label="@string/sectionl_mainheading"
+            android:name=".ui.sections.SectionPICActivity"
+            android:label="@string/section3_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionDActivity"
-            android:label="@string/sectionl_mainheading"
+            android:label="@string/section4_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
