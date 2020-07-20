@@ -445,12 +445,12 @@ public class SectionH3Activity extends AppCompatActivity {
         sH3.put("nh324f", bi.nh324f.getText().toString());
         sH3.put("nh324g", bi.nh324g.getText().toString());
 
-        MainApp.form.setsCC(String.valueOf(sH3));
+        MainApp.form.setsH3(String.valueOf(sH3));
     }
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH3, MainApp.form.getsCC());
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH3, MainApp.form.getsH3());
         if (updcount == 1) {
             return true;
         } else {

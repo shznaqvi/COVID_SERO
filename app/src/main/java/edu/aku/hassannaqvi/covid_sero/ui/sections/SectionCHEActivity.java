@@ -44,7 +44,7 @@ public class SectionCHEActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCHE());
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCC());
         if (updcount == 1) {
             return true;
         } else {
@@ -63,9 +63,9 @@ public class SectionCHEActivity extends AppCompatActivity {
         f1.put("im26d", bi.im26d.getText().toString());
 
         try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsCHE()), f1);
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsCC()), f1);
 
-            form.setsCHE(String.valueOf(json_merge));
+            form.setsCC(String.valueOf(json_merge));
 
         } catch (JSONException e) {
             e.printStackTrace();
