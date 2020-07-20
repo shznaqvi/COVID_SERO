@@ -302,13 +302,13 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         Intent oF = null;
         switch (v.getId()) {
         /*    case R.id.formA:
-                oF = new Intent(this, SectionAActivity.class);
+                oF = new Intent(this, SectionPIAActivity.class);
                 break;
             case R.id.formB:
-                oF = new Intent(this, SectionBActivity.class);
+                oF = new Intent(this, SectionPIBActivity.class);
                 break;
             case R.id.formC:
-                oF = new Intent(this, SectionCActivity.class);
+                oF = new Intent(this, SectionPICActivity.class);
                 break;
             case R.id.formD:
                 oF = new Intent(this, SectionDActivity.class);

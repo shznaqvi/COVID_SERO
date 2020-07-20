@@ -9,7 +9,7 @@
             type="edu.aku.hassannaqvi.uencovid19.models.Form" />-->
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCActivity" />
+            type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPICActivity" />
     </data>
 
     <ScrollView

@@ -44,6 +44,8 @@ public class Form extends LiveData<Form> {
     private String sB = "";
     private String sC = "";
     private String sCC = "";
+    private String sCD = "";
+    private String sCE = "";
     private String sD = "";
     private String sH3 = "";
     private String sH4 = "";
@@ -113,6 +115,15 @@ public class Form extends LiveData<Form> {
 
     public void setsCC(String sCC) {
         this.sCC = sCC;
+    }
+
+    public String getsCD() {
+        return sCD;
+    }
+
+    public Form setsCD(String sCD) {
+        this.sCD = sCD;
+        return this;
     }
 
     public String getsB() {

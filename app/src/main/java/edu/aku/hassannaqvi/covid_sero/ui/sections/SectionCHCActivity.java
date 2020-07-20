@@ -195,7 +195,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCC());
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, MainApp.form.getsCC());
         if (updcount == 1) {
             return true;
         } else {
@@ -235,7 +235,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());
 
-        form.setsCC(String.valueOf(f1));
+        form.setsCHE(String.valueOf(f1));
 
         if (dtInstant != null)
             form.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());

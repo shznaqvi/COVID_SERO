@@ -21,14 +21,14 @@ import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
-public class SectionBActivity extends AppCompatActivity {
+public class SectionPIBActivity extends AppCompatActivity {
 
     ActivitySectionBBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pib);
         bi.setCallback(this);
         setupSkips();
     }
@@ -60,7 +60,7 @@ public class SectionBActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionCActivity.class));
+            startActivity(new Intent(this, SectionPICActivity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }

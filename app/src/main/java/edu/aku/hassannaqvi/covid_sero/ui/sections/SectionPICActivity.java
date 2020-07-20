@@ -21,14 +21,14 @@ import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
-public class SectionCActivity extends AppCompatActivity {
+public class SectionPICActivity extends AppCompatActivity {
 
     ActivitySectionCBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pic);
         bi.setCallback(this);
         setupSkips();
     }
