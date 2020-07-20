@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -35,17 +36,11 @@ public class SectionPICActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        /*bi.h04.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.h0402.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVh05);
+        bi.pc01.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pc012.getId()) {
+                Clear.clearAllFields(bi.fldGrpSectionC01);
             }
-        }));*/
-
-        /*bi.h06.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.h0602.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecH01);
-            }
-        }));*/
+        }));
 
     }
 
