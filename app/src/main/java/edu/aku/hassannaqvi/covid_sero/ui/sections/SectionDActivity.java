@@ -13,6 +13,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
+import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
+import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionDBinding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.MainActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
@@ -31,7 +34,6 @@ public class SectionDActivity extends AppCompatActivity {
         setupSkips();
     }
 
-
     private void setupSkips() {
 
         /*bi.h04.setOnCheckedChangeListener(((radioGroup, i) -> {
@@ -48,7 +50,6 @@ public class SectionDActivity extends AppCompatActivity {
 
     }
 
-
     public void BtnContinue() {
         if (!formValidation()) return;
         try {
@@ -64,19 +65,16 @@ public class SectionDActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH, MainApp.form.getsH());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SD, MainApp.form.getsD());
         if (updcount > 0) {
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
-
 
     private void SaveDraft() throws JSONException {
 
@@ -205,22 +203,17 @@ public class SectionDActivity extends AppCompatActivity {
                 : bi.im153.isChecked() ? "98"
                 : "-1");
 
-
-        //    MainApp.form.setsH(json.toString());
-
+        MainApp.form.setsD(json.toString());
     }
-
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.fldGrpSectionD);
 
     }
-
 
     @Override
     public void onBackPressed() {
