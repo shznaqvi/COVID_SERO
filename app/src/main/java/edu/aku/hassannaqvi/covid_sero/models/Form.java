@@ -123,7 +123,6 @@ public class Form extends LiveData<Form> {
         this.sB = sB;
     }
 
-
     public String getsC() {
         return sC;
     }
