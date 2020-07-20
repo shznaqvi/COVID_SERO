@@ -42,19 +42,11 @@ public class Form extends LiveData<Form> {
     private String appversion = "";
     private String sInfo = "";
     private String sB = "";
+    private String sC = "";
+    private String sCC = "";
+    private String sD = "";
     private String sH3 = "";
     private String sH4 = "";
-    private String sCC = "";
-    private String sC = "";
-    private String sD = "";
-    private String sE = "";
-    private String sF = "";
-    private String sG = "";
-    private String sH = "";
-    private String sI = "";
-    private String sJ = "";
-    private String sK = "";
-    private String sL = "";
 
     //Date Settings
     private LocalDate localDate = null, calculatedDOB = null;
@@ -115,22 +107,6 @@ public class Form extends LiveData<Form> {
         this.a05 = a05;
     }
 
-    public String getsH3() {
-        return sH3;
-    }
-
-    public void setsH3(String sH3) {
-        this.sH3 = sH3;
-    }
-
-    public String getsH4() {
-        return sH4;
-    }
-
-    public void setsH4(String sH4) {
-        this.sH4 = sH4;
-    }
-
     public String getsCC() {
         return sCC;
     }
@@ -166,75 +142,21 @@ public class Form extends LiveData<Form> {
     }
 
 
-    public String getsE() {
-        return sE;
+    public String getsH3() {
+        return sH3;
     }
 
-    public void setsE(String sE) {
-        this.sE = sE;
-    }
-
-
-    public String getsF() {
-        return sF;
-    }
-
-    public void setsF(String sF) {
-        this.sF = sF;
+    public void setsH3(String sH3) {
+        this.sH3 = sH3;
     }
 
 
-    public String getsG() {
-        return sG;
+    public String getsH4() {
+        return sH4;
     }
 
-    public void setsG(String sG) {
-        this.sG = sG;
-    }
-
-
-    public String getsH() {
-        return sH;
-    }
-
-    public void setsH(String sH) {
-        this.sH = sH;
-    }
-
-
-    public String getsI() {
-        return sI;
-    }
-
-    public void setsI(String sI) {
-        this.sI = sI;
-    }
-
-
-    public String getsJ() {
-        return sJ;
-    }
-
-    public void setsJ(String sJ) {
-        this.sJ = sJ;
-    }
-
-
-    public String getsK() {
-        return sK;
-    }
-
-    public void setsK(String sK) {
-        this.sK = sK;
-    }
-
-
-    public String getsL() {
-        return sL;
-    }
-
-    public void setsL(String sL) {
-        this.sL = sL;
+    public void setsH4(String sH4) {
+        this.sH4 = sH4;
     }
 
 
@@ -428,23 +350,14 @@ public class Form extends LiveData<Form> {
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sH3 = jsonObject.getString(FormsTable.COLUMN_SH3);
-        this.sH4 = jsonObject.getString(FormsTable.COLUMN_SH4);
-        this.sCC = jsonObject.getString(FormsTable.COLUMN_SCC);
+        this.sCC = jsonObject.getString(FormsTable.COLUMN_SH3);
         this.sB = jsonObject.getString(FormsTable.COLUMN_SB);
         this.sC = jsonObject.getString(FormsTable.COLUMN_SC);
         this.sD = jsonObject.getString(FormsTable.COLUMN_SD);
-        this.sE = jsonObject.getString(FormsTable.COLUMN_SE);
-        this.sF = jsonObject.getString(FormsTable.COLUMN_SF);
-        this.sG = jsonObject.getString(FormsTable.COLUMN_SG);
-        this.sH = jsonObject.getString(FormsTable.COLUMN_SH);
-        this.sI = jsonObject.getString(FormsTable.COLUMN_SI);
-        this.sJ = jsonObject.getString(FormsTable.COLUMN_SJ);
-        this.sK = jsonObject.getString(FormsTable.COLUMN_SK);
-        this.sL = jsonObject.getString(FormsTable.COLUMN_SL);
+        this.sH3 = jsonObject.getString(FormsTable.COLUMN_SE);
+        this.sH4 = jsonObject.getString(FormsTable.COLUMN_SF);
 
         return this;
-
     }
 
     public Form Hydrate(Cursor cursor) {
@@ -468,20 +381,12 @@ public class Form extends LiveData<Form> {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
-        this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4));
-        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SCC));
+        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
         this.sB = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
         this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
-        this.sE = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
-        this.sF = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
-        this.sG = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SG));
-        this.sH = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH));
-        this.sI = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SI));
-        this.sJ = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SJ));
-        this.sK = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SK));
-        this.sL = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SL));
+        this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
+        this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
 
         return this;
     }
@@ -514,14 +419,8 @@ public class Form extends LiveData<Form> {
             if (this.sInfo != null && !this.sInfo.equals("")) {
                 json.put(FormsTable.COLUMN_SINFO, new JSONObject(this.sInfo));
             }
-            if (this.sH3 != null && !this.sH3.equals("")) {
-                json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sH3));
-            }
-            if (this.sH4 != null && !this.sH4.equals("")) {
-                json.put(FormsTable.COLUMN_SH4, new JSONObject(this.sH4));
-            }
             if (this.sCC != null && !this.sCC.equals("")) {
-                json.put(FormsTable.COLUMN_SCC, new JSONObject(this.sCC));
+                json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sCC));
             }
             if (this.sB != null && !this.sB.equals("")) {
                 json.put(FormsTable.COLUMN_SB, new JSONObject(this.sB));
@@ -532,29 +431,11 @@ public class Form extends LiveData<Form> {
             if (this.sD != null && !this.sD.equals("")) {
                 json.put(FormsTable.COLUMN_SD, new JSONObject(this.sD));
             }
-            if (this.sE != null && !this.sE.equals("")) {
-                json.put(FormsTable.COLUMN_SE, new JSONObject(this.sE));
+            if (this.sH3 != null && !this.sH3.equals("")) {
+                json.put(FormsTable.COLUMN_SE, new JSONObject(this.sH3));
             }
-            if (this.sF != null && !this.sF.equals("")) {
-                json.put(FormsTable.COLUMN_SF, new JSONObject(this.sF));
-            }
-            if (this.sG != null && !this.sG.equals("")) {
-                json.put(FormsTable.COLUMN_SG, new JSONObject(this.sG));
-            }
-            if (this.sH != null && !this.sH.equals("")) {
-                json.put(FormsTable.COLUMN_SH, new JSONObject(this.sH));
-            }
-            if (this.sI != null && !this.sI.equals("")) {
-                json.put(FormsTable.COLUMN_SI, new JSONObject(this.sI));
-            }
-            if (this.sJ != null && !this.sJ.equals("")) {
-                json.put(FormsTable.COLUMN_SJ, new JSONObject(this.sJ));
-            }
-            if (this.sK != null && !this.sK.equals("")) {
-                json.put(FormsTable.COLUMN_SK, new JSONObject(this.sK));
-            }
-            if (this.sL != null && !this.sL.equals("")) {
-                json.put(FormsTable.COLUMN_SL, new JSONObject(this.sL));
+            if (this.sH4 != null && !this.sH4.equals("")) {
+                json.put(FormsTable.COLUMN_SF, new JSONObject(this.sH4));
             }
 
             json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);

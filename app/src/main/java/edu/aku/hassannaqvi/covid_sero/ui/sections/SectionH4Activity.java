@@ -15,9 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
-import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
-import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH4Binding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
@@ -196,19 +193,20 @@ public class SectionH4Activity extends AppCompatActivity {
 
         sH4.put("nh40696x", bi.nh40696x.getText().toString());
 
-        MainApp.form.setsH4(String.valueOf(sH4));
+//        MainApp.form.setsCHD(String.valueOf(sH4));
 
     }
 
     private boolean updateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsH4());
+        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsCHD());
         if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return true;
     }
 
     @Override

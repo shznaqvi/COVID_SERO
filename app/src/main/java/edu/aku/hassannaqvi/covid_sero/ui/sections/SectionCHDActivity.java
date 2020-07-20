@@ -533,7 +533,7 @@ public class SectionCHDActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCC());
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCHE());
         if (updcount == 1) {
             return true;
         } else {
@@ -704,9 +704,9 @@ public class SectionCHDActivity extends AppCompatActivity {
 
 
         try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsCC()), json);
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsCHE()), json);
 
-            form.setsCC(String.valueOf(json_merge));
+            form.setsCHE(String.valueOf(json_merge));
 
         } catch (JSONException e) {
             e.printStackTrace();
