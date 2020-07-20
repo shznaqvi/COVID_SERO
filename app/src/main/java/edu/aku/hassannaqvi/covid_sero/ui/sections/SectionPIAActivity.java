@@ -13,12 +13,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionABinding;
+import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 public class SectionPIAActivity extends AppCompatActivity {
 
-    ActivitySectionABinding bi;
+    ActivitySectionPiaBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

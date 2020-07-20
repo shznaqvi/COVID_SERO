@@ -16,14 +16,14 @@ import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
-import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionBBinding;
+import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPibBinding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIBActivity extends AppCompatActivity {
 
-    ActivitySectionBBinding bi;
+    ActivitySectionPibBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
