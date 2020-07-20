@@ -111,7 +111,7 @@ public class SectionH301Activity extends AppCompatActivity {
             }
             if (updateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionH4Activity.class));
+                startActivity(new Intent(this, SectionH302Activity.class));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }

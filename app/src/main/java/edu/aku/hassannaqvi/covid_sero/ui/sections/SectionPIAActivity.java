@@ -61,7 +61,7 @@ public class SectionPIAActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionPIBActivity.class));
+            startActivity(new Intent(this, SectionPIB01Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
