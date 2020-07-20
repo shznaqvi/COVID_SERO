@@ -19,7 +19,9 @@ import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib02Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIB02Activity extends AppCompatActivity {
@@ -147,7 +149,14 @@ public class SectionPIB02Activity extends AppCompatActivity {
         json.put("pb1808ad", bi.pb1808ad.getText().toString());
 
 
-        MainApp.form.setsB(json.toString());
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsB()), json);
+
+            form.setsB(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
