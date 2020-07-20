@@ -52,7 +52,7 @@ public class InfoSectionActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-          startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+          startActivity(new Intent(this, bi.hh1401.isChecked() ? EndingActivity.class : SectionDActivity.class ).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
@@ -63,12 +63,16 @@ public class InfoSectionActivity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
+
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsH4());
-        if (updcount == 1) {
+        long updcount = db.addForm(form);
+        form.set_ID(String.valueOf(updcount));
+        if (updcount > 0) {
+            form.set_UID(form.getDeviceID() + form.get_ID());
+            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
             return true;
         } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
