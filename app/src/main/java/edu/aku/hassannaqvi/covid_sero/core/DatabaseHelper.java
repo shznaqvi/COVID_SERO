@@ -48,7 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_BL_RANDOM);
@@ -64,12 +63,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(BLRandomTable.TABLE_NAME, null, null);
 
-        JSONArray jsonArray = blList;
         int insertCount = 0;
-        for (int i = 0; i < jsonArray.length(); i++) {
+        for (int i = 0; i < blList.length(); i++) {
             JSONObject jsonObjectCC = null;
             try {
-                jsonObjectCC = jsonArray.getJSONObject(i);
+                jsonObjectCC = blList.getJSONObject(i);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -221,6 +219,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.get_UID());
+        values.put(FormsTable.COLUMN_SYSDATE, form.getSysdate());
         values.put(FormsTable.COLUMN_A01, form.getA01());
         values.put(FormsTable.COLUMN_A02, form.getA02());
         values.put(FormsTable.COLUMN_A03, form.getA03());
@@ -286,6 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_A03,
@@ -357,6 +357,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_A03,
@@ -428,6 +429,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_A03,
@@ -507,6 +509,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_A04,
@@ -539,6 +542,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Form form = new Form();
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
                 form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
                 form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
@@ -565,6 +569,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_REFNO,
@@ -596,6 +601,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Form form = new Form();
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
                 form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
                 form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
@@ -620,6 +626,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_REFNO,
@@ -647,6 +654,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Form form = new Form();
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
                 form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
                 form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
@@ -744,6 +752,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
                 FormsTable.COLUMN_A01,
                 FormsTable.COLUMN_A02,
                 FormsTable.COLUMN_A03,
