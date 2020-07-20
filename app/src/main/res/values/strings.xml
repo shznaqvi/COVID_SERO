@@ -820,7 +820,7 @@
     <string name="pc05"> قد سینٹی میٹر میں</string>
     <string name="pc06">وزن کلو گرام میں                                 </string>
 
-<!--    SectionInfo-->
+    <!--    SectionInfo-->
     <string name="newHHheadname"> نیا سربراہ کا نام </string>
     <string name="hh01">انٹرویو کی تاریخ</string>
     <string name="hh02">انٹرویو شروع کرنے کا وقت(24 گھنٹوں میں)</string>
