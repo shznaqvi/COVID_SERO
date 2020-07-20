@@ -214,5 +214,4 @@ public class SectionH4Activity extends AppCompatActivity {
     public void onBackPressed() {
         contextBackActivity(this);
     }
-
 }
