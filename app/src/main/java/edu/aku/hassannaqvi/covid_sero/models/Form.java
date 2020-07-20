@@ -134,7 +134,6 @@ public class Form extends LiveData<Form> {
         this.sB = sB;
     }
 
-
     public String getsC() {
         return sC;
     }
@@ -361,7 +360,7 @@ public class Form extends LiveData<Form> {
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sCC = jsonObject.getString(FormsTable.COLUMN_SH3);
+        this.sCC = jsonObject.getString(FormsTable.COLUMN_SCC);
         this.sB = jsonObject.getString(FormsTable.COLUMN_SB);
         this.sC = jsonObject.getString(FormsTable.COLUMN_SC);
         this.sD = jsonObject.getString(FormsTable.COLUMN_SD);
@@ -392,7 +391,7 @@ public class Form extends LiveData<Form> {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
+        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SCC));
         this.sB = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
         this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
@@ -431,7 +430,7 @@ public class Form extends LiveData<Form> {
                 json.put(FormsTable.COLUMN_SINFO, new JSONObject(this.sInfo));
             }
             if (this.sCC != null && !this.sCC.equals("")) {
-                json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sCC));
+                json.put(FormsTable.COLUMN_SCC, new JSONObject(this.sCC));
             }
             if (this.sB != null && !this.sB.equals("")) {
                 json.put(FormsTable.COLUMN_SB, new JSONObject(this.sB));

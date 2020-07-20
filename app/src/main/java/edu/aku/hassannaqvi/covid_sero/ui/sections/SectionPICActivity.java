@@ -13,6 +13,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
+import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
+import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
@@ -30,7 +33,6 @@ public class SectionPICActivity extends AppCompatActivity {
         setupSkips();
     }
 
-
     private void setupSkips() {
 
         /*bi.h04.setOnCheckedChangeListener(((radioGroup, i) -> {
@@ -47,7 +49,6 @@ public class SectionPICActivity extends AppCompatActivity {
 
     }
 
-
     public void BtnContinue() {
         if (!formValidation()) return;
         try {
@@ -63,19 +64,16 @@ public class SectionPICActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH, MainApp.form.getsH());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SC, MainApp.form.getsC());
         if (updcount > 0) {
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
-
 
     private void SaveDraft() throws JSONException {
 
@@ -97,22 +95,17 @@ public class SectionPICActivity extends AppCompatActivity {
 
         json.put("pc06", bi.pc06.getText().toString());
 
-
-        //    MainApp.form.setsH(json.toString());
-
+        MainApp.form.setsC(json.toString());
     }
-
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.fldGrpSectionC);
 
     }
-
 
     @Override
     public void onBackPressed() {

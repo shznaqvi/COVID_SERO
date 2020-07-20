@@ -235,7 +235,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());
 
-        form.setsCC(String.valueOf(f1));
+        form.setsCHE(String.valueOf(f1));
 
         if (dtInstant != null)
             form.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());
