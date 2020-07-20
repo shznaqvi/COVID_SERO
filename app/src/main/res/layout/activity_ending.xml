@@ -65,43 +65,43 @@
                             android:id="@+id/istatus01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus02" />
+                            android:text="@string/hh1401" />
 
                         <RadioButton
                             android:id="@+id/istatus02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus02" />
+                            android:text="@string/hh1402" />
 
                         <RadioButton
                             android:id="@+id/istatus03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus03" />
+                            android:text="@string/hh1403" />
 
                         <RadioButton
                             android:id="@+id/istatus04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus04" />
+                            android:text="@string/hh1404" />
 
                         <RadioButton
                             android:id="@+id/istatus05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus05" />
+                            android:text="@string/hh1405" />
 
                         <RadioButton
                             android:id="@+id/istatus06"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus06" />
+                            android:text="@string/hh1406" />
 
                         <RadioButton
                             android:id="@+id/istatus07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus07" />
+                            android:text="@string/hh1407" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
@@ -145,7 +145,6 @@
                     android:text="End Interview"
                     android:textColor="@color/white" />
                 <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
-
 
             </LinearLayout>
 
