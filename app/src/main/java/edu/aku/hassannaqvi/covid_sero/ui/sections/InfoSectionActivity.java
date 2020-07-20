@@ -1,21 +1,17 @@
 package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -24,7 +20,6 @@ import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
-import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class InfoSectionActivity extends AppCompatActivity {
@@ -64,7 +59,7 @@ public class InfoSectionActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsH4());
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SINFO, MainApp.form.getsInfo());
         if (updcount == 1) {
             return true;
         } else {
