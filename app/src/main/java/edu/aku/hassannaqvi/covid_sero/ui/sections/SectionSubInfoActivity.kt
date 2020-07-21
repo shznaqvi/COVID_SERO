@@ -101,6 +101,16 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                 flagNewForm = false
                 bi.instruction.text = getString(R.string.memberforminfo)
             }
+            2 -> {
+                bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
+                bi.formScroll.hhScroll.status.visibility = View.VISIBLE
+                bi.formScroll.childScroll.name.text = "CHILD FORM COMPLETED"
+                bi.formScroll.childScroll.status.visibility = View.VISIBLE
+                hhFlag = false
+                memFlag = false
+                flagNewForm = false
+                bi.instruction.text = getString(R.string.end_interview)
+            }
             99 -> {
                 bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
                 bi.formScroll.childScroll.name.text = "MEMBER FORM IS BLOCKED\nContact Team Leader"

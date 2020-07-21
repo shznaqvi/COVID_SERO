@@ -63,6 +63,17 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
+            android:name=".ui.sections.InfoSectionActivity"
+            android:label="@string/section1_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.sections.SectionSubInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
             android:name=".ui.sections.SectionH301Activity"
             android:label="@string/nh3heading"
             android:screenOrientation="portrait"

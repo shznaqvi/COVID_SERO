@@ -53,6 +53,17 @@
                             android:layout_alignBottom="@id/qtxt_hh01"
                             android:text="@string/Q_hh01" />
                     </RelativeLayout>
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        android:id="@+id/hh01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="DD/MM/YYYY"
+                        android:onTextChanged="@{callback::hh01OnTextChanged}"
+                        app:dateFormat="dd-MM-yyyy"
+                        app:maxDate="CR_DATE"
+                        app:minDate="07/07/2020" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

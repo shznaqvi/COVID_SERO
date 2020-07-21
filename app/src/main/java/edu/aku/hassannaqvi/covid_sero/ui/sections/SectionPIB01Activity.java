@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib01Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIB01Activity extends AppCompatActivity {
@@ -224,11 +225,13 @@ public class SectionPIB01Activity extends AppCompatActivity {
 
         MainApp.form.setsB(json.toString());
 
+        MainApp.form.getHhModel().setMarried(bi.pb0301.isChecked());
+
     }
 
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
 

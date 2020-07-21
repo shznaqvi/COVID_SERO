@@ -11,6 +11,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneId;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
@@ -80,6 +86,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
 
     private void SaveDraft() throws JSONException {
         JSONObject json = new JSONObject();
+        json.put("hh01", bi.hh01.getText().toString());
         json.put("hh03", bi.hh03.getText().toString());
 
         json.put("hh05", bi.hh05.getText().toString());
@@ -109,6 +116,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         MainApp.form.setsInfo(json.toString());
 
         form.setHhModel(new HHModel(bi.hh12.getText().toString(), bi.hh13.getText().toString()));
+
     }
 
     private boolean formValidation() {
@@ -118,5 +126,16 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     @Override
     public void endSecActivity(boolean flag) {
         btnSavingWorking(EndingActivity.class, flag);
+    }
+
+
+    public void hh01OnTextChanged(CharSequence s, int start, int before, int count) {
+        //Setting Date
+        try {
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(bi.hh01.getText().toString())) + "T06:24:01Z");
+            form.setLocalDate(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
