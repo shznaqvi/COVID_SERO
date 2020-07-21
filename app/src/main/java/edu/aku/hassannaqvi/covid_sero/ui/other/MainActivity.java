@@ -43,8 +43,10 @@ import edu.aku.hassannaqvi.covid_sero.ui.sections.InfoSectionActivity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHCActivity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHDActivity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHEActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionH301Activity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionH4Activity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIAActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIB01Activity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPICActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
@@ -316,13 +318,13 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 oF = new Intent(this, SectionPIAActivity.class);
                 break;
             case R.id.formPIB:
-                oF = new Intent(this, SectionPIBActivity.class);
+                oF = new Intent(this, SectionPIB01Activity.class);
                 break;
             case R.id.formPIC:
                 oF = new Intent(this, SectionPICActivity.class);
                 break;
             case R.id.formH3:
-                oF = new Intent(this, SectionH3Activity.class);
+                oF = new Intent(this, SectionH301Activity.class);
                 break;
             case R.id.formH4:
                 oF = new Intent(this, SectionH4Activity.class);

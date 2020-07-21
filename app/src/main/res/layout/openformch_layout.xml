@@ -29,7 +29,7 @@
                     android:id="@+id/status"
                     android:layout_width="16dp"
                     android:layout_height="0dp"
-                    android:background="@color/colorSecondary"
+                    android:background="@color/colorAccent"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

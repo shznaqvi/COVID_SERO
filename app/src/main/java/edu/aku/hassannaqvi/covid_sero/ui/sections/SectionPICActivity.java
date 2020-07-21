@@ -84,7 +84,10 @@ public class SectionPICActivity extends AppCompatActivity {
         json.put("pc04a", bi.pc04a.getText().toString());
         json.put("pc05", bi.pc05.getText().toString());
         json.put("pc06", bi.pc06.getText().toString());
+
+
         MainApp.form.setsC(json.toString());
+
     }
 
     public void BtnEnd() {

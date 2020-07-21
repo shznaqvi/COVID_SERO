@@ -128,6 +128,7 @@ public class SectionH301Activity extends AppCompatActivity {
     }
 
     private void saveDraft() throws JSONException {
+
         JSONObject sH3 = new JSONObject();
 
         sH3.put("nh301", bi.nh301a.isChecked() ? "1"
@@ -280,8 +281,8 @@ public class SectionH301Activity extends AppCompatActivity {
                 : bi.nh31119b.isChecked() ? "2"
                 : "0");
 
-
         MainApp.form.setsH3(String.valueOf(sH3));
+
     }
 
     private boolean updateDB() {
