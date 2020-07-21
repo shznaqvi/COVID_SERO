@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
+import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
 
 /**
@@ -41,12 +42,6 @@ public class Form extends LiveData<Form> {
     private String synced_date = "";
     private String appversion = "";
     private String sInfo = "";
-    private String sB = "";
-    private String sC = "";
-    private String sCC = "";
-    private String sCD = "";
-    private String sCE = "";
-    private String sD = "";
     private String sH3 = "";
     private String sH4 = "";
 
@@ -93,15 +88,6 @@ public class Form extends LiveData<Form> {
     }
 
 
-    public String getsInfo() {
-        return sInfo;
-    }
-
-    public void setsInfo(String sInfo) {
-        this.sInfo = sInfo;
-    }
-
-
     public String getA04() {
         return a04;
     }
@@ -110,6 +96,13 @@ public class Form extends LiveData<Form> {
         this.a04 = a04;
     }
 
+    public String getsInfo() {
+        return sInfo;
+    }
+
+    public void setsInfo(String sInfo) {
+        this.sInfo = sInfo;
+    }
 
     public String getA05() {
         return a05;
@@ -119,49 +112,6 @@ public class Form extends LiveData<Form> {
         this.a05 = a05;
     }
 
-    public String getsCC() {
-        return sCC;
-    }
-
-    public void setsCC(String sCC) {
-        this.sCC = sCC;
-    }
-
-    public String getsCD() {
-        return sCD;
-    }
-
-    public Form setsCD(String sCD) {
-        this.sCD = sCD;
-        return this;
-    }
-
-    public String getsB() {
-        return sB;
-    }
-
-    public void setsB(String sB) {
-        this.sB = sB;
-    }
-
-    public String getsC() {
-        return sC;
-    }
-
-    public void setsC(String sC) {
-        this.sC = sC;
-    }
-
-
-    public String getsD() {
-        return sD;
-    }
-
-    public void setsD(String sD) {
-        this.sD = sD;
-    }
-
-
     public String getsH3() {
         return sH3;
     }
@@ -169,7 +119,6 @@ public class Form extends LiveData<Form> {
     public void setsH3(String sH3) {
         this.sH3 = sH3;
     }
-
 
     public String getsH4() {
         return sH4;
@@ -179,7 +128,6 @@ public class Form extends LiveData<Form> {
         this.sH4 = sH4;
     }
 
-
     public String getAppversion() {
         return appversion;
     }
@@ -188,11 +136,9 @@ public class Form extends LiveData<Form> {
         this.appversion = appversion;
     }
 
-
     public String getProjectName() {
         return "covid_sero";
     }
-
 
     public String get_ID() {
         return _ID;
@@ -202,7 +148,6 @@ public class Form extends LiveData<Form> {
         this._ID = _ID;
     }
 
-
     public String get_UID() {
         return _UID;
     }
@@ -210,7 +155,6 @@ public class Form extends LiveData<Form> {
     public void set_UID(String _UID) {
         this._UID = _UID;
     }
-
 
     public String getA01() {
         return a01;
@@ -220,7 +164,6 @@ public class Form extends LiveData<Form> {
         this.a01 = a01;
     }
 
-
     public String getA02() {
         return a02;
     }
@@ -229,7 +172,6 @@ public class Form extends LiveData<Form> {
         this.a02 = a02;
     }
 
-
     public String getA03() {
         return a03;
     }
@@ -237,7 +179,6 @@ public class Form extends LiveData<Form> {
     public void setA03(String a03) {
         this.a03 = a03;
     }
-
 
     public String getIstatus() {
         return istatus;
@@ -369,13 +310,9 @@ public class Form extends LiveData<Form> {
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
-        this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sCC = jsonObject.getString(FormsTable.COLUMN_SCC);
-        this.sB = jsonObject.getString(FormsTable.COLUMN_SB);
-        this.sC = jsonObject.getString(FormsTable.COLUMN_SC);
-        this.sD = jsonObject.getString(FormsTable.COLUMN_SD);
-        this.sH3 = jsonObject.getString(FormsTable.COLUMN_SE);
-        this.sH4 = jsonObject.getString(FormsTable.COLUMN_SF);
+        this.sInfo = jsonObject.getString(FormsContract.FormsTable.COLUMN_SINFO);
+        this.sH3 = jsonObject.getString(FormsTable.COLUMN_SH3);
+        this.sH4 = jsonObject.getString(FormsTable.COLUMN_SH4);
 
         return this;
     }
@@ -400,13 +337,9 @@ public class Form extends LiveData<Form> {
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sCC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SCC));
-        this.sB = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB));
-        this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
-        this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
-        this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
-        this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
+        this.sInfo = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO));
+        this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
+        this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4));
 
         return this;
     }
@@ -439,23 +372,11 @@ public class Form extends LiveData<Form> {
             if (this.sInfo != null && !this.sInfo.equals("")) {
                 json.put(FormsTable.COLUMN_SINFO, new JSONObject(this.sInfo));
             }
-            if (this.sCC != null && !this.sCC.equals("")) {
-                json.put(FormsTable.COLUMN_SCC, new JSONObject(this.sCC));
-            }
-            if (this.sB != null && !this.sB.equals("")) {
-                json.put(FormsTable.COLUMN_SB, new JSONObject(this.sB));
-            }
-            if (this.sC != null && !this.sC.equals("")) {
-                json.put(FormsTable.COLUMN_SC, new JSONObject(this.sC));
-            }
-            if (this.sD != null && !this.sD.equals("")) {
-                json.put(FormsTable.COLUMN_SD, new JSONObject(this.sD));
-            }
             if (this.sH3 != null && !this.sH3.equals("")) {
-                json.put(FormsTable.COLUMN_SE, new JSONObject(this.sH3));
+                json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sH3));
             }
             if (this.sH4 != null && !this.sH4.equals("")) {
-                json.put(FormsTable.COLUMN_SF, new JSONObject(this.sH4));
+                json.put(FormsTable.COLUMN_SH4, new JSONObject(this.sH4));
             }
 
             json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);

@@ -19,18 +19,22 @@ import java.util.Date;
 
 import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract.VersionAppTable;
 import edu.aku.hassannaqvi.covid_sero.models.BLRandom;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
+import edu.aku.hassannaqvi.covid_sero.models.Personal;
 import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.models.VersionApp;
 
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_BL_RANDOM;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_PERSONALS;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_VERSIONAPP;
 
@@ -50,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
+        db.execSQL(SQL_CREATE_PERSONALS);
         db.execSQL(SQL_CREATE_BL_RANDOM);
         db.execSQL(SQL_CREATE_VERSIONAPP);
     }
@@ -210,6 +215,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public Long addPersonal(Personal personal) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(PersonalContract.PersonalTable.COLUMN_PROJECT_NAME, personal.getProjectName());
+        values.put(PersonalContract.PersonalTable.COLUMN_UID, personal.get_UID());
+        values.put(PersonalContract.PersonalTable.COLUMN_SYSDATE, personal.getSysdate());
+        values.put(PersonalContract.PersonalTable.COLUMN_A01, personal.getA01());
+        values.put(PersonalContract.PersonalTable.COLUMN_A02, personal.getA02());
+        values.put(PersonalContract.PersonalTable.COLUMN_A03, personal.getA03());
+        values.put(PersonalContract.PersonalTable.COLUMN_A04, personal.getA04());
+        values.put(PersonalContract.PersonalTable.COLUMN_A05, personal.getA05());
+        values.put(PersonalContract.PersonalTable.COLUMN_REFNO, personal.getRefno());
+        values.put(PersonalContract.PersonalTable.COLUMN_ISTATUS, personal.getIstatus());
+        values.put(PersonalContract.PersonalTable.COLUMN_ISTATUS96x, personal.getIstatus96x());
+        values.put(PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME, personal.getEndingdatetime());
+        values.put(PersonalContract.PersonalTable.COLUMN_SA, personal.getsA());
+        values.put(PersonalContract.PersonalTable.COLUMN_SB, personal.getsB());
+        values.put(PersonalContract.PersonalTable.COLUMN_SC, personal.getsC());
+        values.put(PersonalContract.PersonalTable.COLUMN_SI, personal.getsI());
+        values.put(PersonalContract.PersonalTable.COLUMN_GPSLAT, personal.getGpsLat());
+        values.put(PersonalContract.PersonalTable.COLUMN_GPSLNG, personal.getGpsLng());
+        values.put(PersonalContract.PersonalTable.COLUMN_GPSDATE, personal.getGpsDT());
+        values.put(PersonalContract.PersonalTable.COLUMN_GPSACC, personal.getGpsAcc());
+        values.put(PersonalContract.PersonalTable.COLUMN_DEVICETAGID, personal.getDevicetagID());
+        values.put(PersonalContract.PersonalTable.COLUMN_DEVICEID, personal.getDeviceID());
+        values.put(PersonalContract.PersonalTable.COLUMN_APPVERSION, personal.getAppversion());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                PersonalContract.PersonalTable.TABLE_NAME,
+                PersonalContract.PersonalTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     public Long addForm(Form form) {
 
         // Gets the data repository in write mode
@@ -230,12 +275,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_ISTATUS96x, form.getIstatus96x());
         values.put(FormsTable.COLUMN_ENDINGDATETIME, form.getEndingdatetime());
         values.put(FormsTable.COLUMN_SINFO, form.getsInfo());
-        values.put(FormsTable.COLUMN_SCC, form.getsCC());
-        values.put(FormsTable.COLUMN_SB, form.getsB());
-        values.put(FormsTable.COLUMN_SC, form.getsC());
-        values.put(FormsTable.COLUMN_SD, form.getsD());
-        values.put(FormsTable.COLUMN_SE, form.getsH3());
-        values.put(FormsTable.COLUMN_SF, form.getsH4());
+        values.put(FormsTable.COLUMN_SH3, form.getsH3());
+        values.put(FormsTable.COLUMN_SH4, form.getsH4());
         values.put(FormsTable.COLUMN_GPSLAT, form.getGpsLat());
         values.put(FormsTable.COLUMN_GPSLNG, form.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDATE, form.getGpsDT());
@@ -258,11 +299,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_UID, MainApp.form.get_UID());
+        values.put(FormsTable.COLUMN_UID, form.get_UID());
 
 // Which row to update, based on the ID
         String selection = FormsTable._ID + " = ?";
-        String[] selectionArgs = {String.valueOf(MainApp.form.get_ID())};
+        String[] selectionArgs = {String.valueOf(form.get_ID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
@@ -288,18 +329,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SH3,
                 FormsTable.COLUMN_SH4,
-                FormsTable.COLUMN_SCC,
-                FormsTable.COLUMN_SB,
-                FormsTable.COLUMN_SC,
-                FormsTable.COLUMN_SD,
-                FormsTable.COLUMN_SE,
-                FormsTable.COLUMN_SF,
-                FormsTable.COLUMN_SG,
-                FormsTable.COLUMN_SH,
-                FormsTable.COLUMN_SI,
-                FormsTable.COLUMN_SJ,
-                FormsTable.COLUMN_SK,
-                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -343,6 +372,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public Collection<Personal> getAllPersonal() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PersonalContract.PersonalTable._ID,
+                PersonalContract.PersonalTable.COLUMN_UID,
+                PersonalContract.PersonalTable.COLUMN_SYSDATE,
+                PersonalContract.PersonalTable.COLUMN_A01,
+                PersonalContract.PersonalTable.COLUMN_A02,
+                PersonalContract.PersonalTable.COLUMN_A03,
+                PersonalContract.PersonalTable.COLUMN_A04,
+                PersonalContract.PersonalTable.COLUMN_A05,
+                PersonalContract.PersonalTable.COLUMN_REFNO,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS,
+                PersonalContract.PersonalTable.COLUMN_SA,
+                PersonalContract.PersonalTable.COLUMN_SB,
+                PersonalContract.PersonalTable.COLUMN_SC,
+                PersonalContract.PersonalTable.COLUMN_SI,
+                PersonalContract.PersonalTable.COLUMN_GPSLAT,
+                PersonalContract.PersonalTable.COLUMN_GPSLNG,
+                PersonalContract.PersonalTable.COLUMN_GPSDATE,
+                PersonalContract.PersonalTable.COLUMN_GPSACC,
+                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
+                PersonalContract.PersonalTable.COLUMN_DEVICEID,
+                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+
+        };
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
+
+        Collection<Personal> allPersonal = new ArrayList<Personal>();
+        try {
+            c = db.query(
+                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Personal personal = new Personal();
+                allPersonal.add(personal.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPersonal;
+    }
+
     public Collection<Form> checkFormExist() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -360,18 +450,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SH3,
                 FormsTable.COLUMN_SH4,
-                FormsTable.COLUMN_SCC,
-                FormsTable.COLUMN_SB,
-                FormsTable.COLUMN_SC,
-                FormsTable.COLUMN_SD,
-                FormsTable.COLUMN_SE,
-                FormsTable.COLUMN_SF,
-                FormsTable.COLUMN_SG,
-                FormsTable.COLUMN_SH,
-                FormsTable.COLUMN_SI,
-                FormsTable.COLUMN_SJ,
-                FormsTable.COLUMN_SK,
-                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -413,6 +491,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allForms;
+    }
+
+    public Collection<Personal> checkPersonalExist() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PersonalContract.PersonalTable._ID,
+                PersonalContract.PersonalTable.COLUMN_UID,
+                PersonalContract.PersonalTable.COLUMN_SYSDATE,
+                PersonalContract.PersonalTable.COLUMN_A01,
+                PersonalContract.PersonalTable.COLUMN_A02,
+                PersonalContract.PersonalTable.COLUMN_A03,
+                PersonalContract.PersonalTable.COLUMN_A04,
+                PersonalContract.PersonalTable.COLUMN_A05,
+                PersonalContract.PersonalTable.COLUMN_REFNO,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS,
+                PersonalContract.PersonalTable.COLUMN_SA,
+                PersonalContract.PersonalTable.COLUMN_SB,
+                PersonalContract.PersonalTable.COLUMN_SC,
+                PersonalContract.PersonalTable.COLUMN_SI,
+                PersonalContract.PersonalTable.COLUMN_GPSLAT,
+                PersonalContract.PersonalTable.COLUMN_GPSLNG,
+                PersonalContract.PersonalTable.COLUMN_GPSDATE,
+                PersonalContract.PersonalTable.COLUMN_GPSACC,
+                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
+                PersonalContract.PersonalTable.COLUMN_DEVICEID,
+                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+
+        };
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
+
+        Collection<Personal> allPersonal = new ArrayList<Personal>();
+        try {
+            c = db.query(
+                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Personal personal = new Personal();
+                allPersonal.add(personal.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPersonal;
     }
 
     public Collection<Form> getUnsyncedForms() {
@@ -434,18 +573,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SH3,
                 FormsTable.COLUMN_SH4,
-                FormsTable.COLUMN_SCC,
-                FormsTable.COLUMN_SB,
-                FormsTable.COLUMN_SC,
-                FormsTable.COLUMN_SD,
-                FormsTable.COLUMN_SE,
-                FormsTable.COLUMN_SF,
-                FormsTable.COLUMN_SG,
-                FormsTable.COLUMN_SH,
-                FormsTable.COLUMN_SI,
-                FormsTable.COLUMN_SJ,
-                FormsTable.COLUMN_SK,
-                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -491,6 +618,73 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allForms;
+    }
+
+    public Collection<Personal> getUnsyncedPersonal() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PersonalContract.PersonalTable._ID,
+                PersonalContract.PersonalTable.COLUMN_UID,
+                PersonalContract.PersonalTable.COLUMN_SYSDATE,
+                PersonalContract.PersonalTable.COLUMN_A01,
+                PersonalContract.PersonalTable.COLUMN_A02,
+                PersonalContract.PersonalTable.COLUMN_A03,
+                PersonalContract.PersonalTable.COLUMN_A04,
+                PersonalContract.PersonalTable.COLUMN_A05,
+                PersonalContract.PersonalTable.COLUMN_REFNO,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS96x,
+                PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME,
+                PersonalContract.PersonalTable.COLUMN_SA,
+                PersonalContract.PersonalTable.COLUMN_SB,
+                PersonalContract.PersonalTable.COLUMN_SC,
+                PersonalContract.PersonalTable.COLUMN_SI,
+                PersonalContract.PersonalTable.COLUMN_GPSLAT,
+                PersonalContract.PersonalTable.COLUMN_GPSLNG,
+                PersonalContract.PersonalTable.COLUMN_GPSDATE,
+                PersonalContract.PersonalTable.COLUMN_GPSACC,
+                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
+                PersonalContract.PersonalTable.COLUMN_DEVICEID,
+                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+        };
+
+
+        String whereClause = PersonalContract.PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalContract.PersonalTable.COLUMN_ISTATUS + " != '' ";
+        //String whereClause = PersonalTable.COLUMN_ISTATUS +" != '' ";
+
+        String[] whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
+
+        Collection<Personal> allPersonal = new ArrayList<Personal>();
+        try {
+            c = db.query(
+                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Personal personal = new Personal();
+                allPersonal.add(personal.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPersonal;
     }
 
     public Collection<Form> getTodayForms(String sysdate) {
@@ -670,13 +864,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_ISTATUS, MainApp.form.getIstatus());
-        values.put(FormsTable.COLUMN_ISTATUS96x, MainApp.form.getIstatus96x());
-        values.put(FormsTable.COLUMN_ENDINGDATETIME, MainApp.form.getEndingdatetime());
+        values.put(FormsTable.COLUMN_ISTATUS, form.getIstatus());
+        values.put(FormsTable.COLUMN_ISTATUS96x, form.getIstatus96x());
+        values.put(FormsTable.COLUMN_ENDINGDATETIME, form.getEndingdatetime());
 
         // Which row to update, based on the ID
         String selection = FormsTable.COLUMN_ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.form.get_ID())};
+        String[] selectionArgs = {String.valueOf(form.get_ID())};
 
         return db.update(FormsTable.TABLE_NAME,
                 values,
@@ -757,18 +951,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SH3,
                 FormsTable.COLUMN_SH4,
-                FormsTable.COLUMN_SCC,
-                FormsTable.COLUMN_SB,
-                FormsTable.COLUMN_SC,
-                FormsTable.COLUMN_SD,
-                FormsTable.COLUMN_SE,
-                FormsTable.COLUMN_SF,
-                FormsTable.COLUMN_SG,
-                FormsTable.COLUMN_SH,
-                FormsTable.COLUMN_SI,
-                FormsTable.COLUMN_SJ,
-                FormsTable.COLUMN_SK,
-                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -809,6 +991,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    //Get Personal already exist
+    public Personal getFilledPersonal(String district, String refno) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PersonalContract.PersonalTable._ID,
+                PersonalContract.PersonalTable.COLUMN_UID,
+                PersonalContract.PersonalTable.COLUMN_SYSDATE,
+                PersonalContract.PersonalTable.COLUMN_A01,
+                PersonalContract.PersonalTable.COLUMN_A02,
+                PersonalContract.PersonalTable.COLUMN_A03,
+                PersonalContract.PersonalTable.COLUMN_A04,
+                PersonalContract.PersonalTable.COLUMN_A05,
+                PersonalContract.PersonalTable.COLUMN_REFNO,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS,
+                PersonalContract.PersonalTable.COLUMN_ISTATUS96x,
+                PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME,
+                PersonalContract.PersonalTable.COLUMN_SA,
+                PersonalContract.PersonalTable.COLUMN_SB,
+                PersonalContract.PersonalTable.COLUMN_SC,
+                PersonalContract.PersonalTable.COLUMN_SI,
+                PersonalContract.PersonalTable.COLUMN_GPSLAT,
+                PersonalContract.PersonalTable.COLUMN_GPSLNG,
+                PersonalContract.PersonalTable.COLUMN_GPSDATE,
+                PersonalContract.PersonalTable.COLUMN_GPSACC,
+                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
+                PersonalContract.PersonalTable.COLUMN_DEVICEID,
+                PersonalContract.PersonalTable.COLUMN_APPVERSION
+        };
+
+//        String whereClause = "(" + FormsTable.COLUMN_ISTATUS + " is null OR " + FormsTable.COLUMN_ISTATUS + "='') AND " + FormsTable.COLUMN_CLUSTERCODE + "=? AND " + FormsTable.COLUMN_HHNO + "=?";
+        String whereClause = PersonalContract.PersonalTable.COLUMN_A05 + "=? AND " + PersonalContract.PersonalTable.COLUMN_REFNO + "=?";
+        String[] whereArgs = {district, refno};
+        String groupBy = null;
+        String having = null;
+        String orderBy = PersonalContract.PersonalTable._ID + " ASC";
+        Personal allPersonal = null;
+        try {
+            c = db.query(
+                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allPersonal = new Personal().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPersonal;
+    }
+
     //Generic update FormColumn
     public int updatesFormColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -817,7 +1060,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = FormsTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.form.get_ID())};
+        String[] selectionArgs = {String.valueOf(form.get_ID())};
 
         return db.update(FormsTable.TABLE_NAME,
                 values,

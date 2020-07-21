@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
@@ -41,6 +41,7 @@ import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openWarningActivity;
 
@@ -196,7 +197,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, MainApp.form.getsCC());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SI, MainApp.personal.getsI());
         if (updcount == 1) {
             return true;
         } else {
@@ -236,7 +237,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 /*        f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());*/
 
-        form.setsCC(String.valueOf(f1));
+        personal.setsI(String.valueOf(f1));
 
         if (dtInstant != null)
             form.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());

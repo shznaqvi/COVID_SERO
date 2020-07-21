@@ -29,6 +29,7 @@ import java.util.List;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract;
 import edu.aku.hassannaqvi.covid_sero.location.LocationLiveData;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
+import edu.aku.hassannaqvi.covid_sero.models.Personal;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import kotlin.Pair;
 
@@ -77,6 +78,7 @@ public class MainApp extends Application {
     public static edu.aku.hassannaqvi.covid_sero.core.AppInfo appInfo;
     public static Boolean admin = false;
     public static Form form;
+    public static Personal personal;
     public static LiveData<Form> liveForms = new MutableLiveData<>();
 
     public static String userName = "0000";

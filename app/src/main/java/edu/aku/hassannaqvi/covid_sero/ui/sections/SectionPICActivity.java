@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPicBinding;
@@ -62,7 +62,7 @@ public class SectionPICActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SC, MainApp.form.getsC());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SC, MainApp.personal.getsC());
         if (updcount > 0) {
             return true;
         } else {
@@ -86,7 +86,7 @@ public class SectionPICActivity extends AppCompatActivity {
         json.put("pc06", bi.pc06.getText().toString());
 
 
-        MainApp.form.setsC(json.toString());
+        MainApp.personal.setsC(json.toString());
 
     }
 

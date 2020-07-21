@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.utils;
 
 import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract.VersionAppTable;
 
@@ -34,23 +35,41 @@ public final class CreateTable {
             + FormsTable.COLUMN_SINFO + " TEXT,"
             + FormsTable.COLUMN_SH3 + " TEXT,"
             + FormsTable.COLUMN_SH4 + " TEXT,"
-            + FormsTable.COLUMN_SCC + " TEXT,"
-            + FormsTable.COLUMN_SB + " TEXT,"
-            + FormsTable.COLUMN_SC + " TEXT,"
-            + FormsTable.COLUMN_SD + " TEXT,"
-            + FormsTable.COLUMN_SE + " TEXT,"
-            + FormsTable.COLUMN_SF + " TEXT,"
-            + FormsTable.COLUMN_SG + " TEXT,"
-            + FormsTable.COLUMN_SH + " TEXT,"
-            + FormsTable.COLUMN_SI + " TEXT,"
-            + FormsTable.COLUMN_SJ + " TEXT,"
-            + FormsTable.COLUMN_SK + " TEXT,"
-            + FormsTable.COLUMN_SL + " TEXT,"
             + FormsTable.COLUMN_ENDINGDATETIME + " TEXT,"
             + FormsTable.COLUMN_ISTATUS + " TEXT,"
             + FormsTable.COLUMN_ISTATUS96x + " TEXT,"
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT"
+            + " );";
+
+    public static final String SQL_CREATE_PERSONALS = "CREATE TABLE "
+            + PersonalContract.PersonalTable.TABLE_NAME + "("
+            + PersonalContract.PersonalTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + PersonalContract.PersonalTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_DEVICEID + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_DEVICETAGID + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_UID + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SYSDATE + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_A01 + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_A02 + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_A03 + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_A04 + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_A05 + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_REFNO + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_GPSLAT + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_GPSLNG + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_GPSDATE + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_GPSACC + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_APPVERSION + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SA + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SB + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SC + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SI + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_ISTATUS + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_ISTATUS96x + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SYNCED + " TEXT,"
+            + PersonalContract.PersonalTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("

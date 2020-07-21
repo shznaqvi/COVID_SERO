@@ -9,12 +9,12 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class FormsContract {
+public class PersonalContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.covid_sero";
 
-    public static abstract class FormsTable implements BaseColumns {
-        public static final String TABLE_NAME = "forms";
+    public static abstract class PersonalTable implements BaseColumns {
+        public static final String TABLE_NAME = "personals";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -38,11 +38,11 @@ public class FormsContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_SINFO = "sInfo";
-        public static final String COLUMN_SH3 = "sh3";  // NNS Section H3 (A4)
-        public static final String COLUMN_SH4 = "sh4";  // NNS Section H4 (A5)
-
-        public static String PATH = "forms";
+        public static final String COLUMN_SA = "sA";    // personal member
+        public static final String COLUMN_SB = "sB";    // personal member
+        public static final String COLUMN_SC = "sC";    // personal member
+        public static final String COLUMN_SI = "sI";    // personal member
+        public static String PATH = "personals";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
         public static final String CONTENT_ITEM_TYPE =

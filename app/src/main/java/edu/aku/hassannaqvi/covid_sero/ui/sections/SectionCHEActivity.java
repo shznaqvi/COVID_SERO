@@ -13,7 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChEBinding;
@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
-import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionCHEActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public class SectionCHEActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SCC, form.getsCC());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SI, personal.getsI());
         if (updcount == 1) {
             return true;
         } else {
@@ -63,9 +63,9 @@ public class SectionCHEActivity extends AppCompatActivity {
         f1.put("im26d", bi.im26d.getText().toString());
 
         try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsCC()), f1);
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(personal.getsI()), f1);
 
-            form.setsCC(String.valueOf(json_merge));
+            personal.setsI(String.valueOf(json_merge));
 
         } catch (JSONException e) {
             e.printStackTrace();

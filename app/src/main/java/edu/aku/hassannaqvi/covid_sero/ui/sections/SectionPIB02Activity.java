@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib02Binding;
@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
-import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIB02Activity extends AppCompatActivity {
@@ -73,7 +73,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SB, MainApp.form.getsB());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
         if (updcount > 0) {
             return true;
         } else {
@@ -151,9 +151,9 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
 
         try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsB()), json);
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(personal.getsB()), json);
 
-            form.setsB(String.valueOf(json_merge));
+            personal.setsB(String.valueOf(json_merge));
 
         } catch (JSONException e) {
             e.printStackTrace();

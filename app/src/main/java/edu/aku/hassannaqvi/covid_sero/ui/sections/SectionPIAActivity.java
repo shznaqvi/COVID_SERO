@@ -21,17 +21,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
 import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
 import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
-import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 
 public class SectionPIAActivity extends AppCompatActivity {
 
@@ -83,7 +83,7 @@ public class SectionPIAActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SINFO, MainApp.form.getsInfo());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SA, MainApp.personal.getsA());
         if (updcount > 0) {
             return true;
         } else {
@@ -134,17 +134,10 @@ public class SectionPIAActivity extends AppCompatActivity {
         json.put("pa11b", bi.pa11b.getText().toString());
 
 
-        try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsInfo()), json);
+        MainApp.personal.setsA(json.toString());
 
-            form.setsInfo(String.valueOf(json_merge));
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        form.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
-        form.getHhModel().setGenderFemale(bi.pa022.isChecked());
+        personal.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
+        personal.getHhModel().setGenderFemale(bi.pa022.isChecked());
 
     }
 

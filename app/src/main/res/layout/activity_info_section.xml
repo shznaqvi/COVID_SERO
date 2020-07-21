@@ -556,7 +556,7 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hh13"
-                        app:mask="##"
+                        app:mask="####"
                         app:maxValue="0"
                         app:minValue="0"
                         app:type="range" />

@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
-import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib01Binding;
@@ -77,7 +77,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SB, MainApp.form.getsB());
+        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
         if (updcount > 0) {
             return true;
         } else {
@@ -223,9 +223,9 @@ public class SectionPIB01Activity extends AppCompatActivity {
         json.put("pb10", bi.pb10.getText().toString());
 
 
-        MainApp.form.setsB(json.toString());
+        MainApp.personal.setsB(json.toString());
 
-        MainApp.form.getHhModel().setMarried(bi.pb0301.isChecked());
+        MainApp.personal.getHhModel().setMarried(bi.pb0301.isChecked());
 
     }
 
