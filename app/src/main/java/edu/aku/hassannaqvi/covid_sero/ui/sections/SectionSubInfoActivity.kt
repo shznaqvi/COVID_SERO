@@ -2,18 +2,16 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import edu.aku.hassannaqvi.covid_sero.CONSTANTS
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionSubInfoBinding
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity
 import edu.aku.hassannaqvi.covid_sero.utils.contextEndActivity
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import ru.whalemare.sheetmenu.ActionItem
 import ru.whalemare.sheetmenu.SheetMenu
 import ru.whalemare.sheetmenu.layout.GridLayoutProvider
@@ -25,6 +23,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     private var flagInCompleteForm = false
     private var hhFlag = false
     private var memFlag = false
+    private var istatusFlag = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +32,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
         bi.formScroll.callback = this
         bi.txtCluster.text = MainApp.form.hhModel.clusterCode
         bi.txtHHNo.text = MainApp.form.hhModel.hhno
+        istatusFlag = intent.getIntExtra(CONSTANTS.ROUTE_SUBINFO, 0)
     }
 
     override fun onResume() {
@@ -42,12 +42,12 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
 
     fun onHHViewClick() {
         if (!hhFlag) return
-//        startActivity(Intent(this, SectionHHActivity::class.java))
+        startActivity(Intent(this, SectionH301Activity::class.java))
     }
 
     fun onChildViewClick() {
         if (!memFlag) return
-//        startActivity(Intent(this, SectionCHAActivity::class.java).putExtra(CHILD_SERIAL, serial))
+        startActivity(Intent(this, SectionPIAActivity::class.java))
     }
 
     fun onFabBtnMenuClick() {
@@ -86,8 +86,14 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     }
 
     private fun setUI() {
-        /*when (MainApp.fc.getfStatus()) {
-            "1" -> {
+        when (istatusFlag) {
+            0 -> {
+                hhFlag = true
+                memFlag = false
+                flagNewForm = true
+                bi.instruction.text = getString(R.string.hhformInfo)
+            }
+            1 -> {
                 bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
                 bi.formScroll.hhScroll.status.visibility = View.VISIBLE
                 hhFlag = false
@@ -95,13 +101,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                 flagNewForm = false
                 bi.instruction.text = getString(R.string.memberforminfo)
             }
-            "" -> {
-                hhFlag = true
-                memFlag = false
-                flagNewForm = true
-                bi.instruction.text = getString(R.string.hhformInfo)
-            }
-            else -> {
+            99 -> {
                 bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
                 bi.formScroll.childScroll.name.text = "MEMBER FORM IS BLOCKED\nContact Team Leader"
                 bi.formScroll.hhScroll.status.visibility = View.VISIBLE
@@ -111,7 +111,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                 flagInCompleteForm = true
                 bi.instruction.text = getString(R.string.end_interview)
             }
-        }*/
+        }
 
 
     }
@@ -124,10 +124,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     }
 
     private fun endActivityStatus() {
-        GlobalScope.launch {
-            withContext(Dispatchers.Main) {
-                contextEndActivity(this@SectionSubInfoActivity, true)
-            }
-        }
+        contextEndActivity(this@SectionSubInfoActivity, istatusFlag != 99)
     }
+
 }

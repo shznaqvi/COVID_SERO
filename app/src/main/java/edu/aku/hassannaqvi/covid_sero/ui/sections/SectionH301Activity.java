@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH301Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionH301Activity extends AppCompatActivity {
@@ -119,7 +120,7 @@ public class SectionH301Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
     private boolean formValidation() {

@@ -19,9 +19,9 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH4Binding;
-import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 
@@ -122,7 +122,7 @@ public class SectionH4Activity extends AppCompatActivity {
             }
             if (updateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionSubInfoActivity.class).putExtra(ROUTE_SUBINFO, 1));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
@@ -146,7 +146,7 @@ public class SectionH4Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
     private void saveDraft() throws JSONException {

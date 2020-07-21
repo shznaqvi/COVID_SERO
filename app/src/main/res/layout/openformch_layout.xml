@@ -46,7 +46,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:src="@drawable/children"
+                    android:src="@drawable/ctr_male"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +58,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:autoSizeTextType="uniform"
-                    android:text="CLICK FOR CHILDREN FORM"
+                    android:text="CLICK FOR MEMBER FORM"
                     android:textAlignment="center"
                     android:textColor="#7f7f7f"
                     android:textSize="20sp"
