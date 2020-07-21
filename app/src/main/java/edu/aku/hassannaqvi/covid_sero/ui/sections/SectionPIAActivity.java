@@ -19,6 +19,7 @@ import org.threeten.bp.ZoneId;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
@@ -27,6 +28,7 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
 import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
 import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
+import edu.aku.hassannaqvi.covid_sero.models.Personal;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
@@ -83,18 +85,27 @@ public class SectionPIAActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SA, MainApp.personal.getsA());
+        long updcount = db.addPersonal(personal);
+        personal.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
+            personal.set_UID(personal.getDeviceID() + personal.get_ID());
+            db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_UID, personal.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
 
     private void SaveDraft() throws JSONException {
+
+        personal = new Personal();
+        personal.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        personal.setA03(MainApp.userName);
+        personal.setDeviceID(MainApp.appInfo.getDeviceID());
+        personal.setDevicetagID(MainApp.appInfo.getTagName());
+        personal.setAppversion(MainApp.appInfo.getAppVersion());
 
         JSONObject json = new JSONObject();
 
@@ -133,11 +144,10 @@ public class SectionPIAActivity extends AppCompatActivity {
         //    json.put("pa11a", bi.pa11a.getText().toString());
         json.put("pa11b", bi.pa11b.getText().toString());
 
+        personal.setsA(json.toString());
 
-        MainApp.personal.setsA(json.toString());
-
-        personal.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
-        personal.getHhModel().setGenderFemale(bi.pa022.isChecked());
+        form.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
+        form.getHhModel().setGenderFemale(bi.pa022.isChecked());
 
     }
 

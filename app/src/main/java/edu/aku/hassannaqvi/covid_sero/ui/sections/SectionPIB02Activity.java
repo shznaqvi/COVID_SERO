@@ -73,7 +73,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
+        int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
         if (updcount > 0) {
             return true;
         } else {

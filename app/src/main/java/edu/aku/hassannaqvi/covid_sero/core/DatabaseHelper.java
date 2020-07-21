@@ -30,6 +30,7 @@ import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.models.VersionApp;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_BL_RANDOM;
@@ -1063,6 +1064,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(form.get_ID())};
 
         return db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    //Generic update PersonalColumn
+    public int updatesPersonalColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = PersonalContract.PersonalTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(personal.get_ID())};
+
+        return db.update(PersonalContract.PersonalTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

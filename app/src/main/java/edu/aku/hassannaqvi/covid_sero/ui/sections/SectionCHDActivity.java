@@ -535,7 +535,7 @@ public class SectionCHDActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SI, personal.getsI());
+        int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SI, personal.getsI());
         if (updcount == 1) {
             return true;
         } else {

@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,34 +37,31 @@ public class SectionH302Activity extends AppCompatActivity {
         bi.setCallback(this);
 
         bi.nh315.setOnCheckedChangeListener((group, checkedId) -> {
-            formValidation();
             if (bi.nh315a.isChecked()) {
-                Clear.clearAllFields(bi.fldGrpnh316, true);
+                Clear.clearAllFields(bi.fldGrpnh316);
+                bi.fldGrpnh316.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh316, false);
+                bi.fldGrpnh316.setVisibility(View.VISIBLE);
             }
         });
 
 //        nh321
         bi.nh321.setOnCheckedChangeListener((radioGroup, i) -> {
-            formValidation();
             if (i == R.id.nh321b) {
-                Clear.clearAllFields(bi.fldGrpnh322, false);
-
+                Clear.clearAllFields(bi.fldGrpnh322);
+                bi.fldGrpnh322.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh322, true);
-                bi.nh322acr.setEnabled(false);
-                bi.nh322can.setEnabled(false);
+                bi.fldGrpnh322.setVisibility(View.VISIBLE);
             }
         });
 
 //        nh323
         bi.nh323.setOnCheckedChangeListener((radioGroup, i) -> {
-            formValidation();
             if (i == R.id.nh323b) {
                 Clear.clearAllFields(bi.fldGrpnh324, false);
+                bi.fldGrpnh324.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh324, true);
+                bi.fldGrpnh324.setVisibility(View.VISIBLE);
             }
         });
 

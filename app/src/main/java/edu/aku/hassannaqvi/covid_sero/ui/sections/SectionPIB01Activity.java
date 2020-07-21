@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib01Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIB01Activity extends AppCompatActivity {
@@ -56,6 +57,11 @@ public class SectionPIB01Activity extends AppCompatActivity {
             }
         }));
 
+        //Skip for married
+        if (form.getHhModel().getMemAge() < 15) {
+
+        }
+
     }
 
 
@@ -77,7 +83,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
+        int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SB, MainApp.personal.getsB());
         if (updcount > 0) {
             return true;
         } else {
@@ -225,7 +231,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
 
         MainApp.personal.setsB(json.toString());
 
-        MainApp.personal.getHhModel().setMarried(bi.pb0301.isChecked());
+        form.getHhModel().setMarried(bi.pb0301.isChecked());
 
     }
 

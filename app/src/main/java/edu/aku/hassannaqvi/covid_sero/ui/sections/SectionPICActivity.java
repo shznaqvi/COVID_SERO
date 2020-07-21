@@ -62,7 +62,7 @@ public class SectionPICActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SC, MainApp.personal.getsC());
+        int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SC, MainApp.personal.getsC());
         if (updcount > 0) {
             return true;
         } else {

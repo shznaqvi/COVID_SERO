@@ -30,13 +30,11 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
 import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
 import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
-import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.DateUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
 import kotlin.Pair;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.CHILD_ENDING_AGE_ISSUE;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
@@ -197,7 +195,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(PersonalContract.PersonalTable.COLUMN_SI, MainApp.personal.getsI());
+        int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SI, MainApp.personal.getsI());
         if (updcount == 1) {
             return true;
         } else {
@@ -266,7 +264,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                     month_year = getMonthAndYearFromDate(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate().toString());
                 else month_year = getMonthAndYearFromDate(form.getCalculatedDOB().toString());
                 int totalMonths = Integer.parseInt(month_year.getFirst()) + Integer.parseInt(month_year.getSecond()) * 12;
-                monthFlag = totalMonths >= 12 && totalMonths < 24;
+                monthFlag = totalMonths < 60;
             }
             if (monthFlag) {
                 try {
@@ -392,8 +390,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class)
-                    .putExtra(CHILD_ENDING_AGE_ISSUE, true));
+
+            AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 2);
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
