@@ -232,8 +232,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("im04mm", bi.im04mm.getText().toString());
         f1.put("im04yy", bi.im04yy.getText().toString());
         f1.put("im0497", bi.im0497.isChecked() ? "97" : "0");
-        //    f1.put("frontFileName", bi.frontFileName.getText().toString());
-        //    f1.put("backFileName", bi.backFileName.getText().toString());
+/*        f1.put("frontFileName", bi.frontFileName.getText().toString());
+        f1.put("backFileName", bi.backFileName.getText().toString());*/
 
         form.setsCC(String.valueOf(f1));
 
@@ -246,7 +246,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             Toast.makeText(this, "Invalid date!", Toast.LENGTH_SHORT).show();
             return false;
         }
-        /*if (bi.im011.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
+     /*   if (bi.im011.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
             Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
             return false;
         }*/
