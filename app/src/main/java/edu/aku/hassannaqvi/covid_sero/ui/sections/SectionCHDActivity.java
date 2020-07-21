@@ -34,13 +34,14 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChDBinding;
 import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
 import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
+import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openEndActivity;
 
 public class SectionCHDActivity extends AppCompatActivity {
 
@@ -741,7 +742,7 @@ public class SectionCHDActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
     @Override

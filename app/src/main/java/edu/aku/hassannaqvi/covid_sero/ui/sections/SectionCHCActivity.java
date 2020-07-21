@@ -31,6 +31,7 @@ import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
 import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
 import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.DateUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
 import kotlin.Pair;
@@ -38,9 +39,9 @@ import kotlin.Pair;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.CHILD_ENDING_AGE_ISSUE;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openEndActivity;
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openWarningActivity;
 
 
@@ -305,7 +306,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     }
 
     public void BtnEnd() {
-        openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
     @Override

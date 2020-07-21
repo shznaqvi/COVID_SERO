@@ -154,11 +154,13 @@
                         android:text="@string/pa03_dd" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pa03_dd"
+                        android:id="@+id/pa03dd"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa03_dd"
+                        android:inputType="number"
+                        app:defaultValue="98"
                         app:mask="##"
                         app:maxValue="31"
                         app:minValue="1"
@@ -171,13 +173,15 @@
                         android:text="@string/pa03_mm" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pa03_mm"
+                        android:id="@+id/pa03mm"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa03_mm"
+                        android:inputType="number"
+                        app:defaultValue="98"
                         app:mask="##"
-                        app:maxValue="12"
+                        app:maxValue="11"
                         app:minValue="1"
                         app:type="range" />
 
@@ -188,14 +192,17 @@
                         android:text="@string/pa03_yy" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pa03_yy"
+                        android:id="@+id/pa03yy"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa03_yy"
-                        app:mask="##"
+                        android:inputType="number"
+                        android:onTextChanged="@{callback::pa03yyOnTextChanged}"
+                        app:defaultValue="9998"
+                        app:mask="####"
                         app:maxValue="2020"
-                        app:minValue="2015"
+                        app:minValue="1930"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -241,12 +248,13 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/pa04y"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa04y"
+                        android:inputType="number"
                         app:mask="##"
-                        app:maxValue="5"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
 
                     <TextView
@@ -258,12 +266,13 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/pa04m"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa04m"
+                        android:inputType="number"
                         app:mask="##"
-                        app:maxValue="12"
-                        app:minValue="1"
+                        app:maxValue="11"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

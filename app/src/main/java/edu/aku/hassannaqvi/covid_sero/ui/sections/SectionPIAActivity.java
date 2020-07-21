@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,20 +12,32 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneId;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
+import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
+import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 
 public class SectionPIAActivity extends AppCompatActivity {
 
     ActivitySectionPiaBinding bi;
+    boolean dtFlag = false;
+    LocalDate calculatedDOB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +104,9 @@ public class SectionPIAActivity extends AppCompatActivity {
                 : bi.pa022.isChecked() ? "2"
                 : "-1");
 
-        json.put("pa03_dd", bi.pa03Dd.getText().toString());
-        json.put("pa03_mm", bi.pa03Mm.getText().toString());
-        json.put("pa03_yy", bi.pa03Yy.getText().toString());
+        json.put("pa03_dd", bi.pa03dd.getText().toString());
+        json.put("pa03_mm", bi.pa03mm.getText().toString());
+        json.put("pa03_yy", bi.pa03yy.getText().toString());
 
         json.put("pa04y", bi.pa04y.getText().toString());
         json.put("pa04m", bi.pa04m.getText().toString());
@@ -130,16 +143,71 @@ public class SectionPIAActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        form.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
+        form.getHhModel().setGenderFemale(bi.pa022.isChecked());
+
     }
 
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
+        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
     }
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.fldGrpSectionA);
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpSectionA)) return false;
+        if (!dtFlag) {
+            return Validator.emptyCustomTextBox(this, bi.pa03yy, "Invalid date!");
+        }
+        if (Integer.parseInt(bi.pa04m.getText().toString()) == 0 && Integer.parseInt(bi.pa04y.getText().toString()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.pa04y, "Both Month & Year don't be zero!!", false);
+        return true;
+    }
+
+    public void pa03yyOnTextChanged(CharSequence s, int start, int before, int count) {
+        bi.pa04m.setEnabled(false);
+        bi.pa04m.setText(null);
+        bi.pa04y.setEnabled(false);
+        bi.pa04y.setText(null);
+        calculatedDOB = null;
+        dtFlag = false;
+        if (TextUtils.isEmpty(bi.pa03dd.getText()) || TextUtils.isEmpty(bi.pa03mm.getText()) || TextUtils.isEmpty(bi.pa03yy.getText()))
+            return;
+        if (!bi.pa03dd.isRangeTextValidate() || !bi.pa03mm.isRangeTextValidate() || !bi.pa03yy.isRangeTextValidate())
+            return;
+        if (bi.pa03dd.getText().toString().equals("98") && bi.pa03mm.getText().toString().equals("98") && bi.pa03yy.getText().toString().equals("9998")) {
+            bi.pa04m.setEnabled(true);
+            bi.pa04y.setEnabled(true);
+            dtFlag = true;
+            return;
+        }
+        int day = bi.pa03dd.getText().toString().equals("98") ? 15 : Integer.parseInt(bi.pa03dd.getText().toString());
+        int month = Integer.parseInt(bi.pa03mm.getText().toString());
+        int year = Integer.parseInt(bi.pa03yy.getText().toString());
+
+        AgeModel age;
+        if (form.getLocalDate() != null)
+            age = DateRepository.Companion.getCalculatedAge(form.getLocalDate(), year, month, day);
+        else
+            age = DateRepository.Companion.getCalculatedAge(year, month, day);
+        if (age == null) {
+            bi.pa03yy.setError("Invalid date!!");
+            dtFlag = false;
+            return;
+        }
+        dtFlag = true;
+        bi.pa04m.setText(String.valueOf(age.getMonth()));
+        bi.pa04y.setText(String.valueOf(age.getYear()));
+
+        //Setting Date
+        try {
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(
+                    bi.pa03dd.getText().toString() + "-" + bi.pa03mm.getText().toString() + "-" + bi.pa03yy.getText().toString()
+            )) + "T06:24:01Z");
+            calculatedDOB = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
     }
 
