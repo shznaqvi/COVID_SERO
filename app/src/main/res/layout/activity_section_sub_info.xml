@@ -101,12 +101,10 @@
                             android:orientation="vertical">
 
                             <TextView
-
                                 android:id="@+id/textView10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="0dp"
-                                android:padding="0dp"
+                                android:padding="5dp"
                                 android:text="CLUSTER"
                                 android:textColor="#7f7f7f" />
 
@@ -114,8 +112,6 @@
                                 android:id="@+id/txtCluster"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="0dp"
-                                android:padding="0dp"
                                 android:text="901001"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="24sp"
@@ -132,6 +128,7 @@
                                 android:id="@+id/textView11"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:padding="5dp"
                                 android:text="HOUSEHOLD NO."
                                 android:textColor="#7f7f7f" />
 
@@ -139,8 +136,6 @@
                                 android:id="@+id/txtHHNo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="0dp"
-                                android:padding="0dp"
                                 android:text="A-0001-001"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="24sp"

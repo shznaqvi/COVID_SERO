@@ -78,7 +78,7 @@
         <activity
             android:name=".ui.sections.SectionSubInfoActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu"
+            android:theme="@style/AppThemeEnglish"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionH301Activity"

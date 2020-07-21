@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.validatorcrawler.aliazaz.Validator
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityEndingBinding
-import edu.aku.hassannaqvi.covid_sero.validator.ValidatorClass
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -72,7 +72,7 @@ class EndingActivity : AppCompatActivity() {
     }
 
     private fun formValidation(): Boolean {
-        return ValidatorClass.EmptyRadioButton(this, bi.istatus, bi.istatus96, bi.istatus96x, getString(R.string.istatus))
+        return Validator.emptyCheckingContainer(this, bi.fldGrpEnd)
     }
 
     override fun onBackPressed() {

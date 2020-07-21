@@ -18,15 +18,16 @@ import org.threeten.bp.ZoneId;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
+import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.HHModel;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
@@ -53,7 +54,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     }
 
     public void BtnEnd() {
-        AppUtilsKt.contextEndActivity(this, false);
+        btnSavingWorking(EndingActivity.class, false);
+//        AppUtilsKt.contextEndActivity(this, false);
     }
 
     private void btnSavingWorking(Class<?> activity, Boolean flag) {
@@ -87,6 +89,13 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     }
 
     private void SaveDraft() throws JSONException {
+        form = new Form();
+        form.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        form.setA03(MainApp.userName);
+        form.setDeviceID(MainApp.appInfo.getDeviceID());
+        form.setDevicetagID(MainApp.appInfo.getTagName());
+        form.setAppversion(MainApp.appInfo.getAppVersion());
+
         JSONObject json = new JSONObject();
         json.put("hh01", bi.hh01.getText().toString());
         json.put("hh03", bi.hh03.getText().toString());
@@ -118,7 +127,6 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         form.setsInfo(json.toString());
 
         form.setHhModel(new HHModel(bi.hh12.getText().toString(), bi.hh13.getText().toString()));
-
         form.setLocalDate(localDate);
 
     }
