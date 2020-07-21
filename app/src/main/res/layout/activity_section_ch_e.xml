@@ -29,10 +29,34 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/im26a" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_im26a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_im26a"
+                            android:text="@string/im26a" />
+
+                        <TextView
+                            android:id="@+id/q_im26a"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_im26a"
+                            android:layout_alignBottom="@id/qtxt_im26a"
+                            android:text="@string/Q_im26a" />
+
+                    </RelativeLayout>
+
+                    <!-- <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="@string/im26a" />-->
+
 
                     <EditText
                         android:id="@+id/im26a"
@@ -58,10 +82,34 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/im26b" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_im26b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_im26b"
+                            android:text="@string/im26b" />
+
+                        <TextView
+                            android:id="@+id/q_im26b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_im26b"
+                            android:layout_alignBottom="@id/qtxt_im26b"
+                            android:text="@string/Q_im26b" />
+
+                    </RelativeLayout>
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/im26b" />-->
+
 
                     <EditText
                         android:id="@+id/im26b"
@@ -86,6 +134,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_im26c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_im26c"
+                            android:text="@string/im26b" />
+
+                        <TextView
+                            android:id="@+id/q_im26c"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_im26c"
+                            android:layout_alignBottom="@id/qtxt_im26c"
+                            android:text="@string/Q_im26b" />
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -112,6 +183,29 @@
                 style="@style/cardView">
 
                 <LinearLayout style="@style/vlinearlayout">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_im26b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_im26b"
+                            android:text="@string/im26b" />
+
+                        <TextView
+                            android:id="@+id/q_im26b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_im26b"
+                            android:layout_alignBottom="@id/qtxt_im26b"
+                            android:text="@string/Q_im26b" />
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="match_parent"
