@@ -275,7 +275,6 @@ public class SectionPIBActivity extends AppCompatActivity {
         json.put("pb1808n", bi.pb1808n.getText().toString());
         json.put("pb1808ad", bi.pb1808ad.getText().toString());
 
-
         MainApp.form.setsB(json.toString());
 
     }

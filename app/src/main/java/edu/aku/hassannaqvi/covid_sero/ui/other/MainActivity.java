@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Objects;
 
 import edu.aku.hassannaqvi.covid_sero.R;
+import edu.aku.hassannaqvi.covid_sero.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
@@ -38,6 +39,15 @@ import edu.aku.hassannaqvi.covid_sero.models.VersionApp;
 import edu.aku.hassannaqvi.covid_sero.ui.list_activity.FormsReportCluster;
 import edu.aku.hassannaqvi.covid_sero.ui.list_activity.FormsReportDate;
 import edu.aku.hassannaqvi.covid_sero.ui.list_activity.PendingFormsActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.InfoSectionActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHCActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHDActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionCHEActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionH3Activity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionH4Activity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIAActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIBActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPICActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.CreateTable;
@@ -301,45 +311,36 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
     public void openSpecificActivity(View v) {
         Intent oF = null;
         switch (v.getId()) {
-        /*    case R.id.formA:
+            case R.id.formA:
+                oF = new Intent(this, InfoSectionActivity.class);
+                break;
+            case R.id.formPIA:
                 oF = new Intent(this, SectionPIAActivity.class);
                 break;
-            case R.id.formB:
+            case R.id.formPIB:
                 oF = new Intent(this, SectionPIBActivity.class);
                 break;
-            case R.id.formC:
+            case R.id.formPIC:
                 oF = new Intent(this, SectionPICActivity.class);
                 break;
-            case R.id.formD:
-                oF = new Intent(this, SectionDActivity.class);
+            case R.id.formH3:
+                oF = new Intent(this, SectionH3Activity.class);
                 break;
-            case R.id.formE:
-                oF = new Intent(this, SectionEActivity.class);
+            case R.id.formH4:
+                oF = new Intent(this, SectionH4Activity.class);
                 break;
-            case R.id.formF:
-                oF = new Intent(this, SectionFActivity.class);
+            case R.id.formCHC:
+                oF = new Intent(this, SectionCHCActivity.class);
                 break;
-            case R.id.formG:
-                oF = new Intent(this, SectionGActivity.class);
+            case R.id.formCHD:
+                oF = new Intent(this, SectionCHDActivity.class);
                 break;
-            case R.id.formH:
-                oF = new Intent(this, SectionHActivity.class);
-                break;
-            case R.id.formI:
-                oF = new Intent(this, SectionIActivity.class);
-                break;
-            case R.id.formJ:
-                oF = new Intent(this, SectionJActivity.class);
-                break;
-            case R.id.formK:
-                oF = new Intent(this, SectionKActivity.class);
-                break;
-            case R.id.formL:
-                oF = new Intent(this, SectionLActivity.class);
+            case R.id.formCHE:
+                oF = new Intent(this, SectionCHEActivity.class);
                 break;
             case R.id.databaseBtn:
                 oF = new Intent(this, AndroidDatabaseManager.class);
-                break;*/
+                break;
             case R.id.uploadData:
                 if (!AndroidUtilityKt.isNetworkConnected(this)) {
                     Toast.makeText(this, "No network connection available!", Toast.LENGTH_SHORT).show();

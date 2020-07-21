@@ -388,7 +388,7 @@
 
 
                 <!-- Take Photo   -->
-                <androidx.cardview.widget.CardView
+              <!--  <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVtakePhoto"
                     style="@style/cardView">
 
@@ -461,7 +461,7 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
             </LinearLayout>

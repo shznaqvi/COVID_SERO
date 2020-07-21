@@ -174,77 +174,28 @@
 
 
                     <Button
-                        android:id="@+id/formB"
+                        android:id="@+id/formH3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
                         android:background="@color/white_overlay"
                         android:onClick="@{callback::openSpecificActivity}"
-                        android:text="B"
+                        android:text="H3"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/formC"
+                        android:id="@+id/formH4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
                         android:background="@color/white_overlay"
                         android:onClick="@{callback::openSpecificActivity}"
-                        android:text="C"
+                        android:text="H4"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formD"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="D"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formE"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="E"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formF"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="F"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formG"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="G"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -256,7 +207,57 @@
                     android:visibility="visible">
 
                     <Button
-                        android:id="@+id/formH"
+                        android:id="@+id/formPIA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:background="@color/white_overlay"
+                        android:onClick="@{callback::openSpecificActivity}"
+                        android:text="PI-A"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/formPIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:background="@color/white_overlay"
+                        android:onClick="@{callback::openSpecificActivity}"
+                        android:text="PI-B"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/formPIC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:background="@color/white_overlay"
+                        android:onClick="@{callback::openSpecificActivity}"
+                        android:text="PI-C"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/formCHC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:background="@color/white_overlay"
+                        android:onClick="@{callback::openSpecificActivity}"
+                        android:text="CHC"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="30sp" />
+
+
+
+                    <Button
+                        android:id="@+id/formCHD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -264,55 +265,19 @@
                         android:layout_margin="2dp"
                         android:background="@color/white_overlay"
                         android:onClick="@{callback::openSpecificActivity}"
-                        android:text="H"
+                        android:text="CHD"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/formI"
+                        android:id="@+id/formCHE"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
                         android:background="@color/white_overlay"
                         android:onClick="@{callback::openSpecificActivity}"
-                        android:text="I"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formJ"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="J"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formK"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="K"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/formL"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="2dp"
-                        android:background="@color/white_overlay"
-                        android:onClick="@{callback::openSpecificActivity}"
-                        android:text="L"
+                        android:text="CHE"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="30sp" />
