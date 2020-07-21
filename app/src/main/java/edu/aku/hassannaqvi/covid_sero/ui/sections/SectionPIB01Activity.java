@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -21,14 +22,14 @@ import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
-public class SectionPIBActivity extends AppCompatActivity {
+public class SectionPIB01Activity extends AppCompatActivity {
 
-    ActivitySectionPibBinding bi;
+    ActivitySectionPib01Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pib);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pib01);
         bi.setCallback(this);
         setupSkips();
     }
@@ -36,17 +37,23 @@ public class SectionPIBActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        /*bi.h04.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.h0402.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVh05);
+        bi.pb03.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb0302.getId()) {
+                Clear.clearAllFields(bi.fldGrpSectionB01);
             }
-        }));*/
+        }));
 
-        /*bi.h06.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.h0602.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecH01);
+        bi.pb04.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb0402.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVpb05);
             }
-        }));*/
+        }));
+
+        bi.pb09.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb0902.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVpb10);
+            }
+        }));
 
     }
 
@@ -60,7 +67,7 @@ public class SectionPIBActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionPICActivity.class));
+            startActivity(new Intent(this, SectionPIB02Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -214,66 +221,6 @@ public class SectionPIBActivity extends AppCompatActivity {
 
         json.put("pb10", bi.pb10.getText().toString());
 
-        json.put("pb1101", bi.pb1101a.isChecked() ? "1"
-                : bi.pb1101b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb1102", bi.pb1102a.isChecked() ? "1"
-                : bi.pb1102b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb1103", bi.pb1103a.isChecked() ? "1"
-                : bi.pb1103b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb1104", bi.pb1104a.isChecked() ? "1"
-                : bi.pb1104b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb12", bi.pb12.getText().toString());
-
-        json.put("pb13", bi.pb131.isChecked() ? "1"
-                : bi.pb132.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb14dist", bi.pb14dist.getText().toString());
-        json.put("pb14city", bi.pb14city.getText().toString());
-        json.put("pb14country", bi.pb14country.getText().toString());
-
-        json.put("pb15", bi.pb15a.isChecked() ? "1"
-                : bi.pb15b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb16", bi.pb16.getText().toString());
-
-        json.put("pb17", bi.pb17a.isChecked() ? "1"
-                : bi.pb17b.isChecked() ? "2"
-                : "-1");
-
-        json.put("pb18n", bi.pb18n.getText().toString());
-        json.put("pb1801n", bi.pb1801n.getText().toString());
-        json.put("pb1801ad", bi.pb1801ad.getText().toString());
-
-        json.put("pb1802n", bi.pb1802n.getText().toString());
-        json.put("pb1802ad", bi.pb1802ad.getText().toString());
-
-        json.put("pb1803n", bi.pb1803n.getText().toString());
-        json.put("pb1803ad", bi.pb1803ad.getText().toString());
-
-        json.put("pb1804n", bi.pb1804n.getText().toString());
-        json.put("pb1804ad", bi.pb1804ad.getText().toString());
-
-        json.put("pb1805n", bi.pb1805n.getText().toString());
-        json.put("pb1805ad", bi.pb1805ad.getText().toString());
-
-        json.put("pb1806n", bi.pb1806n.getText().toString());
-        json.put("pb1806ad", bi.pb1806ad.getText().toString());
-
-        json.put("pb1807n", bi.pb1807n.getText().toString());
-        json.put("pb1807ad", bi.pb1807ad.getText().toString());
-
-        json.put("pb1808n", bi.pb1808n.getText().toString());
-        json.put("pb1808ad", bi.pb1808ad.getText().toString());
 
         MainApp.form.setsB(json.toString());
 

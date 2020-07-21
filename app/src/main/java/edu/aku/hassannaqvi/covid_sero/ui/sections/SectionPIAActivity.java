@@ -13,8 +13,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
+import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
+import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
+
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 
 public class SectionPIAActivity extends AppCompatActivity {
 
@@ -55,7 +61,7 @@ public class SectionPIAActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionPIBActivity.class));
+            startActivity(new Intent(this, SectionPIB01Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -63,15 +69,15 @@ public class SectionPIAActivity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH, MainApp.form.getsH());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SINFO, MainApp.form.getsInfo());
         if (updcount > 0) {
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
+
     }
 
 
@@ -105,7 +111,7 @@ public class SectionPIAActivity extends AppCompatActivity {
                 : bi.pa082.isChecked() ? "2"
                 : "-1");
 
-    //    json.put("pa09a", bi.pa09a.getText().toString());
+        //    json.put("pa09a", bi.pa09a.getText().toString());
         json.put("pa09b", bi.pa09b.getText().toString());
 
         //    json.put("pa10a", bi.pa10a.getText().toString());
@@ -115,7 +121,14 @@ public class SectionPIAActivity extends AppCompatActivity {
         json.put("pa11b", bi.pa11b.getText().toString());
 
 
-        //    MainApp.form.setsH(json.toString());
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsInfo()), json);
+
+            form.setsInfo(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 

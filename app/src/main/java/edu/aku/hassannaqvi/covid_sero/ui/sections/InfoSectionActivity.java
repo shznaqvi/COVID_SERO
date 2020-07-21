@@ -1,21 +1,17 @@
 package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -23,13 +19,13 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
 
-public class InfoSectionActivity extends AppCompatActivity {
+public class InfoSectionActivity extends AppCompatActivity implements EndSectionActivity {
 
-  ActivityInfoSectionBinding bi;
+    ActivityInfoSectionBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +40,14 @@ public class InfoSectionActivity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
+        btnSavingWorking(SectionDActivity.class, true);
+    }
+
+    public void BtnEnd() {
+        AppUtilsKt.contextEndActivity(this, false);
+    }
+
+    private void btnSavingWorking(Class<?> activity, Boolean flag) {
         if (!formValidation()) return;
         try {
             SaveDraft();
@@ -52,20 +56,20 @@ public class InfoSectionActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-          startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, activity).putExtra("complete", flag));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
-    }
-
     private boolean UpdateDB() {
+
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsH4());
-        if (updcount == 1) {
+        long updcount = db.addForm(form);
+        form.set_ID(String.valueOf(updcount));
+        if (updcount > 0) {
+            form.set_UID(form.getDeviceID() + form.get_ID());
+            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -80,7 +84,7 @@ public class InfoSectionActivity extends AppCompatActivity {
         json.put("hh05", bi.hh05.getText().toString());
 
         json.put("hh07", bi.hh0701.isChecked() ? "1"
-                :  "-1");
+                : "-1");
 
         json.put("hh08", bi.hh0801.isChecked() ? "1"
                 : bi.hh0802.isChecked() ? "2"
@@ -89,7 +93,7 @@ public class InfoSectionActivity extends AppCompatActivity {
                 : bi.hh0805.isChecked() ? "5"
                 : bi.hh0806.isChecked() ? "6"
                 : bi.hh0807.isChecked() ? "7"
-                :  "-1");
+                : "-1");
 
         json.put("hh09", bi.hh09.getText().toString());
 
@@ -101,18 +105,6 @@ public class InfoSectionActivity extends AppCompatActivity {
 
         json.put("hh11", bi.hh11.getText().toString());
 
-        json.put("hh14", bi.hh1401.isChecked() ? "1"
-                : bi.hh1402.isChecked() ? "2"
-                : bi.hh1403.isChecked() ? "3"
-                : bi.hh1404.isChecked() ? "4"
-                : bi.hh1405.isChecked() ? "5"
-                : bi.hh1406.isChecked() ? "6"
-                : bi.hh1407.isChecked() ? "7"
-                : bi.hh1496.isChecked() ? "96"
-                :  "-1");
-
-        json.put("hh1496x", bi.hh1496x.getText().toString());
-
         MainApp.form.setsInfo(json.toString());
     }
 
@@ -121,7 +113,7 @@ public class InfoSectionActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        contextBackActivity(this);
+    public void endSecActivity(boolean flag) {
+        btnSavingWorking(EndingActivity.class, flag);
     }
 }

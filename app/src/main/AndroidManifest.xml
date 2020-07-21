@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.sections.SectionPIB02Activity"></activity>
+        <activity android:name=".ui.sections.SectionH302Activity" />
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
@@ -62,9 +63,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionH3Activity"
-            android:screenOrientation="portrait"
+            android:name=".ui.sections.SectionH301Activity"
             android:label="@string/nh3heading"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
@@ -75,7 +76,6 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionCHCActivity"
-
             android:label="@string/IMheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
@@ -99,7 +99,7 @@
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.sections.SectionPIBActivity"
+            android:name=".ui.sections.SectionPIB01Activity"
             android:label="@string/section2_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
@@ -110,7 +110,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:parentActivityName=".ui.other.MainActivity"
