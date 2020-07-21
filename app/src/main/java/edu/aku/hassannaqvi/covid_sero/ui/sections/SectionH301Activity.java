@@ -2,7 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.RadioGroup;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,10 +36,10 @@ public class SectionH301Activity extends AppCompatActivity {
 
         bi.nh303.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == R.id.nh303b || i == R.id.nh303c) {
-                formValidation();
-                Clear.clearAllFields(bi.fldGrnh304, false);
+                Clear.clearAllFields(bi.fldGrnh304);
+                bi.fldGrnh304.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrnh304, true);
+                bi.fldGrnh304.setVisibility(View.VISIBLE);
             }
         });
 
@@ -66,38 +66,32 @@ public class SectionH301Activity extends AppCompatActivity {
         });
 
         bi.nh305.setOnCheckedChangeListener((group, checkedId) -> {
-            formValidation();
             if (checkedId == R.id.nh305b) {
-                Clear.clearAllFields(bi.fldGrpnh306, false);
+                Clear.clearAllFields(bi.fldGrpnh306);
+                bi.fldGrpnh306.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh306, true);
-                bi.nh30696x.setEnabled(false);
+                bi.fldGrpnh306.setVisibility(View.VISIBLE);
             }
         });
 
 //        nh307
         bi.nh307.setOnCheckedChangeListener((radioGroup, i) -> {
-            formValidation();
             if (i == R.id.nh307h || i == R.id.nh307i) {
-                Clear.clearAllFields(bi.fldGrpnh308, false);
-                //  Clear.clearAllFields(binding.fldGrpnh309,true);
+                Clear.clearAllFields(bi.fldGrpnh308);
+                bi.fldGrpnh308.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh308, true);
+                bi.fldGrpnh308.setVisibility(View.VISIBLE);
             }
         });
 
 //        nh308
-        bi.nh308.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                formValidation();
-                if (checkedId == R.id.nh308b) {
-                    Clear.clearAllFields(bi.fldGrpnh309, false);
-                } else {
-//                    binding.fldGrpnh309.setVisibility(View.VISIBLE);
-                    Clear.clearAllFields(bi.fldGrpnh309, true);
-
-                }
+        bi.nh308.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.nh308b) {
+                Clear.clearAllFields(bi.fldGrpnh309);
+                bi.fldGrpnh308.setVisibility(View.GONE);
+            } else {
+                Clear.clearAllFields(bi.fldGrpnh309);
+                bi.fldGrpnh308.setVisibility(View.VISIBLE);
             }
         });
 
