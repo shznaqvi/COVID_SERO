@@ -387,8 +387,8 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!--&lt;!&ndash; Take Photo   &ndash;&gt;
-                <androidx.cardview.widget.CardView
+                <!-- Take Photo   -->
+              <!--  <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVtakePhoto"
                     style="@style/cardView">
 

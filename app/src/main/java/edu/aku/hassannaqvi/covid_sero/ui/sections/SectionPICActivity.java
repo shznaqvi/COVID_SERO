@@ -18,6 +18,7 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPicBinding;
+import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
@@ -53,7 +54,7 @@ public class SectionPICActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionDActivity.class));
+            startActivity(new Intent(this, EndingActivity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -73,23 +74,16 @@ public class SectionPICActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         JSONObject json = new JSONObject();
-
         json.put("pc01", bi.pc011.isChecked() ? "1"
                 : bi.pc012.isChecked() ? "2"
                 : "-1");
-
         json.put("pc02", bi.pc02.getText().toString());
         json.put("pc02a", bi.pc02a.getText().toString());
-
         json.put("pc03", bi.pc03.getText().toString());
-
         json.put("pc04", bi.pc04.getText().toString());
         json.put("pc04a", bi.pc04a.getText().toString());
-
         json.put("pc05", bi.pc05.getText().toString());
-
         json.put("pc06", bi.pc06.getText().toString());
-
         MainApp.form.setsC(json.toString());
     }
 
