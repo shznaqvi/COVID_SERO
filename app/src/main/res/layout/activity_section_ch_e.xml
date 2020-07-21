@@ -105,10 +105,6 @@
 
                     </RelativeLayout>
 
-                    <!--<TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im26b" />-->
 
 
                     <EditText
@@ -207,10 +203,6 @@
 
                     </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im26d" />
 
                     <EditText
                         android:id="@+id/im26d"
