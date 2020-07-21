@@ -18,14 +18,13 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
+        android:name=".core.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.sections.SectionPIB02Activity"></activity>
-        <activity android:name=".ui.sections.SectionH302Activity" />
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
@@ -60,6 +59,14 @@
             android:theme="@style/AppThemeEnglish" />
         <activity
             android:name=".ui.other.EndingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name=".ui.sections.SectionPIB02Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name=".ui.sections.SectionH302Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity

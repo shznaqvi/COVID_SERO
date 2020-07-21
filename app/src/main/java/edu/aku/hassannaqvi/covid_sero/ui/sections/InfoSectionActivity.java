@@ -12,6 +12,7 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneId;
 
@@ -33,6 +34,7 @@ import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 public class InfoSectionActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivityInfoSectionBinding bi;
+    LocalDate localDate = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +119,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
 
         form.setHhModel(new HHModel(bi.hh12.getText().toString(), bi.hh13.getText().toString()));
 
+        form.setLocalDate(localDate);
+
     }
 
     private boolean formValidation() {
@@ -133,7 +137,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         //Setting Date
         try {
             Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(bi.hh01.getText().toString())) + "T06:24:01Z");
-            form.setLocalDate(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
+            localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
         } catch (ParseException e) {
             e.printStackTrace();
         }
