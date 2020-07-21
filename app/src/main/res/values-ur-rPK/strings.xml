@@ -1012,4 +1012,9 @@
     <string name='Q_nh323'>H323</string>
     <string name='Q_nh324'>H324</string>
 
+
+    <string name="end_interview"> انٹرویو ختم کریں </string>
+    <string name="hhformInfo"> ۔HOUSEHOLD بٹن پر کلک کر کے گھر کی معلومات کا اندراج کریں</string>
+    <string name="memberforminfo">گھر کی معلومات کا فارم کامیابی سے مکمل ہو گیا ہے اب CHILD کے بٹن پر کلک کر کے 23-\12 مہینے کے بچوں کی معلومات کے فارم کا اندراج کریں</string>
+
 </resources>

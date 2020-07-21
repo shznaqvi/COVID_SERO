@@ -74,6 +74,9 @@ dependencies {
     //Date Time
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
 
+    //Walmare
+    implementation 'com.github.whalemare:sheetmenu:2.0.1'
+
 }
 repositories {
     mavenCentral()

@@ -50,10 +50,20 @@ public class Form extends LiveData<Form> {
     private String sH3 = "";
     private String sH4 = "";
 
+    private HHModel hhModel;
+
     //Date Settings
     private LocalDate localDate = null, calculatedDOB = null;
 
     public Form() {
+    }
+
+    public HHModel getHhModel() {
+        return hhModel;
+    }
+
+    public void setHhModel(HHModel hhModel) {
+        this.hhModel = hhModel;
     }
 
     public String getSysdate() {

@@ -17,6 +17,7 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
+import edu.aku.hassannaqvi.covid_sero.models.HHModel;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
@@ -40,7 +41,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     }
 
     public void BtnContinue() {
-        btnSavingWorking(SectionDActivity.class, true);
+        btnSavingWorking(SectionSubInfoActivity.class, true);
     }
 
     public void BtnEnd() {
@@ -106,6 +107,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         json.put("hh11", bi.hh11.getText().toString());
 
         MainApp.form.setsInfo(json.toString());
+
+        form.setHhModel(new HHModel(bi.hh12.getText().toString(), bi.hh13.getText().toString()));
     }
 
     private boolean formValidation() {
