@@ -1985,6 +1985,9 @@
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>
