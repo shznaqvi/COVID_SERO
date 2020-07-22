@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -1786,8 +1787,8 @@
                         android:hint="@string/pb10"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="99"
-                        app:minValue="0"
+                        app:maxValue="50"
+                        app:minValue="1"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
