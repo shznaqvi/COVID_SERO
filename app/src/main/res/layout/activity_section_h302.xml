@@ -1515,7 +1515,7 @@
                                     android:text="@string/Q_nh320" />
                             </RelativeLayout>
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/nh320"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1523,7 +1523,10 @@
                                 android:digits="01234567890"
                                 android:hint="@string/nh320"
                                 android:inputType="number"
-                                android:maxLength="2" />
+                                app:mask="##"
+                                app:minValue="1"
+                                app:maxValue="10"
+                                app:type="range"/>
 
                         </LinearLayout>
 
