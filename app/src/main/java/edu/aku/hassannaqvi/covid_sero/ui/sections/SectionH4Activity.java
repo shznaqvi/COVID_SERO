@@ -48,14 +48,14 @@ public class SectionH4Activity extends AppCompatActivity {
         CheckBox.OnCheckedChangeListener check = (buttonView, isChecked) -> {
             if (bi.nh403a.isChecked() || bi.nh403b.isChecked() || bi.nh403c.isChecked()) {
                 Clear.clearAllFields(bi.fldGrpCVnh404);
-                Clear.clearAllFields(bi.fldGrpnh405check);
+                Clear.clearAllFields(bi.fldGrpCVnh405);
 
                 bi.fldGrpCVnh404.setVisibility(View.GONE);
-                bi.fldGrpnh405check.setVisibility(View.GONE);
+                bi.fldGrpCVnh405.setVisibility(View.GONE);
 
             } else {
                 bi.fldGrpCVnh404.setVisibility(View.VISIBLE);
-                bi.fldGrpnh405check.setVisibility(View.VISIBLE);
+                bi.fldGrpCVnh405.setVisibility(View.VISIBLE);
             }
         };
 
