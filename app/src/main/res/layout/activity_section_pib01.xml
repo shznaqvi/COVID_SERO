@@ -1788,7 +1788,7 @@
                         android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
-                        app:minValue="0"
+                        app:minValue="1"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

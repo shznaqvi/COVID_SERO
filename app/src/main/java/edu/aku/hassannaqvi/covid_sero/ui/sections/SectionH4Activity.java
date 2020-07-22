@@ -72,7 +72,6 @@ public class SectionH4Activity extends AppCompatActivity {
             } else {
                 bi.fldGrpnh405check.setVisibility(View.VISIBLE);
             }
-
         });
 
         bi.nh405e.setOnCheckedChangeListener((buttonView, isChecked) -> Clear.clearAllFields(bi.fldGrpnh405check, !isChecked));
