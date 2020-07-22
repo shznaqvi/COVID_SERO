@@ -530,13 +530,16 @@
                                     android:text="@string/Q_nh304" />
                             </RelativeLayout>
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/nh304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/nh304min"
                                 android:inputType="number"
-                                android:maxLength="3" />
+                                app:mask="###"
+                                app:minValue="1"
+                                app:maxValue="999"
+                                app:type="range"/>
 
                             <LinearLayout
                                 android:id="@+id/fldGrnh304check"
