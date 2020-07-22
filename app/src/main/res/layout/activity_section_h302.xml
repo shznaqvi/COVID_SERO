@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionA4Activity">
 
@@ -609,11 +610,12 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled='@{nh31396.checked ? true : false}'
                                     android:hint="@string/other"
-                                    android:text='@{nh31396.checked ? nh31396x.getText().toString() : ""}' />
-
+                                    android:inputType="textPersonName"
+                                    android:tag="nh31396"
+                                    android:text='@{nh31396.checked ? nh31396x.getText().toString() : ""}'
+                                    android:visibility='@{nh31396.checked ? View.VISIBLE : View.GONE}' />
+                                <!--                                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-->
                             </LinearLayout>
 
                         </LinearLayout>
@@ -753,18 +755,19 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:id="@+id/nh31496x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:tag="nh31496"
+                                    android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}'
+                                    android:visibility="@{nh31496.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31496x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31496.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}' />
 
                         </LinearLayout>
 
@@ -838,18 +841,20 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
+
+                                <EditText
+                                    android:id="@+id/nh31596x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:tag="nh31596"
+                                    android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}'
+                                    android:visibility="@{nh31596.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31596x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31596.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}' />
 
                         </LinearLayout>
 
@@ -1074,18 +1079,20 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:id="@+id/nh31796x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:tag="nh31796"
+                                    android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}'
+                                    android:visibility="@{nh31796.checked ? View.VISIBLE : View.GONE}" />
+
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31796x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31796.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}' />
 
                         </LinearLayout>
 
@@ -1271,19 +1278,19 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
+
+                                <EditText
+                                    android:id="@+id/nh31896x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:tag="nh31896"
+                                    android:text='@{nh31896.checked ? nh31896x.getText().toString() : ""}'
+                                    android:visibility="@{nh31896.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
-
-                            <EditText
-                                android:id="@+id/nh31896x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31896.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31896.checked ? nh31896x.getText().toString() : ""}' />
-
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
@@ -1486,21 +1493,19 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:id="@+id/nh31996x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:tag="nh31996"
+                                    android:text='@{nh31996.checked ? nh31996x.getText().toString() : ""}'
+                                    android:visibility="@{nh31996.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
-
-                            <EditText
-                                android:id="@+id/nh31996x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31996.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31996.checked ? nh31996x.getText().toString() : ""}' />
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh320 -->
@@ -1661,16 +1666,20 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/nh322acr" />
 
-                                    <EditText
+                                    <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/nh322acr"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
-                                        android:enabled="@{nh322a.checked ? true : false}"
                                         android:hint="@string/nh322acr"
                                         android:inputType="numberDecimal"
-                                        android:maxLength="6"
-                                        android:text='@{nh322a.checked ? nh322acr.getText().toString() : ""}' />
+                                        android:tag="nh322a"
+                                        android:text='@{nh322a.checked ? nh322acr.getText().toString() : ""}'
+                                        android:visibility="@{nh322a.checked ? View.VISIBLE : View.GONE}"
+                                        app:mask="####"
+                                        app:maxValue="9999"
+                                        app:minValue="1"
+                                        app:type="range" />
 
                                     <RadioButton
                                         android:id="@+id/nh322b"
@@ -1678,16 +1687,20 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/nh322can" />
 
-                                    <EditText
+                                    <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/nh322can"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
-                                        android:enabled="@{nh322b.checked ? true : false}"
                                         android:hint="@string/nh322can"
                                         android:inputType="numberDecimal"
-                                        android:maxLength="6"
-                                        android:text='@{nh322b.checked ? nh322can.getText().toString() : ""}' />
+                                        android:tag="nh322b"
+                                        android:text='@{nh322b.checked ? nh322can.getText().toString() : ""}'
+                                        android:visibility="@{nh322b.checked ? View.VISIBLE : View.GONE}"
+                                        app:mask="####"
+                                        app:maxValue="9999"
+                                        app:minValue="1"
+                                        app:type="range" />
 
                                     <RadioButton
                                         android:id="@+id/nh32298"
@@ -1770,8 +1783,8 @@
                         android:id="@+id/fldGrpnh324"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="@{nh323a.checked ? true : false}"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="@{nh323a.checked ? View.VISIBLE : View.GONE}">
 
                         <!-- nh324 -->
                         <androidx.cardview.widget.CardView
@@ -1821,15 +1834,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324a"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324a.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324a.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!--b-->
                                 <TextView
@@ -1841,15 +1857,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324b"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324b.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324b.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!-- c -->
                                 <TextView
@@ -1861,15 +1880,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324c"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324c.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324c.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!-- d -->
                                 <TextView
@@ -1881,15 +1903,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324d"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324d"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324d.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324d.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!-- e -->
                                 <TextView
@@ -1901,15 +1926,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324e"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324e"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324e.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324e.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!-- f -->
                                 <TextView
@@ -1921,15 +1949,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324f"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324f"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324f.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324f.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                                 <!--g-->
                                 <TextView
@@ -1941,15 +1972,18 @@
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:textColor="@color/colorPrimaryDark" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/nh324g"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:hint="@string/nh324g"
                                     android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text='@{nh323a.checked ? nh324g.getText().toString() : ""}' />
+                                    android:text='@{nh323a.checked ? nh324g.getText().toString() : ""}'
+                                    app:mask="##"
+                                    app:maxValue="20"
+                                    app:minValue="1"
+                                    app:type="range" />
 
                             </LinearLayout>
 
