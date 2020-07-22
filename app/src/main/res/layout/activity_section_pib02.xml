@@ -627,7 +627,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pb18n"
                         app:mask="##"
-                        app:maxValue="0"
+                        app:maxValue="99"
                         app:minValue="0"
                         app:type="range" />
 

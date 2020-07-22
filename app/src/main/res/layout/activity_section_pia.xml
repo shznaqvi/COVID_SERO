@@ -349,9 +349,10 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa06"
+                        android:inputType="number"
                         app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
+                        app:maxValue="99"
+                        app:minValue="1"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -561,17 +562,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
+                        android:enabled='@{pa09dk.checked? false : true}'
+                        android:inputType="number"
                         android:hint="@string/pa09b"
+                        android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}'
                         app:mask="##"
-                        app:maxValue="0"
+                        app:maxValue="10"
                         app:minValue="0"
                         app:type="range" />
 
                     <CheckBox
-                        android:id="@+id/pa09_dk"
+                        android:id="@+id/pa09dk"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/pa09_dk" />
+                        android:tag="-1"
+                        android:text="@string/pa09dk" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -665,17 +670,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
+                            android:enabled='@{pa10dk.checked? false : true}'
+                            android:inputType="number"
                             android:hint="@string/pa10b"
+                            android:text='@{pa10dk.checked? "" : pa10b.getText().toString()}'
                             app:mask="##"
-                            app:maxValue="0"
+                            app:maxValue="10"
                             app:minValue="0"
                             app:type="range" />
 
                         <CheckBox
-                            android:id="@+id/pa10_dk"
+                            android:id="@+id/pa10dk"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/pa10_dk" />
+                            android:tag="-1"
+                            android:text="@string/pa10dk" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -762,17 +771,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
+                            android:enabled='@{pa11dk.checked? false : true}'
+                            android:inputType="number"
                             android:hint="@string/pa11b"
+                            android:text='@{pa11dk.checked? "" : pa11b.getText().toString()}'
                             app:mask="##"
-                            app:maxValue="0"
+                            app:maxValue="10"
                             app:minValue="0"
                             app:type="range" />
 
                         <CheckBox
-                            android:id="@+id/pa11_dk"
+                            android:id="@+id/pa11dk"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/pa11_dk" />
+                            android:tag="-1"
+                            android:text="@string/pa11dk" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
