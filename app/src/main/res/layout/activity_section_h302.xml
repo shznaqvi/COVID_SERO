@@ -605,15 +605,16 @@
                                     android:text="@string/other" />
 
                                 <EditText
+                                    android:tag="nh31396"
                                     android:id="@+id/nh31396x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:inputType="textPersonName"
                                     android:enabled='@{nh31396.checked ? true : false}'
                                     android:hint="@string/other"
                                     android:text='@{nh31396.checked ? nh31396x.getText().toString() : ""}' />
-
+<!--                                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-->
                             </LinearLayout>
 
                         </LinearLayout>
@@ -753,18 +754,20 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:tag="nh31496"
+                                    android:id="@+id/nh31496x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:enabled="@{nh31496.checked ? true : false}"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}' />
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31496x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31496.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}' />
+
 
                         </LinearLayout>
 
@@ -838,18 +841,21 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
+
+                                <EditText
+                                    android:tag="nh31596"
+                                    android:id="@+id/nh31596x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:enabled="@{nh31596.checked ? true : false}"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}' />
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31596x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31596.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}' />
+
 
                         </LinearLayout>
 
@@ -1074,18 +1080,21 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:tag="nh31796"
+                                    android:id="@+id/nh31796x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:enabled="@{nh31796.checked ? true : false}"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}' />
+
                             </RadioGroup>
 
-                            <EditText
-                                android:id="@+id/nh31796x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31796.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}' />
+
 
                         </LinearLayout>
 
@@ -1271,19 +1280,19 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
+
+                                <EditText
+                                    android:tag="nh31896"
+                                    android:id="@+id/nh31896x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:enabled="@{nh31896.checked ? true : false}"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:text='@{nh31896.checked ? nh31896x.getText().toString() : ""}' />
                             </RadioGroup>
-
-                            <EditText
-                                android:id="@+id/nh31896x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31896.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31896.checked ? nh31896x.getText().toString() : ""}' />
-
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
@@ -1486,21 +1495,19 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/other" />
 
+                                <EditText
+                                    android:tag="nh31996"
+                                    android:id="@+id/nh31996x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                                    android:enabled="@{nh31996.checked ? true : false}"
+                                    android:hint="@string/other"
+                                    android:inputType="text"
+                                    android:text='@{nh31996.checked ? nh31996x.getText().toString() : ""}' />
                             </RadioGroup>
-
-                            <EditText
-                                android:id="@+id/nh31996x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                android:enabled="@{nh31996.checked ? true : false}"
-                                android:hint="@string/other"
-                                android:inputType="text"
-                                android:text='@{nh31996.checked ? nh31996x.getText().toString() : ""}' />
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh320 -->
@@ -1662,11 +1669,12 @@
                                         android:text="@string/nh322acr" />
 
                                     <EditText
+                                        android:tag="nh322a"
                                         android:id="@+id/nh322acr"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
-                                        android:enabled="@{nh322a.checked ? true : false}"
+                                        android:visibility="@{nh322a.checked ? View.VISIBLE : View.GONE}"
                                         android:hint="@string/nh322acr"
                                         android:inputType="numberDecimal"
                                         android:maxLength="6"
@@ -1679,6 +1687,7 @@
                                         android:text="@string/nh322can" />
 
                                     <EditText
+                                        android:tag="nh322b"
                                         android:id="@+id/nh322can"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
