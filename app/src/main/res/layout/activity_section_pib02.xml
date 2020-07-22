@@ -1,5 +1,4 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -302,10 +301,7 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pb12"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:inputType="number" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -626,10 +622,7 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pb18n"
-                        app:mask="##"
-                        app:maxValue="99"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:inputType="number" />
 
                     <TextView
                         android:layout_width="match_parent"
