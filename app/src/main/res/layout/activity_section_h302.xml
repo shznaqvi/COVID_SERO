@@ -1666,17 +1666,20 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/nh322acr" />
 
-                                    <EditText
+                                    <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/nh322acr"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
                                         android:hint="@string/nh322acr"
                                         android:inputType="numberDecimal"
-                                        android:maxLength="6"
                                         android:tag="nh322a"
                                         android:text='@{nh322a.checked ? nh322acr.getText().toString() : ""}'
-                                        android:visibility="@{nh322a.checked ? View.VISIBLE : View.GONE}" />
+                                        android:visibility="@{nh322a.checked ? View.VISIBLE : View.GONE}"
+                                        app:mask="####"
+                                        app:maxValue="9999"
+                                        app:minValue="1"
+                                        app:type="range" />
 
                                     <RadioButton
                                         android:id="@+id/nh322b"
@@ -1684,17 +1687,20 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/nh322can" />
 
-                                    <EditText
+                                    <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/nh322can"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
                                         android:hint="@string/nh322can"
                                         android:inputType="numberDecimal"
-                                        android:maxLength="6"
                                         android:tag="nh322b"
                                         android:text='@{nh322b.checked ? nh322can.getText().toString() : ""}'
-                                        android:visibility="@{nh322b.checked ? View.VISIBLE : View.GONE}" />
+                                        android:visibility="@{nh322b.checked ? View.VISIBLE : View.GONE}"
+                                        app:mask="####"
+                                        app:maxValue="9999"
+                                        app:minValue="1"
+                                        app:type="range" />
 
                                     <RadioButton
                                         android:id="@+id/nh32298"
