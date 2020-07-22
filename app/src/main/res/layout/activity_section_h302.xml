@@ -133,7 +133,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -172,7 +171,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -211,7 +209,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -250,7 +247,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -289,7 +285,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -328,7 +323,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -367,7 +361,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -406,7 +399,6 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
-
                                     </RadioGroup>
                                 </LinearLayout>
 
@@ -512,10 +504,8 @@
                                      android:layout_height="wrap_content"
                                      android:layout_marginBottom="1dp"
                                      android:text="@string/nh312i" />-->
-
                             </LinearLayout>
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh313 -->
@@ -612,15 +602,13 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:hint="@string/other"
-                                    android:inputType="textPersonName"
+                                    android:inputType="text"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                                     android:tag="nh31396"
                                     android:text='@{nh31396.checked ? nh31396x.getText().toString() : ""}'
                                     android:visibility='@{nh31396.checked ? View.VISIBLE : View.GONE}' />
-                                <!--                                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-->
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh314 -->
@@ -768,10 +756,7 @@
                                     android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}'
                                     android:visibility="@{nh31496.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
-
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh315 -->
@@ -855,10 +840,7 @@
                                     android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}'
                                     android:visibility="@{nh31596.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
-
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh316 -->
@@ -916,11 +898,8 @@
                                     android:layout_marginBottom="1dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh317 -->
@@ -1091,12 +1070,8 @@
                                     android:tag="nh31796"
                                     android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}'
                                     android:visibility="@{nh31796.checked ? View.VISIBLE : View.GONE}" />
-
                             </RadioGroup>
-
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh318 -->
@@ -1293,7 +1268,6 @@
                                     android:visibility="@{nh31896.checked ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- nh319 -->
@@ -1610,11 +1584,8 @@
                                     android:layout_marginBottom="1dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- 22-->
@@ -1708,13 +1679,9 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/dkn" />
-
                                 </RadioGroup>
-
                             </LinearLayout>
-
                         </androidx.cardview.widget.CardView>
-
                     </LinearLayout>
 
                     <!-- nh323 -->
@@ -1772,11 +1739,8 @@
                                     android:layout_marginBottom="1dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <!-- 24 -->
@@ -1845,7 +1809,7 @@
                                     android:text='@{nh323a.checked ? nh324a.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!--b-->
@@ -1868,7 +1832,7 @@
                                     android:text='@{nh323a.checked ? nh324b.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!-- c -->
@@ -1891,7 +1855,7 @@
                                     android:text='@{nh323a.checked ? nh324c.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!-- d -->
@@ -1914,7 +1878,7 @@
                                     android:text='@{nh323a.checked ? nh324d.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!-- e -->
@@ -1937,7 +1901,7 @@
                                     android:text='@{nh323a.checked ? nh324e.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!-- f -->
@@ -1960,7 +1924,7 @@
                                     android:text='@{nh323a.checked ? nh324f.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <!--g-->
@@ -1983,13 +1947,10 @@
                                     android:text='@{nh323a.checked ? nh324g.getText().toString() : ""}'
                                     app:mask="##"
                                     app:maxValue="20"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
                             </LinearLayout>
-
                         </androidx.cardview.widget.CardView>
-
                     </LinearLayout>
 
 
@@ -2023,7 +1984,6 @@
                         android:text="Save"
                         android:textColor="@color/white" />
                 </LinearLayout>
-
             </LinearLayout>
 
         </ScrollView>
