@@ -48,10 +48,10 @@ import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionH4Activity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIAActivity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIB01Activity;
 import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPICActivity;
-import edu.aku.hassannaqvi.covid_sero.utils.AndroidUtilityKt;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
-import edu.aku.hassannaqvi.covid_sero.utils.CreateTable;
-import edu.aku.hassannaqvi.covid_sero.utils.WarningActivityInterface;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AndroidUtilityKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.WarningActivityInterface;
+import edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.appInfo;
 

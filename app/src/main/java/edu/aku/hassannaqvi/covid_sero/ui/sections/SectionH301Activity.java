@@ -19,10 +19,10 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH301Binding;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
+import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 public class SectionH301Activity extends AppCompatActivity {
 

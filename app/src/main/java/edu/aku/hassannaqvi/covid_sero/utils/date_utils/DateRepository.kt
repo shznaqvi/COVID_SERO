@@ -1,5 +1,6 @@
-package edu.aku.hassannaqvi.covid_sero.datecollection
+package edu.aku.hassannaqvi.covid_sero.utils.date_utils
 
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel
 import org.threeten.bp.DateTimeException
 import org.threeten.bp.LocalDate
 

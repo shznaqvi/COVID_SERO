@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.covid_sero.utils;
+package edu.aku.hassannaqvi.covid_sero.utils.date_utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

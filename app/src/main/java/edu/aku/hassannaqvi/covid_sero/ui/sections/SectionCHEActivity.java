@@ -17,12 +17,12 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChEBinding;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
+import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 public class SectionCHEActivity extends AppCompatActivity {
 

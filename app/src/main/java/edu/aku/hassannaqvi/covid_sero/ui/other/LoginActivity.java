@@ -59,10 +59,10 @@ import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDA
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.TWO_MINUTES;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.getPermissionsList;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DB_NAME;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.getPermissionsList;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DB_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.PROJECT_NAME;
 import static java.lang.Thread.sleep;
 
 public class LoginActivity extends Activity {

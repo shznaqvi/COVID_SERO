@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.covid_sero.utils
+package edu.aku.hassannaqvi.covid_sero.utils.app_utils
 
 import android.content.Context
 import android.net.ConnectivityManager

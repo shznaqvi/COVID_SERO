@@ -139,7 +139,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
 
-        <service android:name=".utils.DownloadFileService" />
+        <service android:name=".services.DownloadFileService" />
     </application>
 
 </manifest>

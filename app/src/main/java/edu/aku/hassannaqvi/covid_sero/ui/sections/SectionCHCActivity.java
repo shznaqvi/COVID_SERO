@@ -28,11 +28,11 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
-import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
-import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
-import edu.aku.hassannaqvi.covid_sero.utils.DateUtils;
-import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateUtils;
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
@@ -40,8 +40,8 @@ import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.contextBackActivity;
-import static edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt.openWarningActivity;
+import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
+import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.openWarningActivity;
 
 
 public class SectionCHCActivity extends AppCompatActivity implements EndSectionActivity {

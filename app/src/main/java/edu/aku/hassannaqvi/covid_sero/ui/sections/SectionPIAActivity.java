@@ -27,10 +27,10 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
-import edu.aku.hassannaqvi.covid_sero.datecollection.AgeModel;
-import edu.aku.hassannaqvi.covid_sero.datecollection.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
-import edu.aku.hassannaqvi.covid_sero.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
+import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;

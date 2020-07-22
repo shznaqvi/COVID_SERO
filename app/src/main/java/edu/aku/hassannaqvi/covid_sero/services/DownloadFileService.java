@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.covid_sero.utils;
+package edu.aku.hassannaqvi.covid_sero.services;
 
 import android.app.IntentService;
 import android.content.Intent;

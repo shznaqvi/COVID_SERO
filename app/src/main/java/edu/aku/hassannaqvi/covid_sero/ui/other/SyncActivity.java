@@ -42,9 +42,9 @@ import edu.aku.hassannaqvi.covid_sero.sync.SyncAllData;
 import edu.aku.hassannaqvi.covid_sero.sync.SyncAllPhotos;
 import edu.aku.hassannaqvi.covid_sero.sync.SyncDevice;
 
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DB_NAME;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DB_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.PROJECT_NAME;
 
 public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDevicInterface {
     SharedPreferences.Editor editor;

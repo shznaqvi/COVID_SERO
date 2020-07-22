@@ -1021,5 +1021,6 @@
     <string name="end_interview"> انٹرویو ختم کریں </string>
     <string name="hhformInfo"> ۔HOUSEHOLD بٹن پر کلک کر کے گھر کی معلومات کا اندراج کریں</string>
     <string name="memberforminfo">گھر کی معلومات کا فارم کامیابی سے مکمل ہو گیا ہے اب انفرادی سوالنامہ کی معلومات کے فارم کا اندراج کریں</string>
+    <string name="memlistinfo">اندراج شدہ افراد کی فہرست</string>
 
 </resources>

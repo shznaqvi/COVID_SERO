@@ -25,7 +25,7 @@ import java.net.URL;
 
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.PROJECT_NAME;
 
 /**
  * Created by ali.azaz on 3/14/2018.

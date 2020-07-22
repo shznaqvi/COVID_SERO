@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.covid_sero.utils;
+package edu.aku.hassannaqvi.covid_sero.utils.db_utils;
 
 import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;

@@ -10,8 +10,8 @@ import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionSubInfoBinding
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity
-import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity
-import edu.aku.hassannaqvi.covid_sero.utils.contextEndActivity
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.contextEndActivity
 import ru.whalemare.sheetmenu.ActionItem
 import ru.whalemare.sheetmenu.SheetMenu
 import ru.whalemare.sheetmenu.layout.GridLayoutProvider

@@ -31,13 +31,13 @@ import edu.aku.hassannaqvi.covid_sero.models.VersionApp;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.DATABASE_VERSION;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_BL_RANDOM;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_FORMS;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_PERSONALS;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_USERS;
-import static edu.aku.hassannaqvi.covid_sero.utils.CreateTable.SQL_CREATE_VERSIONAPP;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_BL_RANDOM;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_PERSONALS;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_USERS;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_VERSIONAPP;
 
 
 /**

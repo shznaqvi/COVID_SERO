@@ -28,7 +28,7 @@ import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.HHModel;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.covid_sero.utils.EndSectionActivity;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 
