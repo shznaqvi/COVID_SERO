@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,9 +58,23 @@ public class SectionPIB01Activity extends AppCompatActivity {
             }
         }));
 
+        bi.pb09.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb0902.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVpb10);
+            }
+        }));
+
         //Skip for married
         if (form.getHhModel().getMemAge() < 15) {
+            bi.fldGrpCVpb06.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVpb06.setVisibility(View.VISIBLE);
+        }
 
+        if (form.getHhModel().getMemAge() >= 5) {
+            bi.fldGrpCVpb08.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVpb08.setVisibility(View.VISIBLE);
         }
 
     }

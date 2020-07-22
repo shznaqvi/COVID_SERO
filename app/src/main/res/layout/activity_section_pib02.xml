@@ -490,7 +490,8 @@
             <!-- pb16  Input   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb16"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{pb15b.checked? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -870,5 +871,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

@@ -46,6 +46,12 @@ public class SectionPIB02Activity extends AppCompatActivity {
             }
         }));
 
+        bi.pb15.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb15b.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVpb16);
+            }
+        }));
+
         bi.pb17.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.pb17b.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVpb18);

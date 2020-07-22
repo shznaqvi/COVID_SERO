@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,6 +65,12 @@ public class SectionPIAActivity extends AppCompatActivity {
             }
         }));*/
 
+        if (form.getHhModel().getMemAge() < 5) {
+            bi.fldGrpSectionA01.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
+        }
+
     }
 
 
@@ -76,7 +83,7 @@ public class SectionPIAActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionPIB01Activity.class));
+            startActivity(new Intent(this, bi.pa082.isChecked() ? SectionSubInfoActivity.class : SectionPIB01Activity.class).putExtra(ROUTE_SUBINFO, 2));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
