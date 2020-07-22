@@ -58,7 +58,7 @@ public class SectionH302Activity extends AppCompatActivity {
 //        nh323
         bi.nh323.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == R.id.nh323b) {
-                Clear.clearAllFields(bi.fldGrpnh324, false);
+                Clear.clearAllFields(bi.fldGrpnh324);
                 bi.fldGrpnh324.setVisibility(View.GONE);
             } else {
                 bi.fldGrpnh324.setVisibility(View.VISIBLE);

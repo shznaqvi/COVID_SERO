@@ -259,14 +259,15 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/nh403d" />
-
-                                <CheckBox
-                                    android:id="@+id/nh403e"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/nh403e" />
                             </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/nh403e"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:tag="-1"
+                                android:text="@string/nh403e" />
 
                         </LinearLayout>
 
@@ -404,14 +405,15 @@
                                 android:layout_marginBottom="1dp"
                                 android:text="@string/nh405d" />
 
-                            <CheckBox
-                                android:id="@+id/nh405e"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/nh405e" />
-
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/nh405e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:tag="-1"
+                            android:text="@string/nh405e" />
 
                     </LinearLayout>
 

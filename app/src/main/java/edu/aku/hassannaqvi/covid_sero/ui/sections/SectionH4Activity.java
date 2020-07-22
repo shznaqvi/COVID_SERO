@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -37,20 +38,24 @@ public class SectionH4Activity extends AppCompatActivity {
 
         bi.nh401.setOnCheckedChangeListener((group, checkedId) -> {
             if (!(checkedId == R.id.nh401a)) {
-                Clear.clearAllFields(bi.fldGrpnh402, false);
+                Clear.clearAllFields(bi.fldGrpnh402);
+                bi.fldGrpnh402.setVisibility(View.GONE);
             } else {
-                formValidation();
-                Clear.clearAllFields(bi.fldGrpnh402, true);
+                bi.fldGrpnh402.setVisibility(View.VISIBLE);
             }
         });
 
         CheckBox.OnCheckedChangeListener check = (buttonView, isChecked) -> {
             if (bi.nh403a.isChecked() || bi.nh403b.isChecked() || bi.nh403c.isChecked()) {
-                Clear.clearAllFields(bi.fldGrpCVnh404, false);
-                Clear.clearAllFields(bi.fldGrpnh405check, false);
+                Clear.clearAllFields(bi.fldGrpCVnh404);
+                Clear.clearAllFields(bi.fldGrpnh405check);
+
+                bi.fldGrpCVnh404.setVisibility(View.GONE);
+                bi.fldGrpnh405check.setVisibility(View.GONE);
+
             } else {
-                Clear.clearAllFields(bi.fldGrpCVnh404, true);
-                Clear.clearAllFields(bi.fldGrpnh405check, true);
+                bi.fldGrpCVnh404.setVisibility(View.VISIBLE);
+                bi.fldGrpnh405check.setVisibility(View.VISIBLE);
             }
         };
 
@@ -58,58 +63,19 @@ public class SectionH4Activity extends AppCompatActivity {
         bi.nh403b.setOnCheckedChangeListener(check);
         bi.nh403c.setOnCheckedChangeListener(check);
 
-        bi.nh403e.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-
-                bi.nh403a.setEnabled(false);
-                bi.nh403b.setEnabled(false);
-                bi.nh403c.setEnabled(false);
-                bi.nh403d.setEnabled(false);
-
-                bi.nh403a.setChecked(false);
-                bi.nh403b.setChecked(false);
-                bi.nh403c.setChecked(false);
-                bi.nh403d.setChecked(false);
-
-            } else {
-
-
-                bi.nh403a.setEnabled(true);
-                bi.nh403b.setEnabled(true);
-                bi.nh403c.setEnabled(true);
-                bi.nh403d.setEnabled(true);
-            }
-        });
+        bi.nh403e.setOnCheckedChangeListener((buttonView, isChecked) -> Clear.clearAllFields(bi.fldGrnh403check, !isChecked));
 
         bi.nh404.setOnCheckedChangeListener((group, checkedId) -> {
-            formValidation();
             if (checkedId == R.id.nh404b) {
-                Clear.clearAllFields(bi.fldGrpnh405check, false);
-
+                Clear.clearAllFields(bi.fldGrpnh405check);
+                bi.fldGrpnh405check.setVisibility(View.GONE);
             } else {
-                Clear.clearAllFields(bi.fldGrpnh405check, true);
+                bi.fldGrpnh405check.setVisibility(View.VISIBLE);
             }
+
         });
 
-        bi.nh405e.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                bi.nh405a.setEnabled(false);
-                bi.nh405b.setEnabled(false);
-                bi.nh405c.setEnabled(false);
-                bi.nh405d.setEnabled(false);
-
-                bi.nh405a.setChecked(false);
-                bi.nh405b.setChecked(false);
-                bi.nh405c.setChecked(false);
-                bi.nh405d.setChecked(false);
-
-            } else {
-                bi.nh405a.setEnabled(true);
-                bi.nh405b.setEnabled(true);
-                bi.nh405c.setEnabled(true);
-                bi.nh405d.setEnabled(true);
-            }
-        });
+        bi.nh405e.setOnCheckedChangeListener((buttonView, isChecked) -> Clear.clearAllFields(bi.fldGrpnh405check, !isChecked));
 
     }
 
