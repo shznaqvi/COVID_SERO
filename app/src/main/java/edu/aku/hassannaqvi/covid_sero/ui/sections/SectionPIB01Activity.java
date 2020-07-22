@@ -65,16 +65,16 @@ public class SectionPIB01Activity extends AppCompatActivity {
         }));
 
         //Skip for married
-        if (form.getHhModel().getMemAge() < 15) {
-            bi.fldGrpCVpb06.setVisibility(View.GONE);
+        int age = form.getHhModel().getMemAge();
+        if (age < 15) {
+            bi.fldGrpCVpb03.setVisibility(View.GONE);
+            if (age >= 5) {
+                bi.fldGrpSectionB02.setVisibility(View.GONE);
+            } else
+                bi.fldGrpSectionB02.setVisibility(View.VISIBLE);
         } else {
-            bi.fldGrpCVpb06.setVisibility(View.VISIBLE);
-        }
-
-        if (form.getHhModel().getMemAge() >= 5) {
-            bi.fldGrpCVpb08.setVisibility(View.GONE);
-        } else {
-            bi.fldGrpCVpb08.setVisibility(View.VISIBLE);
+            bi.fldGrpCVpb03.setVisibility(View.VISIBLE);
+            bi.fldGrpSectionB02.setVisibility(View.GONE);
         }
 
     }

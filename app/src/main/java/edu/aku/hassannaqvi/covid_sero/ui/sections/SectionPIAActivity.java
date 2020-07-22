@@ -65,12 +65,6 @@ public class SectionPIAActivity extends AppCompatActivity {
             }
         }));*/
 
-        if (form.getHhModel().getMemAge() < 5) {
-            bi.fldGrpSectionA01.setVisibility(View.GONE);
-        } else {
-            bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
-        }
-
     }
 
 
@@ -172,6 +166,13 @@ public class SectionPIAActivity extends AppCompatActivity {
         if (Integer.parseInt(bi.pa04m.getText().toString()) == 0 && Integer.parseInt(bi.pa04y.getText().toString()) == 0)
             return Validator.emptyCustomTextBox(this, bi.pa04y, "Both Month & Year don't be zero!!", false);
         return true;
+    }
+
+    public void pa04yOnTextChanged(CharSequence s, int start, int before, int count) {
+        if (TextUtils.isEmpty(bi.pa04y.getText())) return;
+        if (Integer.parseInt(bi.pa04y.getText().toString()) < 5)
+            bi.fldGrpSectionA01.setVisibility(View.GONE);
+        else bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
     }
 
     public void pa03yyOnTextChanged(CharSequence s, int start, int before, int count) {

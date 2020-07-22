@@ -251,6 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa04y"
+                        android:onTextChanged="@{callback::pa04yOnTextChanged}"
                         android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
