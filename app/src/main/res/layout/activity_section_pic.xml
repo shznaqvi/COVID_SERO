@@ -1,5 +1,4 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -120,10 +119,7 @@
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/pc02"
-                            app:mask="##"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:inputType="number" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -198,11 +194,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/pc02a"
-                            app:mask="##"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:hint="@string/pc02a" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -243,11 +235,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/pc03"
-                            app:mask="##"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:hint="@string/pc03" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -290,12 +278,7 @@
                         android:id="@+id/pc04"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/pc04"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:layout_marginBottom="12dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -336,11 +319,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc04a"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:hint="@string/pc04a" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -381,11 +360,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc05"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:hint="@string/pc05" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -426,11 +401,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc06"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:hint="@string/pc06" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

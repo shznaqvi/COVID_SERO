@@ -566,11 +566,7 @@
                         android:enabled='@{pa09dk.checked? false : true}'
                         android:inputType="number"
                         android:hint="@string/pa09b"
-                        android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}'
-                        app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}' />
 
                     <CheckBox
                         android:id="@+id/pa09dk"
@@ -674,11 +670,7 @@
                             android:enabled='@{pa10dk.checked? false : true}'
                             android:inputType="number"
                             android:hint="@string/pa10b"
-                            android:text='@{pa10dk.checked? "" : pa10b.getText().toString()}'
-                            app:mask="##"
-                            app:maxValue="10"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:text='@{pa10dk.checked? "" : pa10b.getText().toString()}' />
 
                         <CheckBox
                             android:id="@+id/pa10dk"
@@ -775,11 +767,7 @@
                             android:enabled='@{pa11dk.checked? false : true}'
                             android:inputType="number"
                             android:hint="@string/pa11b"
-                            android:text='@{pa11dk.checked? "" : pa11b.getText().toString()}'
-                            app:mask="##"
-                            app:maxValue="10"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:text='@{pa11dk.checked? "" : pa11b.getText().toString()}' />
 
                         <CheckBox
                             android:id="@+id/pa11dk"
