@@ -611,7 +611,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:inputType="textPersonName"
-                                    android:enabled='@{nh31396.checked ? true : false}'
+                                    android:visibility='@{nh31396.checked ? View.VISIBLE : View.GONE}'
                                     android:hint="@string/other"
                                     android:text='@{nh31396.checked ? nh31396x.getText().toString() : ""}' />
 <!--                                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-->
@@ -761,7 +761,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled="@{nh31496.checked ? true : false}"
+                                    android:visibility="@{nh31496.checked ? View.VISIBLE : View.GONE}"
                                     android:hint="@string/other"
                                     android:inputType="text"
                                     android:text='@{nh31496.checked ? nh31496x.getText().toString() : ""}' />
@@ -849,7 +849,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled="@{nh31596.checked ? true : false}"
+                                    android:visibility="@{nh31596.checked ? View.VISIBLE : View.GONE}"
                                     android:hint="@string/other"
                                     android:inputType="text"
                                     android:text='@{nh31596.checked ? nh31596x.getText().toString() : ""}' />
@@ -1087,7 +1087,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled="@{nh31796.checked ? true : false}"
+                                    android:visibility="@{nh31796.checked ? View.VISIBLE : View.GONE}"
                                     android:hint="@string/other"
                                     android:inputType="text"
                                     android:text='@{nh31796.checked ? nh31796x.getText().toString() : ""}' />
@@ -1288,7 +1288,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled="@{nh31896.checked ? true : false}"
+                                    android:visibility="@{nh31896.checked ? View.VISIBLE : View.GONE}"
                                     android:hint="@string/other"
                                     android:inputType="text"
                                     android:text='@{nh31896.checked ? nh31896x.getText().toString() : ""}' />
@@ -1502,7 +1502,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                                    android:enabled="@{nh31996.checked ? true : false}"
+                                    android:visibility="@{nh31996.checked ? View.VISIBLE : View.GONE}"
                                     android:hint="@string/other"
                                     android:inputType="text"
                                     android:text='@{nh31996.checked ? nh31996x.getText().toString() : ""}' />
@@ -1692,7 +1692,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="1dp"
-                                        android:enabled="@{nh322b.checked ? true : false}"
+                                        android:visibility="@{nh322b.checked ? View.VISIBLE : View.GONE}"
                                         android:hint="@string/nh322can"
                                         android:inputType="numberDecimal"
                                         android:maxLength="6"
@@ -1779,7 +1779,7 @@
                         android:id="@+id/fldGrpnh324"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="@{nh323a.checked ? true : false}"
+                        android:visibility="@{nh323a.checked ? View.VISIBLE : View.GONE}"
                         android:orientation="vertical">
 
                         <!-- nh324 -->
