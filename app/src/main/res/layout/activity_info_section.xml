@@ -100,48 +100,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- hh03  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVhh03"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_hh03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh03"
-                            android:text="@string/hh03" />
-
-                        <TextView
-                            android:id="@+id/q_hh03"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh03"
-                            android:layout_alignBottom="@id/qtxt_hh03"
-                            android:text="@string/Q_hh03" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/hh03"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/hh03"
-                        android:inputType="number" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
             <!-- hh04  TextArea   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhh04"
@@ -173,6 +131,13 @@
                             android:layout_alignBottom="@id/qtxt_hh04"
                             android:text="@string/Q_hh04" />
                     </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/hh04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Q_hh04" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

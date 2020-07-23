@@ -18,10 +18,10 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib02Binding;
+import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
@@ -169,7 +169,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
     }
 
 

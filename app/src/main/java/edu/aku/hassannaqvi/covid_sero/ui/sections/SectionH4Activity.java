@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -22,7 +21,6 @@ import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH4Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 
@@ -67,10 +65,10 @@ public class SectionH4Activity extends AppCompatActivity {
 
         bi.nh404.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.nh404b) {
-                Clear.clearAllFields(bi.fldGrpnh405check);
-                bi.fldGrpnh405check.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVnh405);
+                bi.fldGrpCVnh405.setVisibility(View.GONE);
             } else {
-                bi.fldGrpnh405check.setVisibility(View.VISIBLE);
+                bi.fldGrpCVnh405.setVisibility(View.VISIBLE);
             }
         });
 
@@ -86,8 +84,8 @@ public class SectionH4Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (updateDB()) {
+                SectionSubInfoActivity.Companion.setIstatusFlag(1);
                 finish();
-                startActivity(new Intent(this, SectionSubInfoActivity.class).putExtra(ROUTE_SUBINFO, 1));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
@@ -111,7 +109,7 @@ public class SectionH4Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.openHHSpecificEndActivity(this);
     }
 
     private void saveDraft() throws JSONException {

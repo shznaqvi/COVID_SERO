@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.databinding.ChildEndDialogBinding
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity
+import edu.aku.hassannaqvi.covid_sero.ui.sections.SectionSubInfoActivity
 import java.util.*
 
 private fun checkPermission(context: Context): IntArray {
@@ -62,7 +63,7 @@ fun openEndActivity(destination: Activity, current: Class<*> = EndingActivity::c
 }
 
 @JvmOverloads
-fun openEndActivity(destination: Activity, current: Class<*> = EndingActivity::class.java, extra: String, defaultFlag: Int = 0) {
+fun openHHSpecificEndActivity(destination: Activity) {
     val dialog = Dialog(destination)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.general_end_dialog)
@@ -74,8 +75,8 @@ fun openEndActivity(destination: Activity, current: Class<*> = EndingActivity::c
     dialog.show()
     dialog.window!!.attributes = params
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
+        SectionSubInfoActivity.istatusFlag = 99
         destination.finish()
-        destination.startActivity(Intent(destination, current).putExtra(extra, defaultFlag))
     }
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
@@ -164,6 +165,15 @@ fun openWarningActivity(activity: Activity, title: String, message: String, btnY
     bi.btnNo.setOnClickListener {
         dialog.dismiss()
     }
+}
+
+fun getMemberIcon(gender: Int, age: String): Int {
+    val memAge = age.toInt()
+    return if (memAge == -1) R.drawable.upload else if (memAge > 10) if (gender == 1) R.drawable.ctr_male else R.drawable.ctr_female else if (gender == 1) R.drawable.ctr_childboy else R.drawable.ctr_childgirl
+}
+
+fun getMemberIcon(gender: Int): Int {
+    return if (gender == 1) R.drawable.ctr_childboy else R.drawable.ctr_childgirl
 }
 
 interface EndSectionActivity {

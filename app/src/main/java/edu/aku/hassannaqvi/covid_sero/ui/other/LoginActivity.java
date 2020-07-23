@@ -59,6 +59,7 @@ import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDA
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.TWO_MINUTES;
+import static edu.aku.hassannaqvi.covid_sero.data.UserDataKt.userTestData;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.getPermissionsList;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DB_NAME;
@@ -689,6 +690,7 @@ public class LoginActivity extends Activity {
             if (!success) return;
             LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             assert mlocManager != null;
+            MainApp.user = userTestData(musername);
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
                 if ((musername.equals("dmu@aku") && mPassword.equals("aku?dmu")) ||
@@ -696,15 +698,12 @@ public class LoginActivity extends Activity {
                         || (musername.equals("test1234") && mPassword.equals("test1234"))) {
                     MainApp.userName = musername;
                     MainApp.admin = musername.contains("@");
-                    Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(iLogin);
-
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
                     bi.password.setError("Incorrect Password");
                     bi.password.requestFocus();
                     Toast.makeText(LoginActivity.this, musername + " " + mPassword, Toast.LENGTH_SHORT).show();
                 }
-
 
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(

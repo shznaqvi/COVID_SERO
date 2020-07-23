@@ -26,10 +26,10 @@ import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import java.util.List;
 
-import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract;
 import edu.aku.hassannaqvi.covid_sero.location.LocationLiveData;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
+import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import kotlin.Pair;
 
@@ -82,7 +82,7 @@ public class MainApp extends Application {
     public static LiveData<Form> liveForms = new MutableLiveData<>();
 
     public static String userName = "0000";
-    public static UsersContract user;
+    public static Users user;
     public static int deathCount = 0;
     public static String DeviceURL = "devices.php";
     public static String IMEI;

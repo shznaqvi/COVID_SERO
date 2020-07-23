@@ -21,15 +21,15 @@ public class Personal extends LiveData<Personal> {
 
     private String _ID = "";
     private String _UID = "";
+    private String _UUID = "";
     private String sysdate = "";
     private String a01 = ""; // Date
     private String a02 = ""; // Time
     private String a03 = ""; // Interviewer
-    private String a04 = ""; // Province
-    private String a05 = ""; // District
-    private String refno = ""; // Reference Number
-    private String istatus = ""; // Interview Status
-    private String istatus96x = ""; // Interview Status
+    private String hh12 = ""; // Cluster
+    private String hh13 = ""; // HHNo
+    private String cstatus = ""; // Interview Status
+    private String cstatus96x = ""; // Interview Status
     private String endingdatetime = "";
     private String gpsLat = "";
     private String gpsLng = "";
@@ -45,12 +45,77 @@ public class Personal extends LiveData<Personal> {
     private String sC = "";
     private String sI = "";
 
+    //Not in DB
+    private String memberName;
+    private String memberSerial;
+    private String gender;
+    private String agey;
+    private String agem;
+    private String cluster;
+    private String hhno;
+
     private HHModel hhModel;
 
     //Date Settings
     private LocalDate localDate = null, calculatedDOB = null;
 
     public Personal() {
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getMemberSerial() {
+        return memberSerial;
+    }
+
+    public void setMemberSerial(String memberSerial) {
+        this.memberSerial = memberSerial;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAgey() {
+        return agey;
+    }
+
+    public void setAgey(String agey) {
+        this.agey = agey;
+    }
+
+    public String getAgem() {
+        return agem;
+    }
+
+    public void setAgem(String agem) {
+        this.agem = agem;
+    }
+
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+    }
+
+    public String getHhno() {
+        return hhno;
+    }
+
+    public void setHhno(String hhno) {
+        this.hhno = hhno;
     }
 
     public HHModel getHhModel() {
@@ -88,21 +153,21 @@ public class Personal extends LiveData<Personal> {
     }
 
 
-    public String getA04() {
-        return a04;
+    public String getHh12() {
+        return hh12;
     }
 
-    public void setA04(String a04) {
-        this.a04 = a04;
+    public void setHh12(String hh12) {
+        this.hh12 = hh12;
     }
 
 
-    public String getA05() {
-        return a05;
+    public String getHh13() {
+        return hh13;
     }
 
-    public void setA05(String a05) {
-        this.a05 = a05;
+    public void setHh13(String hh13) {
+        this.hh13 = hh13;
     }
 
     public String getsA() {
@@ -198,21 +263,21 @@ public class Personal extends LiveData<Personal> {
     }
 
 
-    public String getIstatus() {
-        return istatus;
+    public String getCstatus() {
+        return cstatus;
     }
 
-    public void setIstatus(String istatus) {
-        this.istatus = istatus;
+    public void setCstatus(String cstatus) {
+        this.cstatus = cstatus;
     }
 
 
-    public String getIstatus96x() {
-        return istatus96x;
+    public String getCstatus96x() {
+        return cstatus96x;
     }
 
-    public void setIstatus96x(String istatus96x) {
-        this.istatus96x = istatus96x;
+    public void setCstatus96x(String cstatus96x) {
+        this.cstatus96x = cstatus96x;
     }
 
 
@@ -297,12 +362,12 @@ public class Personal extends LiveData<Personal> {
     }
 
 
-    public String getRefno() {
-        return refno;
+    public String get_UUID() {
+        return _UUID;
     }
 
-    public void setRefno(String refno) {
-        this.refno = refno;
+    public void set_UUID(String _UUID) {
+        this._UUID = _UUID;
     }
 
 
@@ -313,11 +378,11 @@ public class Personal extends LiveData<Personal> {
         this.a01 = jsonObject.getString(PersonalTable.COLUMN_A01);
         this.a02 = jsonObject.getString(PersonalTable.COLUMN_A02);
         this.a03 = jsonObject.getString(PersonalTable.COLUMN_A03);
-        this.a04 = jsonObject.getString(PersonalTable.COLUMN_A04);
-        this.a05 = jsonObject.getString(PersonalTable.COLUMN_A05);
-        this.refno = jsonObject.getString(PersonalTable.COLUMN_REFNO);
-        this.istatus = jsonObject.getString(PersonalTable.COLUMN_ISTATUS);
-        this.istatus96x = jsonObject.getString(PersonalTable.COLUMN_ISTATUS96x);
+        this.hh12 = jsonObject.getString(PersonalTable.COLUMN_HH12);
+        this.hh13 = jsonObject.getString(PersonalTable.COLUMN_HH13);
+        this._UUID = jsonObject.getString(PersonalTable.COLUMN_UUID);
+        this.cstatus = jsonObject.getString(PersonalTable.COLUMN_CSTATUS);
+        this.cstatus96x = jsonObject.getString(PersonalTable.COLUMN_CSTATUS96x);
         this.endingdatetime = jsonObject.getString(PersonalTable.COLUMN_ENDINGDATETIME);
         this.gpsLat = jsonObject.getString(PersonalTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(PersonalTable.COLUMN_GPSLNG);
@@ -343,11 +408,11 @@ public class Personal extends LiveData<Personal> {
         this.a01 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_A01));
         this.a02 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_A02));
         this.a03 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_A03));
-        this.a04 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_A04));
-        this.a05 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_A05));
-        this.refno = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_REFNO));
-        this.istatus = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_ISTATUS));
-        this.istatus96x = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_ISTATUS96x));
+        this.hh12 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_HH12));
+        this.hh13 = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_HH13));
+        this._UUID = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_UUID));
+        this.cstatus = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_CSTATUS));
+        this.cstatus96x = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_CSTATUS96x));
         this.endingdatetime = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_ENDINGDATETIME));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(PersonalTable.COLUMN_GPSLNG));
@@ -383,11 +448,11 @@ public class Personal extends LiveData<Personal> {
             json.put(PersonalTable.COLUMN_A01, this.a01 == null ? JSONObject.NULL : this.a01);
             json.put(PersonalTable.COLUMN_A02, this.a02 == null ? JSONObject.NULL : this.a02);
             json.put(PersonalTable.COLUMN_A03, this.a03 == null ? JSONObject.NULL : this.a03);
-            json.put(PersonalTable.COLUMN_A04, this.a04 == null ? JSONObject.NULL : this.a04);
-            json.put(PersonalTable.COLUMN_A05, this.a05 == null ? JSONObject.NULL : this.a05);
-            json.put(PersonalTable.COLUMN_REFNO, this.refno == null ? JSONObject.NULL : this.refno);
-            json.put(PersonalTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
-            json.put(PersonalTable.COLUMN_ISTATUS96x, this.istatus96x == null ? JSONObject.NULL : this.istatus96x);
+            json.put(PersonalTable.COLUMN_HH12, this.hh12 == null ? JSONObject.NULL : this.hh12);
+            json.put(PersonalTable.COLUMN_HH13, this.hh13 == null ? JSONObject.NULL : this.hh13);
+            json.put(PersonalTable.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+            json.put(PersonalTable.COLUMN_CSTATUS, this.cstatus == null ? JSONObject.NULL : this.cstatus);
+            json.put(PersonalTable.COLUMN_CSTATUS96x, this.cstatus96x == null ? JSONObject.NULL : this.cstatus96x);
             json.put(PersonalTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
 
             if (this.sA != null && !this.sA.equals("")) {
