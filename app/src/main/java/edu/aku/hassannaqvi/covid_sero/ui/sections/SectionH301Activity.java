@@ -19,8 +19,10 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH301Binding;
+import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 public class SectionH301Activity extends AppCompatActivity {
@@ -87,10 +89,10 @@ public class SectionH301Activity extends AppCompatActivity {
         bi.nh308.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.nh308b) {
                 Clear.clearAllFields(bi.fldGrpnh309);
-                bi.fldGrpnh308.setVisibility(View.GONE);
+                bi.fldGrpnh309.setVisibility(View.GONE);
             } else {
                 Clear.clearAllFields(bi.fldGrpnh309);
-                bi.fldGrpnh308.setVisibility(View.VISIBLE);
+                bi.fldGrpnh309.setVisibility(View.VISIBLE);
             }
         });
 
@@ -274,19 +276,21 @@ public class SectionH301Activity extends AppCompatActivity {
                 : bi.nh31119b.isChecked() ? "2"
                 : "0");
 
-        MainApp.form.setsH3(String.valueOf(sH3));
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsH3()), sH3);
+
+            form.setsH3(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH3, MainApp.form.getsH3());
-        if (updcount == 1) {
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        return updcount == 1;
     }
 
     @Override
