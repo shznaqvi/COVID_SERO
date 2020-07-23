@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import edu.aku.hassannaqvi.covid_sero.CONSTANTS
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.adapter.MemberListAdapter
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
@@ -31,10 +30,10 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     private var serial = 0
     private var memFlag = false
     private lateinit var adapter: MemberListAdapter
-    private var istatusFlag = 0
 
     companion object {
         lateinit var mainVModel: MainVModel
+        var istatusFlag = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +47,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
         bi.txtCluster.text = MainApp.form.hh12
         bi.txtHHNo.text = MainApp.form.hh13
         setupRecyclerView(mutableListOf())
-        istatusFlag = intent.getIntExtra(CONSTANTS.ROUTE_SUBINFO, 0)
+
         mainVModel.members.observe(this, Observer {
             serial = it.size + 1
             adapter.setMList(it)

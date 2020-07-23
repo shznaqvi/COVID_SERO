@@ -1,12 +1,10 @@
 package edu.aku.hassannaqvi.covid_sero.ui.other
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.validatorcrawler.aliazaz.Validator
-import edu.aku.hassannaqvi.covid_sero.CONSTANTS.Companion.ROUTE_SUBINFO
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityPiEndingBinding
@@ -39,8 +37,10 @@ class PIEndingActivity : AppCompatActivity() {
         if (!formValidation()) return
         saveDraft()
         if (updateDB()) {
+            SectionSubInfoActivity.mainVModel.setMemberList(MainApp.personal)
+            SectionSubInfoActivity.istatusFlag = 1
             finish()
-            startActivity(Intent(this, SectionSubInfoActivity::class.java).putExtra(ROUTE_SUBINFO, 1))
+//            startActivity(Intent(this, SectionSubInfoActivity::class.java).putExtra(ROUTE_SUBINFO, 1))
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show()
         }

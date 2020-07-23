@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -65,6 +66,22 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
                 Clear.clearAllFields(bi.fldGrpSecH01);
             }
         }));*/
+
+        bi.pa08.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.pa081.isChecked()) {
+                if (TextUtils.isEmpty(bi.pa04y.getText()))
+                    bi.fldGrpSectionA02.setVisibility(View.VISIBLE);
+                else {
+                    if (Integer.parseInt(bi.pa04y.getText().toString()) < 5)
+                        bi.fldGrpSectionA02.setVisibility(View.GONE);
+                    else
+                        bi.fldGrpSectionA02.setVisibility(View.VISIBLE);
+                }
+            } else {
+                bi.fldGrpSectionA02.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpSectionA02);
+            }
+        });
 
     }
 
@@ -174,9 +191,15 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
 
     public void pa04yOnTextChanged(CharSequence s, int start, int before, int count) {
         if (TextUtils.isEmpty(bi.pa04y.getText())) return;
-        if (Integer.parseInt(bi.pa04y.getText().toString()) < 5)
+        if (Integer.parseInt(bi.pa04y.getText().toString()) < 5) {
+            bi.fldGrpSectionA02.setVisibility(View.GONE);
+            bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpSectionA02);
+        } else {
+            bi.fldGrpSectionA02.setVisibility(View.VISIBLE);
             bi.fldGrpSectionA01.setVisibility(View.GONE);
-        else bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpSectionA01);
+        }
     }
 
     public void pa03yyOnTextChanged(CharSequence s, int start, int before, int count) {
