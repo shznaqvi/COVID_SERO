@@ -18,23 +18,20 @@ public class Users {
     String username;
     String password;
     String distId;
+    String fullname;
 //    String REGION_DSS;
 
     public Users() {
         // Default Constructor
     }
 
-    public Users(String username, String password) {
-        this.password = password;
-        this.username = username;
-    }
 
     public Long getUserID() {
         return this.id;
     }
 
     public void setId(int id) {
-        this.id = Long.valueOf(id);
+        this.id = (long) id;
     }
 
     public String getUserName() {
@@ -61,19 +58,19 @@ public class Users {
         this.distId = distId;
     }
 
-/*    public String getREGION_DSS() {
-        return REGION_DSS;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setREGION_DSS(String REGION_DSS) {
-        this.REGION_DSS = REGION_DSS;
-    }*/
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
 
     public Users Sync(JSONObject jsonObject) throws JSONException {
         this.username = jsonObject.getString(UsersTable.COLUMN_USERNAME);
         this.password = jsonObject.getString(UsersTable.COLUMN_PASSWORD);
         this.distId = jsonObject.getString(UsersTable.DIST_ID);
-//        this.REGION_DSS = jsonObject.getString(singleUser.REGION_DSS);
+        this.fullname = jsonObject.getString(UsersTable.FULL_NAME);
         return this;
 
     }
@@ -83,21 +80,8 @@ public class Users {
         this.username = cursor.getString(cursor.getColumnIndex(UsersTable.COLUMN_USERNAME));
         this.password = cursor.getString(cursor.getColumnIndex(UsersTable.COLUMN_PASSWORD));
         this.distId = cursor.getString(cursor.getColumnIndex(UsersTable.DIST_ID));
-//        this.REGION_DSS = cursor.getString(cursor.getColumnIndex(singleUser.REGION_DSS));
+        this.fullname = cursor.getString(cursor.getColumnIndex(UsersTable.FULL_NAME));
         return this;
-
-    }
-
-
-    public JSONObject toJSONObject() throws JSONException {
-
-        JSONObject json = new JSONObject();
-        json.put(UsersTable._ID, this.id == null ? JSONObject.NULL : this.id);
-        json.put(UsersTable.COLUMN_USERNAME, this.username == null ? JSONObject.NULL : this.username);
-        json.put(UsersTable.COLUMN_PASSWORD, this.password == null ? JSONObject.NULL : this.password);
-        json.put(UsersTable.DIST_ID, this.distId == null ? JSONObject.NULL : this.distId);
-//        json.put(singleUser.REGION_DSS, this.REGION_DSS == null ? JSONObject.NULL : this.REGION_DSS);
-        return json;
     }
 
 }

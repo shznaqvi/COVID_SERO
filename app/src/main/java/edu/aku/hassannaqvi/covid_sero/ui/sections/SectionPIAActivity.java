@@ -27,16 +27,18 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPiaBinding;
+import edu.aku.hassannaqvi.covid_sero.models.HHModel;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
+import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 
-public class SectionPIAActivity extends AppCompatActivity {
+public class SectionPIAActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionPiaBinding bi;
     boolean dtFlag = false;
@@ -49,7 +51,6 @@ public class SectionPIAActivity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkips();
     }
-
 
     private void setupSkips() {
 
@@ -67,24 +68,26 @@ public class SectionPIAActivity extends AppCompatActivity {
 
     }
 
-
     public void BtnContinue() {
+        btnPressed(SectionPIB01Activity.class);
+    }
+
+    private void btnPressed(Class<?> routeClass) {
         if (!formValidation()) return;
         try {
-            SaveDraft();
+            saveDraft();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (UpdateDB()) {
+        if (updateDB()) {
             finish();
-            startActivity(new Intent(this, bi.pa082.isChecked() ? SectionSubInfoActivity.class : SectionPIB01Activity.class).putExtra(ROUTE_SUBINFO, 2));
+            startActivity(new Intent(this, routeClass));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-    private boolean UpdateDB() {
+    private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addPersonal(personal);
         personal.set_ID(String.valueOf(updcount));
@@ -98,8 +101,7 @@ public class SectionPIAActivity extends AppCompatActivity {
         }
     }
 
-
-    private void SaveDraft() throws JSONException {
+    private void saveDraft() throws JSONException {
 
         personal = new Personal();
         personal.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
@@ -107,20 +109,25 @@ public class SectionPIAActivity extends AppCompatActivity {
         personal.setDeviceID(MainApp.appInfo.getDeviceID());
         personal.setDevicetagID(MainApp.appInfo.getTagName());
         personal.setAppversion(MainApp.appInfo.getAppVersion());
+        personal.setHh12(form.getHh12());
+        personal.setHh13(form.getHh13());
 
         JSONObject json = new JSONObject();
 
+        personal.setMemberName(bi.pa01.getText().toString());
         json.put("pa01", bi.pa01.getText().toString());
 
-        json.put("pa02", bi.pa021.isChecked() ? "1"
-                : bi.pa022.isChecked() ? "2"
-                : "-1");
+        String gender = bi.pa021.isChecked() ? "1" : bi.pa022.isChecked() ? "2" : "-1";
+        personal.setGender(gender);
+        json.put("pa02", gender);
 
         json.put("pa03_dd", bi.pa03dd.getText().toString());
         json.put("pa03_mm", bi.pa03mm.getText().toString());
         json.put("pa03_yy", bi.pa03yy.getText().toString());
 
+        personal.setAgey(bi.pa04y.getText().toString());
         json.put("pa04y", bi.pa04y.getText().toString());
+        personal.setAgem(bi.pa04m.getText().toString());
         json.put("pa04m", bi.pa04m.getText().toString());
 
         json.put("pa06", bi.pa06.getText().toString());
@@ -147,16 +154,13 @@ public class SectionPIAActivity extends AppCompatActivity {
 
         personal.setsA(json.toString());
 
-        form.getHhModel().setMemAge(Integer.parseInt(bi.pa04y.getText().toString()));
-        form.getHhModel().setGenderFemale(bi.pa022.isChecked());
+        personal.setHhModel(new HHModel(form.getHh12(), form.getHh13(), Integer.parseInt(bi.pa04y.getText().toString()), bi.pa022.isChecked()));
 
     }
-
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.contextEndActivity(this);
     }
-
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.fldGrpSectionA)) return false;
@@ -222,4 +226,8 @@ public class SectionPIAActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void endSecActivity(boolean flag) {
+        btnPressed(PIEndingActivity.class);
+    }
 }

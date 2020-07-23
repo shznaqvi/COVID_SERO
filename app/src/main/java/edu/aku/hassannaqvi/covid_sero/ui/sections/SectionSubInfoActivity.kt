@@ -5,13 +5,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import edu.aku.hassannaqvi.covid_sero.CONSTANTS
 import edu.aku.hassannaqvi.covid_sero.R
+import edu.aku.hassannaqvi.covid_sero.adapter.MemberListAdapter
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionSubInfoBinding
+import edu.aku.hassannaqvi.covid_sero.models.Personal
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.contextEndActivity
+import edu.aku.hassannaqvi.covid_sero.viewmodel.MainVModel
 import ru.whalemare.sheetmenu.ActionItem
 import ru.whalemare.sheetmenu.SheetMenu
 import ru.whalemare.sheetmenu.layout.GridLayoutProvider
@@ -22,17 +28,31 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     private var flagNewForm = false
     private var flagInCompleteForm = false
     private var hhFlag = false
+    private var serial = 0
     private var memFlag = false
+    private lateinit var adapter: MemberListAdapter
     private var istatusFlag = 0
+
+    companion object {
+        lateinit var mainVModel: MainVModel
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_sub_info)
         bi.callback = this
         bi.formScroll.callback = this
-        bi.txtCluster.text = MainApp.form.hhModel.clusterCode
-        bi.txtHHNo.text = MainApp.form.hhModel.hhno
+        mainVModel = this.run {
+            ViewModelProvider(this).get(MainVModel::class.java)
+        }
+        bi.txtCluster.text = MainApp.form.hh12
+        bi.txtHHNo.text = MainApp.form.hh13
+        setupRecyclerView(mutableListOf())
         istatusFlag = intent.getIntExtra(CONSTANTS.ROUTE_SUBINFO, 0)
+        mainVModel.members.observe(this, Observer {
+            serial = it.size + 1
+            adapter.setMList(it)
+        })
     }
 
     override fun onResume() {
@@ -101,16 +121,6 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                 flagNewForm = false
                 bi.instruction.text = getString(R.string.memberforminfo)
             }
-            2 -> {
-                bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
-                bi.formScroll.hhScroll.status.visibility = View.VISIBLE
-                bi.formScroll.childScroll.name.text = "CHILD FORM COMPLETED"
-                bi.formScroll.childScroll.status.visibility = View.VISIBLE
-                hhFlag = false
-                memFlag = false
-                flagNewForm = false
-                bi.instruction.text = getString(R.string.end_interview)
-            }
             99 -> {
                 bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
                 bi.formScroll.childScroll.name.text = "MEMBER FORM IS BLOCKED\nContact Team Leader"
@@ -135,6 +145,12 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
 
     private fun endActivityStatus() {
         contextEndActivity(this@SectionSubInfoActivity, istatusFlag != 99)
+    }
+
+    private fun setupRecyclerView(membersLst: MutableList<Personal>) {
+        adapter = MemberListAdapter(this, membersLst)
+        bi.formScroll.recyclerViewChildren.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        bi.formScroll.recyclerViewChildren.adapter = adapter
     }
 
 }

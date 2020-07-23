@@ -62,6 +62,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
+            android:name=".ui.other.PIEndingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
             android:name=".ui.sections.SectionPIB02Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />

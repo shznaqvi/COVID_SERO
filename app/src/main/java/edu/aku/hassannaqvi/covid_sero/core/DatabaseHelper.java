@@ -16,10 +16,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract.PersonalTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract.VersionAppTable;
@@ -187,6 +188,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.DIST_ID, user.getDistId());
+                values.put(UsersTable.FULL_NAME, user.getFullname());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
@@ -207,8 +209,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (mCursor != null) {
             if (mCursor.getCount() > 0) {
 
-                if (mCursor.moveToFirst()) {
+                while (mCursor.moveToFirst()) {
 //                    MainApp.DIST_ID = mCursor.getString(mCursor.getColumnIndex(Users.UsersTable.ROW_USERNAME));
+                    MainApp.user = new Users().Hydrate(mCursor);
                 }
                 return true;
             }
@@ -223,35 +226,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(PersonalContract.PersonalTable.COLUMN_PROJECT_NAME, personal.getProjectName());
-        values.put(PersonalContract.PersonalTable.COLUMN_UID, personal.get_UID());
-        values.put(PersonalContract.PersonalTable.COLUMN_SYSDATE, personal.getSysdate());
-        values.put(PersonalContract.PersonalTable.COLUMN_A01, personal.getA01());
-        values.put(PersonalContract.PersonalTable.COLUMN_A02, personal.getA02());
-        values.put(PersonalContract.PersonalTable.COLUMN_A03, personal.getA03());
-        values.put(PersonalContract.PersonalTable.COLUMN_A04, personal.getA04());
-        values.put(PersonalContract.PersonalTable.COLUMN_A05, personal.getA05());
-        values.put(PersonalContract.PersonalTable.COLUMN_REFNO, personal.getRefno());
-        values.put(PersonalContract.PersonalTable.COLUMN_ISTATUS, personal.getIstatus());
-        values.put(PersonalContract.PersonalTable.COLUMN_ISTATUS96x, personal.getIstatus96x());
-        values.put(PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME, personal.getEndingdatetime());
-        values.put(PersonalContract.PersonalTable.COLUMN_SA, personal.getsA());
-        values.put(PersonalContract.PersonalTable.COLUMN_SB, personal.getsB());
-        values.put(PersonalContract.PersonalTable.COLUMN_SC, personal.getsC());
-        values.put(PersonalContract.PersonalTable.COLUMN_SI, personal.getsI());
-        values.put(PersonalContract.PersonalTable.COLUMN_GPSLAT, personal.getGpsLat());
-        values.put(PersonalContract.PersonalTable.COLUMN_GPSLNG, personal.getGpsLng());
-        values.put(PersonalContract.PersonalTable.COLUMN_GPSDATE, personal.getGpsDT());
-        values.put(PersonalContract.PersonalTable.COLUMN_GPSACC, personal.getGpsAcc());
-        values.put(PersonalContract.PersonalTable.COLUMN_DEVICETAGID, personal.getDevicetagID());
-        values.put(PersonalContract.PersonalTable.COLUMN_DEVICEID, personal.getDeviceID());
-        values.put(PersonalContract.PersonalTable.COLUMN_APPVERSION, personal.getAppversion());
+        values.put(PersonalTable.COLUMN_PROJECT_NAME, personal.getProjectName());
+        values.put(PersonalTable.COLUMN_UID, personal.get_UID());
+        values.put(PersonalTable.COLUMN_SYSDATE, personal.getSysdate());
+        values.put(PersonalTable.COLUMN_A01, personal.getA01());
+        values.put(PersonalTable.COLUMN_A02, personal.getA02());
+        values.put(PersonalTable.COLUMN_A03, personal.getA03());
+        values.put(PersonalTable.COLUMN_HH12, personal.getHh12());
+        values.put(PersonalTable.COLUMN_HH13, personal.getHh13());
+        values.put(PersonalTable.COLUMN_UUID, personal.get_UUID());
+        values.put(PersonalTable.COLUMN_CSTATUS, personal.getCstatus());
+        values.put(PersonalTable.COLUMN_CSTATUS96x, personal.getCstatus96x());
+        values.put(PersonalTable.COLUMN_ENDINGDATETIME, personal.getEndingdatetime());
+        values.put(PersonalTable.COLUMN_SA, personal.getsA());
+        values.put(PersonalTable.COLUMN_SB, personal.getsB());
+        values.put(PersonalTable.COLUMN_SC, personal.getsC());
+        values.put(PersonalTable.COLUMN_SI, personal.getsI());
+        values.put(PersonalTable.COLUMN_GPSLAT, personal.getGpsLat());
+        values.put(PersonalTable.COLUMN_GPSLNG, personal.getGpsLng());
+        values.put(PersonalTable.COLUMN_GPSDATE, personal.getGpsDT());
+        values.put(PersonalTable.COLUMN_GPSACC, personal.getGpsAcc());
+        values.put(PersonalTable.COLUMN_DEVICETAGID, personal.getDevicetagID());
+        values.put(PersonalTable.COLUMN_DEVICEID, personal.getDeviceID());
+        values.put(PersonalTable.COLUMN_APPVERSION, personal.getAppversion());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                PersonalContract.PersonalTable.TABLE_NAME,
-                PersonalContract.PersonalTable.COLUMN_NAME_NULLABLE,
+                PersonalTable.TABLE_NAME,
+                PersonalTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -266,11 +269,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.get_UID());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysdate());
-        values.put(FormsTable.COLUMN_A01, form.getA01());
-        values.put(FormsTable.COLUMN_A02, form.getA02());
-        values.put(FormsTable.COLUMN_A03, form.getA03());
-        values.put(FormsTable.COLUMN_A04, form.getA04());
-        values.put(FormsTable.COLUMN_A05, form.getA05());
+        values.put(FormsTable.COLUMN_HH01, form.getHh01());
+        values.put(FormsTable.COLUMN_HH02, form.getHh02());
+        values.put(FormsTable.COLUMN_HH03, form.getHh03());
+        values.put(FormsTable.COLUMN_HH12, form.getHh12());
+        values.put(FormsTable.COLUMN_HH13, form.getHh13());
         values.put(FormsTable.COLUMN_REFNO, form.getRefno());
         values.put(FormsTable.COLUMN_ISTATUS, form.getIstatus());
         values.put(FormsTable.COLUMN_ISTATUS96x, form.getIstatus96x());
@@ -306,11 +309,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String selection = FormsTable._ID + " = ?";
         String[] selectionArgs = {String.valueOf(form.get_ID())};
 
-        int count = db.update(FormsTable.TABLE_NAME,
+        return db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
-        return count;
     }
 
     public Collection<Form> getAllForms() {
@@ -320,11 +322,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
-                FormsTable.COLUMN_A03,
-                FormsTable.COLUMN_A04,
-                FormsTable.COLUMN_A05,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
+                FormsTable.COLUMN_HH03,
+                FormsTable.COLUMN_HH12,
+                FormsTable.COLUMN_HH13,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SINFO,
@@ -377,41 +379,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PersonalContract.PersonalTable._ID,
-                PersonalContract.PersonalTable.COLUMN_UID,
-                PersonalContract.PersonalTable.COLUMN_SYSDATE,
-                PersonalContract.PersonalTable.COLUMN_A01,
-                PersonalContract.PersonalTable.COLUMN_A02,
-                PersonalContract.PersonalTable.COLUMN_A03,
-                PersonalContract.PersonalTable.COLUMN_A04,
-                PersonalContract.PersonalTable.COLUMN_A05,
-                PersonalContract.PersonalTable.COLUMN_REFNO,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS,
-                PersonalContract.PersonalTable.COLUMN_SA,
-                PersonalContract.PersonalTable.COLUMN_SB,
-                PersonalContract.PersonalTable.COLUMN_SC,
-                PersonalContract.PersonalTable.COLUMN_SI,
-                PersonalContract.PersonalTable.COLUMN_GPSLAT,
-                PersonalContract.PersonalTable.COLUMN_GPSLNG,
-                PersonalContract.PersonalTable.COLUMN_GPSDATE,
-                PersonalContract.PersonalTable.COLUMN_GPSACC,
-                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
-                PersonalContract.PersonalTable.COLUMN_DEVICEID,
-                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+                PersonalTable._ID,
+                PersonalTable.COLUMN_UID,
+                PersonalTable.COLUMN_SYSDATE,
+                PersonalTable.COLUMN_A01,
+                PersonalTable.COLUMN_A02,
+                PersonalTable.COLUMN_A03,
+                PersonalTable.COLUMN_HH12,
+                PersonalTable.COLUMN_HH13,
+                PersonalTable.COLUMN_UUID,
+                PersonalTable.COLUMN_CSTATUS,
+                PersonalTable.COLUMN_SA,
+                PersonalTable.COLUMN_SB,
+                PersonalTable.COLUMN_SC,
+                PersonalTable.COLUMN_SI,
+                PersonalTable.COLUMN_GPSLAT,
+                PersonalTable.COLUMN_GPSLNG,
+                PersonalTable.COLUMN_GPSDATE,
+                PersonalTable.COLUMN_GPSACC,
+                PersonalTable.COLUMN_DEVICETAGID,
+                PersonalTable.COLUMN_DEVICEID,
+                PersonalTable.COLUMN_APPVERSION,
 
         };
         String whereClause = null;
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
-
-        String orderBy =
-                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
-
+        String orderBy = PersonalTable.COLUMN_ID + " ASC";
         Collection<Personal> allPersonal = new ArrayList<Personal>();
         try {
             c = db.query(
-                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    PersonalTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -441,11 +440,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
-                FormsTable.COLUMN_A03,
-                FormsTable.COLUMN_A04,
-                FormsTable.COLUMN_A05,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
+                FormsTable.COLUMN_HH03,
+                FormsTable.COLUMN_HH12,
+                FormsTable.COLUMN_HH13,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SINFO,
@@ -498,27 +497,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PersonalContract.PersonalTable._ID,
-                PersonalContract.PersonalTable.COLUMN_UID,
-                PersonalContract.PersonalTable.COLUMN_SYSDATE,
-                PersonalContract.PersonalTable.COLUMN_A01,
-                PersonalContract.PersonalTable.COLUMN_A02,
-                PersonalContract.PersonalTable.COLUMN_A03,
-                PersonalContract.PersonalTable.COLUMN_A04,
-                PersonalContract.PersonalTable.COLUMN_A05,
-                PersonalContract.PersonalTable.COLUMN_REFNO,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS,
-                PersonalContract.PersonalTable.COLUMN_SA,
-                PersonalContract.PersonalTable.COLUMN_SB,
-                PersonalContract.PersonalTable.COLUMN_SC,
-                PersonalContract.PersonalTable.COLUMN_SI,
-                PersonalContract.PersonalTable.COLUMN_GPSLAT,
-                PersonalContract.PersonalTable.COLUMN_GPSLNG,
-                PersonalContract.PersonalTable.COLUMN_GPSDATE,
-                PersonalContract.PersonalTable.COLUMN_GPSACC,
-                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
-                PersonalContract.PersonalTable.COLUMN_DEVICEID,
-                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+                PersonalTable._ID,
+                PersonalTable.COLUMN_UID,
+                PersonalTable.COLUMN_SYSDATE,
+                PersonalTable.COLUMN_A01,
+                PersonalTable.COLUMN_A02,
+                PersonalTable.COLUMN_A03,
+                PersonalTable.COLUMN_HH12,
+                PersonalTable.COLUMN_HH13,
+                PersonalTable.COLUMN_UUID,
+                PersonalTable.COLUMN_CSTATUS,
+                PersonalTable.COLUMN_SA,
+                PersonalTable.COLUMN_SB,
+                PersonalTable.COLUMN_SC,
+                PersonalTable.COLUMN_SI,
+                PersonalTable.COLUMN_GPSLAT,
+                PersonalTable.COLUMN_GPSLNG,
+                PersonalTable.COLUMN_GPSDATE,
+                PersonalTable.COLUMN_GPSACC,
+                PersonalTable.COLUMN_DEVICETAGID,
+                PersonalTable.COLUMN_DEVICEID,
+                PersonalTable.COLUMN_APPVERSION,
 
         };
         String whereClause = null;
@@ -527,12 +526,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
+                PersonalTable.COLUMN_ID + " ASC";
 
         Collection<Personal> allPersonal = new ArrayList<Personal>();
         try {
             c = db.query(
-                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    PersonalTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -555,6 +554,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allPersonal;
     }
 
+    public List<Personal> checkAllPersonalExist(String clusterCode, String hhNo, String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PersonalTable._ID,
+                PersonalTable.COLUMN_UID,
+                PersonalTable.COLUMN_SYSDATE,
+                PersonalTable.COLUMN_A01,
+                PersonalTable.COLUMN_A02,
+                PersonalTable.COLUMN_A03,
+                PersonalTable.COLUMN_HH12,
+                PersonalTable.COLUMN_HH13,
+                PersonalTable.COLUMN_UUID,
+                PersonalTable.COLUMN_CSTATUS,
+                PersonalTable.COLUMN_SA,
+                PersonalTable.COLUMN_SB,
+                PersonalTable.COLUMN_SC,
+                PersonalTable.COLUMN_SI,
+                PersonalTable.COLUMN_GPSLAT,
+                PersonalTable.COLUMN_GPSLNG,
+                PersonalTable.COLUMN_GPSDATE,
+                PersonalTable.COLUMN_GPSACC,
+                PersonalTable.COLUMN_DEVICETAGID,
+                PersonalTable.COLUMN_DEVICEID,
+                PersonalTable.COLUMN_APPVERSION,
+
+        };
+        String whereClause = PersonalTable.COLUMN_HH12 + "=? AND " + PersonalTable.COLUMN_HH13 + "=? AND " + PersonalTable.COLUMN_UUID + "=? AND (" + PersonalTable.COLUMN_CSTATUS + " is not null OR " + PersonalTable.COLUMN_CSTATUS + " !='')";
+        String[] whereArgs = {clusterCode, hhNo, uuid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PersonalTable.COLUMN_ID + " ASC";
+
+        List<Personal> allPersonal = new ArrayList<>();
+        try {
+            c = db.query(
+                    PersonalTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allPersonal.add(new Personal().Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPersonal;
+    }
+
     public Collection<Form> getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -562,11 +620,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
-                FormsTable.COLUMN_A03,
-                FormsTable.COLUMN_A04,
-                FormsTable.COLUMN_A05,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
+                FormsTable.COLUMN_HH03,
+                FormsTable.COLUMN_HH12,
+                FormsTable.COLUMN_HH13,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS96x,
@@ -625,33 +683,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PersonalContract.PersonalTable._ID,
-                PersonalContract.PersonalTable.COLUMN_UID,
-                PersonalContract.PersonalTable.COLUMN_SYSDATE,
-                PersonalContract.PersonalTable.COLUMN_A01,
-                PersonalContract.PersonalTable.COLUMN_A02,
-                PersonalContract.PersonalTable.COLUMN_A03,
-                PersonalContract.PersonalTable.COLUMN_A04,
-                PersonalContract.PersonalTable.COLUMN_A05,
-                PersonalContract.PersonalTable.COLUMN_REFNO,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS96x,
-                PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME,
-                PersonalContract.PersonalTable.COLUMN_SA,
-                PersonalContract.PersonalTable.COLUMN_SB,
-                PersonalContract.PersonalTable.COLUMN_SC,
-                PersonalContract.PersonalTable.COLUMN_SI,
-                PersonalContract.PersonalTable.COLUMN_GPSLAT,
-                PersonalContract.PersonalTable.COLUMN_GPSLNG,
-                PersonalContract.PersonalTable.COLUMN_GPSDATE,
-                PersonalContract.PersonalTable.COLUMN_GPSACC,
-                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
-                PersonalContract.PersonalTable.COLUMN_DEVICEID,
-                PersonalContract.PersonalTable.COLUMN_APPVERSION,
+                PersonalTable._ID,
+                PersonalTable.COLUMN_UID,
+                PersonalTable.COLUMN_SYSDATE,
+                PersonalTable.COLUMN_A01,
+                PersonalTable.COLUMN_A02,
+                PersonalTable.COLUMN_A03,
+                PersonalTable.COLUMN_HH12,
+                PersonalTable.COLUMN_HH13,
+                PersonalTable.COLUMN_UUID,
+                PersonalTable.COLUMN_CSTATUS,
+                PersonalTable.COLUMN_CSTATUS96x,
+                PersonalTable.COLUMN_ENDINGDATETIME,
+                PersonalTable.COLUMN_SA,
+                PersonalTable.COLUMN_SB,
+                PersonalTable.COLUMN_SC,
+                PersonalTable.COLUMN_SI,
+                PersonalTable.COLUMN_GPSLAT,
+                PersonalTable.COLUMN_GPSLNG,
+                PersonalTable.COLUMN_GPSDATE,
+                PersonalTable.COLUMN_GPSACC,
+                PersonalTable.COLUMN_DEVICETAGID,
+                PersonalTable.COLUMN_DEVICEID,
+                PersonalTable.COLUMN_APPVERSION,
         };
 
 
-        String whereClause = PersonalContract.PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalContract.PersonalTable.COLUMN_ISTATUS + " != '' ";
+        String whereClause = PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalTable.COLUMN_CSTATUS + " != '' ";
         //String whereClause = PersonalTable.COLUMN_ISTATUS +" != '' ";
 
         String[] whereArgs = null;
@@ -660,12 +718,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                PersonalContract.PersonalTable.COLUMN_ID + " ASC";
+                PersonalTable.COLUMN_ID + " ASC";
 
         Collection<Personal> allPersonal = new ArrayList<Personal>();
         try {
             c = db.query(
-                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    PersonalTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -697,15 +755,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
-                FormsTable.COLUMN_A04,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
+                FormsTable.COLUMN_HH12,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SYNCED,
 
         };
-        String whereClause = FormsTable.COLUMN_A01 + " Like ? ";
+        String whereClause = FormsTable.COLUMN_HH01 + " Like ? ";
         String[] whereArgs = new String[]{"%" + sysdate + " %"};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
@@ -730,8 +788,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
                 form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
-                form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
-                form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
+                form.setHh01(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH01)));
+                form.setHh02(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
                 form.setIstatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
                 form.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
@@ -757,8 +815,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SYNCED,
@@ -789,8 +847,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
                 form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
-                form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
-                form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
+                form.setHh01(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH01)));
+                form.setHh02(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
                 form.setIstatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
                 form.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
@@ -814,8 +872,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SYNCED,
@@ -842,8 +900,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 form.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 form.set_UID(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
                 form.setSysdate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
-                form.setA01(c.getString(c.getColumnIndex(FormsTable.COLUMN_A01)));
-                form.setA02(c.getString(c.getColumnIndex(FormsTable.COLUMN_A02)));
+                form.setHh01(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH01)));
+                form.setHh02(c.getString(c.getColumnIndex(FormsTable.COLUMN_HH02)));
                 form.setRefno(c.getString(c.getColumnIndex(FormsTable.COLUMN_REFNO)));
                 form.setIstatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
                 form.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
@@ -874,6 +932,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(form.get_ID())};
 
         return db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updateMemberEnding() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(PersonalTable.COLUMN_CSTATUS, personal.getCstatus());
+        values.put(PersonalTable.COLUMN_CSTATUS96x, personal.getCstatus96x());
+        values.put(PersonalTable.COLUMN_ENDINGDATETIME, personal.getEndingdatetime());
+
+        // Which row to update, based on the ID
+        String selection = PersonalTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(personal.get_ID())};
+
+        return db.update(PersonalTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -940,11 +1017,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_A01,
-                FormsTable.COLUMN_A02,
-                FormsTable.COLUMN_A03,
-                FormsTable.COLUMN_A04,
-                FormsTable.COLUMN_A05,
+                FormsTable.COLUMN_HH01,
+                FormsTable.COLUMN_HH02,
+                FormsTable.COLUMN_HH03,
+                FormsTable.COLUMN_HH12,
+                FormsTable.COLUMN_HH13,
                 FormsTable.COLUMN_REFNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS96x,
@@ -962,7 +1039,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 //        String whereClause = "(" + FormsTable.COLUMN_ISTATUS + " is null OR " + FormsTable.COLUMN_ISTATUS + "='') AND " + FormsTable.COLUMN_CLUSTERCODE + "=? AND " + FormsTable.COLUMN_HHNO + "=?";
-        String whereClause = FormsTable.COLUMN_A05 + "=? AND " + FormsTable.COLUMN_REFNO + "=?";
+        String whereClause = FormsTable.COLUMN_HH13 + "=? AND " + FormsTable.COLUMN_REFNO + "=?";
         String[] whereArgs = {district, refno};
         String groupBy = null;
         String having = null;
@@ -997,41 +1074,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PersonalContract.PersonalTable._ID,
-                PersonalContract.PersonalTable.COLUMN_UID,
-                PersonalContract.PersonalTable.COLUMN_SYSDATE,
-                PersonalContract.PersonalTable.COLUMN_A01,
-                PersonalContract.PersonalTable.COLUMN_A02,
-                PersonalContract.PersonalTable.COLUMN_A03,
-                PersonalContract.PersonalTable.COLUMN_A04,
-                PersonalContract.PersonalTable.COLUMN_A05,
-                PersonalContract.PersonalTable.COLUMN_REFNO,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS,
-                PersonalContract.PersonalTable.COLUMN_ISTATUS96x,
-                PersonalContract.PersonalTable.COLUMN_ENDINGDATETIME,
-                PersonalContract.PersonalTable.COLUMN_SA,
-                PersonalContract.PersonalTable.COLUMN_SB,
-                PersonalContract.PersonalTable.COLUMN_SC,
-                PersonalContract.PersonalTable.COLUMN_SI,
-                PersonalContract.PersonalTable.COLUMN_GPSLAT,
-                PersonalContract.PersonalTable.COLUMN_GPSLNG,
-                PersonalContract.PersonalTable.COLUMN_GPSDATE,
-                PersonalContract.PersonalTable.COLUMN_GPSACC,
-                PersonalContract.PersonalTable.COLUMN_DEVICETAGID,
-                PersonalContract.PersonalTable.COLUMN_DEVICEID,
-                PersonalContract.PersonalTable.COLUMN_APPVERSION
+                PersonalTable._ID,
+                PersonalTable.COLUMN_UID,
+                PersonalTable.COLUMN_SYSDATE,
+                PersonalTable.COLUMN_A01,
+                PersonalTable.COLUMN_A02,
+                PersonalTable.COLUMN_A03,
+                PersonalTable.COLUMN_HH12,
+                PersonalTable.COLUMN_HH13,
+                PersonalTable.COLUMN_UUID,
+                PersonalTable.COLUMN_CSTATUS,
+                PersonalTable.COLUMN_CSTATUS96x,
+                PersonalTable.COLUMN_ENDINGDATETIME,
+                PersonalTable.COLUMN_SA,
+                PersonalTable.COLUMN_SB,
+                PersonalTable.COLUMN_SC,
+                PersonalTable.COLUMN_SI,
+                PersonalTable.COLUMN_GPSLAT,
+                PersonalTable.COLUMN_GPSLNG,
+                PersonalTable.COLUMN_GPSDATE,
+                PersonalTable.COLUMN_GPSACC,
+                PersonalTable.COLUMN_DEVICETAGID,
+                PersonalTable.COLUMN_DEVICEID,
+                PersonalTable.COLUMN_APPVERSION
         };
 
 //        String whereClause = "(" + FormsTable.COLUMN_ISTATUS + " is null OR " + FormsTable.COLUMN_ISTATUS + "='') AND " + FormsTable.COLUMN_CLUSTERCODE + "=? AND " + FormsTable.COLUMN_HHNO + "=?";
-        String whereClause = PersonalContract.PersonalTable.COLUMN_A05 + "=? AND " + PersonalContract.PersonalTable.COLUMN_REFNO + "=?";
+        String whereClause = PersonalTable.COLUMN_HH13 + "=? AND " + PersonalTable.COLUMN_UUID + "=?";
         String[] whereArgs = {district, refno};
         String groupBy = null;
         String having = null;
-        String orderBy = PersonalContract.PersonalTable._ID + " ASC";
+        String orderBy = PersonalTable._ID + " ASC";
         Personal allPersonal = null;
         try {
             c = db.query(
-                    PersonalContract.PersonalTable.TABLE_NAME,  // The table to query
+                    PersonalTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1076,10 +1153,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = PersonalContract.PersonalTable._ID + " =? ";
+        String selection = PersonalTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(personal.get_ID())};
 
-        return db.update(PersonalContract.PersonalTable.TABLE_NAME,
+        return db.update(PersonalTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

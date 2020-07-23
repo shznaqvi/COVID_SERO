@@ -26,7 +26,6 @@ import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
-import edu.aku.hassannaqvi.covid_sero.models.HHModel;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
 
@@ -46,7 +45,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     }
 
     private void setupSkips() {
-
+        bi.hh04.setText(MainApp.user.getFullname().toUpperCase());
     }
 
     public void BtnContinue() {
@@ -55,7 +54,6 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
 
     public void BtnEnd() {
         btnSavingWorking(EndingActivity.class, false);
-//        AppUtilsKt.contextEndActivity(this, false);
     }
 
     private void btnSavingWorking(Class<?> activity, Boolean flag) {
@@ -91,14 +89,17 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     private void SaveDraft() throws JSONException {
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
-        form.setA03(MainApp.userName);
+        form.setHh03(MainApp.userName);
         form.setDeviceID(MainApp.appInfo.getDeviceID());
         form.setDevicetagID(MainApp.appInfo.getTagName());
         form.setAppversion(MainApp.appInfo.getAppVersion());
+        form.setHh01(bi.hh01.getText().toString());
+        form.setHh03(MainApp.user.getUserName());
+        form.setHh12(bi.hh12.getText().toString());
+        form.setHh13(bi.hh13.getText().toString());
 
         JSONObject json = new JSONObject();
-        json.put("hh01", bi.hh01.getText().toString());
-        json.put("hh03", bi.hh03.getText().toString());
+        json.put("hh04", bi.hh04.getText().toString());
 
         json.put("hh05", bi.hh05.getText().toString());
 
@@ -118,15 +119,10 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
 
         json.put("hh10", bi.hh10.getText().toString());
 
-        json.put("hh12", bi.hh12.getText().toString());
-
-        json.put("hh13", bi.hh13.getText().toString());
-
         json.put("hh11", bi.hh11.getText().toString());
 
         form.setsInfo(json.toString());
 
-        form.setHhModel(new HHModel(bi.hh12.getText().toString(), bi.hh13.getText().toString()));
         form.setLocalDate(localDate);
 
     }

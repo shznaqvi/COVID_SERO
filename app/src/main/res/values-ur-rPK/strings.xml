@@ -1021,5 +1021,10 @@
     <string name="hhformInfo"> ۔HOUSEHOLD بٹن پر کلک کر کے گھر کی معلومات کا اندراج کریں</string>
     <string name="memberforminfo">گھر کی معلومات کا فارم کامیابی سے مکمل ہو گیا ہے اب انفرادی سوالنامہ کی معلومات کے فارم کا اندراج کریں</string>
     <string name="memlistinfo">اندراج شدہ افراد کی فہرست</string>
+    <string name="cstatus">" انٹرویو کا نتیجہ "</string>
+    <string name="Q_cstatus">MStatus</string>
+    <string name="pa1201">مکمل</string>
+    <string name="pa1202">انکار کردیا</string>
+    <string name="pa1203">جواب دینے سے قاصر</string>
 
 </resources>

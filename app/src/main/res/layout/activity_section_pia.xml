@@ -251,8 +251,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/pa04y"
-                        android:onTextChanged="@{callback::pa04yOnTextChanged}"
                         android:inputType="number"
+                        android:onTextChanged="@{callback::pa04yOnTextChanged}"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="0"
@@ -480,109 +480,110 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- pa09t  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVpa09t"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_pa09t"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_pa09t"
-                            android:text="@string/pa09t" />
-
-                        <TextView
-                            android:id="@+id/q_pa09t"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_pa09t"
-                            android:layout_alignBottom="@id/qtxt_pa09t"
-                            android:text="@string/Q_pa09t" />
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/pa09" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- pa09a  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVpa09a"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_pa09a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_pa09a"
-                            android:text="@string/pa09a" />
-
-                        <TextView
-                            android:id="@+id/q_pa09a"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_pa09a"
-                            android:layout_alignBottom="@id/qtxt_pa09a"
-                            android:text="@string/Q_pa09a" />
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/pa09b" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pa09b"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:enabled='@{pa09dk.checked? false : true}'
-                        android:inputType="number"
-                        android:hint="@string/pa09b"
-                        android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}' />
-
-                    <CheckBox
-                        android:id="@+id/pa09dk"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:tag="-1"
-                        android:text="@string/pa09dk" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
 
             <LinearLayout
                 android:id="@+id/fldGrpSectionA01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="@{pa081.checked ? View.VISIBLE : View.GONE}">
+
+                <!-- pa09t  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVpa09t"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_pa09t"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_pa09t"
+                                android:text="@string/pa09t" />
+
+                            <TextView
+                                android:id="@+id/q_pa09t"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_pa09t"
+                                android:layout_alignBottom="@id/qtxt_pa09t"
+                                android:text="@string/Q_pa09t" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/pa09" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- pa09a  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVpa09a"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_pa09a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_pa09a"
+                                android:text="@string/pa09a" />
+
+                            <TextView
+                                android:id="@+id/q_pa09a"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_pa09a"
+                                android:layout_alignBottom="@id/qtxt_pa09a"
+                                android:text="@string/Q_pa09a" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/pa09b" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pa09b"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:enabled='@{pa09dk.checked? false : true}'
+                            android:hint="@string/pa09b"
+                            android:inputType="number"
+                            android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}' />
+
+                        <CheckBox
+                            android:id="@+id/pa09dk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/pa09dk" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <!-- pa10t  Title   -->
                 <androidx.cardview.widget.CardView
@@ -668,8 +669,8 @@
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
                             android:enabled='@{pa10dk.checked? false : true}'
-                            android:inputType="number"
                             android:hint="@string/pa10b"
+                            android:inputType="number"
                             android:text='@{pa10dk.checked? "" : pa10b.getText().toString()}' />
 
                         <CheckBox
@@ -765,8 +766,8 @@
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
                             android:enabled='@{pa11dk.checked? false : true}'
-                            android:inputType="number"
                             android:hint="@string/pa11b"
+                            android:inputType="number"
                             android:text='@{pa11dk.checked? "" : pa11b.getText().toString()}' />
 
                         <CheckBox
@@ -797,7 +798,8 @@
                     android:background="@color/red_overlay"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="Cancel"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{pa082.checked ? View.VISIBLE : View.GONE}" />
 
                 <Button
                     android:id="@+id/btn_Continue"
@@ -807,6 +809,7 @@
                     android:background="@color/green_overlay"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="Save"
+                    android:visibility="@{pa081.checked ? View.VISIBLE : View.GONE}"
                     android:textColor="@color/white" />
             </LinearLayout>
 

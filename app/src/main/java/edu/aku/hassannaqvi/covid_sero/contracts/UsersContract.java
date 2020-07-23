@@ -20,6 +20,7 @@ public class UsersContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_PASSWORD = "password";
         public static final String DIST_ID = "dist_id";
+        public static final String FULL_NAME = "full_name";
         public static final String SERVER_URI = "users.php";
         public static String PATH = "user";
         public static final String CONTENT_TYPE =

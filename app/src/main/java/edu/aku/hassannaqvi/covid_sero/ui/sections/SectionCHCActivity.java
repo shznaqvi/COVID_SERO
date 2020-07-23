@@ -28,6 +28,8 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionChCBinding;
+import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
+import edu.aku.hassannaqvi.covid_sero.utils.TakePhoto;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
@@ -65,7 +67,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         } else */
         if (form.getLocalDate() != null) {
             int maxYears = form.getLocalDate().getYear();
-            int minYears = form.getLocalDate().minusYears(2).getYear();
+            int minYears = form.getLocalDate().minusYears(5).getYear();
             setYearOfBirth(minYears, maxYears);
         }
 
@@ -77,9 +79,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     }
 
     private void setupListeners() {
-
-
-        /*bi.im01.setOnCheckedChangeListener(((radioGroup, i) -> {
+        bi.im01.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.im011.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVim02, false);
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
@@ -113,7 +113,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 bi.backFileName.setText(null);
             }
 
-        }));*/
+        }));
 
         bi.im02.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVim03, i == bi.im022.getId());
@@ -147,9 +147,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 int year = Integer.parseInt(txt03);
 
                 AgeModel age;
-                /*if (formgetCalculatedDOB() != null)
-                    age = DateRepository.Companion.getCalculatedAge(formgetCalculatedDOB(), year, month, day);
-                else */
                 if (form.getLocalDate() != null)
                     age = DateRepository.Companion.getCalculatedAge(form.getLocalDate(), year, month, day);
                 else
@@ -161,8 +158,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                     imFlag = true;
                     bi.im04dd.setEnabled(false);
                     bi.im04mm.setEnabled(false);
-
-//                    if (formgetCalculatedDOB() == null) {
                     //Setting Date
                     try {
                         dtInstant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(
@@ -172,7 +167,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-//                    }
 
                 }
             }
@@ -232,8 +226,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("im04mm", bi.im04mm.getText().toString());
         f1.put("im04yy", bi.im04yy.getText().toString());
         f1.put("im0497", bi.im0497.isChecked() ? "97" : "0");
-/*        f1.put("frontFileName", bi.frontFileName.getText().toString());
-        f1.put("backFileName", bi.backFileName.getText().toString());*/
+        f1.put("frontFileName", bi.frontFileName.getText().toString());
+        f1.put("backFileName", bi.backFileName.getText().toString());
 
         personal.setsI(String.valueOf(f1));
 
@@ -246,10 +240,10 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             Toast.makeText(this, "Invalid date!", Toast.LENGTH_SHORT).show();
             return false;
         }
-     /*   if (bi.im011.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
+        if (bi.im011.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
             Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
         return Validator.emptyCheckingContainer(this, bi.fldGrpSectionCHC);
     }
 
@@ -305,7 +299,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
     }
 
     @Override
@@ -313,19 +307,10 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         contextBackActivity(this);
     }
 
-    /*
-        public void takePhoto(int id) {
-
-            Intent intent = new Intent(this, TakePhoto.class);
-
-            intent.putExtra("picID", MainApp.fc.getClusterCode() + "_" + MainApp.fc.getHhno() + "_" + MainApp.formgetChildSerial() + "_");
-            intent.putExtra("childName", MainApp.formgetChildName());
-
-    *//*
-        intent.putExtra("picID", "901001" + "_" + "A-0001-001" + "_" + "1" + "_");
-        intent.putExtra("childName", "Hassan");
-*//*
-
+    public void takePhoto(int id) {
+        Intent intent = new Intent(this, TakePhoto.class);
+        intent.putExtra("picID", personal.getHh12() + "_" + personal.getHh13() + "_" + personal.getMemberSerial() + "_");
+        intent.putExtra("childName", personal.getMemberName());
         if (id == 1) {
             intent.putExtra("picView", "front".toUpperCase());
             startActivityForResult(intent, 1); // Activity is started with requestCode 1 = Front
@@ -346,41 +331,27 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
             // Check if the requestCode 1 = Front : 2 = Back -- resultCode 1 = Success : 2 = Failure
             // Results received with requestCode 1 = Front
-
             if (requestCode == 1 && resultCode == 1) {
                 Toast.makeText(this, "Photo Taken", Toast.LENGTH_SHORT).show();
-
                 bi.frontFileName.setText(fileName);
                 bi.frontPhoto.setEnabled(false);
-
-
-            } else if (requestCode == 1 && resultCode != 1) {
+            } else if (requestCode == 1) {
                 Toast.makeText(this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
-
-                //TODO: Implement functionality below when photo was not taken
-                // ...
                 bi.frontFileName.setText("Photo not taken.");
-
             }
 
             // Results received with requestCode 2 = Back
             if (requestCode == 2 && resultCode == 1) {
                 Toast.makeText(this, "Photo Taken", Toast.LENGTH_SHORT).show();
-
                 bi.backFileName.setText(fileName);
                 bi.backPhoto.setEnabled(false);
-            } else if (requestCode == 2 && resultCode != 1) {
-
+            } else if (requestCode == 2) {
                 Toast.makeText(this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
-
-                //TODO: Implement functionality below when photo was not taken
-                // ...
                 bi.backFileName.setText("Photo not taken.");
-
             }
         }
     }
-*/
+
     @Override
     public void endSecActivity(boolean flag) {
         try {
@@ -390,7 +361,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         }
         if (UpdateDB()) {
             finish();
-
             AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 2);
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();

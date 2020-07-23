@@ -18,9 +18,9 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPicBinding;
+import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPICActivity extends AppCompatActivity {
@@ -54,7 +54,7 @@ public class SectionPICActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, MainApp.form.getHhModel().getMemAge() < 5 ? SectionCHCActivity.class : SectionSubInfoActivity.class).putExtra(ROUTE_SUBINFO, 2));
+            startActivity(new Intent(this, MainApp.personal.getHhModel().getMemAge() < 5 ? SectionCHCActivity.class : PIEndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -91,7 +91,7 @@ public class SectionPICActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
     }
 
     private boolean formValidation() {

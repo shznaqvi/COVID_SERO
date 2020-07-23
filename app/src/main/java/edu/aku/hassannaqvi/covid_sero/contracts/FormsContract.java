@@ -20,11 +20,11 @@ public class FormsContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_A01 = "a01";
-        public static final String COLUMN_A02 = "a02";
-        public static final String COLUMN_A03 = "a03";
-        public static final String COLUMN_A04 = "a04";
-        public static final String COLUMN_A05 = "a05";
+        public static final String COLUMN_HH01 = "hh01";
+        public static final String COLUMN_HH02 = "hh02";
+        public static final String COLUMN_HH03 = "hh03";
+        public static final String COLUMN_HH12 = "hh12";
+        public static final String COLUMN_HH13 = "hh13";
         public static final String COLUMN_REFNO = "refno";
         public static final String COLUMN_ISTATUS = "hh14";
         public static final String COLUMN_ISTATUS96x = "istatus96x";

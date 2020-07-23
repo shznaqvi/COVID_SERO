@@ -19,10 +19,10 @@ import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPib01Binding;
+import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
-import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
+import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
 public class SectionPIB01Activity extends AppCompatActivity {
@@ -65,7 +65,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
         }));
 
         //Skip for married
-        int age = form.getHhModel().getMemAge();
+        int age = personal.getHhModel().getMemAge();
         if (age < 15) {
             bi.fldGrpCVpb03.setVisibility(View.GONE);
             if (age >= 5) {
@@ -244,15 +244,15 @@ public class SectionPIB01Activity extends AppCompatActivity {
         json.put("pb10", bi.pb10.getText().toString());
 
 
-        MainApp.personal.setsB(json.toString());
+        personal.setsB(json.toString());
 
-        form.getHhModel().setMarried(bi.pb0301.isChecked());
+        personal.getHhModel().setMarried(bi.pb0301.isChecked());
 
     }
 
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
     }
 
 

@@ -67,10 +67,10 @@ public class SectionH4Activity extends AppCompatActivity {
 
         bi.nh404.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.nh404b) {
-                Clear.clearAllFields(bi.fldGrpnh405check);
-                bi.fldGrpnh405check.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVnh405);
+                bi.fldGrpCVnh405.setVisibility(View.GONE);
             } else {
-                bi.fldGrpnh405check.setVisibility(View.VISIBLE);
+                bi.fldGrpCVnh405.setVisibility(View.VISIBLE);
             }
         });
 
