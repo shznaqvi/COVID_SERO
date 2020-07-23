@@ -1018,6 +1018,56 @@
     <string name='Q_nh324'>H324</string>
 
 
+    <!-- Household Section HB-->
+    <string name="hb01">Name of the Respondent </string>
+    <string name="hb02">Contact Number of the Respondent</string>
+    <string name="hb03">Age of Respondent (in completed years)</string>
+    <string name="hb04">Is respondent the Head of this Household?</string>
+    <string name="hb0401">Yes</string>
+    <string name="hb0402">No</string>
+    <string name="hb05">Name of the head of Household</string>
+    <string name="hb06">Contact number of the head of Household</string>
+    <string name="hb07">May I start the interview now</string>
+    <string name="hb0701">Yes</string>
+    <string name="hb0702">No</string>
+    <string name="hb08">How many members are living in this household? If 95 or more, record ‘95’. </string>
+    <string name="hb08text">Note for enumerators: Persons who live in this dwelling/ compound and usually share a meal together</string>
+    <string name="hb08present">Number of persons present at home</string>
+    <string name="hb09">Does this HH have children 0-59 months of age? </string>
+    <string name="hb0901">Yes</string>
+    <string name="hb0902">No</string>
+    <string name="hb10">If Yes How many children of age 0-59 months old</string>
+    <string name="hb11">Does this HH have school going children (5 years to 19 years)</string>
+    <string name="hb1101">Yes</string>
+    <string name="hb1102">No</string>
+    <string name="hb12">If Yes How many (5 to 19 years old)</string>
+    <string name="hb13">Does this HH have Adults (20-49 years)</string>
+    <string name="hb1301">Yes</string>
+    <string name="hb1302">No</string>
+    <string name="hb14">If Yes How many (20 to 49 Years old)</string>
+    <string name="hb15">Does this HH have Elderly (49&gt; years)</string>
+    <string name="hb1501">Yes</string>
+    <string name="hb1502">No</string>
+    <string name="hb16">If Yes How many</string>
+
+    <string name='Q_hb01'>HB01</string>
+    <string name='Q_hb02'>HB02</string>
+    <string name='Q_hb03'>HB03</string>
+    <string name='Q_hb04'>HB04</string>
+    <string name='Q_hb05'>HB05</string>
+    <string name='Q_hb06'>HB06</string>
+    <string name='Q_hb07'>HB07</string>
+    <string name='Q_hb08'>HB08</string>
+    <string name='Q_hb09'>HB09</string>
+    <string name='Q_hb10'>HB10</string>
+    <string name='Q_hb11'>HB11</string>
+    <string name='Q_hb12'>HB12</string>
+    <string name='Q_hb13'>HB13</string>
+    <string name='Q_hb14'>HB14</string>
+    <string name='Q_hb15'>HB15</string>
+    <string name='Q_hb16'>HB16</string>
+
+
     <string name="end_interview"> انٹرویو ختم کریں </string>
     <string name="hhformInfo"> ۔HOUSEHOLD بٹن پر کلک کر کے گھر کی معلومات کا اندراج کریں</string>
     <string name="memberforminfo">گھر کی معلومات کا فارم کامیابی سے مکمل ہو گیا ہے اب انفرادی سوالنامہ کی معلومات کے فارم کا اندراج کریں</string>
