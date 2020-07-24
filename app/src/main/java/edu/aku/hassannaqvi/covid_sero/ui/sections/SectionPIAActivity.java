@@ -211,7 +211,7 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
         bi.pa04y.setEnabled(false);
         bi.pa04y.setText(null);
         calculatedDOB = null;
-        dtFlag = false;
+        dtFlag = true;
         if (TextUtils.isEmpty(bi.pa03dd.getText()) || TextUtils.isEmpty(bi.pa03mm.getText()) || TextUtils.isEmpty(bi.pa03yy.getText()))
             return;
         if (!bi.pa03dd.isRangeTextValidate() || !bi.pa03mm.isRangeTextValidate() || !bi.pa03yy.isRangeTextValidate())
