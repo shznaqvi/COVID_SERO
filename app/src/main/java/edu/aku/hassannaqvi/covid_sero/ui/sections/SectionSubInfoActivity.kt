@@ -46,6 +46,8 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
         }
         bi.txtCluster.text = MainApp.form.hh12
         bi.txtHHNo.text = MainApp.form.hh13
+        istatusFlag = 0
+
         setupRecyclerView(mutableListOf())
 
         mainVModel.members.observe(this, Observer {

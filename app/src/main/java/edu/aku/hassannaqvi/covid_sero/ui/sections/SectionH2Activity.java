@@ -91,12 +91,7 @@ public class SectionH2Activity extends AppCompatActivity implements EndSectionAc
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH2, MainApp.form.getsH2());
-        if (updcount == 1) {
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        return updcount == 1;
     }
 
     public void BtnEnd() {

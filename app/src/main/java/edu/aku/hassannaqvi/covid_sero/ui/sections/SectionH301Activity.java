@@ -19,7 +19,6 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH301Binding;
-import edu.aku.hassannaqvi.covid_sero.utils.JSONUtils;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
@@ -276,14 +275,7 @@ public class SectionH301Activity extends AppCompatActivity {
                 : bi.nh31119b.isChecked() ? "2"
                 : "0");
 
-        try {
-            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(form.getsH3()), sH3);
-
-            form.setsH3(String.valueOf(json_merge));
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        form.setsH3(String.valueOf(sH3));
 
     }
 
