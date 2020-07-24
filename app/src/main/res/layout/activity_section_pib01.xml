@@ -1782,8 +1782,8 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/pb10"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:hint="@string/pb10"
                         android:inputType="number"
                         app:mask="##"

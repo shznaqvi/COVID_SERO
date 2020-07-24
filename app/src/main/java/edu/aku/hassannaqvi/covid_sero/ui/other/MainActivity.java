@@ -57,6 +57,8 @@ import static edu.aku.hassannaqvi.covid_sero.core.MainApp.appInfo;
 
 public class MainActivity extends AppCompatActivity implements WarningActivityInterface {
 
+
+
     static File file;
     ActivityMainBinding bi;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());

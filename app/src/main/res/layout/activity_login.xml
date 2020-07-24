@@ -118,7 +118,7 @@
                                     <EditText
                                         android:id="@+id/username"
                                         android:layout_width="match_parent"
-                                        android:layout_height="56dp"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
                                         android:layout_marginBottom="4dp"
                                         android:background="@color/white_overlay"
@@ -272,7 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="24dp"
-                        android:layout_marginBottom="12dp"
+
                         android:gravity="center"
                         android:shadowColor="#d6d6d6"
                         android:shadowDx="1"

@@ -42,6 +42,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         bi = DataBindingUtil.setContentView(this, R.layout.activity_info_section);
         bi.setCallback(this);
         setupSkips();
+
+
     }
 
     private void setupSkips() {

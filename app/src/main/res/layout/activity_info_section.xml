@@ -57,7 +57,7 @@
                         android:id="@+id/hh01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
+
                         android:hint="DD/MM/YYYY"
                         android:onTextChanged="@{callback::hh01OnTextChanged}"
                         app:dateFormat="dd-MM-yyyy"
@@ -177,8 +177,8 @@
                         android:id="@+id/hh05"
                         android:hint="@string/hh05"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:inputType="number" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -380,8 +380,8 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/hh09"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:hint="@string/hh09" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -421,8 +421,8 @@
                     <EditText
                         android:id="@+id/hh10"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:hint="@string/hh10" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -462,9 +462,9 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/hh12"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/hh12"
-                        android:layout_marginBottom="12dp"
+
                         android:inputType="number" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -504,8 +504,8 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/hh13"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:inputType="number"
                         android:hint="@string/hh13"
                         app:mask="####" />
@@ -547,8 +547,8 @@
                     <EditText
                         android:id="@+id/hh11"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+
                         android:hint="@string/hh11" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
