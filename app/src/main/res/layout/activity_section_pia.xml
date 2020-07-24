@@ -315,6 +315,15 @@
                                 android:layout_alignBottom="@id/qtxt_pa05"
                                 android:text="@string/Q_pa05" />
                         </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/pa05"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                            android:hint="@string/pa05"
+                            android:inputType="text" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

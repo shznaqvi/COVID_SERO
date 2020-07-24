@@ -97,6 +97,13 @@
                             android:layout_alignBottom="@id/qtxt_hh02"
                             android:text="@string/Q_hh02" />
                     </RelativeLayout>
+
+                    <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                        android:id="@+id/hh02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hh02" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -132,11 +139,13 @@
                             android:text="@string/Q_hh04" />
                     </RelativeLayout>
 
-                    <TextView
+                    <EditText
                         android:id="@+id/hh04"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Q_hh04" />
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/hh04"
+                        android:inputType="text" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -178,7 +187,6 @@
                         android:hint="@string/hh05"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:inputType="number" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -214,6 +222,15 @@
                             android:layout_alignBottom="@id/qtxt_hh06"
                             android:text="@string/Q_hh06" />
                     </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/hh06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/hh06"
+                        android:inputType="text" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
