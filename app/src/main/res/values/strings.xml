@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">COVID19 Inequity Survey - Urdu</string>
+    <string name="app_name">COVID19 Sero Survey - Urdu</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -780,8 +780,8 @@
     <string name="pb131">ہاں</string>
     <string name="pb132">نہیں</string>
     <string name="pb14">بچے نے کہاں سفر کیا ہے؟</string>
-    <string name="pb14dist">ضلع                                                         </string>
-    <string name="pb14city">شہر/گاوں                                         </string>
+    <string name="pb14dist">ضلع</string>
+    <string name="pb14city">شہر/گاوں</string>
     <string name="pb14country">ملک</string>
     <string name="pb15">کیا بچے نے گزشتہ 2 ہفتوں میں کسی  مرکز صحت کا دورہ کیا ہے؟</string>
     <string name="pb15a">ہاں</string>
@@ -808,17 +808,17 @@
     <string name="pb1807ad">تصدیق شدہ کورونا وائرس کے مریض کا مکمل پتہ</string>
     <string name="pb1808n">تصدیق شدہ کورونا وائرس کے مریض  کا نام</string>
     <string name="pb1808ad">تصدیق شدہ کورونا وائرس کے مریض کا مکمل پتہ</string>
-    <string name="pc01"></string>
+    <string name="pc01">Has the blood sample collected</string>
     <string name="pc011">ہاں</string>
     <string name="pc012">نہیں</string>
     <string name="pc02">حاصل کئے گئے خون کے نمونے کی مقدار</string>
     <string name="pc02text">ملی لیٹر</string>
     <string name="pc02a">ہیموگلوبن کے نتائج درج کریں۔</string>
-    <string name="pc03">سیمپل آئی ڈی                                    </string>
+    <string name="pc03">سیمپل آئی ڈی</string>
     <string name="pc04">پیمائش کرنے والے کا نام</string>
     <string name="pc04a">پیمائش کرنے والے کا کوڈ</string>
     <string name="pc05"> قد سینٹی میٹر میں</string>
-    <string name="pc06">وزن کلو گرام میں                                 </string>
+    <string name="pc06">وزن کلو گرام میں</string>
 
     <!--    SectionInfo-->
     <string name="newHHheadname"> نیا سربراہ کا نام </string>
@@ -828,17 +828,17 @@
     <string name="hh04">انٹرویو لینے والے کا نام</string>
     <string name="hh05">سُپروائزر کا کوڈ</string>
     <string name="hh06">سُپروائزر کا نام</string>
-    <string name="hh07">صوبہ                                                </string>
+    <string name="hh07">صوبہ</string>
     <string name="hh0701">سندھ</string>
-    <string name="hh08">ضلع                                                         </string>
+    <string name="hh08">ضلع</string>
     <string name="hh0801">مٹیاری </string>
     <string name="hh09">سب ڈسٹرکٹ</string>
     <string name="hh0802">کراچی سینٹرل</string>
     <string name="hh10"> شہر /گاوں</string>
     <string name="hh0803"> ضلع کراچی شرقی</string>
-    <string name="hh12">کلسٹر نمبر                                      </string>
+    <string name="hh12">کلسٹر نمبر</string>
     <string name="hh0804"> کراچی ساوتھ </string>
-    <string name="hh13">گھرانے کانمبر                           </string>
+    <string name="hh13">گھرانے کانمبر</string>
     <string name="hh0805">کراچی ویسٹ</string>
     <string name="hh0806">کورنگی</string>
     <string name="hh0807">ملیر</string>

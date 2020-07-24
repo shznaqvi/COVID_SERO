@@ -31,6 +31,7 @@ import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
 import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.covid_sero.ui.other.LoginActivity;
 import kotlin.Pair;
 
 
@@ -163,11 +164,18 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        Thread.setDefaultUncaughtExceptionHandler(
+                new Thread.UncaughtExceptionHandler() {
+                    @Override
+                    public void uncaughtException (Thread thread, Throwable e) {
+                        handleUncaughtException (thread, e);
+                    }
+                });
         // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         //TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/MBLateefi.ttf");
 
-        edu.aku.hassannaqvi.covid_sero.core.TypefaceUtil.overrideFont(getApplicationContext(), "SANS_SERIF", "fonts/JameelNooriNastaleeq.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SANS_SERIF", "fonts/JameelNooriNastaleeq.ttf");
 
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
@@ -320,6 +328,15 @@ public class MainApp extends Application {
         public void onProviderEnabled(String s) {
 
         }
+    }
+
+    private void handleUncaughtException (Thread thread, Throwable e) {
+
+        // The following shows what I'd like, though it won't work like this.
+        Intent intent = new Intent (getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+
+        // Add some code logic if needed based on your requirement
     }
 
 }
