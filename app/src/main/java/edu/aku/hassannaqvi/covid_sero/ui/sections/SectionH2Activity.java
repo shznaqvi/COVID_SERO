@@ -19,11 +19,11 @@ import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH2Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
+import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.ROUTE_SUBINFO;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
-public class SectionH2Activity extends AppCompatActivity {
+public class SectionH2Activity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionH2Binding bi;
 
@@ -36,6 +36,12 @@ public class SectionH2Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        bi.hb07.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.hb0702.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecHA01);
+            }
+        }));
 
         bi.hb09.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.hb0902.getId()) {
@@ -64,20 +70,18 @@ public class SectionH2Activity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
-        if (formValidation()) {
-            try {
-                saveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (updateDB()) {
-                finish();
-                startActivity(new Intent(this, SectionSubInfoActivity.class).putExtra(ROUTE_SUBINFO, 1));
-            } else {
-                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            }
+        if (!formValidation()) return;
+        try {
+            saveDraft();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
+        if (updateDB()) {
+            finish();
+            startActivity(new Intent(this, SectionH301Activity.class));
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public boolean formValidation() {
@@ -96,7 +100,7 @@ public class SectionH2Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, SectionSubInfoActivity.class, ROUTE_SUBINFO, 99);
+        AppUtilsKt.contextEndActivity(this);
     }
 
     private void saveDraft() throws JSONException {
@@ -156,5 +160,21 @@ public class SectionH2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         contextBackActivity(this);
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
+        if (!formValidation()) return;
+        try {
+            saveDraft();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (updateDB()) {
+            SectionSubInfoActivity.Companion.setIstatusFlag(88);
+            finish();
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -61,7 +61,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
 
     fun onHHViewClick() {
         if (!hhFlag) return
-        startActivity(Intent(this, SectionH301Activity::class.java))
+        startActivity(Intent(this, SectionH2Activity::class.java))
     }
 
     fun onChildViewClick() {
@@ -120,19 +120,22 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                 flagNewForm = false
                 bi.instruction.text = getString(R.string.memberforminfo)
             }
-            99 -> {
-                bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
-                bi.formScroll.childScroll.name.text = "MEMBER FORM IS BLOCKED\nContact Team Leader"
-                bi.formScroll.hhScroll.status.visibility = View.VISIBLE
-                hhFlag = false
-                memFlag = false
-                flagNewForm = false
-                flagInCompleteForm = true
-                bi.instruction.text = getString(R.string.end_interview)
-            }
+            88 -> endFormHH()
+            99 -> endFormHH()
         }
 
 
+    }
+
+    private fun endFormHH() {
+        bi.formScroll.hhScroll.name.text = "HOUSEHOLD FORM COMPLETED"
+        bi.formScroll.childScroll.name.text = "MEMBER FORM IS BLOCKED\nContact Team Leader"
+        bi.formScroll.hhScroll.status.visibility = View.VISIBLE
+        hhFlag = false
+        memFlag = false
+        flagNewForm = false
+        flagInCompleteForm = true
+        bi.instruction.text = getString(R.string.end_interview)
     }
 
     override fun endSecActivity(flag: Boolean) {
