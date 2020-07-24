@@ -95,16 +95,14 @@
                             android:text="@string/Q_hb02" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/hb02"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hb02"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:inputType="number"
+                        android:maxLength="11" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -146,6 +144,7 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hb03"
+                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="15"
@@ -284,10 +283,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hb06"
-                        app:mask="##"
-                        app:maxValue="0"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:inputType="number"
+                        android:maxLength="11" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
