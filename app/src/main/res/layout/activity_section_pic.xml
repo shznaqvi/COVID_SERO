@@ -119,11 +119,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/pc02"
+                            android:hint="#.##"
                             android:inputType="number"
-                            app:mask="#"
-                            app:minValue="1"
-                            app:maxValue="6"
+                            app:mask="#.##"
+                            app:pattern="^(\\d{1}\\.\\d{2,2})$"
+                            app:minValue="1.00"
+                            app:maxValue="6.00"
                             app:type="range"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -199,10 +200,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/pc02a"
-                            app:mask="##"
-                            app:minValue="5"
-                            app:maxValue="18"
+                            android:inputType="number"
+                            android:hint="##.##"
+                            app:mask="##.##"
+                            app:pattern="^(\\d{2,2}\\.\\d{2,2})$"
+                            app:minValue="5.00"
+                            app:maxValue="18.00"
                             app:type="range"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -369,10 +372,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc05"
-                        app:mask="##"
-                        app:minValue="40"
-                        app:maxValue="200"
+                        android:inputType="number"
+                        android:hint="##.###"
+                        app:mask="###.##"
+                        app:pattern="^(\\d{3,3}\\.\\d{2,2})$"
+                        app:minValue="40.00"
+                        app:maxValue="200.0"
                         app:type="range"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -414,10 +419,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/pc06"
-                        app:mask="##"
-                        app:minValue="1"
-                        app:maxValue="160"
+                        android:hint="##.###"
+                        android:inputType="number"
+                        app:mask="###.##"
+                        app:pattern="^(\\d{3,3}\\.\\d{2,2})$"
+                        app:minValue="1.00"
+                        app:maxValue="160.0"
                         app:type="range"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
