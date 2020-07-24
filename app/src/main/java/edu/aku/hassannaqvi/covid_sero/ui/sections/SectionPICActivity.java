@@ -63,12 +63,7 @@ public class SectionPICActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesPersonalColumn(PersonalContract.PersonalTable.COLUMN_SC, MainApp.personal.getsC());
-        if (updcount > 0) {
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        return updcount == 1;
     }
 
     private void SaveDraft() throws JSONException {
