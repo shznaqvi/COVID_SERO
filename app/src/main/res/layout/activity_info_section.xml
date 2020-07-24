@@ -145,7 +145,8 @@
                         android:layout_height="wrap_content"
                         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                         android:hint="@string/hh04"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:enabled="false"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
