@@ -100,10 +100,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/hb02"
+                        android:hint="###########"
                         android:inputType="number"
                         android:maxLength="11"
-                        app:minValue="1"
                         app:pattern="[0-9]{11}"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -284,10 +283,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:hint="@string/hb06"
+                        android:hint="###########"
                         android:inputType="number"
                         android:maxLength="11"
-                        app:minValue="1"
                         app:pattern="[0-9]{11}"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

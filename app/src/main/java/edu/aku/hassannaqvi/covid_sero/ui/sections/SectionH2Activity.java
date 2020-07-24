@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,7 +86,19 @@ public class SectionH2Activity extends AppCompatActivity implements EndSectionAc
     }
 
     public boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.fldGrpSectionH2);
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpSectionH2))
+            return false;
+        int totalmember = (TextUtils.isEmpty(bi.hb10.getText()) ? 0 : Integer.parseInt(bi.hb10.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.hb12.getText()) ? 0 : Integer.parseInt(bi.hb12.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.hb14.getText()) ? 0 : Integer.parseInt(bi.hb14.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.hb16.getText()) ? 0 : Integer.parseInt(bi.hb16.getText().toString().trim()));
+
+        if (totalmember == 0){
+            return Validator.emptyCustomTextBox(this,bi.hb08present,"Invalid Total Count Please check again");
+        } else if (totalmember != Integer.parseInt(bi.hb08present.getText().toString())){
+            return Validator.emptyCustomTextBox(this, bi.hb08present,"Invalid Total Count Please check again");
+        }
+        return true;
     }
 
     private boolean updateDB() {
