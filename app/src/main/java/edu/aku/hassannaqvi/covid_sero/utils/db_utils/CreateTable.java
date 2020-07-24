@@ -33,6 +33,7 @@ public final class CreateTable {
             + FormsTable.COLUMN_GPSACC + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
             + FormsTable.COLUMN_SINFO + " TEXT,"
+            + FormsTable.COLUMN_SH2 + " TEXT,"
             + FormsTable.COLUMN_SH3 + " TEXT,"
             + FormsTable.COLUMN_SH4 + " TEXT,"
             + FormsTable.COLUMN_ENDINGDATETIME + " TEXT,"

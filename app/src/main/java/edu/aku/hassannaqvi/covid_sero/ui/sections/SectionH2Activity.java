@@ -14,6 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.covid_sero.R;
+import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
+import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionH2Binding;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
@@ -82,15 +85,14 @@ public class SectionH2Activity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH4, MainApp.form.getsH4());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH2, MainApp.form.getsH2());
         if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
     public void BtnEnd() {
@@ -99,55 +101,55 @@ public class SectionH2Activity extends AppCompatActivity {
 
     private void saveDraft() throws JSONException {
 
-        JSONObject json = new JSONObject();
+        JSONObject sH2 = new JSONObject();
 
-        json.put("hb01", bi.hb01.getText().toString());
+        sH2.put("hb01", bi.hb01.getText().toString());
 
-        json.put("hb02", bi.hb02.getText().toString());
+        sH2.put("hb02", bi.hb02.getText().toString());
 
-        json.put("hb03", bi.hb03.getText().toString());
+        sH2.put("hb03", bi.hb03.getText().toString());
 
-        json.put("hb04", bi.hb0401.isChecked() ? "1"
+        sH2.put("hb04", bi.hb0401.isChecked() ? "1"
                 : bi.hb0402.isChecked() ? "2"
                 : "-1");
 
-        json.put("hb05", bi.hb05.getText().toString());
+        sH2.put("hb05", bi.hb05.getText().toString());
 
-        json.put("hb06", bi.hb06.getText().toString());
+        sH2.put("hb06", bi.hb06.getText().toString());
 
-        json.put("hb07", bi.hb0701.isChecked() ? "1"
+        sH2.put("hb07", bi.hb0701.isChecked() ? "1"
                 : bi.hb0702.isChecked() ? "2"
                 : "-1");
 
-        //    json.put("hb08", bi.hb08.getText().toString());
+        //    sH2.put("hb08", bi.hb08.getText().toString());
 
-        json.put("hb08present", bi.hb08present.getText().toString());
-        json.put("hb09", bi.hb0901.isChecked() ? "1"
+        sH2.put("hb08present", bi.hb08present.getText().toString());
+        sH2.put("hb09", bi.hb0901.isChecked() ? "1"
                 : bi.hb0902.isChecked() ? "2"
                 : "-1");
 
-        json.put("hb10", bi.hb10.getText().toString());
+        sH2.put("hb10", bi.hb10.getText().toString());
 
-        json.put("hb11", bi.hb1101.isChecked() ? "1"
+        sH2.put("hb11", bi.hb1101.isChecked() ? "1"
                 : bi.hb1102.isChecked() ? "2"
                 : "-1");
 
-        json.put("hb12", bi.hb12.getText().toString());
+        sH2.put("hb12", bi.hb12.getText().toString());
 
-        json.put("hb13", bi.hb1301.isChecked() ? "1"
+        sH2.put("hb13", bi.hb1301.isChecked() ? "1"
                 : bi.hb1302.isChecked() ? "2"
                 : "-1");
 
-        json.put("hb14", bi.hb14.getText().toString());
+        sH2.put("hb14", bi.hb14.getText().toString());
 
-        json.put("hb15", bi.hb1501.isChecked() ? "1"
+        sH2.put("hb15", bi.hb1501.isChecked() ? "1"
                 : bi.hb1502.isChecked() ? "2"
                 : "-1");
 
-        json.put("hb16", bi.hb16.getText().toString());
+        sH2.put("hb16", bi.hb16.getText().toString());
 
 
-        //    MainApp.form.setsH4((String.valueOf(sH4)));
+        MainApp.form.setsH2((String.valueOf(sH2)));
 
     }
 

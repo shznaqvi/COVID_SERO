@@ -42,6 +42,7 @@ public class Form extends LiveData<Form> {
     private String synced_date = "";
     private String appversion = "";
     private String sInfo = "";
+    private String sH2 = "";
     private String sH3 = "";
     private String sH4 = "";
 
@@ -100,6 +101,14 @@ public class Form extends LiveData<Form> {
 
     public void setHh13(String hh13) {
         this.hh13 = hh13;
+    }
+
+    public String getsH2() {
+        return sH2;
+    }
+
+    public void setsH2(String sH2) {
+        this.sH2 = sH2;
     }
 
     public String getsH3() {
@@ -301,6 +310,7 @@ public class Form extends LiveData<Form> {
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.sInfo = jsonObject.getString(FormsContract.FormsTable.COLUMN_SINFO);
+        this.sH2 = jsonObject.getString(FormsTable.COLUMN_SH2);
         this.sH3 = jsonObject.getString(FormsTable.COLUMN_SH3);
         this.sH4 = jsonObject.getString(FormsTable.COLUMN_SH4);
 
@@ -328,6 +338,7 @@ public class Form extends LiveData<Form> {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO));
+        this.sH2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2));
         this.sH3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3));
         this.sH4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4));
 
@@ -361,6 +372,9 @@ public class Form extends LiveData<Form> {
 
             if (this.sInfo != null && !this.sInfo.equals("")) {
                 json.put(FormsTable.COLUMN_SINFO, new JSONObject(this.sInfo));
+            }
+            if (this.sH2 != null && !this.sH2.equals("")) {
+                json.put(FormsTable.COLUMN_SH2, new JSONObject(this.sH2));
             }
             if (this.sH3 != null && !this.sH3.equals("")) {
                 json.put(FormsTable.COLUMN_SH3, new JSONObject(this.sH3));
