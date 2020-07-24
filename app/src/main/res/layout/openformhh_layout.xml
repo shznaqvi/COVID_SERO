@@ -41,7 +41,7 @@
                 <ImageView
                     android:id="@+id/formImage"
                     android:layout_width="56dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="56dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
