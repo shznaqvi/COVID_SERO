@@ -19,11 +19,11 @@
 
             <ImageView
                 android:id="@+id/childImage"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
-                android:src="@drawable/ctr_male"
+                android:src="@drawable/emoji_man"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
