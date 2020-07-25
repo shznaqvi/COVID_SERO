@@ -372,6 +372,9 @@
                                 android:text="@string/hb08" />
 
                             <TextView
+                                android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                                android:drawablePadding="16dp"
+                                android:onClick="@{callback::showTooltipView}"
                                 android:id="@+id/q_hb08"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"

@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -184,5 +185,9 @@ public class SectionH2Activity extends AppCompatActivity implements EndSectionAc
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void showTooltipView(View view) {
+        AppUtilsKt.showTooltip(this, view);
     }
 }

@@ -1030,7 +1030,8 @@
     <string name="hb07">May I start the interview now</string>
     <string name="hb0701">Yes</string>
     <string name="hb0702">No</string>
-    <string name="hb08">How many members are living in this household? If 95 or more, record ‘95’. </string>
+    <string name="hb08">How many members are living in this household? </string>
+    <string name="hb08_info">If 95 or more, record ‘95’. </string>
     <string name="hb08text">Note for enumerators: Persons who live in this dwelling/ compound and usually share a meal together</string>
     <string name="hb08present">Number of persons present at home</string>
     <string name="hb09">Does this HH have children 0-59 months of age? </string>
