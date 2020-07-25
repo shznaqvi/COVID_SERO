@@ -39,6 +39,10 @@ public class SectionH2Activity extends AppCompatActivity implements EndSectionAc
 
     private void setupSkips() {
 
+        bi.hb04.setOnCheckedChangeListener((radioGroup, checkId) -> {
+            Clear.clearAllFields(bi.llb0401);
+        });
+
         bi.hb07.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.hb0702.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecHA01);
