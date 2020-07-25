@@ -87,7 +87,20 @@ public class SectionH302Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.fldGrpH302);
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpH302))
+            return false;
+        int total_324 = Integer.parseInt(bi.nh324a.getText().toString().trim())
+                + Integer.parseInt(bi.nh324b.getText().toString().trim())
+                + Integer.parseInt(bi.nh324c.getText().toString().trim())
+                + Integer.parseInt(bi.nh324d.getText().toString().trim())
+                + Integer.parseInt(bi.nh324e.getText().toString().trim())
+                + Integer.parseInt(bi.nh324f.getText().toString().trim())
+                + Integer.parseInt(bi.nh324g.getText().toString().trim());
+
+        if (total_324 == 0){
+            return Validator.emptyCustomTextBox(this, bi.qtxtNh324,"Total count cannot be 0");
+        }
+        return true;
     }
 
     private void saveDraft() throws JSONException {
