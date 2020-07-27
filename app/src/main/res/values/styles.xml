@@ -234,11 +234,24 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:background">#FFEB9C</item>
-        <item name="android:visibility">gone</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/green</item>
         <item name="android:textSize">20sp</item>
         <item name="android:padding">16dp</item>
 
+    </style>
+
+
+    <style name="sub">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:background">@drawable/subheadings_separator</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 </resources>

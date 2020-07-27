@@ -57,17 +57,20 @@
                     <RadioGroup
                         android:id="@+id/pc01"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pc011"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/pc011" />
 
                         <RadioButton
                             android:id="@+id/pc012"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/pc012" />
                     </RadioGroup>
@@ -128,39 +131,39 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- pc02text  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpc02text"
-                    style="@style/cardView">
+                <!-- &lt;!&ndash; pc02text  Title   &ndash;&gt;
+                 <androidx.cardview.widget.CardView
+                     android:id="@+id/fldGrpCVpc02text"
+                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/bottom">
 
-                            <TextView
-                                android:id="@+id/qtxt_pc02text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pc02text"
-                                android:text="@string/pc02text" />
+                             <TextView
+                                 android:id="@+id/qtxt_pc02text"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_toEndOf="@id/q_pc02text"
+                                 android:text="@string/pc02text" />
 
-                            <TextView
-                                android:id="@+id/q_pc02text"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pc02text"
-                                android:layout_alignBottom="@id/qtxt_pc02text"
-                                android:text="@string/Q_pc02text" />
-                        </RelativeLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                             <TextView
+                                 android:id="@+id/q_pc02text"
+                                 style="@style/quesNum"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignTop="@id/qtxt_pc02text"
+                                 android:layout_alignBottom="@id/qtxt_pc02text"
+                                 android:text="@string/Q_pc02text" />
+                         </RelativeLayout>
+                     </LinearLayout>
+                 </androidx.cardview.widget.CardView>-->
 
                 <!-- pc02a  Input-Numeric   -->
                 <androidx.cardview.widget.CardView

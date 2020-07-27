@@ -150,7 +150,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+
                         android:text="@string/pa03_dd" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -169,7 +169,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+
                         android:text="@string/pa03_mm" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -188,7 +188,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+
                         android:text="@string/pa03_yy" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -242,7 +242,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+
                         android:text="@string/pa04y" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -261,7 +261,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+
                         android:text="@string/pa04m" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -539,7 +539,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa09" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -579,7 +579,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa09b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -636,7 +636,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa10" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -676,7 +676,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa10b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -733,7 +733,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa11" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -773,7 +773,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+
                             android:text="@string/pa11b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
