@@ -282,8 +282,8 @@
     <string name="nh402">۔H402 - ہاتھ دھونے کی جگہ پر پانی کی موجودگی کا مشاہدہ کریں</string>
     <string name="nh403">۔H403 - مشاہدہ کریں کہ ہاتھ دھونے کی جگہ پر صابن یا ڈٹرجنٹ موجود ہے</string>
     <string name="nh404"> ۔H404 - کیا آپ کے گھر میں ہاتھ دھونے کے لیے صابن یا صفائی والی اشیاء ڈٹرجنٹ /راکھ /مٹی /ریت موجود ہے </string>
-    "<string name="nh405">۔H405 - کیا آپ مجھے ہاتھ دھونے کی اشیاء دیکھا سکتی ہیں ؟
-    اپنا مشاہدہ درج کریں</string>"
+    "<string name="nh405">۔H405 - کیا آپ مجھے ہاتھ دھونے کی اشیاء دیکھا سکتی ہیں ؟</string>"
+    "<string name="nh405_info">اپنا مشاہدہ درج کریں</string>"
     <string name="nh406">۔H406 - آپ کس کس وقت اپنے ہاتھ صابن سے دھوتے/دھوتی ہیں؟</string>
     <string name="nh401a"> مشاہدہ کیا  </string>
     <string name="nh401info"> مشاہدہ نہیں کیا </string>
@@ -650,17 +650,17 @@
     <string name="pa09">منتخب فرد کی  زیادہ سے زیادہ مکمل کردہ تعلیم کتنی ہے؟ </string>
     <string name="pa09a">گریڈ</string>
     <string name="pa09b">مذہبی تعلیم </string>
-    <string name="pa09dk">معلوم نہیں کے لئے 98 درج کریں</string>
+    <string name="pa09dk">معلوم نہیں</string>
     <string name="pa10t"> (اگر غیر تعلیم تافتہ یا ان پڑھ تو 77 لکھیں اور مذہبی تعلیم کے لئے 88 لھکیں)</string>
     <string name="pa10">بچے کی والدہ کی  زیادہ سے زیادہ مکمل کردہ تعلیم کتنی ہے؟</string>
     <string name="pa10a">گریڈ</string>
     <string name="pa10b">مذہبی تعلیم </string>
-    <string name="pa10dk">معلوم نہیں کے لئے 98 درج کریں</string>
+    <string name="pa10dk">معلوم نہیں</string>
     <string name="pa11t"> (اگر غیر تعلیم تافتہ یا ان پڑھ تو 77 لکھیں اور مذہبی تعلیم کے لئے 88 لھکیں)</string>
     <string name="pa11">بچہ/بچی (نام)کے والد کی مکمل کردہ زیادہ سے زیادہ تعلیم کتنی ہے؟ اگر غیر تعلیم تافتہ یا ان پڑھ ہیں تو 77 لکھیں۔ کسی بھی قسم کی مذہبی تعلیم کے لئے </string>
     <string name="pa11a">گریڈ</string>
     <string name="pa11b">مذہبی تعلیم </string>
-    <string name="pa11dk">معلوم نہیں کے لئے 98 درج کریں</string>
+    <string name="pa11dk">معلوم نہیں</string>
 
     <string name="pb01">کیا بچے کو پچھلے 2 ہفتوں میں مندرجہ ذیل علامات میں سے کوئی علامت  ہے یا  تھی؟</string>
     <string name="pb011">بخار       </string>

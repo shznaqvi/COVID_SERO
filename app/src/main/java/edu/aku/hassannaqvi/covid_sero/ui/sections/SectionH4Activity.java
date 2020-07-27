@@ -172,4 +172,8 @@ public class SectionH4Activity extends AppCompatActivity {
     public void onBackPressed() {
         contextBackActivity(this);
     }
+
+    public void showTooltipView(View view) {
+        AppUtilsKt.showTooltip(this, view);
+    }
 }
