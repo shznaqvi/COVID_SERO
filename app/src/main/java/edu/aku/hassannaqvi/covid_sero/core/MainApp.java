@@ -31,7 +31,6 @@ import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
 import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.covid_sero.ui.other.LoginActivity;
 import kotlin.Pair;
 
 
@@ -164,13 +163,15 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Thread.setDefaultUncaughtExceptionHandler(
+       /* Thread.setDefaultUncaughtExceptionHandler(
                 new Thread.UncaughtExceptionHandler() {
                     @Override
                     public void uncaughtException (Thread thread, Throwable e) {
                         handleUncaughtException (thread, e);
                     }
-                });
+                });*/
+
+
         // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         //TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/MBLateefi.ttf");
@@ -330,7 +331,7 @@ public class MainApp extends Application {
         }
     }
 
-    private void handleUncaughtException (Thread thread, Throwable e) {
+/*    private void handleUncaughtException (Thread thread, Throwable e) {
 
         // The following shows what I'd like, though it won't work like this.
         Intent intent = new Intent (getApplicationContext(), LoginActivity.class);
@@ -338,6 +339,6 @@ public class MainApp extends Application {
         startActivity(intent);
 
         // Add some code logic if needed based on your requirement
-    }
+    }*/
 
 }
