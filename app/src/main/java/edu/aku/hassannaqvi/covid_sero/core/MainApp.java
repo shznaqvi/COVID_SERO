@@ -334,7 +334,7 @@ public class MainApp extends Application {
 
         // The following shows what I'd like, though it won't work like this.
         Intent intent = new Intent (getApplicationContext(), LoginActivity.class);
-        Toast.makeText(this, e.getCause().getMessage(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, e.getCause().getMessage(), Toast.LENGTH_LONG).show();
         startActivity(intent);
 
         // Add some code logic if needed based on your requirement
