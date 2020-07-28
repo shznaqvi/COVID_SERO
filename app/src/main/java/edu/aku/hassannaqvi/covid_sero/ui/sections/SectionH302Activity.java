@@ -5,15 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -89,6 +88,8 @@ public class SectionH302Activity extends AppCompatActivity {
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.fldGrpH302))
             return false;
+        if (bi.nh323b.isChecked())
+            return true;
         int total_324 = Integer.parseInt(bi.nh324a.getText().toString().trim())
                 + Integer.parseInt(bi.nh324b.getText().toString().trim())
                 + Integer.parseInt(bi.nh324c.getText().toString().trim())
@@ -97,8 +98,8 @@ public class SectionH302Activity extends AppCompatActivity {
                 + Integer.parseInt(bi.nh324f.getText().toString().trim())
                 + Integer.parseInt(bi.nh324g.getText().toString().trim());
 
-        if (total_324 == 0){
-            return Validator.emptyCustomTextBox(this, bi.qtxtNh324,"Total count cannot be 0");
+        if (total_324 == 0) {
+            return Validator.emptyCustomTextBox(this, bi.qtxtNh324, "Total count cannot be 0");
         }
         return true;
     }
