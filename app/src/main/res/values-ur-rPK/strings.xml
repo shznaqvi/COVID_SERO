@@ -910,12 +910,9 @@
     <string name='Q_pa06'>pa06</string>
     <string name='Q_pa07'>pa07</string>
     <string name='Q_pa08'>pa08</string>
-    <string name='Q_pa09t'>pa09t</string>
-    <string name='Q_pa09a'>pa09a</string>
-    <string name='Q_pa10a'>pa10a</string>
-    <string name='Q_pa10t'>pa10t</string>
-    <string name='Q_pa11a'>pa11a</string>
-    <string name='Q_pa11t'>pa11t</string>
+    <string name='Q_pa09'>pa09</string>
+    <string name='Q_pa10'>pa10</string>
+    <string name='Q_pa11'>pa11</string>
     <string name='Q_pb01'>pb01</string>
     <string name='Q_pb011'>pb011</string>
     <string name='Q_pb0110'>pb0110</string>

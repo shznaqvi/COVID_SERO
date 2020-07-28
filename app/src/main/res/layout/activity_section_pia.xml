@@ -104,15 +104,15 @@
                         <RadioButton
                             android:id="@+id/pa021"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/pa021" />
 
                         <RadioButton
                             android:id="@+id/pa022"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/pa022" />
                     </RadioGroup>
                 </LinearLayout>
@@ -162,16 +162,16 @@
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/sub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/sub"
                                 android:text="@string/pa03_dd" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/pa03dd"
+                                style="@style/textInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/textInput"
                                 android:hint="@string/pa03_dd"
                                 android:inputType="number"
                                 app:defaultValue="98"
@@ -188,17 +188,17 @@
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/sub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/sub"
 
                                 android:text="@string/pa03_mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/pa03mm"
+                                style="@style/textInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/textInput"
 
                                 android:hint="@string/pa03_mm"
                                 android:inputType="number"
@@ -216,17 +216,17 @@
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/sub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/sub"
 
                                 android:text="@string/pa03_yy" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/pa03yy"
+                                style="@style/textInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="@style/textInput"
 
                                 android:hint="@string/pa03_yy"
                                 android:inputType="number"
@@ -289,8 +289,8 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pa04y"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
 
                             android:hint="@string/pa04y"
                             android:inputType="number"
@@ -316,8 +316,8 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pa04m"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
 
                             android:hint="@string/pa04m"
                             android:inputType="number"
@@ -555,9 +555,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- pa09t  Title   -->
+                <!-- pa09  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa09t"
+                    android:id="@+id/fldGrpCVpa09"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -571,90 +571,56 @@
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_pa09t"
+                                android:id="@+id/qtxt_pa09"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa09t"
-                                android:text="@string/pa09t" />
+                                android:layout_toEndOf="@id/q_pa09"
+                                android:text="@string/pa09" />
 
                             <TextView
-                                android:id="@+id/q_pa09t"
+                                android:id="@+id/q_pa09"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa09t"
-                                android:layout_alignBottom="@id/qtxt_pa09t"
-                                android:text="@string/Q_pa09t" />
+                                android:layout_alignTop="@id/qtxt_pa09"
+                                android:layout_alignBottom="@id/qtxt_pa09"
+                                android:text="@string/Q_pa09" />
                         </RelativeLayout>
 
                         <TextView
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:text="@string/pa09a" />
 
-                            android:text="@string/pa09" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- pa09a  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa09a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pa09a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
-                            <TextView
-                                android:id="@+id/qtxt_pa09a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa09a"
-                                android:text="@string/pa09a" />
-
-                            <TextView
-                                android:id="@+id/q_pa09a"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa09a"
-                                android:layout_alignBottom="@id/qtxt_pa09a"
-                                android:text="@string/Q_pa09a" />
-                        </RelativeLayout>
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/pa09a"
+                            android:inputType="number" />
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
                             android:text="@string/pa09b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pa09b"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:enabled='@{pa09dk.checked? false : true}'
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
                             android:hint="@string/pa09b"
-                            android:inputType="number"
-                            android:text='@{pa09dk.checked? "" : pa09b.getText().toString()}' />
+                            android:inputType="number" />
 
-                        <CheckBox
-                            android:id="@+id/pa09dk"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:tag="-1"
-                            android:text="@string/pa09dk" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- pa10t  Title   -->
+                <!-- pa10  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa10t"
+                    android:id="@+id/fldGrpCVpa10"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -668,90 +634,55 @@
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_pa10t"
+                                android:id="@+id/qtxt_pa10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa10t"
-                                android:text="@string/pa10t" />
+                                android:layout_toEndOf="@id/q_pa10"
+                                android:text="@string/pa10" />
 
                             <TextView
-                                android:id="@+id/q_pa10t"
+                                android:id="@+id/q_pa10"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa10t"
-                                android:layout_alignBottom="@id/qtxt_pa10t"
-                                android:text="@string/Q_pa10t" />
+                                android:layout_alignTop="@id/qtxt_pa10"
+                                android:layout_alignBottom="@id/qtxt_pa10"
+                                android:text="@string/Q_pa10" />
                         </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/pa10a" />
 
-                            android:text="@string/pa10" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- pa10a  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa10a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pa10a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
-                            <TextView
-                                android:id="@+id/qtxt_pa10a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa10a"
-                                android:text="@string/pa10a" />
-
-                            <TextView
-                                android:id="@+id/q_pa10a"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa10a"
-                                android:layout_alignBottom="@id/qtxt_pa10a"
-                                android:text="@string/Q_pa10a" />
-                        </RelativeLayout>
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/pa10a"
+                            android:inputType="number" />
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
                             android:text="@string/pa10b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pa10b"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:enabled='@{pa10dk.checked? false : true}'
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
                             android:hint="@string/pa10b"
-                            android:inputType="number"
-                            android:text='@{pa10dk.checked? "" : pa10b.getText().toString()}' />
-
-                        <CheckBox
-                            android:id="@+id/pa10dk"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:tag="-1"
-                            android:text="@string/pa10dk" />
+                            android:inputType="number" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- pa11t  Title   -->
+                <!-- pa11  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa11t"
+                    android:id="@+id/fldGrpCVpa11"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -765,84 +696,49 @@
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_pa11t"
+                                android:id="@+id/qtxt_pa11"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa11t"
-                                android:text="@string/pa11t" />
+                                android:layout_toEndOf="@id/q_pa11"
+                                android:text="@string/pa11" />
 
                             <TextView
-                                android:id="@+id/q_pa11t"
+                                android:id="@+id/q_pa11"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa11t"
-                                android:layout_alignBottom="@id/qtxt_pa11t"
-                                android:text="@string/Q_pa11t" />
+                                android:layout_alignTop="@id/qtxt_pa11"
+                                android:layout_alignBottom="@id/qtxt_pa11"
+                                android:text="@string/Q_pa11" />
                         </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/pa11a" />
 
-                            android:text="@string/pa11" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- pa11a  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVpa11a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pa11a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
-                            <TextView
-                                android:id="@+id/qtxt_pa11a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_pa11a"
-                                android:text="@string/pa11a" />
-
-                            <TextView
-                                android:id="@+id/q_pa11a"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_pa11a"
-                                android:layout_alignBottom="@id/qtxt_pa11a"
-                                android:text="@string/Q_pa11a" />
-                        </RelativeLayout>
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/pa11a"
+                            android:inputType="number" />
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
                             android:text="@string/pa11b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pa11b"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:enabled='@{pa11dk.checked? false : true}'
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
                             android:hint="@string/pa11b"
-                            android:inputType="number"
-                            android:text='@{pa11dk.checked? "" : pa11b.getText().toString()}' />
-
-                        <CheckBox
-                            android:id="@+id/pa11dk"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:tag="-1"
-                            android:text="@string/pa11dk" />
+                            android:inputType="number" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
