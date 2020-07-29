@@ -40,11 +40,10 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.pb13.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.pb132.getId()) {
+        bi.pb13.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.pb132.getId())
                 Clear.clearAllFields(bi.fldGrpCVpb14);
-            }
-        }));
+        });
 
         bi.pb15.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.pb15b.getId()) {
