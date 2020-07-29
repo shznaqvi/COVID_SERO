@@ -199,7 +199,6 @@
                                 style="@style/textInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
                                 android:hint="@string/pa03_mm"
                                 android:inputType="number"
                                 app:defaultValue="98"
@@ -227,7 +226,6 @@
                                 style="@style/textInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
                                 android:hint="@string/pa03_yy"
                                 android:inputType="number"
                                 android:onTextChanged="@{callback::pa03yyOnTextChanged}"
@@ -291,7 +289,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
                             android:hint="@string/pa04y"
                             android:inputType="number"
                             android:onTextChanged="@{callback::pa04yOnTextChanged}"
@@ -318,7 +315,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
                             android:hint="@string/pa04m"
                             android:inputType="number"
                             app:mask="##"
