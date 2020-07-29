@@ -68,13 +68,13 @@ public class SectionPIB01Activity extends AppCompatActivity {
         int age = personal.getHhModel().getMemAge();
         if (age < 15) {
             bi.fldGrpCVpb03.setVisibility(View.GONE);
-            if (age >= 5) {
+            if (age <= 5) {
                 bi.fldGrpSectionB02.setVisibility(View.GONE);
             } else
                 bi.fldGrpSectionB02.setVisibility(View.VISIBLE);
         } else {
             bi.fldGrpCVpb03.setVisibility(View.VISIBLE);
-            bi.fldGrpSectionB02.setVisibility(View.GONE);
+            bi.fldGrpSectionB02.setVisibility(View.VISIBLE);
         }
 
     }
