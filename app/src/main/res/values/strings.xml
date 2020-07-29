@@ -625,7 +625,7 @@
     <string name="section3_mainheading">سیکشن 3 : جسمانی معائنہ اور قد اور وزن کی پیمائش</string>
     <string name="section4_mainheading">سیکشن 4                        :   پانچ سال سے کم عمر بچوں کے حفاظتی ٹیکوں کی معلومات</string>
 
-    <string name="pa01">بچے کا نام(منتخب فرد/بچہ) کا نام  </string>
+    <string name="pa01">(منتخب فرد/بچہ) کا نام  </string>
     <string name="pa02">(منتخب فرد/بچہ) کی جنس </string>
     <string name="pa021">لڑکا</string>
     <string name="pa03">نام) کی پیدائش کس دن، مہینے اور سال میں ہوئی تھی؟ )</string>

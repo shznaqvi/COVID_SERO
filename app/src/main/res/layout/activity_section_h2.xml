@@ -103,7 +103,7 @@
                         android:hint="###########"
                         android:inputType="number"
                         android:maxLength="11"
-                        app:pattern="[0-9]{11}"/>
+                        app:pattern="[0-9]{11}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -212,90 +212,90 @@
                 android:orientation="vertical"
                 android:visibility='@{hb0402.checked ? View.VISIBLE : View.GONE}'>
 
-            <!-- hb05  Input   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVhb05"
-                style="@style/cardView">
+                <!-- hb05  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVhb05"
+                    style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/qtxt_hb05"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hb05"
-                            android:text="@string/hb05" />
+                            android:background="@drawable/bottom">
 
-                        <TextView
-                            android:id="@+id/q_hb05"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hb05"
-                            android:layout_alignBottom="@id/qtxt_hb05"
-                            android:text="@string/Q_hb05" />
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/qtxt_hb05"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_hb05"
+                                android:text="@string/hb05" />
 
-                    <EditText
-                        android:id="@+id/hb05"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                            <TextView
+                                android:id="@+id/q_hb05"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_hb05"
+                                android:layout_alignBottom="@id/qtxt_hb05"
+                                android:text="@string/Q_hb05" />
+                        </RelativeLayout>
 
-                        android:hint="@string/hb05" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- hb06  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVhb06"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_hb06"
+                        <EditText
+                            android:id="@+id/hb05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hb06"
-                            android:text="@string/hb06" />
 
-                        <TextView
-                            android:id="@+id/q_hb06"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hb06"
-                            android:layout_alignBottom="@id/qtxt_hb06"
-                            android:text="@string/Q_hb06" />
-                    </RelativeLayout>
+                            android:hint="@string/hb05" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/hb06"
+                <!-- hb06  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVhb06"
+                    style="@style/cardView">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                        android:hint="###########"
-                        android:inputType="number"
-                        android:maxLength="11"
-                        app:pattern="[0-9]{11}"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_hb06"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_hb06"
+                                android:text="@string/hb06" />
+
+                            <TextView
+                                android:id="@+id/q_hb06"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_hb06"
+                                android:layout_alignBottom="@id/qtxt_hb06"
+                                android:text="@string/Q_hb06" />
+                        </RelativeLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/hb06"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:hint="###########"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            app:pattern="[0-9]{11}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <!-- hb07  Radio   -->
@@ -357,9 +357,9 @@
                 android:orientation="vertical"
                 android:visibility="@{hb0701.checked ? View.VISIBLE : View.GONE}">
 
-                <!-- hb08  Input-Numeric   -->
+                <!-- hb08text  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVhb08"
+                    android:id="@+id/fldGrpCVhb08text"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -380,35 +380,48 @@
                                 android:text="@string/hb08" />
 
                             <TextView
-                                android:drawableStart="@drawable/ic_info_outline_black_24dp"
-                                android:drawablePadding="16dp"
-                                android:onClick="@{callback::showTooltipView}"
                                 android:id="@+id/q_hb08"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignTop="@id/qtxt_hb08"
                                 android:layout_alignBottom="@id/qtxt_hb08"
+                                android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                                android:drawablePadding="16dp"
+                                android:onClick="@{callback::showTooltipView}"
                                 android:text="@string/Q_hb08" />
                         </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/hb08" />
 
-                            android:text="@string/hb08text" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/hb08"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/hb08"
+                            android:inputType="number"
+                            app:defaultValue="95"
+                            app:mask="##"
+                            app:maxValue="94"
+                            app:minValue="1"
+                            app:type="range" />
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
                             android:text="@string/hb08present" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/hb08present"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
                             android:hint="@string/hb08present"
                             android:inputType="number"
                             app:defaultValue="95"
@@ -418,6 +431,7 @@
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- hb09  Radio   -->
                 <androidx.cardview.widget.CardView
