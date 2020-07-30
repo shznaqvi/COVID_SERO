@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
@@ -70,52 +71,16 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (!bi.pb18n.getText().toString().equals("")) {
-
-
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 1) {
-                        bi.fldGrpCVpb1801.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1801.setVisibility(View.VISIBLE);
-                    }
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 2) {
-                        bi.fldGrpCVpb1802.setVisibility(View.GONE);
-                        //bi.fldGrpCVpb1802n.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1802.setVisibility(View.VISIBLE);
-                    }
-
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 3) {
-                        bi.fldGrpCVpb1803.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1803.setVisibility(View.VISIBLE);
-                    }
-
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 4) {
-                        bi.fldGrpCVpb1804.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1804.setVisibility(View.VISIBLE);
-                    }
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 5) {
-                        bi.fldGrpCVpb1805.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1805.setVisibility(View.VISIBLE);
-                    }
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 6) {
-                        bi.fldGrpCVpb1806.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1806.setVisibility(View.VISIBLE);
-                    }
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 7) {
-                        bi.fldGrpCVpb1807.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1807.setVisibility(View.VISIBLE);
-                    }
-                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 8) {
-                        bi.fldGrpCVpb1808.setVisibility(View.GONE);
-                    } else {
-                        bi.fldGrpCVpb1808.setVisibility(View.VISIBLE);
-                    }
+                if (!TextUtils.isEmpty(bi.pb18n.getText())) {
+                    int count = Integer.parseInt(bi.pb18n.getText().toString());
+                    bi.fldGrpCVpb1801.setVisibility(count < 1 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1802.setVisibility(count < 2 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1803.setVisibility(count < 3 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1804.setVisibility(count < 4 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1805.setVisibility(count < 5 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1806.setVisibility(count < 6 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1807.setVisibility(count < 7 ? View.GONE : View.VISIBLE);
+                    bi.fldGrpCVpb1808.setVisibility(count < 8 ? View.GONE : View.VISIBLE);
                 } else {
                     bi.fldGrpCVpb1801.setVisibility(View.GONE);
                     bi.fldGrpCVpb1802.setVisibility(View.GONE);
