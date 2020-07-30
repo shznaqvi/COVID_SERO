@@ -46,7 +46,6 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
     private String syncClass, url, tableName, updateSyncClass;
     private Class contractClass;
     private Collection dbData;
-    private DatabaseHelper db;
 
     public SyncAllData(Context mContext, String syncClass, String updateSyncClass, Class contractClass, String url,
                        String tableName, Collection dbData, int position, SyncListAdapter adapter, List<SyncModel> uploadlist) {
@@ -202,7 +201,7 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
             Log.d(TAG, "onPostExecute: " + result);
             json = new JSONArray(result);
 
-            db = new DatabaseHelper(mContext); // Database Helper
+            DatabaseHelper db = new DatabaseHelper(mContext); // Database Helper
 
             Method method = null;
             for (Method method1 : db.getClass().getDeclaredMethods()) {

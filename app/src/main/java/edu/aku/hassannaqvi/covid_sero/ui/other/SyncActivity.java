@@ -36,6 +36,7 @@ import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySyncBinding;
+import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.SyncModel;
 import edu.aku.hassannaqvi.covid_sero.sync.GetAllData;
 import edu.aku.hassannaqvi.covid_sero.sync.SyncAllData;
@@ -155,7 +156,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     this,
                     "Forms",
                     "updateSyncedForms",
-                    FormsContract.class,
+                    Form.class,
                     MainApp._HOST_URL + MainApp._SERVER_URL,
                     FormsContract.FormsTable.TABLE_NAME,
                     db.getUnsyncedForms(), 0, syncListAdapter, uploadlist
