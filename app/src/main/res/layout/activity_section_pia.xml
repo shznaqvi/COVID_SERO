@@ -285,7 +285,6 @@
                             android:text="@string/pa04y" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
-
                             android:id="@+id/pa04y"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
