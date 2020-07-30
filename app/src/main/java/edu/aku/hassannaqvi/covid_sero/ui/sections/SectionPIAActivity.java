@@ -253,4 +253,8 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
     public void endSecActivity(boolean flag) {
         btnPressed(PIEndingActivity.class);
     }
+
+    public void showTooltipView(View view) {
+        AppUtilsKt.showTooltip(this, view);
+    }
 }
