@@ -322,7 +322,7 @@
                             android:id="@+id/fldGrpim04DT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
+                            android:layoutDirection="rtl"
                             android:orientation="horizontal">
 
                             <TextView
@@ -332,17 +332,16 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04dd"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-
                                 android:layout_weight="2"
                                 android:hint="@string/im04dd"
+                                android:inputType="number"
                                 android:maxLength="2"
                                 app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
-
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -351,11 +350,11 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04mm"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-
                                 android:layout_weight="2"
                                 android:hint="@string/im04mm"
+                                android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="12"
                                 app:minValue="1"
@@ -369,19 +368,17 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04yy"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-
                                 android:layout_weight="4"
                                 android:hint="@string/im04yy"
+                                android:inputType="number"
                                 android:maxLength="4"
                                 app:mask="20##"
                                 app:maxValue="2020"
                                 app:minValue="2018"
                                 app:type="range" />
-
                         </LinearLayout>
-
 
                         <CheckBox
                             android:id="@+id/im0497"
@@ -390,7 +387,6 @@
                             android:text="@string/im0497" />
 
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
 

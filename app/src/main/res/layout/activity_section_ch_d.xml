@@ -83,7 +83,6 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -99,7 +98,7 @@
                                     android:id="@+id/im0501dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0501dd"
                                     android:maxLength="2"
@@ -118,7 +117,7 @@
                                     android:id="@+id/im0501mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0501mm"
                                     android:maxLength="2"
@@ -136,7 +135,7 @@
                                     android:id="@+id/im0501yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0501yy"
                                     android:maxLength="4"
@@ -199,7 +198,7 @@
                                     android:id="@+id/im0502dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0502dd"
                                     android:maxLength="2"
@@ -218,7 +217,7 @@
                                     android:id="@+id/im0502mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0502mm"
                                     android:maxLength="2"
@@ -236,7 +235,7 @@
                                     android:id="@+id/im0502yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0502yy"
                                     android:maxLength="4"
@@ -300,7 +299,7 @@
                                     android:id="@+id/im0503dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0503dd"
                                     android:maxLength="2"
@@ -319,7 +318,7 @@
                                     android:id="@+id/im0503mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0503mm"
                                     android:maxLength="2"
@@ -337,7 +336,7 @@
                                     android:id="@+id/im0503yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0503yy"
                                     android:maxLength="4"
@@ -401,7 +400,7 @@
                                     android:id="@+id/im0504dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0504dd"
                                     android:maxLength="2"
@@ -420,7 +419,7 @@
                                     android:id="@+id/im0504mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0504mm"
                                     android:maxLength="2"
@@ -438,7 +437,7 @@
                                     android:id="@+id/im0504yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0504yy"
                                     android:maxLength="4"
@@ -501,7 +500,7 @@
                                     android:id="@+id/im0505dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0505dd"
                                     android:maxLength="2"
@@ -520,7 +519,7 @@
                                     android:id="@+id/im0505mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0505mm"
                                     android:maxLength="2"
@@ -538,7 +537,7 @@
                                     android:id="@+id/im0505yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0505yy"
                                     android:maxLength="4"
@@ -601,7 +600,7 @@
                                     android:id="@+id/im0506dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0506dd"
                                     android:maxLength="2"
@@ -620,7 +619,7 @@
                                     android:id="@+id/im0506mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0506mm"
                                     android:maxLength="2"
@@ -638,7 +637,7 @@
                                     android:id="@+id/im0506yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0506yy"
                                     android:maxLength="4"
@@ -701,7 +700,7 @@
                                     android:id="@+id/im0507dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0507dd"
                                     android:maxLength="2"
@@ -720,7 +719,7 @@
                                     android:id="@+id/im0507mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0507mm"
                                     android:maxLength="2"
@@ -738,7 +737,7 @@
                                     android:id="@+id/im0507yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0507yy"
                                     android:maxLength="4"
@@ -801,7 +800,7 @@
                                     android:id="@+id/im0508dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0508dd"
                                     android:maxLength="2"
@@ -820,7 +819,7 @@
                                     android:id="@+id/im0508mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0508mm"
                                     android:maxLength="2"
@@ -838,7 +837,7 @@
                                     android:id="@+id/im0508yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0508yy"
                                     android:maxLength="4"
@@ -901,7 +900,7 @@
                                     android:id="@+id/im0509dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0509dd"
                                     android:maxLength="2"
@@ -920,7 +919,7 @@
                                     android:id="@+id/im0509mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0509mm"
                                     android:maxLength="2"
@@ -938,7 +937,7 @@
                                     android:id="@+id/im0509yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0509yy"
                                     android:maxLength="4"
@@ -1001,7 +1000,7 @@
                                     android:id="@+id/im0510dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0510dd"
                                     android:maxLength="2"
@@ -1020,7 +1019,7 @@
                                     android:id="@+id/im0510mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0510mm"
                                     android:maxLength="2"
@@ -1038,7 +1037,7 @@
                                     android:id="@+id/im0510yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0510yy"
                                     android:maxLength="4"
@@ -1101,7 +1100,7 @@
                                     android:id="@+id/im0511dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0511dd"
                                     android:maxLength="2"
@@ -1120,7 +1119,7 @@
                                     android:id="@+id/im0511mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0511mm"
                                     android:maxLength="2"
@@ -1138,7 +1137,7 @@
                                     android:id="@+id/im0511yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0511yy"
                                     android:maxLength="4"
@@ -1201,7 +1200,7 @@
                                     android:id="@+id/im0512dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0512dd"
                                     android:maxLength="2"
@@ -1220,7 +1219,7 @@
                                     android:id="@+id/im0512mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0512mm"
                                     android:maxLength="2"
@@ -1238,7 +1237,7 @@
                                     android:id="@+id/im0512yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0512yy"
                                     android:maxLength="4"
@@ -1301,7 +1300,7 @@
                                     android:id="@+id/im0513dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0513dd"
                                     android:maxLength="2"
@@ -1320,7 +1319,7 @@
                                     android:id="@+id/im0513mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0513mm"
                                     android:maxLength="2"
@@ -1338,7 +1337,7 @@
                                     android:id="@+id/im0513yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0513yy"
                                     android:maxLength="4"
@@ -1401,7 +1400,7 @@
                                     android:id="@+id/im0514dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0514dd"
                                     android:maxLength="2"
@@ -1420,7 +1419,7 @@
                                     android:id="@+id/im0514mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0514mm"
                                     android:maxLength="2"
@@ -1438,7 +1437,7 @@
                                     android:id="@+id/im0514yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0514yy"
                                     android:maxLength="4"
@@ -1501,7 +1500,7 @@
                                     android:id="@+id/im0515dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0515dd"
                                     android:maxLength="2"
@@ -1520,7 +1519,7 @@
                                     android:id="@+id/im0515mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0515mm"
                                     android:maxLength="2"
@@ -1538,7 +1537,7 @@
                                     android:id="@+id/im0515yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0515yy"
                                     android:maxLength="4"
@@ -1603,7 +1602,7 @@
                                     android:id="@+id/im0516dd"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0516dd"
                                     android:maxLength="2"
@@ -1622,7 +1621,7 @@
                                     android:id="@+id/im0516mm"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="2"
                                     android:hint="@string/im0516mm"
                                     android:maxLength="2"
@@ -1640,7 +1639,7 @@
                                     android:id="@+id/im0516yy"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-
+                                    android:inputType="number"
                                     android:layout_weight="4"
                                     android:hint="@string/im0516yy"
                                     android:maxLength="4"
