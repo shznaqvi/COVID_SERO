@@ -14,8 +14,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:animateLayoutChanges="true"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
 
         <LinearLayout
             android:id="@+id/fldGrpSectionB"
@@ -611,19 +611,17 @@
                         android:id="@+id/pb18n"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="@string/pb18n"
                         android:inputType="number"
                         app:maxValue="8"
-                        android:hint="@string/pb18n"
                         app:minValue="1"
-
-                        />
+                        app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1801"
-                style="@style/cardView"
-                >
+                style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
