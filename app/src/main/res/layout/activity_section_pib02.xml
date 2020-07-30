@@ -675,7 +675,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1802"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 2? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -720,7 +720,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1803"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 3? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -765,7 +765,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1804"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 4? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -810,7 +810,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1805"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 5? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -855,7 +855,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1806"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 6? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -900,7 +900,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1807"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 7? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -945,7 +945,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1808"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 8? View.GONE : View.VISIBLE:View.GONE}'>
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
