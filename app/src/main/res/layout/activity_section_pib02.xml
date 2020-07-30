@@ -623,7 +623,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb1801"
                 style="@style/cardView"
-                android:visibility='@{!pb18n.getText().toString().equals("")?Integer.valueOf(pb18n.getText().toString()) &lt; 1? View.GONE : View.VISIBLE:View.GONE}'>
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -469,7 +469,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:background="@color/colorPrimaryLight_overlay"
                             android:text="@string/nh40601"
                             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -504,7 +504,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:background="@color/colorPrimaryLight_overlay"
                             android:text="@string/nh40602"
                             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -539,7 +539,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:background="@color/colorPrimaryLight_overlay"
                             android:text="@string/nh40603"
                             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -574,7 +574,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:background="@color/colorPrimaryLight_overlay"
                             android:text="@string/nh40604"
                             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -609,7 +609,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:background="@color/colorPrimaryLight_overlay"
                             android:text="@string/nh40605"
                             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -644,7 +644,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+
                             android:text="@string/other"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@color/colorPrimaryDark" />

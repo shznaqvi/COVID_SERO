@@ -42,7 +42,7 @@
             android:id="@+id/subInfoInstruction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+
             android:background="@color/white"
             android:fontFamily="sans-serif"
             android:gravity="center"
@@ -71,7 +71,7 @@
                 android:id="@+id/recyclerViewChildren"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+
                 android:orientation="horizontal"
                 android:scrollbarSize="3dp"
                 android:scrollbars="horizontal"

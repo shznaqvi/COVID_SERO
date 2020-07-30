@@ -36,7 +36,7 @@
             android:id="@+id/lblAppVersion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+
             android:layout_marginBottom="8dp"
             android:background="@color/white_overlay"
             android:textAlignment="center"
@@ -60,7 +60,7 @@
                     android:id="@+id/lblMainMenu"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:layout_marginTop="16dp"
+
                     android:background="@drawable/mainmenu"
                     android:gravity="center"
                     android:padding="10dp"

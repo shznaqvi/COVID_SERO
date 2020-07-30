@@ -44,7 +44,7 @@
                     android:layout_height="56dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+
                     android:layout_marginBottom="16dp"
                     android:src="@drawable/hhform_icon"
                     app:layout_constraintBottom_toBottomOf="parent"

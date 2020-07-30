@@ -1796,7 +1796,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324a"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1819,7 +1819,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324b"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1842,7 +1842,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324c"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1865,7 +1865,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324d"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1888,7 +1888,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324e"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1911,7 +1911,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324f"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -1934,7 +1934,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
+
                                     android:background="@color/colorPrimaryLight_overlay"
                                     android:text="@string/nh324g"
                                     android:textAppearance="?android:attr/textAppearanceLarge"

@@ -66,6 +66,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    style="@style/sub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -205,7 +206,7 @@
                                     android:layout_width="200dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginTop="16dp"
+
                                     android:layout_marginBottom="16dp"
                                     android:background="@drawable/outline_btn"
                                     android:text="Login"
