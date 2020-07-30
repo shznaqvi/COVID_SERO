@@ -70,12 +70,67 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!bi.pb18n.getText().toString().equals("")) {
 
+
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 1) {
+                        bi.fldGrpCVpb1801.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1801.setVisibility(View.VISIBLE);
+                    }
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 2) {
+                        bi.fldGrpCVpb1802.setVisibility(View.GONE);
+                        //bi.fldGrpCVpb1802n.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1802.setVisibility(View.VISIBLE);
+                    }
+
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 3) {
+                        bi.fldGrpCVpb1803.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1803.setVisibility(View.VISIBLE);
+                    }
+
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 4) {
+                        bi.fldGrpCVpb1804.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1804.setVisibility(View.VISIBLE);
+                    }
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 5) {
+                        bi.fldGrpCVpb1805.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1805.setVisibility(View.VISIBLE);
+                    }
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 6) {
+                        bi.fldGrpCVpb1806.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1806.setVisibility(View.VISIBLE);
+                    }
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 7) {
+                        bi.fldGrpCVpb1807.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1807.setVisibility(View.VISIBLE);
+                    }
+                    if (Integer.valueOf(bi.pb18n.getText().toString()) < 8) {
+                        bi.fldGrpCVpb1808.setVisibility(View.GONE);
+                    } else {
+                        bi.fldGrpCVpb1808.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    bi.fldGrpCVpb1801.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1802.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1803.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1804.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1805.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1806.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1807.setVisibility(View.GONE);
+                    bi.fldGrpCVpb1808.setVisibility(View.GONE);
+                }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (!bi.pb18n.getText().toString().equals("")) {
+             /*   if (!bi.pb18n.getText().toString().equals("")) {
 
 
                     if (Integer.valueOf(bi.pb18n.getText().toString()) < 1) {
@@ -129,7 +184,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
                     bi.pb1806n.setVisibility(View.GONE);
                     bi.pb1807n.setVisibility(View.GONE);
                     bi.pb1808n.setVisibility(View.GONE);
-                }
+                }*/
             }
 
         });
