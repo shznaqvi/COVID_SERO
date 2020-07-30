@@ -55,7 +55,6 @@
                     android:src="@drawable/agakhan" />
 
                 <TextView
-                    style="@style/sub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -66,7 +65,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    style="@style/sub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
