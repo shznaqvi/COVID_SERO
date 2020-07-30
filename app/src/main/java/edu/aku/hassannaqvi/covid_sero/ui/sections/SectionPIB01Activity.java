@@ -233,8 +233,8 @@ public class SectionPIB01Activity extends AppCompatActivity {
                 : bi.pb0702.isChecked() ? "2"
                 : "-1");
 
-        json.put("pb08", bi.pb0801.isChecked() ? ""
-                : bi.pb0802.isChecked() ? ""
+        json.put("pb08", bi.pb0801.isChecked() ? "1"
+                : bi.pb0802.isChecked() ? "2"
                 : "-1");
 
         json.put("pb09", bi.pb0901.isChecked() ? "1"

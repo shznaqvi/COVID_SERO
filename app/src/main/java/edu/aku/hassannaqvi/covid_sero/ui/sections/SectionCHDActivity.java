@@ -605,103 +605,103 @@ public class SectionCHDActivity extends AppCompatActivity {
                 bi.im071.isChecked() ? "1" :
                         bi.im072.isChecked() ? "2" :
                                 bi.im073.isChecked() ? "3" :
-                                        "0");
+                                        "-1");
         f1.put("im08",
                 bi.im081.isChecked() ? "1" :
                         bi.im082.isChecked() ? "2" :
                                 bi.im083.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im09",
                 bi.im091.isChecked() ? "1" :
                         bi.im092.isChecked() ? "2" :
                                 bi.im093.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im10",
                 bi.im101.isChecked() ? "1" :
                         bi.im102.isChecked() ? "2" :
                                 bi.im103.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im11",
                 bi.im111.isChecked() ? "1" :
                         bi.im112.isChecked() ? "2" :
                                 bi.im113.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im12", bi.im12.getText().toString());
-        f1.put("im1298", bi.im1298.isChecked() ? "98" : "0");
+        f1.put("im1298", bi.im1298.isChecked() ? "98" : "-1");
 
         f1.put("im13",
                 bi.im131.isChecked() ? "1" :
                         bi.im132.isChecked() ? "2" :
                                 bi.im133.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im14",
                 bi.im141.isChecked() ? "1" :
                         bi.im142.isChecked() ? "2" :
                                 bi.im143.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im15", bi.im15.getText().toString());
-        f1.put("im1598", bi.im1598.isChecked() ? "98" : "0");
+        f1.put("im1598", bi.im1598.isChecked() ? "98" : "-1");
 
         f1.put("im16",
                 bi.im161.isChecked() ? "1" :
                         bi.im162.isChecked() ? "2" :
                                 bi.im163.isChecked() ? "98" :
-                                        "0");
+                                        "-1");
         f1.put("im17", bi.im17.getText().toString());
-        f1.put("im1798", bi.im1798.isChecked() ? "98" : "0");
+        f1.put("im1798", bi.im1798.isChecked() ? "98" : "-1");
 
         f1.put("im18", bi.im181.isChecked() ? "1"
                 : bi.im182.isChecked() ? "2"
                 : bi.im183.isChecked() ? "98"
-                : "0");
+                : "-1");
         f1.put("im19", bi.im19.getText().toString());
-        f1.put("im1998", bi.im1998.isChecked() ? "98" : "0");
+        f1.put("im1998", bi.im1998.isChecked() ? "98" : "-1");
 
         f1.put("im20", bi.im201.isChecked() ? "1"
                 : bi.im202.isChecked() ? "2"
                 : bi.im203.isChecked() ? "98"
-                : "0");
+                : "-1");
 
         f1.put("im21", bi.im211.isChecked() ? "1"
                 : bi.im212.isChecked() ? "2"
                 : bi.im213.isChecked() ? "98"
-                : "0");
+                : "-1");
         f1.put("im22", bi.im22.getText().toString());
-        f1.put("im2298", bi.im2298.isChecked() ? "98" : "0");
+        f1.put("im2298", bi.im2298.isChecked() ? "98" : "-1");
 
         f1.put("im23", bi.im231.isChecked() ? "1"
                 : bi.im232.isChecked() ? "2"
                 : bi.im233.isChecked() ? "3"
                 : bi.im234.isChecked() ? "4"
                 : bi.im236.isChecked() ? "6"
-                : "0");
+                : "-1");
         f1.put("im236x", bi.im236x.getText().toString());
 
         f1.put("im23a", bi.im23a1.isChecked() ? "1"
                 : bi.im23a2.isChecked() ? "2"
                 : bi.im23a3.isChecked() ? "3"
                 : bi.im23a96.isChecked() ? "96"
-                : "0");
+                : "-1");
         f1.put("im23a96x", bi.im23a96x.getText().toString());
 
-        f1.put("im241", bi.im241.isChecked() ? "1" : "0");
-        f1.put("im242", bi.im242.isChecked() ? "2" : "0");
-        f1.put("im243", bi.im243.isChecked() ? "3" : "0");
-        f1.put("im244", bi.im244.isChecked() ? "4" : "0");
-        f1.put("im245", bi.im245.isChecked() ? "5" : "0");
-        f1.put("im246", bi.im246.isChecked() ? "6" : "0");
-        f1.put("im247", bi.im247.isChecked() ? "7" : "0");
-        f1.put("im248", bi.im248.isChecked() ? "8" : "0");
-        f1.put("im249", bi.im249.isChecked() ? "9" : "0");
-        f1.put("im2410", bi.im2410.isChecked() ? "10" : "0");
-        f1.put("im2411", bi.im2411.isChecked() ? "11" : "0");
-        f1.put("im2412", bi.im2412.isChecked() ? "12" : "0");
-        f1.put("im2413", bi.im2413.isChecked() ? "13" : "0");
-        f1.put("im2414", bi.im2414.isChecked() ? "14" : "0");
-        f1.put("im2415", bi.im2415.isChecked() ? "15" : "0");
-        f1.put("im2416", bi.im2416.isChecked() ? "16" : "0");
-        f1.put("im2417", bi.im2417.isChecked() ? "98" : "0");
-        f1.put("im2499", bi.im2499.isChecked() ? "98" : "0");
+        f1.put("im241", bi.im241.isChecked() ? "1" : "-1");
+        f1.put("im242", bi.im242.isChecked() ? "2" : "-1");
+        f1.put("im243", bi.im243.isChecked() ? "3" : "-1");
+        f1.put("im244", bi.im244.isChecked() ? "4" : "-1");
+        f1.put("im245", bi.im245.isChecked() ? "5" : "-1");
+        f1.put("im246", bi.im246.isChecked() ? "6" : "-1");
+        f1.put("im247", bi.im247.isChecked() ? "7" : "-1");
+        f1.put("im248", bi.im248.isChecked() ? "8" : "-1");
+        f1.put("im249", bi.im249.isChecked() ? "9" : "-1");
+        f1.put("im2410", bi.im2410.isChecked() ? "10" : "-1");
+        f1.put("im2411", bi.im2411.isChecked() ? "11" : "-1");
+        f1.put("im2412", bi.im2412.isChecked() ? "12" : "-1");
+        f1.put("im2413", bi.im2413.isChecked() ? "13" : "-1");
+        f1.put("im2414", bi.im2414.isChecked() ? "14" : "-1");
+        f1.put("im2415", bi.im2415.isChecked() ? "15" : "-1");
+        f1.put("im2416", bi.im2416.isChecked() ? "16" : "-1");
+        f1.put("im2417", bi.im2417.isChecked() ? "98" : "-1");
+        f1.put("im2499", bi.im2499.isChecked() ? "98" : "-1");
         f1.put("im2417x", bi.im2417x.getText().toString());
 
 

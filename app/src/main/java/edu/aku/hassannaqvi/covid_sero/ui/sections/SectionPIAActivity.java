@@ -21,7 +21,6 @@ import org.threeten.bp.ZoneId;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
@@ -121,7 +120,7 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
     private void saveDraft() throws JSONException {
 
         personal = new Personal();
-        personal.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        personal.setSysdate(form.getSysdate());
         personal.setA03(MainApp.userName);
         personal.setDeviceID(MainApp.appInfo.getDeviceID());
         personal.setDevicetagID(MainApp.appInfo.getTagName());

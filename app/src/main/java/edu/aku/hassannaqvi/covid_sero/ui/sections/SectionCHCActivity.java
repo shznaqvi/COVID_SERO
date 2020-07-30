@@ -204,11 +204,11 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 bi.im011.isChecked() ? "1" :
                         bi.im012.isChecked() ? "2" :
                                 bi.im013.isChecked() ? "3" :
-                                        "0");
+                                        "-1");
         f1.put("im02",
                 bi.im021.isChecked() ? "1" :
                         bi.im022.isChecked() ? "2" :
-                                "0");
+                                "-1");
         f1.put("im03",
                 bi.im031.isChecked() ? "1" :
                         bi.im032.isChecked() ? "2" :
@@ -217,13 +217,13 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                                                 bi.im035.isChecked() ? "5" :
                                                         bi.im036.isChecked() ? "6" :
                                                                 bi.im0396.isChecked() ? "96" :
-                                                                        "0");
+                                                                        "-1");
         f1.put("im0396x", bi.im0396x.getText().toString());
 
         f1.put("im04dd", bi.im04dd.getText().toString());
         f1.put("im04mm", bi.im04mm.getText().toString());
         f1.put("im04yy", bi.im04yy.getText().toString());
-        f1.put("im0497", bi.im0497.isChecked() ? "97" : "0");
+        f1.put("im0497", bi.im0497.isChecked() ? "97" : "-1");
         /*f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());*/
 

@@ -41,7 +41,7 @@ import kotlin.Pair;
 public class MainApp extends Application {
 
     public static final String TAG = "AppMain";
-    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    // public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     public static final String _IP = "http://f38158";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/covidsero/api/";// .TEST server;
     public static final String _SERVER_URL = "sync.php";

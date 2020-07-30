@@ -115,53 +115,53 @@ public class SectionH4Activity extends AppCompatActivity {
                 : bi.nh401b.isChecked() ? "2"
                 : bi.nh401c.isChecked() ? "3"
                 : bi.nh401d.isChecked() ? "4"
-                : "0");
+                : "-1");
 
         sH4.put("nh402", bi.nh402a.isChecked() ? "1"
                 : bi.nh402b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
-        sH4.put("nh403a", bi.nh403a.isChecked() ? "1" : "0");
-        sH4.put("nh403b", bi.nh403b.isChecked() ? "2" : "0");
-        sH4.put("nh403c", bi.nh403c.isChecked() ? "3" : "0");
-        sH4.put("nh403d", bi.nh403d.isChecked() ? "4" : "0");
-        sH4.put("nh403e", bi.nh403e.isChecked() ? "5" : "0");
+        sH4.put("nh403a", bi.nh403a.isChecked() ? "1" : "-1");
+        sH4.put("nh403b", bi.nh403b.isChecked() ? "2" : "-1");
+        sH4.put("nh403c", bi.nh403c.isChecked() ? "3" : "-1");
+        sH4.put("nh403d", bi.nh403d.isChecked() ? "4" : "-1");
+        sH4.put("nh403e", bi.nh403e.isChecked() ? "5" : "-1");
 
         sH4.put("nh404", bi.nh404a.isChecked() ? "1"
                 : bi.nh404b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
-        sH4.put("nh405a", bi.nh405a.isChecked() ? "1" : "0");
-        sH4.put("nh405b", bi.nh405b.isChecked() ? "2" : "0");
-        sH4.put("nh405c", bi.nh405c.isChecked() ? "3" : "0");
-        sH4.put("nh405d", bi.nh405d.isChecked() ? "4" : "0");
-        sH4.put("nh405e", bi.nh405e.isChecked() ? "5" : "0");
+        sH4.put("nh405a", bi.nh405a.isChecked() ? "1" : "-1");
+        sH4.put("nh405b", bi.nh405b.isChecked() ? "2" : "-1");
+        sH4.put("nh405c", bi.nh405c.isChecked() ? "3" : "-1");
+        sH4.put("nh405d", bi.nh405d.isChecked() ? "4" : "-1");
+        sH4.put("nh405e", bi.nh405e.isChecked() ? "5" : "-1");
 
 
         sH4.put("nh40601", bi.nh40601a.isChecked() ? "1"
                 : bi.nh40601b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
 
         sH4.put("nh40602", bi.nh40602a.isChecked() ? "1"
                 : bi.nh40602b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sH4.put("nh40603", bi.nh40603a.isChecked() ? "1"
                 : bi.nh40603b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sH4.put("nh40604", bi.nh40604a.isChecked() ? "1"
                 : bi.nh40604b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sH4.put("nh40605", bi.nh40605a.isChecked() ? "1"
                 : bi.nh40605b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sH4.put("nh40696", bi.nh40696a.isChecked() ? "1"
                 : bi.nh40696b.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sH4.put("nh40696x", bi.nh40696x.getText().toString());
 
