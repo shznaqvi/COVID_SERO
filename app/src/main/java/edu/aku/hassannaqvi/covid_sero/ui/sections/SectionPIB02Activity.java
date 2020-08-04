@@ -46,6 +46,42 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
+        bi.pb1101.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb1101b.getId()) {
+                bi.fldGrpCVpb12.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVpb12);
+            } else {
+                bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
+            }
+        }));
+
+        bi.pb1102.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb1102b.getId()) {
+                bi.fldGrpCVpb12.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVpb12);
+            } else {
+                bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
+            }
+        }));
+
+        bi.pb1103.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb1103b.getId()) {
+                bi.fldGrpCVpb12.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVpb12);
+            } else {
+                bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
+            }
+        }));
+
+        bi.pb1104.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.pb1104b.getId()) {
+                bi.fldGrpCVpb12.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVpb12);
+            } else {
+                bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
+            }
+        }));
+
         bi.pb13.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.pb132.getId())
                 Clear.clearAllFields(bi.fldGrpCVpb14);

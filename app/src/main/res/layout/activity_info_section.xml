@@ -445,6 +445,47 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- hh11  Input   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVhh11"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_hh11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_hh11"
+                            android:text="@string/hh11" />
+
+                        <TextView
+                            android:id="@+id/q_hh11"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_hh11"
+                            android:layout_alignBottom="@id/qtxt_hh11"
+                            android:text="@string/Q_hh11" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/hh11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:hint="@string/hh11" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <!-- hh12  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhh12"
@@ -527,47 +568,6 @@
                         android:inputType="number"
                         android:hint="@string/hh13"
                         app:mask="####" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- hh11  Input   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVhh11"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_hh11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh11"
-                            android:text="@string/hh11" />
-
-                        <TextView
-                            android:id="@+id/q_hh11"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh11"
-                            android:layout_alignBottom="@id/qtxt_hh11"
-                            android:text="@string/Q_hh11" />
-                    </RelativeLayout>
-
-                    <EditText
-                        android:id="@+id/hh11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:hint="@string/hh11" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

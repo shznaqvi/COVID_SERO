@@ -57,6 +57,12 @@ public class SectionCHEActivity extends AppCompatActivity {
 
         JSONObject f1 = new JSONObject();
 
+        f1.put("im25", bi.im251.isChecked() ? "1"
+                : bi.im252.isChecked() ? "2"
+                : bi.im2598.isChecked() ? "98"
+                : "-1");
+
+        f1.put("im26", bi.im26.getText().toString());
         f1.put("im26a", bi.im26a.getText().toString());
         f1.put("im26b", bi.im26b.getText().toString());
         f1.put("im26c", bi.im26c.getText().toString());
