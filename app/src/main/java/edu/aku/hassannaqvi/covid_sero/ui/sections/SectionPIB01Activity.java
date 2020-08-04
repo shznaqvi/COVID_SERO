@@ -42,9 +42,20 @@ public class SectionPIB01Activity extends AppCompatActivity {
 
         bi.pb03.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.pb0302.getId()) {
+                bi.fldGrpSectionB01.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpSectionB01);
+            } else {
+                if (personal.getHhModel().getGenderFemale())
+                    bi.fldGrpSectionB01.setVisibility(View.GONE);
+                else
+                    bi.fldGrpSectionB01.setVisibility(View.VISIBLE);
             }
         }));
+
+        if (personal.getHhModel().getGenderFemale()) {
+            bi.fldGrpSectionB01.setVisibility(View.GONE);
+        }
+
 
         bi.pb04.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.pb0402.getId()) {

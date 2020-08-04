@@ -63,15 +63,15 @@
                         <RadioButton
                             android:id="@+id/pc011"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/pc011" />
 
                         <RadioButton
                             android:id="@+id/pc012"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/pc012" />
                     </RadioGroup>
                 </LinearLayout>
@@ -247,8 +247,18 @@
                             android:id="@+id/pc03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:hint="@string/pc03" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:background="@color/green_overlay"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:onClick="@{callback::btnScan}"
+                            android:layout_gravity="center"
+                            style="@style/button"
+                            android:text="SCAN FOR STICKER" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
