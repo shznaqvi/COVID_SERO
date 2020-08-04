@@ -37,7 +37,7 @@ import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM03FLAG;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
@@ -47,7 +47,7 @@ import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.openWarn
 public class SectionCHCActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionChCBinding bi;
-    boolean im02Flag = false, imFlag = true;
+    boolean im03Flag = false, imFlag = true;
     Instant dtInstant = null;
 
     @Override
@@ -77,9 +77,9 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     }
 
     private void setupListeners() {
-        bi.im01.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.im011.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVim02, false);
+        bi.im02.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.im021.getId()) {
+                //    Clear.clearAllFields(bi.fldGrpCVim02, false);
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
                 Clear.clearAllFields(bi.fldGrpCVim04, true);
                 /*bi.frontPhoto.setEnabled(true);
@@ -88,8 +88,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 bi.backPhoto.setBackground(getResources().getDrawable(R.drawable.outline_btn));
                 bi.frontFileName.setText(null);
                 bi.backFileName.setText(null);*/
-            } else if (i == bi.im012.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVim02, false);
+            } else if (i == bi.im023.getId()) {
+                //    Clear.clearAllFields(bi.fldGrpCVim02, false);
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
                 Clear.clearAllFields(bi.fldGrpCVim04, false);
                 /*bi.frontPhoto.setEnabled(false);
@@ -98,9 +98,9 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 bi.backPhoto.setBackground(null);
                 bi.frontFileName.setText(null);
                 bi.backFileName.setText(null);*/
-                im02Flag = true;
+                im03Flag = true;
             } else {
-                Clear.clearAllFields(bi.fldGrpCVim02, true);
+                //    Clear.clearAllFields(bi.fldGrpCVim02, true);
                 Clear.clearAllFields(bi.fldGrpCVim03, true);
                 Clear.clearAllFields(bi.fldGrpCVim04, false);
                 /*bi.frontPhoto.setEnabled(false);
@@ -113,10 +113,19 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
         }));
 
-        bi.im02.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVim03, i == bi.im022.getId());
-            im02Flag = i == bi.im021.getId() || i == bi.im022.getId();
+        bi.im03.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVim04, i == bi.im032.getId());
+            im03Flag = i == bi.im031.getId() || i == bi.im032.getId();
         });
+
+        bi.im04.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.im044.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVim04d, false);
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVim04d, true);
+            }
+
+        }));
 
         bi.im04yy.addTextChangedListener(new TextWatcher() {
             @Override
@@ -200,7 +209,29 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
         JSONObject f1 = new JSONObject();
 
-        f1.put("im01",
+        f1.put("im01", bi.im011.isChecked() ? "1"
+                : bi.im012.isChecked() ? "2"
+                : bi.im013.isChecked() ? "3"
+                : bi.im014.isChecked() ? "4"
+                : "-1");
+
+        f1.put("im02", bi.im021.isChecked() ? "1"
+                : bi.im022.isChecked() ? "2"
+                : bi.im023.isChecked() ? "3"
+                : bi.im024.isChecked() ? "4"
+                : "-1");
+
+        f1.put("im03", bi.im031.isChecked() ? "1"
+                : bi.im032.isChecked() ? "2"
+                : "-1");
+
+        f1.put("im04", bi.im041.isChecked() ? "1"
+                : bi.im042.isChecked() ? "2"
+                : bi.im043.isChecked() ? "3"
+                : bi.im044.isChecked() ? "4"
+                : "-1");
+
+        /*f1.put("im01",
                 bi.im011.isChecked() ? "1" :
                         bi.im012.isChecked() ? "2" :
                                 bi.im013.isChecked() ? "3" :
@@ -223,7 +254,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         f1.put("im04dd", bi.im04dd.getText().toString());
         f1.put("im04mm", bi.im04mm.getText().toString());
         f1.put("im04yy", bi.im04yy.getText().toString());
-        f1.put("im0497", bi.im0497.isChecked() ? "97" : "-1");
+        f1.put("im0497", bi.im0497.isChecked() ? "97" : "-1");*/
         /*f1.put("frontFileName", bi.frontFileName.getText().toString());
         f1.put("backFileName", bi.backFileName.getText().toString());*/
 
@@ -252,7 +283,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             boolean monthFlag = true;
             if (form.getCalculatedDOB() != null || dtInstant != null) {
                 Pair<String, String> month_year;
-                if (bi.im011.isChecked() && dtInstant != null && !bi.im0497.isChecked())
+                if (bi.im021.isChecked() && dtInstant != null && !bi.im0497.isChecked())
                     month_year = getMonthAndYearFromDate(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate().toString());
                 else month_year = getMonthAndYearFromDate(form.getCalculatedDOB().toString());
                 int totalMonths = Integer.parseInt(month_year.getFirst()) + Integer.parseInt(month_year.getSecond()) * 12;
@@ -266,7 +297,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 }
                 if (UpdateDB()) {
                     finish();
-                    startActivity(new Intent(this, SectionCHDActivity.class).putExtra(IM02FLAG, !im02Flag).putExtra(IM01CARDSEEN, bi.im011.isChecked()));
+                    startActivity(new Intent(this, SectionCHDActivity.class).putExtra(IM03FLAG, !im03Flag).putExtra(IM01CARDSEEN, bi.im021.isChecked() || bi.im023.isChecked()));
                 } else {
                     Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
                 }

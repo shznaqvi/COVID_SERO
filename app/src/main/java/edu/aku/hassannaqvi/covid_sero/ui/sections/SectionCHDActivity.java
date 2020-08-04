@@ -39,7 +39,7 @@ import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM02FLAG;
+import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM03FLAG;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
@@ -346,7 +346,7 @@ public class SectionCHDActivity extends AppCompatActivity {
 
     private void setupListeners() {
 
-        boolean flag = getIntent().getBooleanExtra(IM02FLAG, true);
+        boolean flag = getIntent().getBooleanExtra(IM03FLAG, true);
         if (!flag) imFlag = true;
         Clear.clearAllFields(bi.fldGrpSecChc2, flag);
 
