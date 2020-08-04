@@ -41,7 +41,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
     private void setupSkips() {
 
         bi.pb03.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.pb0302.getId()) {
+            if (i == bi.pb0302.getId() || i == bi.pb0304.getId()) {
                 bi.fldGrpSectionB01.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpSectionB01);
             } else {
