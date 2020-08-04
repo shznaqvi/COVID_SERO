@@ -46,14 +46,14 @@ public class SectionPIB01Activity extends AppCompatActivity {
                 Clear.clearAllFields(bi.fldGrpSectionB01);
             } else {
                 if (personal.getHhModel().getGenderFemale())
-                    bi.fldGrpSectionB01.setVisibility(View.GONE);
-                else
                     bi.fldGrpSectionB01.setVisibility(View.VISIBLE);
+                else
+                    bi.fldGrpSectionB01.setVisibility(View.GONE);
             }
         }));
 
         if (personal.getHhModel().getGenderFemale()) {
-            bi.fldGrpSectionB01.setVisibility(View.GONE);
+            bi.fldGrpSectionB01.setVisibility(View.VISIBLE);
         }
 
 
