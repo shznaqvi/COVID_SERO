@@ -102,6 +102,8 @@ public class SectionH2Activity extends AppCompatActivity implements EndSectionAc
             return Validator.emptyCustomTextBox(this,bi.hb08present,"Invalid Total Count Please check again");
         } else if (totalmember != Integer.parseInt(bi.hb08present.getText().toString())){
             return Validator.emptyCustomTextBox(this, bi.hb08present,"Invalid Total Count Please check again");
+        } else if (Integer.parseInt(bi.hb08present.getText().toString()) > Integer.parseInt(bi.hb08.getText().toString())){
+            return Validator.emptyCustomTextBox(this,bi.hb08,"Total Members Cannot be less than present members");
         }
         return true;
     }
