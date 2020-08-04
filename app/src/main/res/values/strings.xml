@@ -702,7 +702,7 @@
     <string name="pb0115">ذائقہ محسوس ہونے میں کمی</string>
     <string name="pb0115a">ہاں</string>
     <string name="pb0115b">نہیں</string>
-    <string name="pb02">کیا بچہ ان میں سے کسی حالت میں مبتلا ہے؟</string>
+    <string name="pb02">کیا (منتخب فرد/ بچہ) ان میں سے کسی حالت میں مبتلا ہے؟</string>
     <string name="pb021">امراض قلب،بشمول ہائی بلڈ پریشر</string>
     <string name="pb021a">ہاں</string>
     <string name="pb021b">نہیں</string>
@@ -774,11 +774,11 @@
     <string name="pb14dist">ضلع</string>
     <string name="pb14city">شہر/گاوں</string>
     <string name="pb14country">ملک</string>
-    <string name="pb15">کیا بچے نے گزشتہ 2 ہفتوں میں کسی  مرکز صحت کا دورہ کیا ہے؟</string>
+    <string name="pb15">کیا (منتخب فرد/ بچہ) نے گزشتہ 2 ہفتوں میں کسی مرکز صحت کا دورہ کیا ہے؟</string>
     <string name="pb15a">ہاں</string>
     <string name="pb15b">نہیں</string>
     <string name="pb16">صحت کی سہولت کا نام</string>
-    <string name="pb17">  کیا بچے کا تصدیق شدہ سے رابطہ ہے؟ کوویڈ کیس پچھلے 2 ہفتوں میں</string>
+    <string name="pb17"> کیا اس (منتخب فرد/بچہ)کاگذشتہ 2 ہفتوںمیں کسی تصدیق شدہ کورونا وائرس کے مریض سے رابطہ ہواہے؟</string>
     <string name="pb17a">ہاں</string>
     <string name="pb17b">نہیں</string>
     <string name="pb18">اگرہاں،توبراہ کرم تمام ممکنہ یا تصدیق شدہ کیسز میں سےمنفرد کیس شناخت کنندگان کی فہرست بنائیں</string>
