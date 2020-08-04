@@ -610,9 +610,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
                             android:hint="@string/pa09a"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            app:defaultValue="77" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -697,9 +697,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-
                                 android:hint="@string/pa10a"
-                                android:inputType="number" />
+                                android:inputType="number"
+                                app:defaultValue="77" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -777,9 +777,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-
                                 android:hint="@string/pa11a"
-                                android:inputType="number" />
+                                android:inputType="number"
+                                app:defaultValue="77" />
                         </LinearLayout>
 
                         <LinearLayout

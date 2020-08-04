@@ -531,7 +531,13 @@
     <string name="im2417"> دیگر </string>
     <string name="im2499"> معلوم نہیں </string>
 
-    <string name="im25"> اس بچے کے حفاظتی ٹیکوں کے ریکارڈ کے لئے مرکز صحت پر ایک سوالنامہ کا فارم جاری کریں۔ اس سوالنامہ کا انفارمیشن پینل مکمل کریں۔ </string>
+    <string name="im25"> )کی ویکسین لگی ہےیہ ایک انجکشن ہے جو ران یا کولہوں پر hepatitis HBV کیا بچہ/بچی کو(لگایا جاتا ہے بعض اوقات ایک ہی وقت میں پولیو کے قطروں کے ساتھ بھی دی جاتی ہے</string>
+    <string name="im251"> ہاں </string>
+    <string name="im252"> نہیں </string>
+    <string name="im2598"> معلوم نہیں </string>
+
+    <string name="im26"> کی ویکسین دی گئی تھی؟ HBV کتنی مرتبہ </string>
+    <string name="im26x"> ویکسین دینے کی تعداد </string>
 
     <string name="im26a"> حفاظتی ٹیکوں کے بارے میں جواب دہندہ کی معلومات</string>
     <string name="im26b">  سوالوں کے جواب میں جواب دہندہ کا تعاون اور رویہ۔ </string>
@@ -799,7 +805,7 @@
     <string name="pb1807ad">تصدیق شدہ کورونا وائرس کے مریض کا مکمل پتہ</string>
     <string name="pb1808n">تصدیق شدہ کورونا وائرس کے مریض  کا نام</string>
     <string name="pb1808ad">تصدیق شدہ کورونا وائرس کے مریض کا مکمل پتہ</string>
-    <string name="pc01">Has the blood sample collected</string>
+    <string name="pc01">کیا خون کا نمونہ حاصل کیا گیا ہے</string>
     <string name="pc011">ہاں</string>
     <string name="pc012">نہیں</string>
     <string name="pc02">حاصل کئے گئے خون کے نمونے کی مقدار</string>
@@ -972,6 +978,8 @@
     <string name='Q_im23'>Im23</string>
     <string name='Q_im23a'>Im23A</string>
     <string name='Q_im24'>Im24</string>
+    <string name='Q_im25'>Im25</string>
+    <string name='Q_im26'>Im26</string>
     <string name='Q_im26a'>Im26a</string>
     <string name='Q_im26b'>Im26b</string>
     <string name='Q_im26c'>Im26c</string>

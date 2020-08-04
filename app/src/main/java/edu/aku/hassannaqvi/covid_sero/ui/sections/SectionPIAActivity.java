@@ -2,7 +2,9 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -41,7 +43,7 @@ import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 public class SectionPIAActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionPiaBinding bi;
-    boolean dtFlag = false;
+    boolean dtFlag = false, edGrade = true, edGrade02 = true, edGrade03 = true;
     LocalDate calculatedDOB;
 
     @Override
@@ -79,6 +81,135 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
             } else {
                 bi.fldGrpSectionA02.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpSectionA02);
+            }
+        });
+
+        bi.pa09a.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                bi.pa09b.setText(null);
+                if (TextUtils.isEmpty(bi.pa09a.getText())) return;
+                if (bi.pa09a.getText().toString().trim().length() > 0 && Integer.parseInt(bi.pa09a.getText().toString()) == 77) {
+                    bi.pa09b.setEnabled(true);
+                    edGrade = false;
+                } else {
+                    bi.pa09b.setEnabled(false);
+                    edGrade = true;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.pa09b.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (TextUtils.isEmpty(bi.pa09b.getText())) return;
+                edGrade = bi.pa09b.getText().toString().equals("88") || bi.pa09b.getText().toString().equals("77");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!edGrade) bi.pa09b.setError("Invalid grade");
+                else bi.pa09b.setError(null);
+            }
+        });
+
+        bi.pa10a.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                bi.pa10b.setText(null);
+                if (TextUtils.isEmpty(bi.pa10a.getText())) return;
+                if (bi.pa10a.getText().toString().trim().length() > 0 && Integer.parseInt(bi.pa10a.getText().toString()) == 77) {
+                    bi.pa10b.setEnabled(true);
+                    edGrade02 = false;
+                } else {
+                    bi.pa10b.setEnabled(false);
+                    edGrade02 = true;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.pa10b.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (TextUtils.isEmpty(bi.pa10b.getText())) return;
+                edGrade02 = bi.pa10b.getText().toString().equals("88") || bi.pa10b.getText().toString().equals("77");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!edGrade02) bi.pa10b.setError("Invalid grade");
+                else bi.pa10b.setError(null);
+            }
+        });
+
+        bi.pa11a.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                bi.pa11b.setText(null);
+                if (TextUtils.isEmpty(bi.pa11a.getText())) return;
+                if (bi.pa11a.getText().toString().trim().length() > 0 && Integer.parseInt(bi.pa11a.getText().toString()) == 77) {
+                    bi.pa11b.setEnabled(true);
+                    edGrade03 = false;
+                } else {
+                    bi.pa11b.setEnabled(false);
+                    edGrade03 = true;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.pa11b.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (TextUtils.isEmpty(bi.pa11b.getText())) return;
+                edGrade03 = bi.pa11b.getText().toString().equals("88") || bi.pa11b.getText().toString().equals("77");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!edGrade03) bi.pa11b.setError("Invalid grade");
+                else bi.pa11b.setError(null);
             }
         });
 
