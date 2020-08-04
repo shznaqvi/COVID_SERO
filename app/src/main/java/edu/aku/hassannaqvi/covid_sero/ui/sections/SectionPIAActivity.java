@@ -152,8 +152,9 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
                 : bi.pa072.isChecked() ? "2"
                 : bi.pa073.isChecked() ? "3"
                 : bi.pa074.isChecked() ? "4"
-                : bi.pa07x.isChecked() ? "96"
+                : bi.pa0796.isChecked() ? "96"
                 : "-1");
+        json.put("pa0796x", bi.pa0796x.getText().toString());
 
         json.put("pa08", bi.pa081.isChecked() ? "1"
                 : bi.pa082.isChecked() ? "2"
