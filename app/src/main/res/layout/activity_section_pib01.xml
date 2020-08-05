@@ -1503,7 +1503,6 @@
                         android:id="@+id/pb10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:hint="@string/pb10"
                         android:inputType="number"
                         app:mask="##"
