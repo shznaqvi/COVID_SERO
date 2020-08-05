@@ -180,15 +180,17 @@ public class GetAllData extends AsyncTask<String, String, String> {
             if (result.length() > 0) {
                 DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
-                    JSONArray jsonArray = new JSONArray(result);
+                    JSONArray jsonArray = new JSONArray();
                     int insertCount = 0;
                     switch (syncClass) {
                         case "User":
+                            jsonArray = new JSONArray(result);
                             insertCount = db.syncUser(jsonArray);
                             position = 0;
                             break;
                         case "VersionApp":
                             insertCount = db.syncVersionApp(new JSONObject(result));
+                            if (insertCount == 1) jsonArray.put("1");
                             position = 1;
                             break;
                     }
