@@ -1,7 +1,10 @@
 package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,7 @@ import org.threeten.bp.ZoneId;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
@@ -26,8 +30,12 @@ import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivityInfoSectionBinding;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
+import edu.aku.hassannaqvi.covid_sero.models.Random;
 import edu.aku.hassannaqvi.covid_sero.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.EndSectionActivity;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 
@@ -138,6 +146,9 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         btnSavingWorking(EndingActivity.class, flag);
     }
 
+    public void hh03OnTextChanged(CharSequence s, int start, int before, int count) {
+        bi.fldGrpSectionA03.setVisibility(View.GONE);
+    }
 
     public void hh01OnTextChanged(CharSequence s, int start, int before, int count) {
         //Setting Date
@@ -147,5 +158,28 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    @SuppressLint("CheckResult")
+    public void btnCheckCluster(View v) {
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpSecInfoA)) return;
+        RadioButton rd = (RadioButton) findViewById(bi.hh08.getCheckedRadioButtonId());
+        int id = Integer.parseInt(rd.getTag().toString());
+        getClusterBlock(String.valueOf(id))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(items -> {
+                    bi.fldGrpSectionA03.setVisibility(View.VISIBLE);
+                    bi.hh09.setText(items.get(0).getSub_dist_name());
+                }, error -> {
+                    Toast.makeText(this, "Sorry. Cluster not found!!", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private Observable<List<Random>> getClusterBlock(String district) {
+        return Observable.create(emitter -> {
+            emitter.onNext(MainApp.appInfo.getDbHelper().getClusters(district));
+            emitter.onComplete();
+        });
     }
 }

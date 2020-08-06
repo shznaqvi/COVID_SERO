@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -18,15 +17,15 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract.PersonalTable;
+import edu.aku.hassannaqvi.covid_sero.contracts.RandomContract.RandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract.VersionAppTable;
-import edu.aku.hassannaqvi.covid_sero.models.BLRandom;
 import edu.aku.hassannaqvi.covid_sero.models.Form;
 import edu.aku.hassannaqvi.covid_sero.models.Personal;
+import edu.aku.hassannaqvi.covid_sero.models.Random;
 import edu.aku.hassannaqvi.covid_sero.models.Users;
 import edu.aku.hassannaqvi.covid_sero.models.VersionApp;
 
@@ -34,9 +33,9 @@ import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.DATABASE_VERSION;
-import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_BL_RANDOM;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_FORMS;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_PERSONALS;
+import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_RANDOM;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.covid_sero.utils.db_utils.CreateTable.SQL_CREATE_VERSIONAPP;
 
@@ -57,8 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_PERSONALS);
-        db.execSQL(SQL_CREATE_BL_RANDOM);
         db.execSQL(SQL_CREATE_VERSIONAPP);
+        db.execSQL(SQL_CREATE_RANDOM);
     }
 
     @Override
@@ -66,42 +65,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public int syncBLRandom(JSONArray blList) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(BLRandomTable.TABLE_NAME, null, null);
-
-        int insertCount = 0;
-        for (int i = 0; i < blList.length(); i++) {
-            JSONObject jsonObjectCC = null;
-            try {
-                jsonObjectCC = blList.getJSONObject(i);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            BLRandom Vc = new BLRandom();
-            Vc.Sync(jsonObjectCC);
-            Log.d(TAG, "syncBLRandom: " + Vc.get_ID());
-            ContentValues values = new ContentValues();
-
-            values.put(BLRandomTable.COLUMN_ID, Vc.get_ID());
-            values.put(BLRandomTable.COLUMN_LUID, Vc.getLUID());
-            values.put(BLRandomTable.COLUMN_STRUCTURE_NO, Vc.getStructure());
-            values.put(BLRandomTable.COLUMN_FAMILY_EXT_CODE, Vc.getExtension());
-            values.put(BLRandomTable.COLUMN_HH, Vc.getHh());
-            values.put(BLRandomTable.COLUMN_EB_CODE, Vc.getEbcode());
-            values.put(BLRandomTable.COLUMN_P_CODE, Vc.getpCode());
-            values.put(BLRandomTable.COLUMN_RANDOMDT, Vc.getRandomDT());
-            values.put(BLRandomTable.COLUMN_HH_HEAD, Vc.getHhhead());
-            values.put(BLRandomTable.COLUMN_CONTACT, Vc.getContact());
-            values.put(BLRandomTable.COLUMN_HH_SELECTED_STRUCT, Vc.getSelStructure());
-            values.put(BLRandomTable.COLUMN_SNO_HH, Vc.getSno());
-
-            long row = db.insert(BLRandomTable.TABLE_NAME, null, values);
-            if (row != -1) insertCount++;
-        }
-        return insertCount;
-    }
 
     public Integer syncVersionApp(JSONObject VersionList) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -127,49 +90,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return (int) count;
-    }
-
-    public VersionApp getVersionApp() {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = {
-                VersionAppTable._ID,
-                VersionAppTable.COLUMN_VERSION_CODE,
-                VersionAppTable.COLUMN_VERSION_NAME,
-                VersionAppTable.COLUMN_PATH_NAME
-        };
-
-        String whereClause = null;
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = null;
-
-        VersionApp allVC = new VersionApp();
-        try {
-            c = db.query(
-                    VersionAppTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                allVC.hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allVC;
     }
 
     public int syncUser(JSONArray userList) {
@@ -201,6 +121,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
+
+    public int syncRandom(JSONArray randomList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(RandomTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < randomList.length(); i++) {
+
+                JSONObject jsonObjectRandom = randomList.getJSONObject(i);
+
+                Random random = new Random();
+                random.Sync(jsonObjectRandom);
+                ContentValues values = new ContentValues();
+
+                values.put(RandomTable.COLUMN_CLUSTER, random.getCluster());
+                values.put(RandomTable.COLUMN_DIST_ID, random.getDist_id());
+                values.put(RandomTable.COLUMN_DIST_NAME, random.getDist_name());
+                values.put(RandomTable.COLUMN_SUB_DIST_NAME, random.getSub_dist_name());
+                values.put(RandomTable.COLUMN_HHNO, random.getHhno());
+                long rowID = db.insert(RandomTable.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
 
     public boolean Login(String username, String password) throws SQLException {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -299,6 +251,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -314,6 +267,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
+    }
+
+    public VersionApp getVersionApp() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VersionAppTable._ID,
+                VersionAppTable.COLUMN_VERSION_CODE,
+                VersionAppTable.COLUMN_VERSION_NAME,
+                VersionAppTable.COLUMN_PATH_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = null;
+
+        VersionApp allVC = new VersionApp();
+        try {
+            c = db.query(
+                    VersionAppTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allVC.hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allVC;
     }
 
     public Collection<Form> getAllForms() {
@@ -434,6 +430,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allPersonal;
     }
+
 
     public Collection<Form> checkFormExist() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -615,6 +612,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allPersonal;
     }
+
 
     public Collection<Form> getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -922,6 +920,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -960,38 +959,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+
     //Get BLRandom data
-    public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {
+    public List<Random> getClusters(String district) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-
         String[] columns = {
-                BLRandomTable.COLUMN_ID,
-                BLRandomTable.COLUMN_LUID,
-                BLRandomTable.COLUMN_STRUCTURE_NO,
-                BLRandomTable.COLUMN_FAMILY_EXT_CODE,
-                BLRandomTable.COLUMN_HH,
-                BLRandomTable.COLUMN_P_CODE,
-                BLRandomTable.COLUMN_EB_CODE,
-                BLRandomTable.COLUMN_RANDOMDT,
-                BLRandomTable.COLUMN_HH_SELECTED_STRUCT,
-                BLRandomTable.COLUMN_CONTACT,
-                BLRandomTable.COLUMN_HH_HEAD,
-                BLRandomTable.COLUMN_SNO_HH
+                RandomTable._ID,
+                RandomTable.COLUMN_HHNO,
+                RandomTable.COLUMN_SUB_DIST_NAME,
+                RandomTable.COLUMN_DIST_NAME,
+                RandomTable.COLUMN_DIST_ID,
+                RandomTable.COLUMN_CLUSTER,
         };
-
-        String whereClause = BLRandomTable.COLUMN_P_CODE + "=? AND " + BLRandomTable.COLUMN_HH + "=?";
-        String[] whereArgs = new String[]{subAreaCode, hh};
+        String whereClause = RandomTable.COLUMN_DIST_ID + "=? ";
+        String[] whereArgs = {district};
         String groupBy = null;
         String having = null;
-
-        String orderBy =
-                BLRandomTable.COLUMN_ID + " ASC";
-
-        BLRandom allBL = null;
+        String orderBy = RandomTable._ID + " ASC";
+        List<Random> allForms = new ArrayList<>();
         try {
             c = db.query(
-                    BLRandomTable.TABLE_NAME,  // The table to query
+                    RandomTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1000,7 +989,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allBL = new BLRandom().hydrate(c);
+                allForms.add(new Random().Hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -1010,7 +999,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allBL;
+        return allForms;
     }
 
     //Get Form already exist
@@ -1229,6 +1218,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //Generic Un-Synced Personal
+    public void updateSyncedPersonal(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(PersonalTable.COLUMN_SYNCED, true);
+        values.put(PersonalTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = PersonalTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                PersonalTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

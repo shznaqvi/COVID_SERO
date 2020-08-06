@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.covid_sero.utils.db_utils;
 
-import edu.aku.hassannaqvi.covid_sero.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.RandomContract.RandomTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract.VersionAppTable;
 
@@ -88,20 +88,14 @@ public final class CreateTable {
             VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
             ");";
 
-    public static final String SQL_CREATE_BL_RANDOM = "CREATE TABLE " + BLRandomTable.TABLE_NAME + "("
-            + BLRandomTable.COLUMN_ID + " TEXT,"
-            + BLRandomTable.COLUMN_P_CODE + " TEXT,"
-            + BLRandomTable.COLUMN_EB_CODE + " TEXT,"
-            + BLRandomTable.COLUMN_LUID + " TEXT,"
-            + BLRandomTable.COLUMN_HH + " TEXT,"
-            + BLRandomTable.COLUMN_STRUCTURE_NO + " TEXT,"
-            + BLRandomTable.COLUMN_FAMILY_EXT_CODE + " TEXT,"
-            + BLRandomTable.COLUMN_HH_HEAD + " TEXT,"
-            + BLRandomTable.COLUMN_CONTACT + " TEXT,"
-            + BLRandomTable.COLUMN_HH_SELECTED_STRUCT + " TEXT,"
-            + BLRandomTable.COLUMN_RANDOMDT + " TEXT,"
-            + BLRandomTable.COLUMN_SNO_HH + " TEXT );";
-
+    public static final String SQL_CREATE_RANDOM = "CREATE TABLE " + RandomTable.TABLE_NAME + " (" +
+            RandomTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            RandomTable.COLUMN_CLUSTER + " TEXT, " +
+            RandomTable.COLUMN_HHNO + " TEXT, " +
+            RandomTable.COLUMN_DIST_ID + " TEXT, " +
+            RandomTable.COLUMN_SUB_DIST_NAME + " TEXT, " +
+            RandomTable.COLUMN_DIST_NAME + " TEXT " +
+            ");";
 
 /*    public static final String SQL_ALTER_FORMS = "ALTER TABLE " +
             FormsTable.TABLE_NAME + " ADD COLUMN " +

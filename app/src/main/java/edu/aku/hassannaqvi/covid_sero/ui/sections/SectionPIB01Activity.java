@@ -52,9 +52,9 @@ public class SectionPIB01Activity extends AppCompatActivity {
             }
         }));
 
-        if (personal.getHhModel().getGenderFemale()) {
+/*        if (personal.getHhModel().getGenderFemale()) {
             bi.fldGrpSectionB01.setVisibility(View.VISIBLE);
-        }
+        }*/
 
 
         bi.pb04.setOnCheckedChangeListener(((radioGroup, i) -> {
@@ -79,6 +79,7 @@ public class SectionPIB01Activity extends AppCompatActivity {
         int age = personal.getHhModel().getMemAge();
         if (age < 15) {
             bi.fldGrpCVpb03.setVisibility(View.GONE);
+            bi.fldGrpSectionB01.setVisibility(View.GONE);
             if (age <= 5) {
                 bi.fldGrpSectionB02.setVisibility(View.GONE);
             } else
@@ -86,6 +87,9 @@ public class SectionPIB01Activity extends AppCompatActivity {
         } else {
             bi.fldGrpCVpb03.setVisibility(View.VISIBLE);
             bi.fldGrpSectionB02.setVisibility(View.VISIBLE);
+            if (personal.getHhModel().getGenderFemale()) {
+                bi.fldGrpSectionB01.setVisibility(View.VISIBLE);
+            }
         }
 
     }

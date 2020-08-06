@@ -33,6 +33,7 @@ import edu.aku.hassannaqvi.covid_sero.CONSTANTS;
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.adapter.SyncListAdapter;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
+import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
 import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySyncBinding;
@@ -77,7 +78,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
         uploadlistActivityCreated = true;
         sharedPref = getSharedPreferences("src", MODE_PRIVATE);
         editor = sharedPref.edit();
-        db = new DatabaseHelper(this);
+        db = MainApp.appInfo.getDbHelper();
         dbBackup();
 
         sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
@@ -142,8 +143,6 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            DatabaseHelper db = new DatabaseHelper(this);
-
             new SyncDevice(this, false).execute();
 //  *******************************************************Forms*********************************
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
@@ -160,6 +159,23 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     MainApp._HOST_URL + MainApp._SERVER_URL,
                     FormsContract.FormsTable.TABLE_NAME,
                     db.getUnsyncedForms(), 0, syncListAdapter, uploadlist
+            ).execute();
+
+//  *******************************************************Personal*********************************
+            Toast.makeText(getApplicationContext(), "Syncing Personal", Toast.LENGTH_SHORT).show();
+            if (uploadlistActivityCreated) {
+                uploadmodel = new SyncModel();
+                uploadmodel.setstatusID(0);
+                uploadlist.add(uploadmodel);
+            }
+            new SyncAllData(
+                    this,
+                    "Personal",
+                    "updateSyncedPersonal",
+                    Form.class,
+                    MainApp._HOST_URL + MainApp._SERVER_URL,
+                    PersonalContract.PersonalTable.TABLE_NAME,
+                    db.getUnsyncedPersonal(), 0, syncListAdapter, uploadlist
             ).execute();
 
             bi.noDataItem.setVisibility(View.GONE);
@@ -327,6 +343,14 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                         list.add(model);
                     }
                     new GetAllData(mContext, "VersionApp", syncListAdapter, list).execute();
+
+//                    Getting App Random
+                    if (listActivityCreated) {
+                        model = new SyncModel();
+                        model.setstatusID(0);
+                        list.add(model);
+                    }
+                    new GetAllData(mContext, "Random", syncListAdapter, list).execute();
 
                 }
 
