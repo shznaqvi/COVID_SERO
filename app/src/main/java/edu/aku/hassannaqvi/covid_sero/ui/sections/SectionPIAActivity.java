@@ -326,10 +326,13 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
             bi.fldGrpSectionA02.setVisibility(View.GONE);
             bi.fldGrpSectionA01.setVisibility(View.VISIBLE);
             Clear.clearAllFields(bi.fldGrpSectionA02);
+            bi.fldGrpCVpa09.setVisibility(View.GONE);
+            Clear.clearAllFields(bi.fldGrpCVpa09);
         } else {
             bi.fldGrpSectionA02.setVisibility(View.VISIBLE);
             bi.fldGrpSectionA01.setVisibility(View.GONE);
             Clear.clearAllFields(bi.fldGrpSectionA01);
+            bi.fldGrpCVpa09.setVisibility(View.VISIBLE);
         }
     }
 

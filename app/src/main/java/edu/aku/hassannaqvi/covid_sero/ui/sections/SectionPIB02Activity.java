@@ -190,6 +190,13 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
         });
 
+        //Skip on age
+        int age = personal.getHhModel().getMemAge();
+        if (age <= 5) {
+            bi.fldGrpCVpb11text.setVisibility(View.GONE);
+            bi.fldGrpCVpb12.setVisibility(View.GONE);
+        }
+
     }
 
 
