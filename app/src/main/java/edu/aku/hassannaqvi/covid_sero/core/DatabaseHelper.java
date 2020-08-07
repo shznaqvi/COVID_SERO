@@ -961,7 +961,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Get BLRandom data
-    public List<Random> getClusters(String district) {
+    public List<Random> getClusters(String district, String cluster) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -972,8 +972,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 RandomTable.COLUMN_DIST_ID,
                 RandomTable.COLUMN_CLUSTER,
         };
-        String whereClause = RandomTable.COLUMN_DIST_ID + "=? ";
-        String[] whereArgs = {district};
+        String whereClause = RandomTable.COLUMN_DIST_ID + "=? AND " + RandomTable.COLUMN_CLUSTER + "=?";
+        String[] whereArgs = {district, cluster};
         String groupBy = null;
         String having = null;
         String orderBy = RandomTable._ID + " ASC";

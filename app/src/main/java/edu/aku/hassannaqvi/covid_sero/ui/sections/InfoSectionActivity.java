@@ -163,9 +163,9 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     @SuppressLint("CheckResult")
     public void btnCheckCluster(View v) {
         if (!Validator.emptyCheckingContainer(this, bi.fldGrpSecInfoA)) return;
-        RadioButton rd = (RadioButton) findViewById(bi.hh08.getCheckedRadioButtonId());
+        RadioButton rd = findViewById(bi.hh08.getCheckedRadioButtonId());
         int id = Integer.parseInt(rd.getTag().toString());
-        getClusterBlock(String.valueOf(id))
+        getClusterBlock(String.valueOf(id), bi.hh12.getText().toString())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(items -> {
@@ -176,9 +176,9 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
                 });
     }
 
-    private Observable<List<Random>> getClusterBlock(String district) {
+    private Observable<List<Random>> getClusterBlock(String district, String cluster) {
         return Observable.create(emitter -> {
-            emitter.onNext(MainApp.appInfo.getDbHelper().getClusters(district));
+            emitter.onNext(MainApp.appInfo.getDbHelper().getClusters(district, cluster));
             emitter.onComplete();
         });
     }

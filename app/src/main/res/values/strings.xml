@@ -812,6 +812,10 @@
     <string name="pc02text">ملی لیٹر</string>
     <string name="pc02a">ہیموگلوبن کے نتائج درج کریں۔</string>
     <string name="pc03">سیمپل آئی ڈی</string>
+    <string name="pc03a">کیا کرونا کے ٹیسٹ کے لئے ناک سے سیمپل لیا گیا</string>
+    <string name="pc03b">ناک کے سیمپل کی آئی ڈی</string>
+    <string name="pc03a1">ہاں</string>
+    <string name="pc03a2">نہیں</string>
     <string name="pc04">پیمائش کرنے والے کا نام</string>
     <string name="pc04a">پیمائش کرنے والے کا کوڈ</string>
     <string name="pc05"> قد سینٹی میٹر میں</string>
@@ -930,6 +934,8 @@
     <string name='Q_pc02a'>pc02a</string>
     <string name='Q_pc02text'>pc02text</string>
     <string name='Q_pc03'>pc03</string>
+    <string name='Q_pc03a'>pc03a</string>
+    <string name='Q_pc03b'>pc03b</string>
     <string name='Q_pc04'>pc04</string>
     <string name='Q_pc04a'>pc04a</string>
     <string name='Q_pc05'>pc05</string>

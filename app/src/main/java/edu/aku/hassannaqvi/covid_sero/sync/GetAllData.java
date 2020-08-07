@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.List;
 
 import edu.aku.hassannaqvi.covid_sero.adapter.SyncListAdapter;
+import edu.aku.hassannaqvi.covid_sero.contracts.RandomContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -120,6 +121,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     break;
                 case "Random":
                     url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
+                    tableName = RandomContract.RandomTable.TABLE_NAME;
                     position = 2;
                     break;
             }

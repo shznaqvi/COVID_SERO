@@ -8,14 +8,13 @@ import android.provider.BaseColumns;
 
 public class RandomContract {
 
-    private static final String TAG = "UCs_CONTRACT";
+    private static final String TAG = "Random_CONTRACT";
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.covid_sero";
 
-
     public static abstract class RandomTable implements BaseColumns {
 
-        public static final String TABLE_NAME = "ucs";
+        public static final String TABLE_NAME = "bl_random";
 
         public static final String _ID = "_id";
         public static final String COLUMN_DIST_ID = "dist_id";

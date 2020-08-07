@@ -250,19 +250,123 @@
                             android:hint="@string/pc03" />
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:background="@color/green_overlay"
-                            android:textColor="@color/white"
-                            android:layout_margin="10dp"
-                            android:onClick="@{callback::btnScan}"
-                            android:layout_gravity="center"
                             style="@style/button"
-                            android:text="SCAN FOR STICKER" />
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:background="@color/green_overlay"
+                            android:onClick="@{(v) -> callback.btnScan(1)}"
+                            android:text="SCAN BLOOD STICKER"
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
+
+            <!-- pc03a  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVpc03a"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_pc03a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_pc03a"
+                            android:text="@string/pc03a" />
+
+                        <TextView
+                            android:id="@+id/q_pc03a"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_pc03a"
+                            android:layout_alignBottom="@id/qtxt_pc03a"
+                            android:text="@string/Q_pc03a" />
+                    </RelativeLayout>
+
+                    <RadioGroup
+                        android:id="@+id/pc03a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/pc03a1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pc03a1" />
+
+                        <RadioButton
+                            android:id="@+id/pc03a2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pc03a2" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- pc03b  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVpc03b"
+                style="@style/cardView"
+                android:visibility="@{pc03a1.checked ? View.VISIBLE : View.GONE}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_pc03b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_pc03b"
+                            android:text="@string/pc03b" />
+
+                        <TextView
+                            android:id="@+id/q_pc03b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_pc03b"
+                            android:layout_alignBottom="@id/qtxt_pc03b"
+                            android:text="@string/Q_pc03b" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/pc03b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/pc03"
+                        android:text='@{pc03a1.checked ? pc03b.getText().toString() : ""}' />
+
+                    <Button
+                        style="@style/button"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@color/green_overlay"
+                        android:onClick="@{(v) -> callback.btnScan(2)}"
+                        android:text="SCAN NASAL STICKER"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <!-- pc04  Input-Numeric   -->

@@ -471,11 +471,11 @@
                                 android:text="@string/Q_hh09" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/hh09"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:enabled="false"
                             android:hint="@string/hh09" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
