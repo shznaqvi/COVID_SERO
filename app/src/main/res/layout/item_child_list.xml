@@ -20,7 +20,7 @@
             <ImageView
                 android:id="@+id/childImage"
                 android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
                 android:src="@drawable/emoji_man"
