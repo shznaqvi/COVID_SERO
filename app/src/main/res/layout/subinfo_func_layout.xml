@@ -42,15 +42,12 @@
             android:id="@+id/subInfoInstruction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:background="@color/white"
-            android:fontFamily="sans-serif"
+style="@style/sub"
             android:gravity="center"
             android:padding="16dp"
             android:text="@string/memlistinfo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/red"
             android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/childScroll" />
