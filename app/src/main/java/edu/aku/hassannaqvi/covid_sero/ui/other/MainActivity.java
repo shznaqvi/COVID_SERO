@@ -126,44 +126,43 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                     .append("[Cluster][Household][Form Status][Sync Status]\r\n")
                     .append("---------------------------------------------------------\r\n");
 
-            for (Form fc : todaysForms) {
-                Log.d(TAG, "onCreate: '" + fc.getIstatus() + "'");
-                switch (fc.getIstatus()) {
+            for (Form form : todaysForms) {
+                Log.d(TAG, "onCreate: '" + form.getIstatus() + "'");
+                switch (form.getIstatus()) {
                     case "1":
-                        iStatus = "Complete";
+                        iStatus = " Complete   ";
                         break;
                     case "2":
-                        iStatus = "No Resp";
+                        iStatus = " No Resp    ";
                         break;
                     case "3":
-                        iStatus = "Empty";
+                        iStatus = " Empty      ";
                         break;
                     case "4":
-                        iStatus = "Refused";
+                        iStatus = " Refused     ";
                         break;
                     case "5":
-                        iStatus = "Non Res.";
+                        iStatus = " Non Res.   ";
                         break;
                     case "6":
-                        iStatus = "Not Found";
+                        iStatus = " Not Found  ";
                         break;
                     case "96":
-                        iStatus = "Other";
+                        iStatus = " Other      ";
                         break;
                     case "":
-                        iStatus = "Open";
+                        iStatus = " Open       ";
                         break;
                     default:
-                        iStatus = "\t\tN/A" + fc.getIstatus();
+                        iStatus = " N/A        " + form.getIstatus();
                 }
 
                 rSumText
-                        /*.append(fc.getClusterCode())
-                        .append(fc.getHhno())*/
-                        .append("  \t\t")
+                        .append("  " + form.getHh12() + "    ")
+                        .append("  " + form.getHh13() + "      ")
+
                         .append(iStatus)
-                        .append("\t\t\t\t")
-                        .append(fc.getSynced() == null ? "Not Synced" : "Synced")
+                        .append(form.getSynced() == null ? " Not Synced " : " Synced     ")
                         .append("\r\n")
                         .append("---------------------------------------------------------\r\n");
             }

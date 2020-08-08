@@ -98,9 +98,11 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         }
 
-        holder.hhno.setText(form.get(position).getRefno() + " \t\t(" + form.get(position).getHh01() + ")");
+        holder.hhno.setText("Cluster: " + form.get(position).getHh12());
+        holder.cluster.setText("Household#: " + form.get(position).getHh13());
         holder.istatus.setText(iStatus);
-        holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
+        holder.sysdate.setText(form.get(position).getSysdate());
+        //holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
         holder.istatus.setTextColor(iColor);
 
 
@@ -138,4 +140,6 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
 
     }
+
+
 }
