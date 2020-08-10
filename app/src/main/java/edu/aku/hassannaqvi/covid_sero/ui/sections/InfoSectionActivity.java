@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -150,6 +151,10 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         bi.fldGrpSectionA03.setVisibility(View.GONE);
     }
 
+    public void hh13OnTextChanged(CharSequence s, int start, int before, int count) {
+        bi.fldGrpSectionA04.setVisibility(View.GONE);
+    }
+
     public void hh01OnTextChanged(CharSequence s, int start, int before, int count) {
         //Setting Date
         try {
@@ -163,6 +168,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     @SuppressLint("CheckResult")
     public void btnCheckCluster(View v) {
         if (!Validator.emptyCheckingContainer(this, bi.fldGrpSecInfoA)) return;
+        Clear.clearAllFields(bi.fldGrpSectionA03);
         RadioButton rd = findViewById(bi.hh08.getCheckedRadioButtonId());
         int id = Integer.parseInt(rd.getTag().toString());
         getClusterBlock(String.valueOf(id), bi.hh12.getText().toString())
@@ -171,14 +177,30 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
                 .subscribe(items -> {
                     bi.fldGrpSectionA03.setVisibility(View.VISIBLE);
                     bi.hh09.setText(items.get(0).getSub_dist_name());
-                }, error -> {
-                    Toast.makeText(this, "Sorry. Cluster not found!!", Toast.LENGTH_SHORT).show();
-                });
+                }, error -> Toast.makeText(this, "Sorry. Cluster not found!!", Toast.LENGTH_SHORT).show());
+    }
+
+    @SuppressLint("CheckResult")
+    public void btnCheckHHNo(View v) {
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return;
+        RadioButton rd = findViewById(bi.hh08.getCheckedRadioButtonId());
+        int id = Integer.parseInt(rd.getTag().toString());
+        getClusterBlock(String.valueOf(id), bi.hh12.getText().toString(), bi.hh13.getText().toString())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(items -> bi.fldGrpSectionA04.setVisibility(View.VISIBLE), error -> Toast.makeText(this, "Sorry. HH not found!!", Toast.LENGTH_SHORT).show());
     }
 
     private Observable<List<Random>> getClusterBlock(String district, String cluster) {
         return Observable.create(emitter -> {
             emitter.onNext(MainApp.appInfo.getDbHelper().getClusters(district, cluster));
+            emitter.onComplete();
+        });
+    }
+
+    private Observable<Random> getClusterBlock(String district, String cluster, String hhno) {
+        return Observable.create(emitter -> {
+            emitter.onNext(MainApp.appInfo.getDbHelper().getClusterHH(district, cluster, hhno));
             emitter.onComplete();
         });
     }

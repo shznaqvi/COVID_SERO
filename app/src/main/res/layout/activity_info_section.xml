@@ -594,16 +594,25 @@
                                 android:text="@string/Q_hh13" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/hh13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:hint="@string/hh13"
                             android:inputType="number"
-                            app:mask="####" />
+                            android:maxLength="2"
+                            android:onTextChanged="@{callback.hh13OnTextChanged}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/green_overlay"
+                    android:onClick="@{callback::btnCheckHHNo}"
+                    android:text="CHECK HHNO"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:id="@+id/fldGrpSectionA04"
@@ -611,7 +620,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <Button
                         android:id="@+id/btn_End"

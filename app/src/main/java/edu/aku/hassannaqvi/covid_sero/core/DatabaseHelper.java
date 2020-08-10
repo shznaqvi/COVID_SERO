@@ -997,6 +997,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public Random getClusterHH(String district, String cluster, String hhno) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                RandomTable._ID,
+                RandomTable.COLUMN_HHNO,
+                RandomTable.COLUMN_SUB_DIST_NAME,
+                RandomTable.COLUMN_DIST_NAME,
+                RandomTable.COLUMN_DIST_ID,
+                RandomTable.COLUMN_CLUSTER,
+        };
+        String whereClause = RandomTable.COLUMN_DIST_ID + "=? AND " + RandomTable.COLUMN_CLUSTER + "=? AND " + RandomTable.COLUMN_HHNO + "=?";
+        String[] whereArgs = {district, cluster, hhno};
+        String groupBy = null;
+        String having = null;
+        String orderBy = RandomTable._ID + " ASC";
+        Random allForms = null;
+        try {
+            c = db.query(
+                    RandomTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allForms = new Random().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
+
     //Get Form already exist
     public Form getFilledForm(String district, String refno) {
         SQLiteDatabase db = this.getReadableDatabase();

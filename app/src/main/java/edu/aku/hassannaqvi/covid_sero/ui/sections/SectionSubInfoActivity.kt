@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import edu.aku.hassannaqvi.covid_sero.CONSTANTS
 import edu.aku.hassannaqvi.covid_sero.R
 import edu.aku.hassannaqvi.covid_sero.adapter.MemberListAdapter
 import edu.aku.hassannaqvi.covid_sero.core.MainApp
@@ -68,7 +69,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
 
     fun onChildViewClick() {
         if (!memFlag) return
-        startActivity(Intent(this, SectionPIAActivity::class.java))
+        startActivity(Intent(this, SectionPIAActivity::class.java).putExtra(CONSTANTS.MEMBER_SERIAL, serial))
     }
 
     fun onFabBtnMenuClick() {

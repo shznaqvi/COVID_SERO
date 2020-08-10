@@ -31,7 +31,7 @@ class CONSTANTS {
         //Child Activity
         const val CHILD_ENDING_AGE_ISSUE = "childAgeIssue"
         const val CHILD_NO_ANSWER = "childNoAns"
-        const val CHILD_SERIAL = "serial_extra"
+        const val MEMBER_SERIAL = "serial_extra"
 
         //Dashboard Activity
         const val ROUTE_SUBINFO = "complete_current_section"

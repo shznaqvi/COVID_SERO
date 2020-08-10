@@ -24,6 +24,7 @@ import org.threeten.bp.ZoneId;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import edu.aku.hassannaqvi.covid_sero.CONSTANTS;
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -258,6 +259,8 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
         personal.setAppversion(MainApp.appInfo.getAppVersion());
         personal.setHh12(form.getHh12());
         personal.setHh13(form.getHh13());
+        personal.set_UUID(form.get_UID());
+        personal.setMemberSerial(getIntent().getStringExtra(CONSTANTS.MEMBER_SERIAL));
 
         JSONObject json = new JSONObject();
 
