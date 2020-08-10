@@ -8,14 +8,28 @@ android {
     buildFeatures {
         dataBinding true
     }
-    defaultConfig {
-        applicationId "edu.aku.hassannaqvi.covid_sero"
-        minSdkVersion 22
-        targetSdkVersion 29
-        versionCode 1
-        versionName "0.1"
+    def versionPropsFile = file('version.properties')
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def code = versionProps['VERSION_CODE'].toInteger() + 1
+
+        versionProps['VERSION_CODE'] = code.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        defaultConfig {
+            applicationId "edu.aku.hassannaqvi.covid_sero"
+            minSdkVersion 22
+            targetSdkVersion 29
+            versionCode code
+            versionName "1.1"
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        }
+    } else {
+        throw new GradleException("Could not read version.properties!")
     }
 
     buildTypes {
