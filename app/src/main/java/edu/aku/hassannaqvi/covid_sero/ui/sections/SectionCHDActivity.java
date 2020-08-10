@@ -455,79 +455,61 @@ public class SectionCHDActivity extends AppCompatActivity {
             }
         });
 
-        bi.im2499.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im24check, false);
-                    bi.im24check.setTag("-1");
-                    bi.im2499.setTag("0");
-                } else {
-                    Clear.clearAllFields(bi.im24check, true);
-                    bi.im24check.setTag("0");
-                    bi.im2499.setTag("-1");
-                }
+        bi.im2499.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im24check, false);
+                bi.im24check.setTag("-1");
+                bi.im2499.setTag("0");
+            } else {
+                Clear.clearAllFields(bi.im24check, true);
+                bi.im24check.setTag("0");
+                bi.im2499.setTag("-1");
             }
         });
 
 
-        bi.im1298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im12, false);
-                } else {
-                    if (im07) return;
-                    Clear.clearAllFields(bi.im12, true);
-                }
+        bi.im1298.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im12, false);
+            } else {
+                if (im07) return;
+                Clear.clearAllFields(bi.im12, true);
             }
         });
 
-        bi.im1598.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im15, false);
-                } else {
-                    if (im07) return;
-                    Clear.clearAllFields(bi.im15, true);
-                }
+        bi.im1598.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im15, false);
+            } else {
+                if (im07) return;
+                Clear.clearAllFields(bi.im15, true);
             }
         });
 
-        bi.im1798.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im17, false);
-                } else {
-                    if (im07) return;
-                    Clear.clearAllFields(bi.im17, true);
-                }
+        bi.im1798.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im17, false);
+            } else {
+                if (im07) return;
+                Clear.clearAllFields(bi.im17, true);
             }
         });
 
-        bi.im1998.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im19, false);
-                } else {
-                    if (im07) return;
-                    Clear.clearAllFields(bi.im19, true);
-                }
+        bi.im1998.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im19, false);
+            } else {
+                if (im07) return;
+                Clear.clearAllFields(bi.im19, true);
             }
         });
 
-        bi.im2298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    Clear.clearAllFields(bi.im22, false);
-                } else {
-                    if (im07) return;
-                    Clear.clearAllFields(bi.im22, true);
-                }
+        bi.im2298.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.im22, false);
+            } else {
+                if (im07) return;
+                Clear.clearAllFields(bi.im22, true);
             }
         });
 
