@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -39,6 +40,12 @@ public class SectionCHEActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
+
+        bi.im25.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.im251.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVim26);
+            }
+        }));
 
     }
 
