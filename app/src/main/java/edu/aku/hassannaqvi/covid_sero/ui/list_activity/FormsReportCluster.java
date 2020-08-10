@@ -44,10 +44,11 @@ public class FormsReportCluster extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         dtFilter = findViewById(R.id.dtFilter);
         db = new DatabaseHelper(this);
-        form = db.getFormsByCluster("0000000");
+        form = db.getFormsByCluster("0000");
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter((List<Form>) form, this);
+
         recyclerView.setAdapter(formsAdapter);
     }
 

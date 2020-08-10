@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +28,7 @@ import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextB
 public class SectionPICActivity extends AppCompatActivity {
 
     ActivitySectionPicBinding bi;
+    boolean stickerType = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,10 @@ public class SectionPICActivity extends AppCompatActivity {
         json.put("pc02", bi.pc02.getText().toString());
         json.put("pc02a", bi.pc02a.getText().toString());
         json.put("pc03", bi.pc03.getText().toString());
+        json.put("pc03a", bi.pc03a1.isChecked() ? "1"
+                : bi.pc03a2.isChecked() ? "2"
+                : "-1");
+        json.put("pc03b", bi.pc03b.getText().toString());
         json.put("pc04", bi.pc04.getText().toString());
         json.put("pc04a", bi.pc04a.getText().toString());
         json.put("pc05", bi.pc05.getText().toString());
@@ -102,15 +106,16 @@ public class SectionPICActivity extends AppCompatActivity {
         contextBackActivity(this);
     }
 
-    public void btnScan(View v) {
+    public void btnScan(int type) {
+        stickerType = type == 1;
         IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-        integrator.setPrompt("Scan sticker");
-        integrator.setCameraId(0);  // Use a specific camera of the device
-        integrator.setBeepEnabled(false);
-        integrator.setBarcodeImageEnabled(true);
-        integrator.setOrientationLocked(false);
-        integrator.initiateScan();
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES)
+                .setPrompt("Scan sticker")
+                .setCameraId(0)  // Use a specific camera of the device
+                .setBeepEnabled(false)
+                .setBarcodeImageEnabled(true)
+                .setOrientationLocked(false)
+                .initiateScan();
     }
 
     @Override
@@ -119,12 +124,22 @@ public class SectionPICActivity extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-                bi.pc03.setText(null);
-                bi.pc03.setEnabled(true);
+                if (stickerType) {
+                    bi.pc03.setText(null);
+                    bi.pc03.setEnabled(true);
+                } else {
+                    bi.pc03b.setText(null);
+                    bi.pc03b.setEnabled(true);
+                }
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-                bi.pc03.setText(result.getContents().trim());
-                bi.pc03.setEnabled(false);
+                if (stickerType) {
+                    bi.pc03.setText(result.getContents().trim());
+                    bi.pc03.setEnabled(false);
+                } else {
+                    bi.pc03b.setText(result.getContents().trim());
+                    bi.pc03b.setEnabled(false);
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

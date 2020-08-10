@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
@@ -15,63 +14,46 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@drawable/card_design"
-            android:elevation="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:elevation="1dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <RelativeLayout
+                <View
                     android:id="@+id/status"
                     android:layout_width="16dp"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:background="@color/colorPrimary"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     tools:visibility="visible">
 
-                </RelativeLayout>
+                </View>
 
                 <ImageView
                     android:id="@+id/formImage"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-
-                    android:layout_marginBottom="16dp"
-                    android:src="@drawable/hhform_icon"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/status"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:src="@drawable/hhform_icon" />
 
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
                     android:autoSizeTextType="uniform"
-                    android:text="CLICK FOR HOUSEHOLD FORM"
-                    android:textAlignment="center"
+                    android:text="MEMBERS INFORMATION FORM"
+                    android:gravity="center"
                     android:textColor="#7f7f7f"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/formImage"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="18sp" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </layout>

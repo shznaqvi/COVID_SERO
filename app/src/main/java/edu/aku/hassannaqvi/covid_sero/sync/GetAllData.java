@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.List;
 
 import edu.aku.hassannaqvi.covid_sero.adapter.SyncListAdapter;
+import edu.aku.hassannaqvi.covid_sero.contracts.RandomContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.UsersContract;
 import edu.aku.hassannaqvi.covid_sero.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
@@ -59,6 +60,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "VersionApp":
                 position = 1;
                 break;
+            case "Random":
+                position = 2;
+                break;
         }
         list.get(position).settableName(syncClass);
     }
@@ -87,6 +91,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "VersionApp":
                 position = 1;
                 break;
+            case "Random":
+                position = 2;
+                break;
         }
         list.get(position).setstatus("Syncing");
         list.get(position).setstatusID(2);
@@ -112,6 +119,11 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     url = new URL(MainApp._UPDATE_URL + VersionAppContract.VersionAppTable.SERVER_URI);
                     position = 1;
                     break;
+                case "Random":
+                    url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
+                    tableName = RandomContract.RandomTable.TABLE_NAME;
+                    position = 2;
+                    break;
             }
 
             urlConnection = (HttpURLConnection) url.openConnection();
@@ -120,6 +132,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
             switch (syncClass) {
                 case "User":
+                case "Random":
                     urlConnection.setRequestMethod("POST");
                     urlConnection.setDoOutput(true);
                     urlConnection.setDoInput(true);
@@ -192,6 +205,11 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             insertCount = db.syncVersionApp(new JSONObject(result));
                             if (insertCount == 1) jsonArray.put("1");
                             position = 1;
+                            break;
+                        case "Random":
+                            jsonArray = new JSONArray(result);
+                            insertCount = db.syncRandom(jsonArray);
+                            position = 2;
                             break;
                     }
 

@@ -136,7 +136,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 dtInstant = null;
-                if (!bi.im011.isChecked() || bi.im0497.isChecked()) return;
+                imFlag = true;
+                if (!bi.im011.isChecked() || bi.im0497.isChecked() || bi.im044.isChecked()) return;
                 String txt01, txt02, txt03;
                 bi.im04dd.setEnabled(true);
                 bi.im04mm.setEnabled(true);
