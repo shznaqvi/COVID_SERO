@@ -644,7 +644,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_ISTATUS + " != '' ";
+        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " == '' ";
         //String whereClause = FormsTable.COLUMN_ISTATUS +" != '' ";
 
         String[] whereArgs = null;
@@ -652,8 +652,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                FormsTable.COLUMN_ID + " ASC";
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
 
         Collection<Form> allForms = new ArrayList<Form>();
         try {
@@ -711,16 +710,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-        String whereClause = PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalTable.COLUMN_CSTATUS + " != '' ";
+        String whereClause = PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalTable.COLUMN_SYNCED + " == '' ";
         //String whereClause = PersonalTable.COLUMN_ISTATUS +" != '' ";
-
         String[] whereArgs = null;
-
         String groupBy = null;
         String having = null;
-
-        String orderBy =
-                PersonalTable.COLUMN_ID + " ASC";
+        String orderBy = PersonalTable.COLUMN_ID + " ASC";
 
         Collection<Personal> allPersonal = new ArrayList<Personal>();
         try {
