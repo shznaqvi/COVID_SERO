@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         if (todaysForms.size() > 0) {
             String iStatus;
             rSumText.append("---------------------------------------------------------\r\n")
-                    .append("[Cluster][Household][Form Status][Sync Status]\r\n")
+                    .append("[Cluster][Household][Members][Form Status][Sync Status]\r\n")
                     .append("---------------------------------------------------------\r\n");
 
             for (Form form : todaysForms) {
@@ -156,11 +156,12 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                     default:
                         iStatus = " N/A        " + form.getIstatus();
                 }
+                int personalCount = appInfo.getDbHelper().getPersonalByUUID(form.get_UID());
 
                 rSumText
                         .append("  " + form.getHh12() + "    ")
                         .append("  " + form.getHh13() + "      ")
-
+                        .append("    " + personalCount + "    ")
                         .append(iStatus)
                         .append(form.getSynced() == null ? " Not Synced " : " Synced     ")
                         .append("\r\n")

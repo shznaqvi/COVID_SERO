@@ -608,6 +608,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/pb18n"
                         android:inputType="number"
+                        android:maxLength="1"
                         app:maxValue="8"
                         app:minValue="1"
                         app:type="range" />
