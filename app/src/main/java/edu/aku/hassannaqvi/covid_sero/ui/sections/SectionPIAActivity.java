@@ -339,6 +339,10 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
         }
     }
 
+    public void pa03ddmmOnTextChanged(CharSequence s, int start, int before, int count) {
+        bi.pa03yy.setText(null);
+    }
+
     public void pa03yyOnTextChanged(CharSequence s, int start, int before, int count) {
         bi.pa04m.setEnabled(false);
         bi.pa04m.setText(null);
