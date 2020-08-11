@@ -26,6 +26,7 @@
                     android:layout_width="16dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorAccent"
+                    android:visibility="gone"
                     tools:visibility="visible">
 
                 </View>
@@ -40,13 +41,13 @@
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
                     android:autoSizeTextType="uniform"
-                    android:text="HOUSEHOLD FORM"
                     android:gravity="center"
+                    android:text="HOUSEHOLD FORM"
                     android:textColor="#7f7f7f"
                     android:textSize="18sp" />
 

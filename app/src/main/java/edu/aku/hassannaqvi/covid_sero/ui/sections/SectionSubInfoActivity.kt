@@ -68,7 +68,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
     }
 
     fun onChildViewClick() {
-        if (!memFlag) return
+//        if (!memFlag) return
         startActivity(Intent(this, SectionPIAActivity::class.java).putExtra(CONSTANTS.MEMBER_SERIAL, serial))
     }
 
@@ -154,7 +154,7 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
 
     private fun setupRecyclerView(membersLst: MutableList<Personal>) {
         adapter = MemberListAdapter(this, membersLst)
-        bi.formScroll.recyclerViewChildren.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        bi.formScroll.recyclerViewChildren.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         bi.formScroll.recyclerViewChildren.adapter = adapter
     }
 
