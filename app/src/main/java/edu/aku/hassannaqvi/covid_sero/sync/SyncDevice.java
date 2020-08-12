@@ -151,7 +151,7 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(context, "Failed to get TAG ID " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Failed: > " + result + " < " + e.getMessage(), Toast.LENGTH_SHORT).show();
             if (flag) {
                 delegate.processFinish(true);
             }

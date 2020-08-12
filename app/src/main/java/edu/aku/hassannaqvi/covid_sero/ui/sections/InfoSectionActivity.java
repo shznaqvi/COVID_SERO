@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.covid_sero.ui.sections;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -174,6 +175,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         Clear.clearAllFields(bi.fldGrpSectionA03);
         RadioButton rd = findViewById(bi.hh08.getCheckedRadioButtonId());
         int id = Integer.parseInt(rd.getTag().toString());
+        Log.d("District_ID", "btnCheckCluster: " + id);
+
         getClusterBlock(String.valueOf(id), bi.hh12.getText().toString())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
