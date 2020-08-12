@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -80,13 +81,13 @@ class SectionSubInfoActivity : AppCompatActivity(), EndSectionActivity {
                         ActionItem(
                                 0,
                                 "Force Stop",
-                                getDrawable(R.drawable.ic_warning_black_24dp)
+                                ContextCompat.getDrawable(this, R.drawable.ic_warning_black_24dp)
                         )
                         ,
                         ActionItem(
                                 1,
                                 "End Household",
-                                getDrawable(R.drawable.ic_closed_caption_black_24dp)
+                                ContextCompat.getDrawable(this, R.drawable.ic_closed_caption_black_24dp)
                         )
                 ),
                 onClick = { item: ActionItem ->

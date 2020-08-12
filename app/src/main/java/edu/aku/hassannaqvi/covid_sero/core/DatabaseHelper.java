@@ -710,7 +710,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-        String whereClause = PersonalTable.COLUMN_SYNCED + " is null AND " + PersonalTable.COLUMN_SYNCED + " == '' ";
+        String whereClause = PersonalTable.COLUMN_SYNCED + " is null OR " + PersonalTable.COLUMN_SYNCED + " == '' ";
         //String whereClause = PersonalTable.COLUMN_ISTATUS +" != '' ";
         String[] whereArgs = null;
         String groupBy = null;
