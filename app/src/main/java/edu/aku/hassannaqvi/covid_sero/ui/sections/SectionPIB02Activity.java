@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.pb1101.setOnCheckedChangeListener(((radioGroup, i) -> {
+        /*bi.pb1101.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.pb1101b.getId()) {
                 bi.fldGrpCVpb12.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpCVpb12);
@@ -80,7 +81,18 @@ public class SectionPIB02Activity extends AppCompatActivity {
             } else {
                 bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
             }
-        }));
+        }));*/
+
+        for (RadioGroup rdg : new RadioGroup[]{bi.pb1101, bi.pb1102, bi.pb1103, bi.pb1104}) {
+            rdg.setOnCheckedChangeListener((group, checkedId) -> {
+                if (checkedId == bi.pb1101a.getId() || checkedId == bi.pb1102a.getId() || checkedId == bi.pb1103a.getId() || checkedId == bi.pb1104a.getId()) {
+                    bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpCVpb12.setVisibility(View.GONE);
+                    Clear.clearAllFields(bi.fldGrpCVpb12);
+                }
+            });
+        }
 
         bi.pb13.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.pb132.getId())
