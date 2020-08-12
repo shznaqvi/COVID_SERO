@@ -158,10 +158,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 }
                 int personalCount = appInfo.getDbHelper().getPersonalByUUID(form.get_UID());
 
-                rSumText
-                        .append("  " + form.getHh12() + "    ")
-                        .append("  " + form.getHh13() + "      ")
-                        .append("    " + personalCount + "    ")
+                rSumText.append("  ").append(form.getHh12()).append("    ").append("  ").append(form.getHh13()).append("      ").append("    ").append(personalCount).append("    ")
                         .append(iStatus)
                         .append(form.getSynced() == null ? " Not Synced " : " Synced     ")
                         .append("\r\n")
