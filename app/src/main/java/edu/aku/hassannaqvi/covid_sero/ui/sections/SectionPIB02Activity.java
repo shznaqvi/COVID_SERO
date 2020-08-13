@@ -85,7 +85,7 @@ public class SectionPIB02Activity extends AppCompatActivity {
 
         for (RadioGroup rdg : new RadioGroup[]{bi.pb1101, bi.pb1102, bi.pb1103, bi.pb1104}) {
             rdg.setOnCheckedChangeListener((group, checkedId) -> {
-                if (checkedId == bi.pb1101a.getId() || checkedId == bi.pb1102a.getId() || checkedId == bi.pb1103a.getId() || checkedId == bi.pb1104a.getId()) {
+                if (bi.pb1101a.isChecked() || bi.pb1102a.isChecked() || bi.pb1103a.isChecked() || bi.pb1104a.isChecked()) {
                     bi.fldGrpCVpb12.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpCVpb12.setVisibility(View.GONE);
