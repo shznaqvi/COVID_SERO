@@ -592,6 +592,7 @@
                                 android:layout_alignTop="@id/qtxt_hh13"
                                 android:layout_alignBottom="@id/qtxt_hh13"
                                 android:text="@string/Q_hh13" />
+
                         </RelativeLayout>
 
                         <EditText
@@ -600,19 +601,21 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/hh13"
                             android:inputType="number"
-                            android:maxLength="2"
-                            android:onTextChanged="@{callback.hh13OnTextChanged}" />
+                            android:maxLength="5"/>
+                           <!-- android:onTextChanged="@{callback.hh13OnTextChanged}" />-->
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <Button
+                <!--<Button
                     style="@style/button"
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
                     android:background="@color/green_overlay"
                     android:onClick="@{callback::btnCheckHHNo}"
                     android:text="CHECK HHNO"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white" />-->
 
                 <LinearLayout
                     android:id="@+id/fldGrpSectionA04"
@@ -621,7 +624,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <Button
                         android:id="@+id/btn_End"
