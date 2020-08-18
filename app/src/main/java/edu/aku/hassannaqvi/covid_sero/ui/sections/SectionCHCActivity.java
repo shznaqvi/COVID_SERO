@@ -261,8 +261,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
         personal.setsI(String.valueOf(f1));
 
-        if (dtInstant != null)
-            form.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());
+        /*if (dtInstant != null)
+            personal.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());*/
     }
 
     private boolean formValidation() {
@@ -280,13 +280,17 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     public void BtnContinue() {
 
         if (formValidation()) {
+
+            if (dtInstant != null)
+                personal.setCalculatedDOB(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate());
+
             //Calculate months
             boolean monthFlag = true;
-            if (form.getCalculatedDOB() != null || dtInstant != null) {
+            if (personal.getCalculatedDOB() != null) {
                 Pair<String, String> month_year;
                 if (bi.im021.isChecked() && dtInstant != null && !bi.im0497.isChecked())
                     month_year = getMonthAndYearFromDate(LocalDateTime.ofInstant(dtInstant, ZoneId.systemDefault()).toLocalDate().toString());
-                else month_year = getMonthAndYearFromDate(form.getCalculatedDOB().toString());
+                else month_year = getMonthAndYearFromDate(personal.getCalculatedDOB().toString());
                 int totalMonths = Integer.parseInt(month_year.getFirst()) + Integer.parseInt(month_year.getSecond()) * 12;
                 monthFlag = totalMonths < 60;
             }
