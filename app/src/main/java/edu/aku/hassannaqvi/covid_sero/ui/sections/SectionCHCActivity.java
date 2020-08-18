@@ -79,36 +79,15 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     private void setupListeners() {
         bi.im02.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.im021.getId()) {
-                //    Clear.clearAllFields(bi.fldGrpCVim02, false);
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
                 Clear.clearAllFields(bi.fldGrpCVim04, true);
-                /*bi.frontPhoto.setEnabled(true);
-                bi.backPhoto.setEnabled(true);
-                bi.frontPhoto.setBackground(getResources().getDrawable(R.drawable.outline_btn));
-                bi.backPhoto.setBackground(getResources().getDrawable(R.drawable.outline_btn));
-                bi.frontFileName.setText(null);
-                bi.backFileName.setText(null);*/
             } else if (i == bi.im023.getId()) {
-                //    Clear.clearAllFields(bi.fldGrpCVim02, false);
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
                 Clear.clearAllFields(bi.fldGrpCVim04, false);
-                /*bi.frontPhoto.setEnabled(false);
-                bi.backPhoto.setEnabled(false);
-                bi.frontPhoto.setBackground(null);
-                bi.backPhoto.setBackground(null);
-                bi.frontFileName.setText(null);
-                bi.backFileName.setText(null);*/
                 im03Flag = true;
             } else {
-                //    Clear.clearAllFields(bi.fldGrpCVim02, true);
                 Clear.clearAllFields(bi.fldGrpCVim03, true);
                 Clear.clearAllFields(bi.fldGrpCVim04, false);
-                /*bi.frontPhoto.setEnabled(false);
-                bi.backPhoto.setEnabled(false);
-                bi.frontPhoto.setBackground(null);
-                bi.backPhoto.setBackground(null);
-                bi.frontFileName.setText(null);
-                bi.backFileName.setText(null);*/
             }
 
         }));
@@ -175,7 +154,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
                 }
             }
 
@@ -270,10 +248,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             Toast.makeText(this, "Invalid date!", Toast.LENGTH_SHORT).show();
             return false;
         }
-        /*if (bi.im011.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
-            Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
         return Validator.emptyCheckingContainer(this, bi.fldGrpSectionCHC);
     }
 
@@ -340,51 +314,6 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
     public void onBackPressed() {
         contextBackActivity(this);
     }
-
-/*    public void takePhoto(int id) {
-        Intent intent = new Intent(this, TakePhoto.class);
-        intent.putExtra("picID", personal.getHh12() + "_" + personal.getHh13() + "_" + personal.getMemberSerial() + "_");
-        intent.putExtra("childName", personal.getMemberName());
-        if (id == 1) {
-            intent.putExtra("picView", "front".toUpperCase());
-            startActivityForResult(intent, 1); // Activity is started with requestCode 1 = Front
-        } else {
-            intent.putExtra("picView", "back".toUpperCase());
-            startActivityForResult(intent, 2); // Activity is started with requestCode 2 = Back
-        }
-    }
-
-    // Call Back method  to get the Message form other Activity
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode != RESULT_CANCELED) {
-            Toast.makeText(this, requestCode + "_" + resultCode, Toast.LENGTH_SHORT).show();
-
-            String fileName = data.getStringExtra("FileName");
-
-            // Check if the requestCode 1 = Front : 2 = Back -- resultCode 1 = Success : 2 = Failure
-            // Results received with requestCode 1 = Front
-            if (requestCode == 1 && resultCode == 1) {
-                Toast.makeText(this, "Photo Taken", Toast.LENGTH_SHORT).show();
-                bi.frontFileName.setText(fileName);
-                bi.frontPhoto.setEnabled(false);
-            } else if (requestCode == 1) {
-                Toast.makeText(this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
-                bi.frontFileName.setText("Photo not taken.");
-            }
-
-            // Results received with requestCode 2 = Back
-            if (requestCode == 2 && resultCode == 1) {
-                Toast.makeText(this, "Photo Taken", Toast.LENGTH_SHORT).show();
-                bi.backFileName.setText(fileName);
-                bi.backPhoto.setEnabled(false);
-            } else if (requestCode == 2) {
-                Toast.makeText(this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
-                bi.backFileName.setText("Photo not taken.");
-            }
-        }
-    }*/
 
     @Override
     public void endSecActivity(boolean flag) {
