@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +37,6 @@ import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.DateRepository;
 import edu.aku.hassannaqvi.covid_sero.utils.date_utils.model.AgeModel;
 
-import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM01CARDSEEN;
 import static edu.aku.hassannaqvi.covid_sero.CONSTANTS.IM03FLAG;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.personal;
@@ -59,13 +57,6 @@ public class SectionCHDActivity extends AppCompatActivity {
         setupListeners();
         setupTextWatchers();
         setupYears();
-
-        //imo7 Check
-        im07 = getIntent().getBooleanExtra(IM01CARDSEEN, false);
-        if (im07) {
-            Clear.clearAllFields(bi.fldGrpCVim07, false);
-            bi.im071.setChecked(true);
-        }
 
     }
 
@@ -349,6 +340,13 @@ public class SectionCHDActivity extends AppCompatActivity {
         boolean flag = getIntent().getBooleanExtra(IM03FLAG, true);
         if (!flag) imFlag = true;
         Clear.clearAllFields(bi.fldGrpSecChc2, flag);
+
+        //imo7 Check
+//        im07 = getIntent().getBooleanExtra(IM01CARDSEEN, false);
+        if (flag) {
+            Clear.clearAllFields(bi.fldGrpCVim07, false);
+            bi.im071.setChecked(true);
+        }
 
        /* bi.im06.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i != bi.im061.getId()) {

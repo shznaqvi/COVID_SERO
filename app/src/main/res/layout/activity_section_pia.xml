@@ -205,7 +205,7 @@
                                 android:onTextChanged="@{callback::pa03ddmmOnTextChanged}"
                                 app:defaultValue="98"
                                 app:mask="##"
-                                app:maxValue="11"
+                                app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
                         </LinearLayout>

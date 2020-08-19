@@ -58,7 +58,6 @@ import static edu.aku.hassannaqvi.covid_sero.core.MainApp.appInfo;
 public class MainActivity extends AppCompatActivity implements WarningActivityInterface {
 
 
-
     static File file;
     ActivityMainBinding bi;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
@@ -181,12 +180,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 .append("\t========================================================\r\n");
         bi.recordSummary.setText(rSumText);
 
-        Log.d(TAG, "onCreate: " + rSumText);
-        if (MainApp.admin) {
-            bi.databaseBtn.setVisibility(View.VISIBLE);
-        } else {
-            bi.databaseBtn.setVisibility(View.GONE);
-        }
+        bi.adminSections.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
 
         // Auto download app
         sharedPrefDownload = getSharedPreferences("appDownload", MODE_PRIVATE);
@@ -352,7 +346,6 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
     }
 
     public void toggleSummary(View view) {
-
         if (bi.recordSummary.getVisibility() == View.VISIBLE) {
             bi.recordSummary.setVisibility(View.GONE);
         } else {

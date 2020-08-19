@@ -78,30 +78,27 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
 
     private void setupListeners() {
         bi.im02.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.im021.getId()) {
+            if (i == bi.im021.getId() || i == bi.im022.getId() || i == bi.im023.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVim03, false);
+                Clear.clearAllFields(bi.fldGrpCVim04d, false);
                 Clear.clearAllFields(bi.fldGrpCVim04, true);
-            } else if (i == bi.im023.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVim03, false);
-                Clear.clearAllFields(bi.fldGrpCVim04, false);
-                im03Flag = true;
+                im03Flag = false;
             } else {
                 Clear.clearAllFields(bi.fldGrpCVim03, true);
                 Clear.clearAllFields(bi.fldGrpCVim04, false);
+                Clear.clearAllFields(bi.fldGrpCVim04d, false);
+                im03Flag = true;
             }
 
         }));
 
-        bi.im03.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVim04, i == bi.im032.getId());
-            im03Flag = i == bi.im031.getId() || i == bi.im032.getId();
-        });
-
         bi.im04.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.im044.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVim04d, false);
-            } else {
+            if (i == bi.im041.getId() || i == bi.im043.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVim04d, true);
+                im03Flag = false;
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVim04d, false);
+                im03Flag = true;
             }
 
         }));
@@ -116,7 +113,8 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 dtInstant = null;
                 imFlag = true;
-                if (!bi.im011.isChecked() || bi.im0497.isChecked() || bi.im044.isChecked()) return;
+                if (!(bi.im041.isChecked() || bi.im043.isChecked()) || bi.im0497.isChecked() || bi.im044.isChecked())
+                    return;
                 String txt01, txt02, txt03;
                 bi.im04dd.setEnabled(true);
                 bi.im04mm.setEnabled(true);
@@ -164,11 +162,12 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
         });
 
         bi.im0497.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
+            if (!isChecked) {
+                Clear.clearAllFields(bi.fldGrpim04DT, true);
+            } else {
                 Clear.clearAllFields(bi.fldGrpim04DT, false);
                 imFlag = true;
-            } else
-                Clear.clearAllFields(bi.fldGrpim04DT, true);
+            }
         });
 
     }
@@ -276,7 +275,7 @@ public class SectionCHCActivity extends AppCompatActivity implements EndSectionA
                 }
                 if (UpdateDB()) {
                     finish();
-                    startActivity(new Intent(this, SectionCHDActivity.class).putExtra(IM03FLAG, !im03Flag).putExtra(IM01CARDSEEN, bi.im021.isChecked() || bi.im023.isChecked()));
+                    startActivity(new Intent(this, SectionCHDActivity.class).putExtra(IM03FLAG, !im03Flag).putExtra(IM01CARDSEEN, bi.im041.isChecked() || bi.im043.isChecked()));
                 } else {
                     Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
                 }
