@@ -52,8 +52,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        int childCount = 0;
-        //childCount = db.getChildrenByUUID(form.get(position).get_UID());
+        int personalCount = 0;
+        personalCount = db.getPersonalByUUID(form.get(position).get_UID());
         int photoChild = 0;
         //photoChild = db.getChildrenPhotoCheck(form.get(position).get_UID());
         int cardChild = 0;
@@ -99,7 +99,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         }
 
         holder.hhno.setText("Cluster: " + form.get(position).getHh12());
-        holder.cluster.setText("Household#: " + form.get(position).getHh13());
+        holder.cluster.setText("Household: " + form.get(position).getHh13() + " (" + personalCount + " member)");
         holder.istatus.setText(iStatus);
         holder.sysdate.setText(form.get(position).getSysdate());
         //holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
