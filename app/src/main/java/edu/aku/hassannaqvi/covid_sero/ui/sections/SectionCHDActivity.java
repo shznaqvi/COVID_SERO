@@ -341,13 +341,6 @@ public class SectionCHDActivity extends AppCompatActivity {
         if (!flag) imFlag = true;
         Clear.clearAllFields(bi.fldGrpSecChc2, flag);
 
-        //imo7 Check
-//        im07 = getIntent().getBooleanExtra(IM01CARDSEEN, false);
-        if (flag) {
-            Clear.clearAllFields(bi.fldGrpCVim07, false);
-            bi.im071.setChecked(true);
-        }
-
        /* bi.im06.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i != bi.im061.getId()) {
                 *//*bi.qim07.setEnabled(false);
@@ -511,6 +504,13 @@ public class SectionCHDActivity extends AppCompatActivity {
             }
         });
 
+
+        //imo7 Check
+//        im07 = getIntent().getBooleanExtra(IM01CARDSEEN, false);
+        if (flag) {
+            Clear.clearAllFields(bi.fldGrpCVim07, false);
+            bi.im071.setChecked(true);
+        }
     }
 
     private boolean UpdateDB() {
