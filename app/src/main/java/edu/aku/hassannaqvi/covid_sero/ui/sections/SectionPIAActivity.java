@@ -267,6 +267,7 @@ public class SectionPIAActivity extends AppCompatActivity implements EndSectionA
         json.put("pa03_dd", bi.pa03dd.getText().toString());
         json.put("pa03_mm", bi.pa03mm.getText().toString());
         json.put("pa03_yy", bi.pa03yy.getText().toString());
+        json.put("username", MainApp.user.getUserName());
 
         personal.setAgey(bi.pa04y.getText().toString());
         json.put("pa04y", bi.pa04y.getText().toString());

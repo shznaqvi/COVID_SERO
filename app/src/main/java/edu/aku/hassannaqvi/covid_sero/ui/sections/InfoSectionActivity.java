@@ -112,6 +112,7 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         form.setHh13(bi.hh13.getText().toString());
 
         JSONObject json = new JSONObject();
+        json.put("username", MainApp.user.getUserName());
         json.put("hh04", bi.hh04.getText().toString());
 
         json.put("hh05", bi.hh05.getText().toString());
