@@ -102,17 +102,17 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     private void SaveDraft() throws JSONException {
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
-        form.setHh03(MainApp.userName);
+        //form.setHh03(MainApp.userName);
         form.setDeviceID(MainApp.appInfo.getDeviceID());
         form.setDevicetagID(MainApp.appInfo.getTagName());
         form.setAppversion(MainApp.appInfo.getAppVersion());
         form.setHh01(bi.hh01.getText().toString());
-        form.setHh03(MainApp.user.getUserName());
+        form.setHh03(MainApp.user.getUserName()); // duplicate removed L:105
         form.setHh12(bi.hh12.getText().toString());
         form.setHh13(bi.hh13.getText().toString());
 
         JSONObject json = new JSONObject();
-        json.put("username", MainApp.user.getUserName());
+        json.put("username", MainApp.user.getUserName()); // Create field for username
         json.put("hh04", bi.hh04.getText().toString());
 
         json.put("hh05", bi.hh05.getText().toString());
