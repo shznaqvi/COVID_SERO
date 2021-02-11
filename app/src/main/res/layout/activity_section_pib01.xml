@@ -1,20 +1,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
 
+    <data>
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.uencovid19.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIB01Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/fldGrpSectionB"
@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- pb01  Title   -->
+
+        <!-- pb01  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVpb01"
                 style="@style/cardView">

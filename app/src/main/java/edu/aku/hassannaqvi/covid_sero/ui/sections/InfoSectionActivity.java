@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -25,6 +26,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.FormsContract;
@@ -40,7 +42,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.covid_sero.core.MainApp.form;
-import static edu.aku.hassannaqvi.covid_sero.core.MainApp.setGPS;
 
 public class InfoSectionActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -52,7 +53,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_info_section);
         bi.setCallback(this);
-        setupSkips();
+        setupSkips();//Initiate DateTime
+        AndroidThreeTen.init(this);
 
 
     }
@@ -139,7 +141,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
 
         form.setLocalDate(localDate);
 
-        setGPS(this);
+        //HassanBhai@Requested11Feb2021
+        //setGPS(this);
 
     }
 
@@ -163,7 +166,8 @@ public class InfoSectionActivity extends AppCompatActivity implements EndSection
     public void hh01OnTextChanged(CharSequence s, int start, int before, int count) {
         //Setting Date
         try {
-            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(bi.hh01.getText().toString())) + "T06:24:01Z");
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
+                    .format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.hh01.getText().toString())) + "T06:24:01Z");
             localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
         } catch (ParseException e) {
             e.printStackTrace();

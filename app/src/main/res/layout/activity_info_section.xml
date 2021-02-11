@@ -38,39 +38,38 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_hh01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_hh01"
-                                android:text="@string/hh01" />
-
-                            <TextView
-                                android:id="@+id/q_hh01"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_hh01"
-                                android:layout_alignBottom="@id/qtxt_hh01"
+                                android:layout_height="match_parent"
                                 android:text="@string/Q_hh01" />
-                        </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/hh01" />
+
+                        </LinearLayout>
 
                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/hh01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
-                            android:hint="DD/MM/YYYY"
+                            android:gravity="center"
                             android:onTextChanged="@{callback::hh01OnTextChanged}"
+                            android:hint="DD/MM/YYYY"
                             app:dateFormat="dd-MM-yyyy"
                             app:maxDate="CR_DATE"
                             app:minDate="07/07/2020" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- hh02  TextArea   -->
@@ -83,35 +82,34 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_hh02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_hh02"
-                                android:text="@string/hh02" />
-
-                            <TextView
-                                android:id="@+id/q_hh02"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_hh02"
-                                android:layout_alignBottom="@id/qtxt_hh02"
+                                android:layout_height="match_parent"
                                 android:text="@string/Q_hh02" />
-                        </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/hh02" />
+
+                        </LinearLayout>
 
                         <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                             android:id="@+id/hh02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/hh02" />
+                            android:gravity="center"
+                            android:hint="HH:mm" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- hh04  TextArea   -->
@@ -124,38 +122,40 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_hh04"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_hh04"
-                                android:text="@string/hh04" />
-
-                            <TextView
-                                android:id="@+id/q_hh04"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_hh04"
-                                android:layout_alignBottom="@id/qtxt_hh04"
+                                android:layout_height="match_parent"
                                 android:text="@string/Q_hh04" />
-                        </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/hh04" />
+
+                        </LinearLayout>
 
                         <EditText
                             android:id="@+id/hh04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                             android:enabled="false"
                             android:hint="@string/hh04"
-                            android:inputType="text" />
+                            android:inputType="text"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- hh05  Input-Numeric   -->
@@ -559,7 +559,9 @@
                             android:layout_height="wrap_content"
 
                             android:hint="@string/hh11" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- hh13  Input-Numeric   -->

@@ -824,7 +824,7 @@
     <!--    SectionInfo-->
     <string name="newHHheadname"> نیا سربراہ کا نام </string>
     <string name="hh01">انٹرویو کی تاریخ</string>
-    <string name="hh02">انٹرویو شروع کرنے کا وقت(24 گھنٹوں میں)</string>
+    <string name="hh02">انٹرویو شروع کرنے کا وقت (24 گھنٹوں میں) </string>
     <string name="hh03">انٹرویو لینے والے کا کوڈ</string>
     <string name="hh04">انٹرویو لینے والے کا نام</string>
     <string name="hh05">سُپروائزر کا کوڈ</string>
