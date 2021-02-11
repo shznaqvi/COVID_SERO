@@ -150,7 +150,7 @@
                             android:enabled="false"
                             android:hint="@string/hh04"
                             android:inputType="text"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/green"
                             android:textSize="22sp"
                             android:textStyle="bold" />
 
