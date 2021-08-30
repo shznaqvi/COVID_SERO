@@ -27,18 +27,28 @@
         tools:replace="android:allowBackup"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.sections.SectionPDActivity"
+            android:label="@string/sectionpd_mainheading"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.SectionPIB02Activity"
             android:label="@string/nh3heading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.InfoSectionActivity"
             android:label="@string/nh3heading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.SectionH302Activity"
             android:label="@string/nh3heading"
