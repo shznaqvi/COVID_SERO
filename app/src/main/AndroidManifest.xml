@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.sections.SectionPDActivity"
+            android:name=".ui.sections.SectionPIDActivity"
             android:label="@string/sectionpd_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"

@@ -12,7 +12,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPDActivity" />
+            type="edu.aku.hassannaqvi.covid_sero.ui.sections.SectionPIDActivity" />
 
     </data>
 

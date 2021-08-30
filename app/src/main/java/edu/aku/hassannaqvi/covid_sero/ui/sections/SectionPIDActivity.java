@@ -17,20 +17,20 @@ import edu.aku.hassannaqvi.covid_sero.R;
 import edu.aku.hassannaqvi.covid_sero.contracts.PersonalContract;
 import edu.aku.hassannaqvi.covid_sero.core.DatabaseHelper;
 import edu.aku.hassannaqvi.covid_sero.core.MainApp;
-import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPdBinding;
+import edu.aku.hassannaqvi.covid_sero.databinding.ActivitySectionPidBinding;
 import edu.aku.hassannaqvi.covid_sero.ui.other.PIEndingActivity;
 import edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.covid_sero.utils.app_utils.AppUtilsKt.contextBackActivity;
 
-public class SectionPDActivity extends AppCompatActivity {
+public class SectionPIDActivity extends AppCompatActivity {
 
-    ActivitySectionPdBinding bi;
+    ActivitySectionPidBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pd);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_pid);
         bi.setCallback(this);
         setupSkips();
     }
